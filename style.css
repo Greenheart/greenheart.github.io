@@ -1,0 +1,70 @@
+html {
+  height: 100%;
+  font-size: 20px;
+}
+
+body {
+  height: 100%;
+  font-family:'Poiret One', sans-serif;
+  color: yellow;
+  background: url(http://i.imgur.com/zdvgPbs.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 3rem;
+  background: -webkit-linear-gradient(#404040, #151515);
+  background: -moz-linear-gradient(#404040, #151515);
+  background: -o-linear-gradient(#404040, #151515);
+  background: linear-gradient(#404040, #151515);
+  background-color: #404040;
+}
+
+nav {
+  width: 90%;
+  margin: 0 auto;
+}
+
+nav li {
+  display: inline;
+}
+
+a:visited,
+a:link {
+  color: #9d9d9d;
+  text-decoration: none;
+}
+
+
+a:hover,
+a:active {
+  color: #e3e3e3;
+  text-decoration: underline;
+}
+
+section {
+  height: 100vh;
+  margin: 0 auto;
+  width: 60%;
+  padding: 1rem;
+}
+
+#top.content {
+  background: transparent;
+}
+
+#top a {
+  background-color: rgba(119, 156, 64, 0.9);
+}
+
+.content {
+  margin-top: 3rem;
+  background-color: rgba(119, 156, 64, 0.9);
+  border-radius: 0.4rem;
+}
