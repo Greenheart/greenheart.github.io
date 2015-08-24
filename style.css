@@ -1,6 +1,6 @@
 html {
   height: 100%;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 body {
@@ -27,44 +27,102 @@ header {
 }
 
 nav {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 
-nav li {
+nav ul {
+  margin: 0;
+  height: 3rem;
+}
+
+nav ul li {
   display: inline;
+  margin-right: 1rem;
+}
+
+nav a {
+  padding: 0.4rem;
+  line-height: 3rem;
+}
+
+nav a:link,
+nav a:visited {
+  color: #9d9d9d;
+  font-weight: lighter;
+}
+
+nav a:hover,
+nav a:active {
+  color: #e3e3e3;
 }
 
 a:visited,
 a:link {
-  color: #9d9d9d;
+  color: #020202;
   text-decoration: none;
+  font-weight: bold;
 }
 
 
 a:hover,
 a:active {
-  color: #e3e3e3;
+  color: #000;
   text-decoration: underline;
+  font-weight: bold;
 }
 
 section {
   height: 100vh;
   margin: 0 auto;
-  width: 60%;
+  width: 72%;
   padding: 1rem;
-}
-
-#top.content {
-  background: transparent;
-}
-
-#top a {
-  background-color: rgba(119, 156, 64, 0.9);
 }
 
 .content {
   margin-top: 3rem;
-  background-color: rgba(119, 156, 64, 0.9);
-  border-radius: 0.4rem;
+  background-color: rgba(119, 156, 64, 0.95);
+  border-radius: 0.3rem;
+  padding: 0.5rem;
 }
+
+h1,h2,h3, #top p {
+  text-shadow: 1px 1px #000;
+}
+
+#home {
+  font-size: 1.5rem;
+  padding: 0.3rem;
+}
+
+#top .content {
+  background: transparent;
+  padding-top: 6rem;
+  font-size: 2rem;
+  line-height: 1.2rem;
+}
+
+#top a {
+  background-color: rgba(119, 156, 64, 0.95);
+}
+
+#top p {
+  margin: 1.5rem 0;
+}
+
+#top h1 {
+  font-weight: lighter;
+}
+
+#photo-credit {
+	background-color: rgba(119, 156, 64, 0.95);
+	font-size: 1rem;
+	padding: 0.2rem 0.4rem;
+	border-radius: 0.3rem;
+	color: white;
+}
+
+#about {
+  
+}
+
