@@ -3,11 +3,12 @@ html {
   font-size: 22px;
 }
 
-body {
+html {  /* body ej-lokal*/
   height: 100%;
   font-family:'Poiret One', sans-serif;
   color: yellow;
-  background: url(http://i.imgur.com/zdvgPbs.jpg) no-repeat center center fixed;
+  background: url(images/Tiomila2015.jpg) no-repeat center center fixed;
+  /*background: url(http://i.imgur.com/zdvgPbs.jpg) no-repeat center center fixed;  ej-lokal*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -59,7 +60,7 @@ nav a:active {
 
 a:visited,
 a:link {
-  color: #020202;
+  color: white;
   text-decoration: none;
   font-weight: bold;
 }
@@ -67,7 +68,7 @@ a:link {
 
 a:hover,
 a:active {
-  color: #000;
+  color: white;
   text-decoration: underline;
   font-weight: bold;
 }
@@ -81,9 +82,19 @@ section {
 
 .content {
   margin-top: 3rem;
-  background-color: rgba(119, 156, 64, 0.95);
+  background-color: rgba(10, 10, 0, 0.8);
   border-radius: 0.3rem;
-  padding: 0.5rem;
+  padding: 0.5rem 2rem 2rem 2rem;
+  height: 70%;
+}
+
+.content h2 {
+  margin-left: 2rem;
+  font-size: 2rem;
+}
+
+.project-item img {
+  height: 15rem;
 }
 
 h1,h2,h3, #top p {
@@ -97,32 +108,39 @@ h1,h2,h3, #top p {
 
 #top .content {
   background: transparent;
-  padding-top: 6rem;
-  font-size: 2rem;
+  padding-top: 3.5rem;
+  font-size: 2.5rem;
   line-height: 1.2rem;
-}
-
-#top a {
-  background-color: rgba(119, 156, 64, 0.95);
 }
 
 #top p {
   margin: 1.5rem 0;
+  font-size: 2rem;
 }
 
 #top h1 {
+  font-size: 4rem;
   font-weight: lighter;
 }
 
 #photo-credit {
-	background-color: rgba(119, 156, 64, 0.95);
+	background-color: rgba(10, 10, 0, 0.6);
 	font-size: 1rem;
 	padding: 0.2rem 0.4rem;
 	border-radius: 0.3rem;
 	color: white;
 }
 
-#about {
-  
+#about .content img {
+  float: left;
+  height: 15rem;
+  margin: 1.2rem;
 }
 
+#about .content p {
+  margin-top: 1.5rem;
+}
+
+#skills {
+
+}
