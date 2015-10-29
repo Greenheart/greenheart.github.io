@@ -1,18 +1,21 @@
-html {
-  height: 100%;
-  font-size: 22px;
+* {
+  box-sizing: border-box;
 }
 
-html {  /* body ej-lokal*/
-  height: 100%;
-  font-family:'Poiret One', sans-serif;
+html {
+  font-family: 'Poiret One', sans-serif;
+  font-size: 22px;
   color: yellow;
   background: url(images/Tiomila2015.jpg) no-repeat center center fixed;
-  /*background: url(http://i.imgur.com/zdvgPbs.jpg) no-repeat center center fixed;  ej-lokal*/
+  /*background: url(http://i.imgur.com/zdvgPbs.jpg) no-repeat center center fixed;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+section p {
+  font-family: 'Raleway', sans-serif;
 }
 
 header {
@@ -33,8 +36,29 @@ nav {
 }
 
 nav ul {
-  margin: 0;
+  display: inline;
   height: 3rem;
+}
+
+nav .left {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-84%);
+}
+
+nav img {
+  position: absolute;
+  left: 225px;
+  top: 6px;
+  width: 60px;
+}
+
+nav .right {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-84%);
 }
 
 nav ul li {
@@ -65,7 +89,6 @@ a:link {
   font-weight: bold;
 }
 
-
 a:hover,
 a:active {
   color: white;
@@ -74,8 +97,7 @@ a:active {
 }
 
 section {
-  height: 100vh;
-  margin: 0 auto;
+  margin: 2rem auto;
   width: 72%;
   padding: 1rem;
 }
@@ -84,26 +106,36 @@ section {
   margin-top: 3rem;
   background-color: rgba(10, 10, 0, 0.8);
   border-radius: 0.3rem;
-  padding: 0.5rem 2rem 2rem 2rem;
-  height: 70%;
+  padding: 0.6rem 2rem;
 }
 
 .content h2 {
-  margin-left: 2rem;
+  margin: 0.7rem 0 0.7rem 2rem;
   font-size: 2rem;
+}
+
+.content p {
+  font-size: 0.9rem;
 }
 
 .project-item img {
   height: 15rem;
 }
 
-h1,h2,h3, #top p {
+h1,
+h2,
+h3,
+#top p {
   text-shadow: 1px 1px #000;
 }
 
 #home {
   font-size: 1.5rem;
   padding: 0.3rem;
+}
+
+#top {
+  height: 100vh;
 }
 
 #top .content {
@@ -116,6 +148,7 @@ h1,h2,h3, #top p {
 #top p {
   margin: 1.5rem 0;
   font-size: 2rem;
+  font-family: 'Poiret One', sans-serif;
 }
 
 #top h1 {
@@ -139,6 +172,7 @@ h1,h2,h3, #top p {
 
 #about .content p {
   margin-top: 1.5rem;
+  line-height: 1.5;
 }
 
 #skills {
