@@ -35,6 +35,7 @@
       </div>
     </section>
 
+
     <section id="about">
       <div class="content">
         <h2>About me</h2>
@@ -59,98 +60,129 @@
       </div>
     </section>
 
+
     <section id="projects">
       <div class="content">
         <h2>Projects</h2>
         <hr>
 
-        <!-- TODO: add showcase funcitonality -->
-        <!-- comment: Maybe add some kind of showcase here
-        use js to modify css (visibility: hidden) of items
-        to only show current active item in showcase
-        use css transitions for animation -->
+        <div class="showcase">
 
-      <div class="showcase">
-        <!-- TODO:
-        1. Style content to get right layout
-          a. control-links
-          b. paragraphs
-          c. headings
-          d. technologies used-labels
-        -->
-
-        <div class="project">
-          <img src="images/achtung_intense_battle_wow_2.png" alt="Intense battle in Achtung Panzer">
-          <h3>Achtung Panzer</h3>
-          <p class="project-description">
-            An intense 2D tank battle for two players, made with Python 2.7 and PyGame.
-          </p>
-        </div>
-
-
-        <div class="project spotlight">
-          <div class="display">
-            <img src="images/meteor-tic-tac-toe.png" alt="The GUI of Tic Tac Toe">
-
-            <div class="arrow arrow-prev"></div>
-            <div class="arrow arrow-next"></div>
-          </div>
-
-          <hr>
-
-          <div class="project-info">
-            <h3><a href="https://www.github.com/Catagen/Meteor-TicTacToe" target="_blank">Meteor Tic Tac Toe</a></h3>
-
-            <div class="project-description">
-              <h4>Description</h4>
-              <p>
-                A simple game built together with <a href="https://www.github.com/Catagen"target="_blank">Szymon</a>
-                to learn the basics of the Meteor Platform.
-                An interesting feature we implemented was the Room-system that enables several players to
-                play at the same time and join simply by entering a room's number
-              </p>
+          <div class="project">
+            <div class="display">
+              <img src="images/achtung_intense_battle_wow_2.png" alt="Intense battle in Achtung Panzer">
+              <div class="arrow arrow-prev"></div>
+              <div class="arrow arrow-next"></div>
             </div>
 
-            <div class="project-tech">
-              <h4>Technologies Used</h4>
+            <hr>
+
+            <div class="project-info">
+              <div class="project-description">
+                <h3><a href="https://www.github.com/greenheart/AchtungPanzer">Achtung Panzer</a></h3>
+                <p>
+                  An intense 2D tank battle for two players on the same computer.
+                  Including two different ammo-types with game world with randomly generated terrain and destroyable world-objects
+                </p>
+              </div>
+              <div class="project-tech">
+                <h3>Technologies Used</h3>
+                <ul class="tech-list">
+                  <li>Python 2.7</li>
+                  <li>PyGame</li>
+                </ul>
+              </div>
+            </div>
+          </div><!-- project -->
+
+
+
+
+
+          <div class="project">
+            <div class="display">
+              <img src="images/meteor-tic-tac-toe.png" alt="The GUI of Tic Tac Toe">
+              <div class="arrow arrow-prev"></div>
+              <div class="arrow arrow-next"></div>
+            </div>
+
+            <hr>
+
+            <div class="project-info">
+              <div class="project-description">
+                <h3><a href="https://www.github.com/Catagen/Meteor-TicTacToe" target="_blank">Meteor Tic Tac Toe</a></h3>
+                <p>
+                  A simple game built together with <a href="https://www.github.com/Catagen"target="_blank">Szymon</a>
+                  to learn the basics of the Meteor Platform.
+                  An interesting feature we implemented was the Room-system that enables several players to
+                  play at the same time and join simply by entering a room's number
+                </p>
+              </div>
+
+              <div class="project-tech">
+                <h3>Technologies Used</h3>
+                  <ul class="tech-list">
+                    <li>Meteor</li>
+                    <li>Mongo DB</li>
+                  </ul>
+              </div>
+            </div>
+          </div><!-- project -->
+
+
+
+
+
+          <div class="project spotlight">
+            <div class="display">
+              <img src="images/goa-space-survival.png" alt="Goa Space Survival">
+              <div class="arrow arrow-prev"></div>
+              <div class="arrow arrow-next"></div>
+            </div>
+
+            <hr>
+
+            <div class="project-info">
+              <div class="project-description">
+                <h3><a href="https://www.github.com/greenheart/goa-space-survival" target="_blank">Goa Space Survival</a></h3>
+                <p>
+                  A space-survival game created with Meteor and Phaser.
+                </p>
+              </div>
+
+              <div class="project-tech">
+                <h3>Technologies Used</h3>
                 <ul class="tech-list">
                   <li>Meteor</li>
                   <li>Mongo DB</li>
                 </ul>
+              </div>
             </div>
+          </div><!-- project -->
 
-          </div>
-        </div>
-
-
-        <div class="project">
-          <img src="images/goa-space-survival.png" alt="Goa Space Survival">
-          <a href="https://www.github.com/greenheart/goa-space-survival" target="_blank"><h3>Goa Space Survival</h3></a>
-          <p class="project-description">
-            A space-survival game created with Meteor and Phaser.
-          </p>
-        </div>
-      </div>
-
-<!-- TODO:
-  1. bind arrow-keys, mouse drag and ".arrow"-clicks to change images
--->
-      </div>
+        </div><!-- showcase -->
+      </div><!-- content -->
     </section>
+
 
     <section id="skills">
       <div class="content">
         <h2>Technologies / Frameworks</h2>
         <hr>
+        <!-- TODO: style and edit these -->
         <ul>
           <li>Python</li>
           <li>HTML5</li>
           <li>CSS3</li>
           <li>JavaScript</li>
           <li>jQuery</li>
+          <li>Mongo DB</li>
+          <li>Meteor</li>
+          <li>Git</li>
         </ul>
       </div>
     </section>
+
 
     <section id="contact">
       <div class="content">
