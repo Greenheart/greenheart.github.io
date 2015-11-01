@@ -20,6 +20,7 @@ section p {
 header {
   position: fixed;
   top: 0;
+  z-index: 10;
   width: 100%;
   height: 3rem;
   background: -webkit-linear-gradient(#404040, #151515);
@@ -69,6 +70,8 @@ nav ul li {
 nav a {
   padding: 0.4rem;
   line-height: 3rem;
+  transition: color 1s ease;
+  color: #9d9d9d;
 }
 
 nav a:link,
@@ -105,7 +108,7 @@ section {
 }
 
 .content {
-  margin-top: 3rem;
+  margin-top: 2.5rem;
   background-color: rgba(10, 10, 0, 0.8);
   border-radius: 0.3rem;
   padding: 0.6rem 2rem;
@@ -118,17 +121,20 @@ section {
   font-size: 2rem;
 }
 
-.content p {
-  font-size: 0.9rem;
+.content h3,
+.content h4 {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
 }
 
-.project-item img {
-  height: 15rem;
+.content p {
+  font-size: 0.9rem;
 }
 
 h1,
 h2,
 h3,
+h4,
 #top p {
   text-shadow: 1px 1px #000;
 }
@@ -179,13 +185,101 @@ h3,
   line-height: 1.5;
 }
 
-#skills {
+/* ---------------------- SHOWCASE for Projects-section --------------------- */
 
+.showcase {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
 }
 
-#contact h3 {
-  text-align: center;
-  font-family: 'Raleway', sans-serif;
+/* --------------------------- PROJECT ITEMS -------------------------------- */
+
+.project {
+  display: none;
+}
+
+.display {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.spotlight {
+  display: block !important;
+}
+
+.project-info {
+  position: relative;
+}
+
+.project img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.project h3 {
+  font-size: 1.5rem;
+  margin: 20px auto;
+}
+
+.project h4 {
+  margin: 5px auto;
+}
+
+.project-description {
+  float: left;
+  width: 60%;
+}
+
+.project-tech {
+  float: left;
+  width: 40%;
+}
+
+.tech-list {
+  display: table;
+  margin: 1em auto;
+}
+
+/* ------------------------------ NAV ARROWS -------------------------------- */
+
+.arrow {
+  position: absolute;
+  top: 0;
+  background: url(images/showcase-arrow-light.png) 60% 50% / 20px no-repeat;
+  height: 100%;
+  width: 10%;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-color: rgba(0, 10, 0, 0);
+}
+
+.arrow:hover {
+  transition: transform 0.2s ease-in-out,
+              background-color 0.6s;
+  background-color: rgba(0, 10, 0, 0.6);
+  transform: scale(1.5);
+}
+
+.arrow-next:hover {
+  transform: scale(1.5) rotate(180deg);
+}
+
+.arrow-prev {
+  left: 0;
+}
+
+.arrow-next {
+  right: 0;
+  transform: rotate(180deg);
+}
+
+/* ------------------------------- END SHOWCASE ------------------------------*/
+
+#skills {
+
 }
 
 #contact .social-links {
@@ -197,6 +291,8 @@ h3,
 #contact .social-links a img {
   width: 175px;
   margin: 25px;
+  transition: transform 0.5s ease;
+  transform: scale(1);
 }
 
 #contact .social-links a img:hover {

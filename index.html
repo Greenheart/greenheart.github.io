@@ -7,7 +7,8 @@
     <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/3.0.2/normalize.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway:200|Poiret+One' rel='stylesheet' type='text/css'>
     <link href='style.css' rel='stylesheet' type='text/css'>
-    <script src="script.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="showcase.js" type="text/javascript" charset="utf-8"></script>
   </head>
   <body>
     <header>
@@ -16,7 +17,6 @@
           <li><a href="#top">Samuel Plumppu</a></li>
         </ul>
         <a href="#top"><img src="images/compass.svg" alt="compass-logo"></a>
-
 
         <ul class="right">
           <li><a href="#about">About</a></li>
@@ -70,26 +70,71 @@
         to only show current active item in showcase
         use css transitions for animation -->
 
-        <div id="showcase">
-          <div class="project-item">
-            <h3>Achtung Panzer</h3>
-            <img src="images/achtung_intense_battle_wow_2.png" alt="Intense battle in Achtung Panzer">
-            <p>Intense battle in Achtung Panzer</p>
-          </div>
-          <!--
-          <div class="project-item">
-            <h3>Achtung Panzer</h3>
-            <img src="images/achtung_intense_battle_wow_2.png" alt="Intense battle in Achtung Panzer">
-            <p>Intense battle in Achtung Panzer</p>
+      <div class="showcase">
+        <!-- TODO:
+        1. Style content to get right layout
+          a. control-links
+          b. paragraphs
+          c. headings
+          d. technologies used-labels
+        -->
+
+        <div class="project">
+          <img src="images/achtung_intense_battle_wow_2.png" alt="Intense battle in Achtung Panzer">
+          <h3>Achtung Panzer</h3>
+          <p class="project-description">
+            An intense 2D tank battle for two players, made with Python 2.7 and PyGame.
+          </p>
+        </div>
+
+
+        <div class="project spotlight">
+          <div class="display">
+            <img src="images/meteor-tic-tac-toe.png" alt="The GUI of Tic Tac Toe">
+
+            <div class="arrow arrow-prev"></div>
+            <div class="arrow arrow-next"></div>
           </div>
 
-          <div class="project-item">
-            <h3>Achtung Panzer</h3>
-            <img src="images/achtung_intense_battle_wow_2.png" alt="Intense battle in Achtung Panzer">
-            <p>Intense battle in Achtung Panzer</p>
+          <hr>
+
+          <div class="project-info">
+            <h3><a href="https://www.github.com/Catagen/Meteor-TicTacToe" target="_blank">Meteor Tic Tac Toe</a></h3>
+
+            <div class="project-description">
+              <h4>Description</h4>
+              <p>
+                A simple game built together with <a href="https://www.github.com/Catagen"target="_blank">Szymon</a>
+                to learn the basics of the Meteor Platform.
+                An interesting feature we implemented was the Room-system that enables several players to
+                play at the same time and join simply by entering a room's number
+              </p>
+            </div>
+
+            <div class="project-tech">
+              <h4>Technologies Used</h4>
+                <ul class="tech-list">
+                  <li>Meteor</li>
+                  <li>Mongo DB</li>
+                </ul>
+            </div>
+
           </div>
-          -->
         </div>
+
+
+        <div class="project">
+          <img src="images/goa-space-survival.png" alt="Goa Space Survival">
+          <a href="https://www.github.com/greenheart/goa-space-survival" target="_blank"><h3>Goa Space Survival</h3></a>
+          <p class="project-description">
+            A space-survival game created with Meteor and Phaser.
+          </p>
+        </div>
+      </div>
+
+<!-- TODO:
+  1. bind arrow-keys, mouse drag and ".arrow"-clicks to change images
+-->
       </div>
     </section>
 
