@@ -7,7 +7,6 @@ html {
   font-size: 22px;
   color: yellow;
   background: url(images/Tiomila2015.jpg) no-repeat center center fixed;
-  /*background: url(http://i.imgur.com/zdvgPbs.jpg) no-repeat center center fixed;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -80,6 +79,7 @@ nav a:visited {
 
 nav a:hover,
 nav a:active {
+  transition: color 0.5s ease;
   color: #e3e3e3;
 }
 
@@ -92,6 +92,7 @@ a:link {
 
 a:hover,
 a:active {
+  transition: text-decoration 0.5s ease;
   color: white;
   text-decoration: underline;
   font-weight: bold;
@@ -185,4 +186,20 @@ h3,
 #contact h3 {
   text-align: center;
   font-family: 'Raleway', sans-serif;
+}
+
+#contact .social-links {
+  margin: 1rem auto;
+  width: 500px;
+  text-align: center;
+}
+
+#contact .social-links a img {
+  width: 175px;
+  margin: 25px;
+}
+
+#contact .social-links a img:hover {
+  transition: transform 0.15s ease;
+  transform: scale(1.1);
 }
