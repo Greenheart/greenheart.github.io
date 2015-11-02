@@ -4,7 +4,7 @@
 
 html {
   font-family: 'Poiret One', sans-serif;
-  font-size: 22px;
+  font-size: 20px;
   color: yellow;
   background: url(images/Tiomila2015.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -104,6 +104,7 @@ a:active {
 section {
   margin: 2rem auto;
   width: 72%;
+  max-width: 1300px;
   padding: 1rem;
 }
 
@@ -129,6 +130,7 @@ section {
 
 .content p {
   font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 h1,
@@ -201,7 +203,8 @@ h4,
 }
 
 .display {
-  height: 500px;
+  height: 50vh;
+  max-height: 650px;
   position: relative;
   overflow: hidden;
   text-align: center;
