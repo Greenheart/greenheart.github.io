@@ -102,6 +102,7 @@ a:active {
 }
 
 section {
+  position: relative;
   margin: 2rem auto;
   width: 72%;
   max-width: 1300px;
@@ -284,9 +285,46 @@ h4,
 
 /* ------------------------------- END SHOWCASE ------------------------------*/
 
+/* ---------------------------------- SKILLS -------------------------------- */
+
 #skills {
+  text-align: center;
+}
+
+.skills-wrapper {
+  margin: 0 auto;
+  width: 70%;
 
 }
+
+.col {
+  display: inline-block;
+  width: 49%;
+  margin: 0 auto 20px auto;
+}
+
+.skill {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.skill h4 {
+  text-align: left;
+  margin: 15px 0;
+}
+
+.bar {
+  background-color: #9d9d9d;
+  border-radius: 2px;
+}
+
+.bar div {
+  background-color: rgb(225, 64, 41);
+  border-radius: 2px;
+  height: 5px;
+}
+
+/* ----------------------------- END SKILLS-SECTION ------------------------- */
 
 #contact .social-links {
   margin: 1rem auto;

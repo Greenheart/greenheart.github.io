@@ -17,6 +17,7 @@
           <li><a href="#top">Samuel Plumppu</a></li>
         </ul>
         <a href="#top"><img src="images/compass.svg" alt="compass-logo"></a>
+        <!-- TODO: fix image height -->
 
         <ul class="right">
           <li><a href="#about">About</a></li>
@@ -51,10 +52,12 @@
           I have been programming regularly since late 2013 using Python. So far, I have built some cool games which you can find out more about down below.
           In June 2015 I found the great site <a href="http://www.freecodecamp.com"target="_blank">freeCodeCamp</a> which I use to learn full stack JavaScript development.
           My personal goal is to finish the site's curriculum and be job-ready by autumn 2016.
-          During the autumn of 2015 I started on a project together with my friend <a href="https://github.com/Catagen"target="_blank">Szymon</a>
+          During the autumn of 2015 I started a project together with my friend <a href="https://github.com/Catagen"target="_blank">Szymon</a>
           where we build 5 full stack JavaScript apps using <a href="http://www.meteor.com"target="_blank">Meteor</a>. Check them out down below!
         </p>
         <p>My other big interest is to practice orienteering, which I do almost on a daily basis.</p>
+
+        <!-- fit Self-driven in somewhere with development -->
 
         <!-- TODO: finish this text -->
       </div>
@@ -67,6 +70,7 @@
         <hr>
 
         <div class="showcase">
+          <!-- TODO: change font size of technology-lists -->
 
           <div class="project">
             <div class="display">
@@ -159,8 +163,14 @@
               <div class="project-description">
                 <h3><a href="https://github.com/greenheart/goa-space-survival" target="_blank">Goa Space Survival</a></h3>
                 <p>
-                  A space-survival game created with Phaser as the game engine and Meteor for the real-time highscores
-                  This project taught me a lot about publishing apps and got me thinking about security issues in a whole other way after several persons cheated.
+                  A space-survival game created with Phaser as the game engine and Meteor for the real-time highscores.
+                  My main goal with this game was to spend a weekend to create a simple game with Phaser and then publish
+                  it to my friends.
+                  Since the development went so smooth, I decided to also implement the highscores to make the game more interesting.
+                </p>
+                <p>
+                  This project taught me about publishing apps and also gave me insights to some of the security issues
+                  that arises if you trust clients too much.
                   Knowledge like this will be useful in the future!
                 </p>
                 <p style="font-size: 1.1em;">
@@ -187,20 +197,73 @@
 
     <section id="skills">
       <div class="content">
-        <h2>Technologies / Frameworks</h2>
+        <h2>Skills</h2>
         <hr>
-        <!-- TODO: style and edit these. Maybe use nice images/ svg-icons? -->
-        <ul>
-          <li>Python</li>
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>JavaScript</li>
-          <li>jQuery</li>
-          <li>Mongo DB</li>
-          <li>Meteor</li>
-          <li>Git</li>
-        </ul>
-      </div>
+        <!-- TODO:
+              * Use a 2-col-layout
+                * which may change to 1-col depending on screen size
+                  * @breakpoint  >  col.width change from 50% to 100%
+                  * second col drop down below
+                * Display skill-levels as bars to give an overview of how poficient I'm with different technologies
+      -->
+        <p>These are technologies I use regularly and am comfortable working with</p>
+        <div class="skills-wrapper">
+          <div class="col">
+            <div class="skill">
+              <h4>Python</h4>
+              <div class="bar">
+                <div style="width: 50%;"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <h4>HTML</h4>
+              <div class="bar">
+                <div style="width: 80%;"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <h4>CSS</h4>
+              <div class="bar">
+                <div style="width: 70%;"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <h4>Git</h4>
+              <div class="bar">
+                <div style="width: 40%;"></div>
+              </div>
+            </div>
+          </div><!--// col -->
+
+          <div class="col">
+            <div class="skill">
+              <h4>JavaScript</h4>
+              <div class="bar">
+                <div style="width: 60%;"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <h4>jQuery</h4>
+              <div class="bar">
+                <div style="width: 50%;"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <h4>Mongo DB</h4>
+              <div class="bar">
+                <div style="width: 20%;"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <h4>Meteor</h4>
+              <div class="bar">
+                <div style="width: 40%;"></div>
+              </div>
+            </div>
+          </div><!--// col -->
+
+        </div><!--// skills wrapper -->
+      </div><!--// content -->
     </section>
 
 
