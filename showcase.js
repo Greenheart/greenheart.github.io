@@ -1,4 +1,4 @@
-var curProject = 2,
+var curProject = 3,
     projects,
     fadeTime = 600;
 
