@@ -170,11 +170,19 @@ h4,
 }
 
 #photo-credit {
+  display: inline-block;
 	background-color: rgba(10, 10, 0, 0.6);
-	font-size: 1rem;
-	padding: 0.2rem 0.4rem;
+	font-size: 0.8rem;
+	padding: 0 0.3rem;
 	border-radius: 0.3rem;
 	color: white;
+}
+
+#photo-credit img {
+  width: 20px;
+  height: 17px;
+  margin-bottom: 0.25em;
+  vertical-align: middle;
 }
 
 #about .content img {
