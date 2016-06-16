@@ -276,14 +276,17 @@ h4,
 }
 
 .arrow:hover {
-  transition: transform 0.2s ease-in-out,
+  transition: all 0.2s ease-in-out,
               background-color 0.6s;
   background-color: rgba(0, 10, 0, 0.6);
   transform: scale(1.5);
 }
 
 .arrow-next:hover {
-  transform: scale(1.5) rotate(180deg);
+  transition: all 0.2s ease-in-out,
+              background-color 0.6s;
+  background-color: rgba(0, 10, 0, 0.6);
+  transform: scale(1.5) rotateY(180deg);
 }
 
 .arrow-prev {
@@ -292,7 +295,7 @@ h4,
 
 .arrow-next {
   right: 0;
-  transform: rotate(180deg);
+  transform: rotateY(180deg);
 }
 
 /* ------------------------------- END SHOWCASE ------------------------------*/
