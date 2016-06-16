@@ -326,13 +326,15 @@ h4,
 
 /* ----------------------------- END SKILLS-SECTION ------------------------- */
 
+/* ------------------------------ CONTACT-SECTION --------------------------- */
+
 #contact .social-links {
   margin: 1rem auto;
   text-align: center;
 }
 
 #contact .social-links a img {
-  width: 175px;
+  width: 100px;
   margin: 25px;
   transition: transform 0.5s ease;
   transform: scale(1);
@@ -340,5 +342,7 @@ h4,
 
 #contact .social-links a img:hover {
   transition: transform 0.15s ease;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
+
+/* ---------------------------- END CONTACT-SECTION ------------------------- */
