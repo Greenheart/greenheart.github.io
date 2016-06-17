@@ -1,4 +1,4 @@
-var curProject = 3
+var curProject = 0
 var fadeTime = 600
 var projects
 
