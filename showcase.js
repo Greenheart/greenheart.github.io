@@ -1,13 +1,14 @@
-let curProject = 3
-const fadeTime = 600
+var curProject = 3
+var fadeTime = 600
+var projects
 
-$(document).ready(() => {
-  const projects = $('.showcase .project')
+$(document).ready(function () {
+  projects = $('.showcase .project')
   $(projects[curProject]).fadeIn(fadeTime)
 
   // set up the click-event handlers
-  $('.arrow-prev').click(() => {
-    $(projects[curProject]).fadeOut(fadeTime, () => {
+  $('.arrow-prev').click(function () {
+    $(projects[curProject]).fadeOut(fadeTime, function () {
       // callback-function that enables crossfading between project-views
 
       curProject--
@@ -19,8 +20,8 @@ $(document).ready(() => {
     })
   })
 
-  $('.arrow-next').click(() => {
-    $(projects[curProject]).fadeOut(fadeTime, () => {
+  $('.arrow-next').click(function () {
+    $(projects[curProject]).fadeOut(fadeTime, function () {
       // callback-function that enables crossfading between project-views
 
       curProject++
