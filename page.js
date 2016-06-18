@@ -1,3 +1,8 @@
+// Dynamically calculate age
+document.getElementById('age').innerText = Math.floor((new Date() - new Date(1997, 3, 2)) / 31536000000)
+
+/* ------------------------ Project Showcase ------------------------ */
+
 var curProject = 0
 var fadeTime = 600
 var projects
