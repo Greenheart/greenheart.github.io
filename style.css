@@ -531,8 +531,14 @@ h4,
     font-size: 1.7rem;
   }
 
+  .right li {
+    margin-right: 0;
+  }
+
   .right li a {
     display: none;
+    padding: 0;
+    margin-right: 0;
   }
 
   #toggle {
