@@ -265,7 +265,7 @@ h4,
   line-height: 1.5;
 }
 
-/* ---------------------- SHOWCASE for Projects-section --------------------- */
+/* ------------------------------- SHOWCASE --------------------------------- */
 
 .showcase {
   position: relative;
@@ -274,7 +274,7 @@ h4,
   margin: 0 auto;
 }
 
-/* --------------------------- PROJECT ITEMS -------------------------------- */
+/* ----------------------------- PROJECT ITEMS ------------------------------ */
 
 .project {
   display: none;
@@ -304,11 +304,12 @@ h4,
 
 .project h3 {
   font-size: 1.5rem;
-  margin: 20px auto;
+  margin: 1rem auto;
 }
 
 .project h4 {
-  margin: 20px auto;
+  font-size: 1.1rem;
+  margin: 1rem auto;
   line-height: 1.5rem;
 }
 
@@ -324,8 +325,8 @@ h4,
 
 .tech-list {
   display: table;
-  font-size: 1.2rem;
-  margin: 1em auto;
+  font-size: 1.1rem;
+  margin: 1rem auto;
 }
 
 /* ------------------------------ NAV ARROWS -------------------------------- */
@@ -372,8 +373,6 @@ h4,
           transform: rotateY(180deg);
 }
 
-/* ------------------------------- END SHOWCASE ------------------------------*/
-
 /* ---------------------------------- SKILLS -------------------------------- */
 
 #skills {
@@ -389,7 +388,7 @@ h4,
 .col {
   display: inline-block;
   width: 49%;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 1rem auto;
 }
 
 .skill {
@@ -399,7 +398,7 @@ h4,
 
 .skill h4 {
   text-align: left;
-  margin: 15px 0;
+  margin: 1rem 0;
 }
 
 .bar {
@@ -412,8 +411,6 @@ h4,
   border-radius: 2px;
   height: 5px;
 }
-
-/* ----------------------------- END SKILLS-SECTION ------------------------- */
 
 /* ------------------------------ CONTACT-SECTION --------------------------- */
 
@@ -442,4 +439,114 @@ h4,
           transform: scale(1.2);
 }
 
-/* ---------------------------- END CONTACT-SECTION ------------------------- */
+/* ------------------------- ADAPT TO SMALLER SCREENS ----------------------- */
+
+@media screen and (max-width: 1300px) {
+  body {
+    font-size: 18px;
+  }
+
+  section {
+    width: 80vw;
+  }
+}
+
+
+@media screen and (max-width: 1130px) {
+  body {
+    font-size: 16px;
+  }
+
+  section {
+    width: 90vw;
+  }
+
+  .content {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+
+  .project-description {
+    width: 70%;
+  }
+
+  .project-tech {
+    width: 30%;
+  }
+
+  .skills-wrapper {
+    font-size: 1rem;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 14px;  /* Unsure about this */
+  }
+
+  section {
+    width: 95vw;
+    padding: 1rem 0;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  #photo-credit {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  #top .content {
+    padding-top: 2rem;
+  }
+
+  #top h1 {
+    font-size: 3.5rem;
+  }
+
+  #top p {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  section {
+    width: 100vw;
+  }
+
+  .content {
+    border-radius: 0;
+  }
+
+  #top h1 {
+    font-size: 3rem;
+  }
+
+  #top p {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  #top h1 {
+    font-size: 2.5rem;
+  }
+
+  #top p {
+    font-size: 1.5rem;
+  }
+
+  #about .content img {
+    width: 70vw;
+    height: auto;
+    margin: 0 15vw 1rem;
+  }
+
+  #about-text {
+    clear: both;
+  }
+}
