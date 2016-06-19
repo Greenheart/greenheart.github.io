@@ -47,15 +47,21 @@ nav .left {
   font-size: 1.2rem;
   margin-top: 0.8rem;
   padding: 0;
+  margin-right: 0;
 }
 
 nav .right {
+  padding-left: 0;
   margin-top: 1rem;
 }
 
 nav ul li {
   display: inline;
   margin-right: 1rem;
+}
+
+nav ul li:nth-child(5) {
+  margin-right: 0;
 }
 
 nav a {
@@ -76,6 +82,25 @@ nav a:active {
   -webkit-transition: color 0.5s ease;
   transition: color 0.5s ease;
   color: #e3e3e3;
+}
+
+#toggle {
+  cursor: pointer;
+  height: 30px;
+  margin-top: -5px;
+  display: none;
+}
+
+#toggle-menu {
+  display: none;
+  list-style-type: none;
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 1rem auto;
+}
+
+#toggle-menu li {
+  margin-bottom: 1.5rem;
 }
 
 a:visited,
@@ -471,13 +496,13 @@ h4,
 
 @media screen and (max-width: 800px) {
   body {
-    font-size: 14px;  /* Unsure about this */
+    font-size: 14px;
   }
 
-  /*nav a {
+  nav a {
     font-size: 22px;
     line-height: 3.5em;
-  }*/
+  }
 
   section {
     width: 95vw;
@@ -492,8 +517,8 @@ h4,
     font-size: 0.7rem;
   }
 }
-
-@media screen and (max-width: 670px) {
+*/
+@media screen and (max-width: 690px) {
   #top .content {
     padding-top: 2rem;
   }
@@ -505,8 +530,18 @@ h4,
   #top p {
     font-size: 1.7rem;
   }
-}
 
+  .right li a {
+    display: none;
+  }
+
+  #toggle {
+    display: block;
+    float: right;
+    margin-right: 20px;
+  }
+}
+/*
 @media screen and (max-width: 570px) {
   section {
     width: 100vw;

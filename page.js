@@ -6,8 +6,20 @@ document.getElementById('age').innerText = Math.floor((new Date() - new Date(199
 var curProject = 0
 var fadeTime = 600
 var projects
+var toggle
+var toggleMenu
 
 $(document).ready(function () {
+  toggle = $('#toggle')
+  toggleMenu = $('#toggle-menu')
+  toggle.click(function () {
+    toggleMenu.slideToggle()
+  })
+
+  toggleMenu.click(function () {
+    toggleMenu.slideToggle()
+  })
+
   projects = $('.showcase .project')
   $(projects[curProject]).fadeIn(fadeTime)
 
