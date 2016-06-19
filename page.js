@@ -8,6 +8,7 @@ var fadeTime = 600
 var projects
 var toggle
 var toggleMenu
+var $window = $(window)
 
 $(document).ready(function () {
   toggle = $('#toggle')
@@ -18,6 +19,12 @@ $(document).ready(function () {
 
   toggleMenu.click(function () {
     toggleMenu.slideToggle()
+  })
+
+  $window.resize(function () {
+  	if ($window.width() > 690) {
+  		toggleMenu.hide()
+  	}
   })
 
   projects = $('.showcase .project')
