@@ -14,6 +14,8 @@ section p {
   font-family: 'Raleway', sans-serif;
 }
 
+/* -------------------------------- NAV BAR --------------------------------- */
+
 header {
   position: fixed;
   top: 0;
@@ -109,6 +111,8 @@ nav a:active {
   margin-bottom: 0;
 }
 
+/* ------------------------------------ LINKS ------------------------------- */
+
 a:visited,
 a:link {
   color: white;
@@ -124,6 +128,8 @@ a:active {
   text-decoration: underline;
   font-weight: bold;
 }
+
+/* ---------------------------- MAIN CONTENT SECTIONS ----------------------- */
 
 section {
   position: relative;
@@ -281,7 +287,7 @@ h4,
 #about .content img {
   float: left;
   height: 15rem;
-  margin: 1.2rem;
+  margin: 1.2rem 1.2rem 0 1.2rem;
 }
 
 #about .content p {
@@ -328,7 +334,7 @@ h4,
 
 .project h3 {
   font-size: 1.5rem;
-  margin: 1rem auto;
+  margin: 1rem auto 0;
 }
 
 .project h4 {
@@ -339,21 +345,21 @@ h4,
 
 .project-description {
   float: left;
-  width: 60%;
+  width: 70%;
 }
 
 .project-tech {
   float: left;
-  width: 40%;
+  width: 30%;
 }
 
 .tech-list {
   display: table;
   font-size: 1.1rem;
-  margin: 1rem auto;
+  margin: 1rem 0.5rem;
 }
 
-/* ------------------------------ NAV ARROWS -------------------------------- */
+/* ------------------------------ NAV & SHOWCASE ARROWS -------------------------------- */
 
 .arrow {
   position: absolute;
@@ -377,16 +383,6 @@ h4,
           transform: scale(1.5);
 }
 
-.arrow-next:hover {
-  -webkit-transition: all 0.2s ease-in-out,
-              background-color 0.6s;
-  transition: all 0.2s ease-in-out,
-              background-color 0.6s;
-  background-color: rgba(0, 10, 0, 0.6);
-  -webkit-transform: scale(1.5) rotateY(180deg);
-          transform: scale(1.5) rotateY(180deg);
-}
-
 .arrow-prev {
   left: 0;
 }
@@ -395,6 +391,11 @@ h4,
   right: 0;
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
+}
+
+.arrow-next:hover {
+  -webkit-transform: scale(1.5) rotateY(180deg);
+  transform: scale(1.5) rotateY(180deg);
 }
 
 /* ---------------------------------- SKILLS -------------------------------- */
@@ -465,7 +466,7 @@ h4,
 
 /* ------------------------- ADAPT TO SMALLER SCREENS ----------------------- */
 
-/*@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1300px) {
   section {
     width: 80vw;
   }
@@ -473,17 +474,20 @@ h4,
 
 
 @media screen and (max-width: 1130px) {
-  body {
-    font-size: 16px;
-  }
-
   section {
     width: 90vw;
   }
 
+  section p {
+    font-size: 2.5rem;
+  }
+
   .content {
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
+    padding: 0.2rem 0.8rem;
+  }
+
+  .content h2 {
+    margin-bottom: -0.5rem;
   }
 
   .project-description {
@@ -500,16 +504,14 @@ h4,
   }
 }
 
+@media screen and (max-width: 960px) {
+  /* Fix bad image proportions for project Meteor Tic Tac Toe */
+  #tic-tac-toe .display {
+    height: 100%;
+  }
+}
+
 @media screen and (max-width: 800px) {
-  body {
-    font-size: 14px;
-  }
-
-  nav a {
-    font-size: 22px;
-    line-height: 3.5em;
-  }
-
   section {
     width: 95vw;
     padding: 1rem 0;
@@ -522,9 +524,25 @@ h4,
   #photo-credit {
     font-size: 0.7rem;
   }
+
+  .arrow-prev {
+    background-color: rgba(0, 10, 0, 0.6);
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+
+  .arrow-next {
+    background-color: rgba(0, 10, 0, 0.6);
+    -webkit-transform: scale(1.5) rotateY(180deg);
+            transform: scale(1.5) rotateY(180deg);
+  }
 }
-*/
+
 @media screen and (max-width: 690px) {
+  section p {
+    font-size: 3rem;
+  }
+
   #top .content {
     padding-top: 2rem;
   }
@@ -552,11 +570,72 @@ h4,
     float: right;
     margin-right: 20px;
   }
+
+  .display {
+    height: 100%;
+  }
+
+  .project-description {
+    clear: both;
+    width: 100%;
+  }
+
+  .project-tech h4 {
+    margin: 0 auto;
+  }
+
+  .project-info h3 {
+    margin-bottom: 1rem;
+  }
+
+  .project-tech {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .tech-list {
+    width: 75%;
+    padding-left: 2.5rem;
+    margin: 1rem auto 0;
+    list-style-position: inside;
+  }
+
+  .tech-list li {
+    width: 50%;
+    text-align: left;
+    float: left;
+  }
+
+  .tech-list li:nth-child(2n+1) {
+    padding-right: 2px;
+  }
+
+  .tech-list li:nth-child(2n) {
+    padding-left: 2px;
+  }
 }
-/*
+
+@media screen and (max-width: 650px) {
+  section p {
+    font-size: 4rem;
+  }
+  .tech-list {
+    width: 80%;
+  }
+}
+
 @media screen and (max-width: 570px) {
   section {
     width: 100vw;
+  }
+
+  section p {
+    font-size: 4.5rem;
+  }
+
+  .tech-list {
+    width: 90%;
   }
 
   .content {
@@ -590,4 +669,9 @@ h4,
   #about-text {
     clear: both;
   }
-}*/
+
+  .tech-list {
+    width: 100%;
+    padding-left: 2rem;
+  }
+}

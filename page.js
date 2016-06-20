@@ -1,11 +1,12 @@
 // Dynamically calculate age
-document.getElementById('age').innerText = Math.floor((new Date() - new Date(1997, 3, 2)) / 31536000000)
+$('#age').text(Math.floor((new Date() - new Date(1997, 3, 2)) / 31536000000))
 
-/* ------------------------ Project Showcase ------------------------ */
-
+// Project Showcase
 var curProject = 0
 var fadeTime = 600
 var projects
+
+// Toggle dropdown menu on smaller screens
 var toggle
 var toggleMenu
 var $window = $(window)
@@ -22,9 +23,10 @@ $(document).ready(function () {
   })
 
   $window.resize(function () {
-  	if ($window.width() > 690) {
-  		toggleMenu.hide()
-  	}
+    // Make sure menu is hidden when switching to bigger screen
+    if ($window.width() > 690) {
+      toggleMenu.hide()
+    }
   })
 
   projects = $('.showcase .project')
