@@ -49,7 +49,10 @@ nav .left {
   font-size: 1.2rem;
   margin-top: 0.8rem;
   padding: 0;
-  margin-right: 0;
+}
+
+nav .left li {
+  margin: 0;
 }
 
 nav .right {
@@ -71,6 +74,10 @@ nav a {
   -webkit-transition: color 1s ease;
   transition: color 1s ease;
   color: #9d9d9d;
+}
+
+#img-link {
+  padding: 0;
 }
 
 nav a:link,
