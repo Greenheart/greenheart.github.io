@@ -675,6 +675,11 @@ h4,
   #top p {
     margin: 20px 0;
   }
+
+  #arrow-down {
+    height: 3rem;
+    width: 1.2rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
