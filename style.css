@@ -40,7 +40,8 @@ nav ul {
 }
 
 nav img {
-  height: 60px;
+  height: 52px;
+  margin: 4px;
   float: left;
 }
 
