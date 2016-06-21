@@ -15,11 +15,11 @@ $(document).ready(function () {
   toggle = $('#toggle')
   toggleMenu = $('#toggle-menu')
   toggle.click(function () {
-    toggleMenu.slideToggle()
+    toggleMenu.slideToggle(200)
   })
 
   toggleMenu.click(function () {
-    toggleMenu.slideToggle()
+    toggleMenu.slideToggle(200)
   })
 
   $window.resize(function () {
