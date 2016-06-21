@@ -221,7 +221,9 @@ h4,
 }
 
 #top h1 {
+  line-height: 2.5rem;
   font-size: 4rem;
+  margin: 0;
   font-weight: lighter;
 }
 
@@ -564,15 +566,15 @@ h4,
   }
 
   #top .content {
-    padding-top: 2rem;
+    text-align: center;
   }
 
   #top h1 {
-    font-size: 3.5rem;
+    font-size: 12.8vw;
   }
 
-  #top p {
-    font-size: 1.7rem;
+  #photo-credit {
+    float: left;
   }
 
   .right li {
@@ -643,6 +645,10 @@ h4,
   .tech-list {
     width: 80%;
   }
+
+  #top p {
+    font-size: 6vw;
+  }
 }
 
 @media screen and (max-width: 570px) {
@@ -662,22 +668,18 @@ h4,
     border-radius: 0;
   }
 
-  #top h1 {
-    font-size: 3rem;
+  #top .content {
+    margin-top: 1rem;
   }
 
   #top p {
-    font-size: 1.6rem;
+    margin: 20px 0;
   }
 }
 
-@media screen and (max-width: 470px) {
-  #top h1 {
-    font-size: 2.5rem;
-  }
-
+@media screen and (max-width: 480px) {
   #top p {
-    font-size: 1.5rem;
+    font-size: 8vw;
   }
 
   #about .content img {
