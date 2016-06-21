@@ -107,7 +107,11 @@ nav a:active {
   margin-bottom: 1.5rem;
 }
 
-#toggle-menu li:nth-child(4) {
+#toggle-menu li a {
+  padding: 0.5rem 1.5rem;
+}
+
+#toggle-menu li:nth-last-child(1) {
   margin-bottom: 0;
 }
 
