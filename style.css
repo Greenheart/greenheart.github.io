@@ -81,6 +81,10 @@ nav a {
   padding: 0;
 }
 
+#img-link img {
+  margin-right: 0;
+}
+
 nav a:link,
 nav a:visited {
   color: #9d9d9d;
