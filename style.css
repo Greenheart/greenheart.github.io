@@ -6,12 +6,19 @@ html {
   font-family: 'Poiret One', sans-serif;
   font-size: 20px;
   color: yellow;
-  background: url(images/Tiomila2015.jpg) no-repeat center center fixed;
-  background-size: cover;
 }
 
 section p {
   font-family: 'Raleway', sans-serif;
+}
+
+.bg {
+  background: url(../images/Tiomila2015.jpg) no-repeat center center;
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
 }
 
 /* -------------------------------- NAV BAR --------------------------------- */
@@ -225,6 +232,7 @@ h4,
   font-size: 4rem;
   margin: 0;
   font-weight: lighter;
+  white-space: nowrap;
 }
 
 #photo-credit {
@@ -270,11 +278,14 @@ h4,
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   display: block;
-  position: relative;
-  bottom: 0;
+  position: absolute;
+  bottom: 2.5vh;
   margin: 0 auto;
+  left: 0;
+  right: 0;
   width: 1.4rem;
   height: 3.5rem;
+  z-index: 10;
 
   /* Animate grow-shrink */
   -webkit-animation-duration: 0.5s;
@@ -460,15 +471,22 @@ h4,
 .social-links {
   margin: 1rem auto;
   text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.social-links .row {
+  align-items: center;
+  display: flex;
 }
 
 .social-links a {
   display: inline-block;
-  margin: 25px;
+  margin: 0 25px;
 }
 
 .social-links a img {
-  width: 100px;
+  width: 80px;
   -webkit-transition: -webkit-transform 0.5s ease;
   transition: -webkit-transform 0.5s ease;
   transition: transform 0.5s ease;
@@ -490,14 +508,14 @@ h4,
 
 @media screen and (max-width: 1300px) {
   section {
-    width: 80vw;
+    width: 80%;
   }
 }
 
 
 @media screen and (max-width: 1130px) {
   section {
-    width: 90vw;
+    width: 90%;
   }
 
   section p {
@@ -526,6 +544,12 @@ h4,
   }
 }
 
+@media screen and (max-width: 1015px) {
+  .social-links a img {
+    width: 65px;
+  }
+}
+
 @media screen and (max-width: 960px) {
   /* Fix bad image proportions for project Meteor Tic Tac Toe */
   #tic-tac-toe .display {
@@ -535,7 +559,7 @@ h4,
 
 @media screen and (max-width: 800px) {
   section {
-    width: 95vw;
+    width: 95%;
     padding: 1rem 0;
   }
 
@@ -557,6 +581,24 @@ h4,
     background-color: rgba(0, 10, 0, 0.6);
     -webkit-transform: scale(1.5) rotateY(180deg);
             transform: scale(1.5) rotateY(180deg);
+  }
+
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  .social-links .row {
+    width: 40%;
+    justify-content: center;
+  }
+  .social-links .row:first-child {
+    margin-bottom: 15px;
+  }
+  .social-links .row a {
+    margin: 0;
+  }
+  .social-links .row a:not(:nth-child(3)) {
+    margin-right: 50px;
   }
 }
 
@@ -653,7 +695,7 @@ h4,
 
 @media screen and (max-width: 570px) {
   section {
-    width: 100vw;
+    width: 100%;
   }
 
   section p {
@@ -688,7 +730,7 @@ h4,
   }
 
   #about .content img {
-    width: 70vw;
+    width: 70%;
     height: auto;
     margin: 0 15vw 1rem;
   }
@@ -708,7 +750,13 @@ h4,
     width: 80%;
   }
 
+  .tech-list {
+    padding-left: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 345px) {
   .social-links a img {
-    width: 80px;
+    width: 45px;
   }
 }
