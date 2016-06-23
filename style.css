@@ -285,7 +285,6 @@ h4,
   right: 0;
   width: 1.4rem;
   height: 3.5rem;
-  z-index: 10;
 
   /* Animate grow-shrink */
   -webkit-animation-duration: 0.5s;
