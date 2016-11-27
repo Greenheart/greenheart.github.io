@@ -1,0 +1,11 @@
+{
+  "standard": {
+    "globals": [
+      "Helpers",
+      "Game",
+      "Player",
+      "Area",
+      "Map"
+    ]
+  }
+}
