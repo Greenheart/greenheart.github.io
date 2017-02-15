@@ -7,7 +7,7 @@ The `src/`-directory contains full source code used for development.
 
 
 ## Development
-1. go to `/src/` and start local server: `python3 -m http.server`
+1. Go to `/src/` and start local server: `python3 -m http.server`
 2. Make changes
 3. [Optimize CSS](https://css.github.io/csso/csso.html) into a single `bundle.min.css`
   * Combine dependencies, the order is important!
