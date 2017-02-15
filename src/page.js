@@ -1,26 +1,15 @@
-// Dynamically calculate age
-$('#age').text(Math.floor((new Date() - new Date(1997, 3, 2)) / 31536000000))
+$(function () {
+  // Toggle dropdown menu on smaller screens
+  var toggle = $('#toggle')
+  var toggleMenu = $('#toggle-menu')
+  var $window = $(window)
 
-// Project Showcase
-var curProject = 0
-var fadeTime = 600
-var projects
-
-// Toggle dropdown menu on smaller screens
-var toggle
-var toggleMenu
-var $window = $(window)
-
-$(document).ready(function () {
-  toggle = $('#toggle')
-  toggleMenu = $('#toggle-menu')
-  toggle.click(function () {
+  function toggleMenuState () {
     toggleMenu.slideToggle(200)
-  })
+  }
 
-  toggleMenu.click(function () {
-    toggleMenu.slideToggle(200)
-  })
+  toggle.click(toggleMenuState)
+  toggleMenu.click(toggleMenuState)
 
   $window.resize(function () {
     // Make sure menu is hidden when switching to bigger screen
@@ -29,33 +18,27 @@ $(document).ready(function () {
     }
   })
 
-  projects = $('.showcase .project')
-  $(projects[curProject]).fadeIn(fadeTime)
+  // Project Showcase
+  var i = 0
+  var fadeTime = 500
+  var projects = $('.showcase .project')
+  $(projects[i]).fadeIn(fadeTime)
 
-  // set up the click-event handlers
   $('.arrow-prev').click(function () {
-    $(projects[curProject]).fadeOut(fadeTime, function () {
-      // callback-function that enables crossfading between project-views
-
-      curProject--
-      if (curProject < 0) {
-        // Only loop over actual projects
-        curProject = projects.length - 1 // go to last
+    $(projects[i]).fadeOut(fadeTime, function () {
+      if (--i < 0) {
+        i = projects.length - 1
       }
-      $(projects[curProject]).fadeIn(fadeTime)
+      $(projects[i]).fadeIn(fadeTime)
     })
   })
 
   $('.arrow-next').click(function () {
-    $(projects[curProject]).fadeOut(fadeTime, function () {
-      // callback-function that enables crossfading between project-views
-
-      curProject++
-      if (curProject >= projects.length) {
-        // only loop over actual projects
-        curProject = 0 // go to first
+    $(projects[i]).fadeOut(fadeTime, function () {
+      if (++i >= projects.length) {
+        i = 0
       }
-      $(projects[curProject]).fadeIn(fadeTime)
+      $(projects[i]).fadeIn(fadeTime)
     })
   })
 })
