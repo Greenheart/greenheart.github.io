@@ -369,6 +369,12 @@ h4,
   margin: 1rem auto 0;
 }
 
+.project .year {
+    font-size: 1rem;
+    color: #9d9d9d;
+    text-align: center;
+}
+
 .project h4 {
   font-size: 1.1rem;
   margin: 1rem auto;
