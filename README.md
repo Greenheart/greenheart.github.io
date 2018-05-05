@@ -17,4 +17,5 @@ The `src/`-directory contains full source code used for development.
   * Introduce dependencies in order, `page.js` last
 5. [Optimize HTML](https://htmlcompressor.com/compressor/) into `index.html`
   * Make sure to use correct `link`s and `script`s - **remove external resources** & **use `bundle.min`-files**
-6. Move resulting files to `/` and verify.
+6. [Optimize images](https://tinypng.com) and store in `/images`. Originals are kept in `/src/images`
+7. Move resulting files to `/` and verify.
