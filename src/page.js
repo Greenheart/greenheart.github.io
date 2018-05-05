@@ -2,12 +2,24 @@ $(function () {
   // Toggle dropdown menu on smaller screens
   var toggle = $('#toggle')
   var toggleMenu = $('#toggle-menu')
+  var menuIsOpen
   var $window = $(window)
 
-  function toggleMenuState () {
+  function toggleMenuState (event) {
+    menuIsOpen = !menuIsOpen
     toggleMenu.slideToggle(200)
+    event.stopPropagation()
   }
 
+  function hideIfClickOutside (id) {
+    return function (event) {
+      if (menuIsOpen && event.target.id !== id) {
+        toggleMenuState(event)
+      }
+    }
+  }
+
+  $(document).click(hideIfClickOutside('#toggle-menu'))
   toggle.click(toggleMenuState)
   toggleMenu.click(toggleMenuState)
 
@@ -15,6 +27,7 @@ $(function () {
     // Make sure menu is hidden when switching to bigger screen
     if ($window.width() > 690) {
       toggleMenu.hide()
+      menuIsOpen = false
     }
   })
 
