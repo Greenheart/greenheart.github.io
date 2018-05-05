@@ -13,7 +13,7 @@ section p {
 }
 
 .bg {
-  background: url(../images/Tiomila2015.jpg) no-repeat center center;
+  background: url(images/Tiomila2015.jpg) no-repeat center center;
   background-size: cover;
   position: fixed;
   width: 100%;
@@ -720,6 +720,12 @@ h4,
 
   .tech-list li:nth-child(2n) {
     padding-left: 2px;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  #contact h3 {
+    line-height: 1.5;
   }
 }
 
