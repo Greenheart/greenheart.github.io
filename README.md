@@ -1,4 +1,4 @@
-# [My personal webpage](http://samuelplumppu.se)
+# [My personal webpage](https://samuelplumppu.se)
 
 ---
 
@@ -13,7 +13,7 @@ The `src/`-directory contains full source code used for development.
   * Combine dependencies, the order is important!
   * Vendor prefix `style.css`
   * Put `style.css` last in the optimizer
-4. [Optimize JS](http://marijnhaverbeke.nl//uglifyjs) into a single `bundle.min.js`
+4. Optimize JS into a single `bundle.min.js`
   * Introduce dependencies in order, `page.js` last
 5. [Optimize HTML](https://htmlcompressor.com/compressor/) into `index.html`
   * Make sure to use correct `link`s and `script`s - **remove external resources** & **use `bundle.min`-files**
