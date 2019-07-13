@@ -37,4 +37,5 @@ body {
 .content > section {
     background: #0a0908;
     color: #eed369;
+    text-align: center;
 }
