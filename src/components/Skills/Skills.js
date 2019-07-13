@@ -5,7 +5,7 @@ import styles from './Skills.module.css'
 const Skills = () => {
     // TODO: Load JSON-data for Skills.
     return (
-        <section id={styles.Skills}>
+        <section id={styles.skills}>
             <p>Skills</p>
         </section>
     )
