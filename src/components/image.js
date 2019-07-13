@@ -10,7 +10,6 @@ import Img from 'gatsby-image'
  *
  * For more information, see the docs:
  * - `gatsby-image`: https://gatsby.dev/gatsby-image
- * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
 const Image = () => {
