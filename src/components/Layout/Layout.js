@@ -16,9 +16,9 @@ const Layout = ({ children }) => {
     `)
 
     return (
-        <div className={styles.container}>
+        <div className={styles.layout}>
             <Header siteTitle={site.siteMetadata.title} />
-            <main>{children}</main>
+            <main className={styles.content}>{children}</main>
             <footer>© {new Date().getFullYear() + ' Samuel Plumppu'}</footer>
         </div>
     )

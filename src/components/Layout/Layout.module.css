@@ -10,9 +10,10 @@ html {
 
 body {
     margin: 0;
+    font-size: 16px;
 }
 
-.container {
+.layout {
     display: grid;
     grid-template-areas:
         'header'
@@ -20,4 +21,20 @@ body {
         'footer';
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
+}
+
+.content {
+    display: grid;
+    grid-template-areas:
+        'about'
+        'projects'
+        'skills'
+        'contact';
+    grid-gap: 2rem;
+    margin: 0 2rem;
+}
+
+.content > section {
+    background: #0a0908;
+    color: #eed369;
 }
