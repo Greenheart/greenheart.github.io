@@ -5,7 +5,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import About from '../components/About'
 import Projects from '../components/Projects'
-// import Skills from '../components/Skills'
+import Skills from '../components/Skills'
 // import Contact from '../components/Contact'
 
 const IndexPage = () => {
@@ -24,7 +24,7 @@ const IndexPage = () => {
         <Layout>
             <About />
             <Projects />
-            {/* <Skills /> */}
+            <Skills />
             {/* <Contact /> */}
         </Layout>
     )
