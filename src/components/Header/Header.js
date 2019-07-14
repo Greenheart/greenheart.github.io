@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 
 import styles from './Header.module.css'
 
-const Header = ({ siteTitle }) => {
+const Header = () => {
     return (
         <header className={styles.header}>
             <StaticQuery
