@@ -25,10 +25,9 @@ const Header = ({ siteTitle }) => {
                     </Link>
                 )}
             />
-
-            <Link to="/" className={styles.siteTitle}>
-                Samuel Plumppu
-            </Link>
+            <span className={styles.siteTitle}>
+                <Link to="/">Samuel Plumppu</Link>
+            </span>
             <nav className={styles.mainMenu}>
                 <Link to="#about">About</Link>
                 <Link to="#projects">Projects</Link>
