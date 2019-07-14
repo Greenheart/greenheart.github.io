@@ -1,4 +1,38 @@
 .header {
     position: sticky;
     top: 0;
+    height: 4rem;
+    display: grid;
+    grid-template-columns: max-content auto minmax(auto, 400px);
+    align-items: center;
+    gap: 2rem;
+    padding: 0 2rem;
+    background: white;
+    box-shadow: 0px 1px 2px #00000066;
+}
+
+.site-title:nth-child(2) {
+    justify-content: start;
+}
+
+.header a {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.header a:hover,
+.header a:active {
+    color: #3f3f3f;
+    text-decoration: underline;
+}
+
+.main-menu {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }

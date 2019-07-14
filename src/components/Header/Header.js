@@ -5,9 +5,16 @@ import styles from './Header.module.css'
 
 const Header = ({ siteTitle }) => (
     <header className={styles.header}>
-        <h1>
-            <Link to="/">{siteTitle}</Link>
-        </h1>
+        <Link to="/">Logo</Link>
+        <Link to="/" className={styles.siteTitle}>
+            Samuel Plumppu
+        </Link>
+        <nav className={styles.mainMenu}>
+            <Link to="#about">About</Link>
+            <Link to="#projects">Projects</Link>
+            <Link to="#skills">Skills</Link>
+            <Link to="#contact">Contact</Link>
+        </nav>
     </header>
 )
 
