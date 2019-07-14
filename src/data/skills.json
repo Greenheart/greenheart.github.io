@@ -1,0 +1,50 @@
+[
+    {
+        "skill": "JavaScript",
+        "level": 9
+    },
+    {
+        "skill": "HTML",
+        "level": 8
+    },
+    {
+        "skill": "CSS",
+        "level": 7
+    },
+    {
+        "skill": "Git",
+        "level": 6
+    },
+    {
+        "skill": "React",
+        "level": 6
+    },
+    {
+        "skill": "Node.js",
+        "level": 5
+    },
+    {
+        "skill": "C#",
+        "level": 4
+    },
+    {
+        "skill": "Python",
+        "level": 5
+    },
+    {
+        "skill": "Docker",
+        "level": 3
+    },
+    {
+        "skill": "PHP",
+        "level": 4
+    },
+    {
+        "skill": "Gatsby",
+        "level": 4
+    },
+    {
+        "skill": "GraphQL",
+        "level": 4
+    }
+]
