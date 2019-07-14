@@ -21,7 +21,7 @@ const About = () => {
                 }
             `}
             render={data => (
-                <section id={styles.about}>
+                <section class={styles.about} id="about">
                     <p>About</p>
                     <Img
                         fluid={data.Tiomila2015.childImageSharp.fluid}
