@@ -32,11 +32,11 @@ body {
         'skills'
         'contact';
     grid-gap: 2rem;
-    margin: 0 2rem;
 }
 
 .content > section {
     background: rgba(10, 10, 0, 0.8);
     text-align: center;
     padding: 2rem;
+    margin: 0 2rem;
 }

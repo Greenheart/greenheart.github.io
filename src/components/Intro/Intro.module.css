@@ -1,0 +1,7 @@
+section.intro {
+    margin: 0;
+    height: calc(100vh - 64px);
+    padding: 0;
+    position: relative;
+    background: transparent;
+}
