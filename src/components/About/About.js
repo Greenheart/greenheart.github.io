@@ -6,6 +6,12 @@ const About = () => {
     return (
         <section className={styles.about} id="about">
             <h2>About</h2>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Deserunt facere quibusdam assumenda explicabo temporibus,
+                veritatis voluptas facilis blanditiis cum nostrum hic autem nam,
+                in dolorem ducimus officia, officiis soluta corrupti.
+            </p>
         </section>
     )
 }
