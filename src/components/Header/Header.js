@@ -1,29 +1,26 @@
 import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 
 import styles from './Header.module.css'
 
 const Header = () => {
+    const data = useStaticQuery(graphql`
+        {
+            compass: file(relativePath: { eq: "compass.svg" }) {
+                publicURL
+            }
+        }
+    `)
+
     return (
         <header className={styles.header}>
-            <StaticQuery
-                query={graphql`
-                    {
-                        compass: file(relativePath: { eq: "compass.svg" }) {
-                            publicURL
-                        }
-                    }
-                `}
-                render={data => (
-                    <Link to="/">
-                        <img
-                            src={data.compass.publicURL}
-                            alt="compass logo"
-                            width="64"
-                        />
-                    </Link>
-                )}
-            />
+            <Link to="/">
+                <img
+                    src={data.compass.publicURL}
+                    alt="compass logo"
+                    width="64"
+                />
+            </Link>
             <span className={styles.siteTitle}>
                 <Link to="/">Samuel Plumppu</Link>
             </span>
