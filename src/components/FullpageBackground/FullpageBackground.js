@@ -1,11 +1,10 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 
-// import styles from './FullpageBackground.module.css'
+import styles from './FullpageBackground.module.css'
 
-const BackgroundSection = ({ className }) => {
+const FullpageBackground = () => {
     const data = useStaticQuery(graphql`
         {
             Tiomila2015: file(relativePath: { eq: "Tiomila2015.jpg" }) {
@@ -17,10 +16,11 @@ const BackgroundSection = ({ className }) => {
             }
         }
     `)
+
     const imageData = data.Tiomila2015.childImageSharp.fluid
     return (
         <BackgroundImage
-            className={className}
+            className={styles.background}
             fluid={imageData}
             backgroundColor={`#040e18`}
             alt="Seconds after the start of orienteering relay Tiomila 2015."
@@ -28,17 +28,5 @@ const BackgroundSection = ({ className }) => {
         />
     )
 }
-
-const FullpageBackground = styled(BackgroundSection)`
-    position: fixed !important;
-    height: 100vh;
-    width: 100vw;
-    left: 0;
-    top: 0;
-    z-index: -100;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-`
 
 export default FullpageBackground
