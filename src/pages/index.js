@@ -1,5 +1,6 @@
 import React from 'react'
 
+import FullpageBackground from '../components/FullpageBackground'
 import Layout from '../components/Layout'
 import Intro from '../components/Intro'
 import About from '../components/About'
@@ -9,13 +10,16 @@ import Contact from '../components/Contact'
 
 const IndexPage = () => {
     return (
-        <Layout>
-            <Intro />
-            <About />
-            <Projects />
-            <Skills />
-            <Contact />
-        </Layout>
+        <>
+            <FullpageBackground />
+            <Layout>
+                <Intro />
+                <About />
+                <Projects />
+                <Skills />
+                <Contact />
+            </Layout>
+        </>
     )
 }
 
