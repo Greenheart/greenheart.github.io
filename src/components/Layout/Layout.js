@@ -19,7 +19,9 @@ const Layout = ({ children }) => {
         <div className={styles.layout}>
             <Header siteTitle={site.siteMetadata.title} />
             <main className={styles.content}>{children}</main>
-            <footer>© {new Date().getFullYear() + ' Samuel Plumppu'}</footer>
+            <footer className={styles.footer}>
+                © {new Date().getFullYear() + ' Samuel Plumppu'}
+            </footer>
         </div>
     )
 }
