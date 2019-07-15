@@ -4,7 +4,7 @@ import styles from './Contact.module.css'
 
 const Contact = () => {
     return (
-        <section class={styles.contact} id="contact">
+        <section className={styles.contact} id="contact">
             <p>Contact</p>
         </section>
     )
