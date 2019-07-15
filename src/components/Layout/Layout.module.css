@@ -1,6 +1,7 @@
 html {
     box-sizing: border-box;
     font-size: 16px;
+    color: #ff0;
 }
 
 *,
@@ -35,7 +36,7 @@ body {
 }
 
 .content > section {
-    background: #0a0908;
-    color: #eed369;
+    background: rgba(10, 10, 0, 0.8);
     text-align: center;
+    padding: 2rem;
 }
