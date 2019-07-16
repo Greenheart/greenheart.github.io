@@ -8,6 +8,13 @@ html {
     box-sizing: inherit;
 }
 
+:root {
+    --orange: #f49e4c;
+    --marine-blue: #0f5a81;
+    --light-blue: #d3e9ed;
+    --accent-color: var(--orange);
+}
+
 body {
     margin: 0;
 }
@@ -35,11 +42,14 @@ body {
 
 .content > section {
     background: rgba(255, 255, 255, 0.97);
-    text-align: center;
     padding: 2rem;
     margin: 0 2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
     max-width: 1100px;
+}
+
+.content > section h2 {
+    text-align: center;
 }
 
 .footer {
