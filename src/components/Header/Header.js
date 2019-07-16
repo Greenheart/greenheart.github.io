@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import styles from './Header.module.css'
 
@@ -14,15 +14,21 @@ const Header = () => {
 
     return (
         <header className={styles.header}>
-            <Link to="/" className={styles.logo}>
+            <a
+                href="/"
+                className={styles.logo}
+                onClick={showIntroWithoutReload}
+            >
                 <img
                     src={data.compass.publicURL}
                     alt="compass logo"
                     width="60"
                 />
-            </Link>
+            </a>
             <span className={styles.siteTitle}>
-                <Link to="/">Samuel Plumppu</Link>
+                <a href="/" onClick={showIntroWithoutReload}>
+                    Samuel Plumppu
+                </a>
             </span>
             <nav className={styles.mainMenu}>
                 <a href="#about">About</a>
@@ -32,6 +38,22 @@ const Header = () => {
             </nav>
         </header>
     )
+}
+
+const showIntroWithoutReload = event => {
+    // Prevent multiple history identical entries.
+    if (window.location.hash) {
+        window.history.pushState(
+            '',
+            document.title,
+            window.location.pathname + window.location.search
+        )
+
+        window.scrollTo(0, 0)
+    }
+
+    event.preventDefault()
+    return false
 }
 
 export default Header
