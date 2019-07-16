@@ -27,3 +27,20 @@
     background: #fff;
     transform: skew(0deg, -33deg);
 }
+
+.animation {
+    animation-duration: 0.5s;
+    animation-name: grow-shrink;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes grow-shrink {
+    0% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}

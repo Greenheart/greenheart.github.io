@@ -76,7 +76,8 @@ section.intro {
 
 .center-bottom {
     position: absolute;
-    bottom: 2.2em;
+    bottom: 1.7em;
     left: 50%;
+    padding: 2em;
     transform: translateX(-50%);
 }

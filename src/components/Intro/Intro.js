@@ -21,7 +21,7 @@ const Intro = () => {
             </div>
 
             <a href="#about" className={styles.centerBottom}>
-                <Chevron />
+                <Chevron animated />
             </a>
         </section>
     )
