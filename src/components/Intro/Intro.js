@@ -4,9 +4,9 @@ import styles from './Intro.module.css'
 
 const Intro = () => {
     return (
-        <section id="intro" className={styles.intro}>
+        <section className={styles.intro}>
             <div className={styles.content}>
-                <h1>Samuel Plumppu</h1>
+                <h1 id="intro">Samuel Plumppu</h1>
                 <p>Swedish orienteer and developer</p>
 
                 <div className={styles.introBg}>

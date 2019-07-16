@@ -18,8 +18,8 @@ const Skills = () => {
     `)
 
     return (
-        <section id="skills">
-            <h2>Skills</h2>
+        <section>
+            <h2 id="skills">Skills</h2>
             <div className={styles.skillsContainer}>
                 {getSkills(data)
                     .sort(byLevel)
