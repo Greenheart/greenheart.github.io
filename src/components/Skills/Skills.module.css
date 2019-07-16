@@ -10,18 +10,18 @@
     grid-template-rows: 1fr 1fr;
     align-items: center;
     font-size: 1.2em;
-    text-shadow: 1px 1px #bbb8b2;
+    text-shadow: 1px 1px var(--light-blue);
 }
 
 .bar {
     width: 100%;
     height: 5px;
-    background: #bbb8b2;
+    background: var(--light-blue);
     border-radius: 2px;
 }
 
 .level {
-    background: #ff5714;
+    background: var(--accent-color);
     height: 100%;
     border-radius: 2px;
 }
