@@ -5,17 +5,22 @@ import styles from './Intro.module.css'
 const Intro = () => {
     return (
         <section id="intro" className={styles.intro}>
-            <div className={styles.introBg}>
+            <div className={styles.content}>
                 <h1>Samuel Plumppu</h1>
                 <p>Swedish orienteer and developer</p>
-                <span className={classnames(styles.triangle, styles.t1)} />
-                <span className={classnames(styles.triangle, styles.t2)} />
-                <span className={classnames(styles.triangle, styles.t3)} />
+
+                <div className={styles.introBg}>
+                    <div className={styles.trianglesContainer}>
+                        <span className={join(styles.triangle, styles.t3)} />
+                        <span className={join(styles.triangle, styles.t2)} />
+                        <span className={join(styles.triangle, styles.t1)} />
+                    </div>
+                </div>
             </div>
         </section>
     )
 }
 
-const classnames = (...classes) => classes.join(' ')
+const join = (...classes) => classes.join(' ')
 
 export default Intro
