@@ -1,9 +1,71 @@
 section.intro {
     margin: 0;
-    height: calc(100vh - 64px);
     padding: 0;
+    height: calc(100vh - var(--header-height));
     position: relative;
     background: transparent;
     box-shadow: none;
     max-width: none;
+    color: #000;
+    font-size: 1.4em;
+    padding-top: 6rem;
+    padding-left: 4rem;
+    font-family: 'Roboto', 'sans-serif';
+
+    --intro-bg-transform: rotate3d(4, 1, 1, 0.04turn);
+}
+
+.intro-bg {
+    display: inline-block;
+    position: relative;
+    background: transparent;
+}
+
+.intro-bg::after {
+    content: '';
+    position: absolute;
+    top: -0.5em;
+    left: -1em;
+    height: 130%;
+    width: 110%;
+    z-index: -10;
+    transform: var(--intro-bg-transform);
+    background: var(--orange);
+}
+
+.triangle {
+    position: absolute;
+    bottom: -1em;
+    z-index: -9;
+    transform: var(--intro-bg-transform);
+    content: '';
+    height: 0;
+    width: 0;
+}
+
+.intro-bg .t1 {
+    right: -0.3em;
+    border-top: 1.1em solid #fff;
+    border-right: 1.1em solid transparent;
+}
+
+.intro-bg .t2 {
+    right: 1.15em;
+    border-top: 0.8em solid #fff;
+    border-right: 0.8em solid transparent;
+}
+
+.intro-bg .t3 {
+    right: 2.3em;
+    border-top: 0.5em solid #fff;
+    border-right: 0.5em solid transparent;
+}
+
+.intro-bg h1 {
+    font-size: 2.6em;
+    margin-bottom: 0;
+}
+
+.intro-bg p {
+    margin: 0;
 }
