@@ -2,6 +2,7 @@ import React from 'react'
 
 import Chevron from '../Chevron/Chevron'
 import styles from './Intro.module.css'
+import { join } from '../../utils/Helpers'
 
 const Intro = () => {
     return (
@@ -25,7 +26,5 @@ const Intro = () => {
         </section>
     )
 }
-
-const join = (...classes) => classes.join(' ')
 
 export default Intro
