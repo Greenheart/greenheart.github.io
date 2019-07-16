@@ -17,6 +17,7 @@ html {
 
     /* Variables */
     --header-height: 60px;
+    --header-offset: calc(1.7 * var(--header-height));
 }
 
 body {
