@@ -2,7 +2,7 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    height: 4rem;
+    height: var(--header-height);
     display: grid;
     grid-template-columns: max-content auto minmax(auto, 400px);
     align-items: center;

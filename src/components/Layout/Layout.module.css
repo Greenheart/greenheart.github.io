@@ -9,10 +9,14 @@ html {
 }
 
 :root {
+    /* Colors */
     --orange: #f49e4c;
     --marine-blue: #0f5a81;
     --light-blue: #d3e9ed;
     --accent-color: var(--orange);
+
+    /* Variables */
+    --header-height: 60px;
 }
 
 body {

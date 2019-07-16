@@ -18,7 +18,7 @@ const Header = () => {
                 <img
                     src={data.compass.publicURL}
                     alt="compass logo"
-                    width="64"
+                    width="60"
                 />
             </Link>
             <span className={styles.siteTitle}>
