@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Chevron from '../Chevron/Chevron'
 import styles from './Intro.module.css'
 
 const Intro = () => {
@@ -17,6 +18,10 @@ const Intro = () => {
                     </div>
                 </div>
             </div>
+
+            <a href="#about" className={styles.centerBottom}>
+                <Chevron />
+            </a>
         </section>
     )
 }

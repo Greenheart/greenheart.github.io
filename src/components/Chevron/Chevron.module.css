@@ -1,0 +1,29 @@
+.chevron {
+    position: relative;
+    text-align: center;
+    padding: 0.16em;
+    margin-bottom: 0.1em;
+    width: 3em;
+}
+
+.chevron::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0.34em;
+    width: 51%;
+    background: #fff;
+    transform: skew(0deg, 33deg);
+}
+
+.chevron::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 0.34em;
+    width: 50%;
+    background: #fff;
+    transform: skew(0deg, -33deg);
+}

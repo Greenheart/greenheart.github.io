@@ -73,3 +73,10 @@ section.intro {
     border-top: 0.5em solid #fff;
     border-right: 0.5em solid transparent;
 }
+
+.center-bottom {
+    position: absolute;
+    bottom: 2.2em;
+    left: 50%;
+    transform: translateX(-50%);
+}
