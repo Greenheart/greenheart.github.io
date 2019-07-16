@@ -14,7 +14,7 @@ const Header = () => {
 
     return (
         <header className={styles.header}>
-            <Link to="/">
+            <Link to="/" className={styles.logo}>
                 <img
                     src={data.compass.publicURL}
                     alt="compass logo"

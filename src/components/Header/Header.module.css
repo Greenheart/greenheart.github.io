@@ -11,6 +11,15 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
 }
 
+.header img {
+    margin-bottom: 0;
+}
+
+.logo:hover::before,
+.logo:hover::after {
+    display: none !important;
+}
+
 .site-title {
     display: flex;
     justify-content: flex-start;
@@ -22,19 +31,41 @@
 }
 
 .header a {
+    font-family: 'Roboto', 'sans-serif';
     font-size: 1.3em;
     text-decoration: none;
-    color: black;
+    color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
+    position: relative;
 }
 
-.header a:hover,
-.header a:active {
-    color: #3f3f3f;
-    text-decoration: underline;
+.header a:hover::before,
+.header a:active::before,
+.header a:hover::after,
+.header a:active::after {
+    display: flex;
+    justify-content: center;
+    content: '';
+    position: absolute;
+    height: 2px;
+    background: var(--accent-color);
+    width: 90%;
+    z-index: -10;
+}
+
+.header a:hover::before,
+.header a:active::before {
+    top: 0.1em;
+    box-shadow: 0 0.5em 1em var(--accent-color);
+}
+
+.header a:hover::after,
+.header a:active::after {
+    bottom: 0.1em;
+    box-shadow: 0 -0.5em 1em var(--accent-color);
 }
 
 .main-menu {
