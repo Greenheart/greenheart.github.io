@@ -4,4 +4,6 @@ section.intro {
     padding: 0;
     position: relative;
     background: transparent;
+    box-shadow: none;
+    max-width: none;
 }
