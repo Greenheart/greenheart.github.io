@@ -46,6 +46,8 @@
     background: var(--accent-color);
     width: 90%;
     z-index: -10;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .header a:hover::before,
