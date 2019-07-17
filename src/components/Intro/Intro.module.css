@@ -12,13 +12,17 @@ section.intro {
     padding-left: 4rem;
     font-family: 'Roboto', 'sans-serif';
 
-    --intro-bg-transform: rotate3d(4, 1, 1, 0.04turn);
+    /*  This rotate3d is cooler than the rotate + skew transform,
+        but the latter has better browser support. */
+    /* --intro-bg-transform: rotate3d(4, 1, 1, 14deg); */
+    --intro-bg-transform: rotate(0.5deg) skew(-3deg, 3deg);
 }
 
 .content {
     display: inline-block;
     position: relative;
     background: transparent;
+    z-index: 10;
 }
 
 .content h1 {
@@ -37,7 +41,7 @@ section.intro {
     left: -1em;
     height: 130%;
     width: 110%;
-    z-index: -10;
+    z-index: -1;
     transform: var(--intro-bg-transform);
     background: var(--orange);
 }
