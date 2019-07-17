@@ -1,8 +1,9 @@
 .header {
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 100;
     height: var(--header-height);
+    width: 100vw;
     display: grid;
     grid-template-columns: max-content auto minmax(auto, 400px);
     align-items: center;
