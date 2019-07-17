@@ -3,9 +3,6 @@ import Typography from 'typography'
 const headerFont = 'Roboto'
 const bodyFont = 'Inconsolata'
 
-// TODO: Remove unused CSS from Layout.module.css and other modules.
-// Use this file as single source of truth for fonts, as far as possible.
-
 const typography = new Typography({
     baseFontSize: '16px',
     baseLineHeight: 1.666,

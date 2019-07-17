@@ -1,4 +1,5 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import Chevron from '../Chevron/Chevron'
 import styles from './Intro.module.css'
@@ -8,7 +9,7 @@ const Intro = () => {
     return (
         <section className={styles.intro}>
             <div className={styles.content}>
-                <h1 id="intro">Samuel Plumppu</h1>
+                    <SamuelLogo />
                 <p>Swedish orienteer and developer</p>
 
                 <div className={styles.introBg}>
@@ -24,6 +25,25 @@ const Intro = () => {
                 <Chevron animated />
             </a>
         </section>
+    )
+}
+
+const SamuelLogo = () => {
+    const data = useStaticQuery(graphql`
+        {
+            spLogo: file(relativePath: { eq: "sp-logo.svg" }) {
+                publicURL
+            }
+        }
+    `)
+
+    return (
+        <img
+            src={data.spLogo.publicURL}
+            alt="Samuel Plumppu name logo"
+            style={{ width: '20em', height: '1.32em' }}
+            className={styles.samuelLogo}
+        />
     )
 }
 

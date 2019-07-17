@@ -5,7 +5,8 @@
     height: var(--header-height);
     width: 100vw;
     display: grid;
-    grid-template-columns: max-content auto minmax(auto, 400px);
+    grid-template-columns: max-content minmax(auto, 400px);
+    justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
     background: white;
@@ -19,16 +20,6 @@
 .logo:hover::before,
 .logo:hover::after {
     display: none !important;
-}
-
-.site-title {
-    display: flex;
-    justify-content: flex-start;
-    height: 100%;
-}
-
-.site-title a {
-    padding: 0 1rem;
 }
 
 .header a {

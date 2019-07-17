@@ -25,11 +25,6 @@ const Header = () => {
                     width="60"
                 />
             </a>
-            <span className={styles.siteTitle}>
-                <a href="/" onClick={showIntroWithoutReload}>
-                    Samuel Plumppu
-                </a>
-            </span>
             <nav className={styles.mainMenu}>
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
@@ -41,7 +36,7 @@ const Header = () => {
 }
 
 const showIntroWithoutReload = event => {
-    // Prevent multiple history identical entries.
+    // Prevent multiple identical entries in history.
     if (window.location.hash) {
         window.history.pushState(
             '',
