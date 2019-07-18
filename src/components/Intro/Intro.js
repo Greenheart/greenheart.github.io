@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Chevron from '../Chevron/Chevron'
 import styles from './Intro.module.css'
 import { join } from '../../utils/Helpers'
+import 'animate.css'
 
 const Intro = () => {
     return (
@@ -42,7 +43,12 @@ const SamuelLogo = () => {
             src={data.spLogo.publicURL}
             alt="Samuel Plumppu name logo"
             style={{ width: '20em', height: '1.32em' }}
-            className={styles.samuelLogo}
+            className={join(
+                styles.samuelLogo,
+                'animated',
+                'fadeInLeft',
+                'faster'
+            )}
         />
     )
 }
