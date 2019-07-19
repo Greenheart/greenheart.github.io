@@ -4,11 +4,12 @@
     z-index: 100;
     width: 100vw;
     display: grid;
+    height: var(--expanded-header-height);
     justify-content: center;
     background: transparent;
-    font-size: 1.2em;
     color: white;
     text-shadow: 1px 1px #000;
+    transition: padding 0.3s ease, height 0.3s ease;
 }
 
 .header .container {
@@ -19,14 +20,20 @@
     width: 100vw;
     max-width: var(--max-content-width);
     padding: 2rem;
+    transition: padding 0.3s ease;
 }
 
 .header.scrolled {
     background: white;
-    padding: 0 2rem;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-    font-size: 1em;
+    text-shadow: none;
     height: var(--header-height);
+    transition: padding 0.3s ease, height 0.3s ease, background 0.3s ease;
+}
+
+.header.scrolled .container {
+    padding: 0 2rem;
+    transition: padding 0.3s ease;
 }
 
 .header.scrolled a {
@@ -94,4 +101,8 @@
     height: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+}
+
+.no-transition {
+    transition: none !important;
 }

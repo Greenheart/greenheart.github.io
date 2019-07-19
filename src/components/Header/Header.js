@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
+import { getCSSVariable } from '../../utils/Helpers'
 import styles from './Header.module.css'
 
 const Header = () => {
@@ -11,6 +12,49 @@ const Header = () => {
             }
         }
     `)
+
+    useEffect(() => {
+        const header = document.querySelector('.' + styles.header)
+        const scrollThreshold = getCSSVariable('--scroll-threshold').replace(
+            'px',
+            ''
+        )
+        const updateHeader = event => {
+            const isTop = window.scrollY < scrollThreshold
+            if (isTop) {
+                header.classList.remove(styles.scrolled)
+            } else {
+                header.classList.add(styles.scrolled)
+            }
+        }
+
+        updateHeader()
+        window.addEventListener('scroll', updateHeader)
+
+        // Use cleanUp function to remove any side effects.
+        const cleanUpFn = () =>
+            window.removeEventListener('scroll', updateHeader)
+        return cleanUpFn
+    })
+
+    const handleClick = event => {
+        const header = document.querySelector('.' + styles.header)
+        const scrollThreshold = getCSSVariable('--scroll-threshold').replace(
+            'px',
+            ''
+        )
+        const isTop = window.scrollY < scrollThreshold
+        if (isTop) {
+            // Go to section without showing CSS transition to prevent jumpy
+            // animations caused by header & scroll animating at the same time.
+            header.classList.add(styles.noTransition)
+
+            window.setTimeout(
+                () => header.classList.remove(styles.noTransition),
+                500
+            )
+        }
+    }
 
     return (
         <header className={styles.header}>
@@ -27,10 +71,18 @@ const Header = () => {
                     />
                 </a>
                 <nav className={styles.mainMenu}>
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#about" onClick={handleClick}>
+                        About
+                    </a>
+                    <a href="#projects" onClick={handleClick}>
+                        Projects
+                    </a>
+                    <a href="#skills" onClick={handleClick}>
+                        Skills
+                    </a>
+                    <a href="#contact" onClick={handleClick}>
+                        Contact
+                    </a>
                 </nav>
             </div>
         </header>
