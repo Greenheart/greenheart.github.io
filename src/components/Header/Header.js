@@ -14,23 +14,25 @@ const Header = () => {
 
     return (
         <header className={styles.header}>
-            <a
-                href="/"
-                className={styles.logo}
-                onClick={showIntroWithoutReload}
-            >
-                <img
-                    src={data.compass.publicURL}
-                    alt="compass logo"
-                    width="60"
-                />
-            </a>
-            <nav className={styles.mainMenu}>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
-            </nav>
+            <div className={styles.container}>
+                <a
+                    href="/"
+                    className={styles.logo}
+                    onClick={showIntroWithoutReload}
+                >
+                    <img
+                        src={data.compass.publicURL}
+                        alt="Compass logo"
+                        width="60"
+                    />
+                </a>
+                <nav className={styles.mainMenu}>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
         </header>
     )
 }
