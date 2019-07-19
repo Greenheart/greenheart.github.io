@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, Component } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import Chevron from '../Chevron/Chevron'
@@ -38,17 +38,24 @@ const SamuelLogo = () => {
         }
     `)
 
+    const [hasLoaded, setHasLoaded] = useState(false)
+
     return (
         <img
             src={data.spLogo.publicURL}
             alt="Samuel Plumppu name logo"
-            style={{ width: '20em', height: '1.32em' }}
-            className={join(
+            style={{ width: '20em', height: '1.32em', visibility: hasLoaded ? 'visible' : 'hidden' }}
+            className={
+                hasLoaded
+                    ? join(
                 styles.samuelLogo,
                 'animated',
                 'fadeInLeft',
                 'faster'
-            )}
+                      )
+                    : styles.samuelLogo
+            }
+            onLoad={() => setHasLoaded(true)}
         />
     )
 }
