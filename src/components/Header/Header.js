@@ -6,7 +6,7 @@ import styles from './Header.module.css'
 const Header = () => {
     const data = useStaticQuery(graphql`
         {
-            compass: file(relativePath: { eq: "compass.svg" }) {
+            compass: file(relativePath: { eq: "compass-no-bg-optimized.svg" }) {
                 publicURL
             }
         }
