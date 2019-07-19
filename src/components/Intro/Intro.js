@@ -6,28 +6,26 @@ import styles from './Intro.module.css'
 import { join } from '../../utils/Helpers'
 import 'animate.css'
 
-const Intro = () => {
-    return (
-        <section className={styles.intro}>
-            <div className={styles.content}>
-                    <SamuelLogo />
-                <p>Swedish orienteer and developer</p>
+const Intro = () => (
+    <section className={styles.intro}>
+        <div className={styles.content}>
+            <SamuelLogo />
+            <p>Swedish orienteer and developer</p>
 
-                <div className={styles.introBg}>
-                    <div className={styles.trianglesContainer}>
-                        <span className={join(styles.triangle, styles.t3)} />
-                        <span className={join(styles.triangle, styles.t2)} />
-                        <span className={join(styles.triangle, styles.t1)} />
-                    </div>
+            <div className={styles.introBg}>
+                <div className={styles.trianglesContainer}>
+                    <span className={join(styles.triangle, styles.t3)} />
+                    <span className={join(styles.triangle, styles.t2)} />
+                    <span className={join(styles.triangle, styles.t1)} />
                 </div>
             </div>
+        </div>
 
-            <a href="#about" className={styles.centerBottom}>
-                <Chevron animated />
-            </a>
-        </section>
-    )
-}
+        <a href="#about" className={styles.centerBottom}>
+            <Chevron animated />
+        </a>
+    </section>
+)
 
 const SamuelLogo = () => {
     const data = useStaticQuery(graphql`
@@ -44,14 +42,18 @@ const SamuelLogo = () => {
         <img
             src={data.spLogo.publicURL}
             alt="Samuel Plumppu name logo"
-            style={{ width: '20em', height: '1.32em', visibility: hasLoaded ? 'visible' : 'hidden' }}
+            style={{
+                width: '20em',
+                height: '1.32em',
+                visibility: hasLoaded ? 'visible' : 'hidden',
+            }}
             className={
                 hasLoaded
                     ? join(
-                styles.samuelLogo,
-                'animated',
-                'fadeInLeft',
-                'faster'
+                          styles.samuelLogo,
+                          'animated',
+                          'fadeInLeft',
+                          'faster'
                       )
                     : styles.samuelLogo
             }
