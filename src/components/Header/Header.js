@@ -61,6 +61,22 @@ const Header = () => {
         }
     }
 
+    const showIntroWithoutReload = event => {
+        // Prevent multiple identical entries in history.
+        if (window.location.hash) {
+            window.history.pushState(
+                '',
+                document.title,
+                window.location.pathname + window.location.search
+            )
+
+            window.scrollTo(0, 0)
+        }
+
+        event.preventDefault()
+        return false
+    }
+
     return (
         <header className={styles.header}>
             <div className={styles.container}>
@@ -92,22 +108,6 @@ const Header = () => {
             </div>
         </header>
     )
-}
-
-const showIntroWithoutReload = event => {
-    // Prevent multiple identical entries in history.
-    if (window.location.hash) {
-        window.history.pushState(
-            '',
-            document.title,
-            window.location.pathname + window.location.search
-        )
-
-        window.scrollTo(0, 0)
-    }
-
-    event.preventDefault()
-    return false
 }
 
 export default Header
