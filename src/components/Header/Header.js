@@ -37,7 +37,7 @@ const Header = () => {
         return cleanUpFn
     })
 
-    const handleClick = event => {
+    const temporarilyDisableTransitions = () => {
         const header = document.querySelector('.' + styles.header)
         const scrollThreshold = getCSSVariable('--scroll-threshold').replace(
             'px',
@@ -71,16 +71,16 @@ const Header = () => {
                     />
                 </a>
                 <nav className={styles.mainMenu}>
-                    <a href="#about" onClick={handleClick}>
+                    <a href="#about" onClick={temporarilyDisableTransitions}>
                         About
                     </a>
-                    <a href="#projects" onClick={handleClick}>
+                    <a href="#projects" onClick={temporarilyDisableTransitions}>
                         Projects
                     </a>
-                    <a href="#skills" onClick={handleClick}>
+                    <a href="#skills" onClick={temporarilyDisableTransitions}>
                         Skills
                     </a>
-                    <a href="#contact" onClick={handleClick}>
+                    <a href="#contact" onClick={temporarilyDisableTransitions}>
                         Contact
                     </a>
                 </nav>
