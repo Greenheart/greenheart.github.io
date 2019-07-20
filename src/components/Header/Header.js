@@ -69,10 +69,9 @@ const Header = () => {
                 document.title,
                 window.location.pathname + window.location.search
             )
-
-            window.scrollTo(0, 0)
         }
 
+        window.scrollTo(0, 0)
         event.preventDefault()
         return false
     }
