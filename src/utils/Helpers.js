@@ -3,4 +3,17 @@ const join = (...classes) => classes.join(' ')
 const getCSSVariable = (name, target = document.body) =>
     getComputedStyle(target).getPropertyValue(name)
 
-export { join, getCSSVariable }
+const throttleAnimationFrame = fn => {
+    let ticking = false
+    return (...args) => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                fn(...args)
+                ticking = false
+            })
+            ticking = true
+        }
+    }
+}
+
+export { join, getCSSVariable, throttleAnimationFrame }

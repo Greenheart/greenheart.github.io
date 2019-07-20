@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import { getCSSVariable } from '../../utils/Helpers'
+import { getCSSVariable, throttleAnimationFrame } from '../../utils/Helpers'
 import styles from './Header.module.css'
 
 const Header = () => {
@@ -15,33 +15,38 @@ const Header = () => {
 
     useEffect(() => {
         const header = document.querySelector('.' + styles.header)
-        const scrollThreshold = getCSSVariable('--scroll-threshold').replace(
-            'px',
-            ''
+        const scrollThreshold = Number(
+            getCSSVariable('--scroll-threshold').replace('px', '')
         )
-        const updateHeader = event => {
-            const isTop = window.scrollY < scrollThreshold
-            if (isTop) {
+        let lastScrollPos = window.scrollY
+
+        const updateHeader = () => {
+            const direction = window.scrollY < lastScrollPos ? 'up' : 'down'
+
+            if (direction === 'up' && window.scrollY < scrollThreshold) {
+                // If scrolling up, remove at the threshold.
                 header.classList.remove(styles.scrolled)
-            } else {
+            } else if (window.scrollY > scrollThreshold / 20) {
+                // Else if scrolling down, add class almost immediately to improve UX.
                 header.classList.add(styles.scrolled)
             }
+
+            lastScrollPos = window.scrollY
         }
 
+        // This update ensures the header behaves as expected no matter what scrollY the page loads at.
         updateHeader()
-        window.addEventListener('scroll', updateHeader)
+        const onScroll = throttleAnimationFrame(updateHeader)
 
-        // Use cleanUp function to remove any side effects.
-        const cleanUpFn = () =>
-            window.removeEventListener('scroll', updateHeader)
-        return cleanUpFn
-    })
+        // Attach listener and return cleanup function to remove it.
+        window.addEventListener('scroll', onScroll)
+        return () => window.removeEventListener('scroll', onScroll)
+    }, [])
 
     const temporarilyDisableTransitions = () => {
         const header = document.querySelector('.' + styles.header)
-        const scrollThreshold = getCSSVariable('--scroll-threshold').replace(
-            'px',
-            ''
+        const scrollThreshold = Number(
+            getCSSVariable('--scroll-threshold').replace('px', '')
         )
         const isTop = window.scrollY < scrollThreshold
         if (isTop) {
