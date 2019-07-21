@@ -52,6 +52,7 @@ section.intro {
     z-index: -1;
     transform: var(--intro-bg-transform);
     background: var(--orange);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 .triangles-container {
