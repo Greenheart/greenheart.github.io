@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Header from '../Header'
+import 'animate.css'
 /* eslint-disable-next-line */
 import variables from './variables.module.css'
 import styles from './Layout.module.css'

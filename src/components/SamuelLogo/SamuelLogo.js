@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import 'animate.css'
 
 import { join } from '../../utils/Helpers'
 import styles from './SamuelLogo.module.css'
