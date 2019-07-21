@@ -1,0 +1,71 @@
+.samuel-logo {
+    display: inline-block;
+    position: relative;
+    background: transparent;
+}
+
+.samuel-logo h1 {
+    font-size: 2.6em;
+    margin-bottom: 0;
+}
+
+.samuel-logo p {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.logo {
+    width: 20em;
+    height: 1.32em;
+    margin: 0.3em 0 0 0;
+}
+
+.logo-bg {
+    position: absolute;
+    background: transparent;
+    top: -0.5em;
+    left: -1em;
+    height: 130%;
+    width: 110%;
+    z-index: -1;
+    background: var(--orange);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+
+    /*  This rotate3d is cooler than the rotate + skew transform,
+    but the latter has better browser support. */
+    /* transform: rotate3d(4, 1, 1, 14deg); */
+    transform: rotate(0.5deg) skew(-3deg, 3deg);
+}
+
+.triangles-container {
+    position: absolute;
+    bottom: 0.2em;
+    right: 0.2em;
+    display: flex;
+    justify-content: space-between;
+    width: 3.5em;
+    align-items: flex-end;
+}
+
+.triangle {
+    z-index: -9;
+    content: '';
+    height: 0;
+    width: 0;
+}
+
+.t1 {
+    border-top: 1.1em solid #fff;
+    border-right: 1.1em solid transparent;
+}
+
+.t2 {
+    border-top: 0.8em solid #fff;
+    border-right: 0.8em solid transparent;
+}
+
+.t3 {
+    border-top: 0.5em solid #fff;
+    border-right: 0.5em solid transparent;
+}

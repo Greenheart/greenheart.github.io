@@ -15,7 +15,7 @@ const Header = () => {
 
     useEffect(() => {
         const header = document.querySelector('.' + styles.header)
-        const scrollThreshold = 10
+        const scrollThreshold = 70
 
         const updateHeader = () => {
             if (window.scrollY < scrollThreshold) {
@@ -36,7 +36,7 @@ const Header = () => {
 
     const temporarilyDisableTransitions = () => {
         const header = document.querySelector('.' + styles.header)
-        const scrollThreshold = 10
+        const scrollThreshold = 70
         const isTop = window.scrollY < scrollThreshold
         if (isTop) {
             // Go to section without showing CSS transition to prevent jumpy
