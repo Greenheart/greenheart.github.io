@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import { getCSSVariable, throttleAnimationFrame } from '../../utils/Helpers'
+import { throttleAnimationFrame } from '../../utils/Helpers'
 import styles from './Header.module.css'
 
 const Header = () => {
@@ -15,23 +15,14 @@ const Header = () => {
 
     useEffect(() => {
         const header = document.querySelector('.' + styles.header)
-        const scrollThreshold = Number(
-            getCSSVariable('--scroll-threshold').replace('px', '')
-        )
-        let lastScrollPos = window.scrollY
+        const scrollThreshold = 10
 
         const updateHeader = () => {
-            const direction = window.scrollY < lastScrollPos ? 'up' : 'down'
-
-            if (direction === 'up' && window.scrollY < scrollThreshold) {
-                // If scrolling up, remove at the threshold.
+            if (window.scrollY < scrollThreshold) {
                 header.classList.remove(styles.scrolled)
-            } else if (window.scrollY > scrollThreshold / 20) {
-                // Else if scrolling down, add class almost immediately to improve UX.
+            } else {
                 header.classList.add(styles.scrolled)
             }
-
-            lastScrollPos = window.scrollY
         }
 
         // This update ensures the header behaves as expected no matter what scrollY the page loads at.
@@ -45,9 +36,7 @@ const Header = () => {
 
     const temporarilyDisableTransitions = () => {
         const header = document.querySelector('.' + styles.header)
-        const scrollThreshold = Number(
-            getCSSVariable('--scroll-threshold').replace('px', '')
-        )
+        const scrollThreshold = 10
         const isTop = window.scrollY < scrollThreshold
         if (isTop) {
             // Go to section without showing CSS transition to prevent jumpy
