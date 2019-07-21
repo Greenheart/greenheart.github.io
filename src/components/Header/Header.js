@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import { throttleAnimationFrame } from '../../utils/Helpers'
@@ -13,15 +13,15 @@ const Header = () => {
         }
     `)
 
-    useEffect(() => {
-        const header = document.querySelector('.' + styles.header)
-        const scrollThreshold = 70
+    const headerRef = useRef()
+    const [scrollThreshold] = useState(70)
 
+    useEffect(() => {
         const updateHeader = () => {
             if (window.scrollY < scrollThreshold) {
-                header.classList.remove(styles.scrolled)
+                headerRef.current.classList.remove(styles.scrolled)
             } else {
-                header.classList.add(styles.scrolled)
+                headerRef.current.classList.add(styles.scrolled)
             }
         }
 
@@ -32,19 +32,17 @@ const Header = () => {
         // Attach listener and return cleanup function to remove it.
         window.addEventListener('scroll', onScroll)
         return () => window.removeEventListener('scroll', onScroll)
-    }, [])
+    }, [headerRef, scrollThreshold])
 
     const temporarilyDisableTransitions = () => {
-        const header = document.querySelector('.' + styles.header)
-        const scrollThreshold = 70
         const isTop = window.scrollY < scrollThreshold
         if (isTop) {
             // Go to section without showing CSS transition to prevent jumpy
             // animations caused by header & scroll animating at the same time.
-            header.classList.add(styles.noTransition)
+            headerRef.current.classList.add(styles.noTransition)
 
             window.setTimeout(
-                () => header.classList.remove(styles.noTransition),
+                () => headerRef.current.classList.remove(styles.noTransition),
                 500
             )
         }
@@ -66,7 +64,7 @@ const Header = () => {
     }
 
     return (
-        <header className={styles.header}>
+        <header className={styles.header} ref={headerRef}>
             <div className={styles.container}>
                 <a
                     href="/"
