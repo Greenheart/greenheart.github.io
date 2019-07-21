@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import { throttleAnimationFrame } from '../../utils/Helpers'
+import SamuelLogo from '../SamuelLogo'
 import styles from './Header.module.css'
 
 const Header = () => {
@@ -20,8 +21,10 @@ const Header = () => {
         const updateHeader = () => {
             if (window.scrollY < scrollThreshold) {
                 headerRef.current.classList.remove(styles.scrolled)
+                // fade in the logo
             } else {
                 headerRef.current.classList.add(styles.scrolled)
+                // fade out the logo
             }
         }
 
@@ -77,6 +80,7 @@ const Header = () => {
                         width="60"
                     />
                 </a>
+                <SamuelLogo type="small" style={{ paddingLeft: '1em' }} />
                 <nav className={styles.mainMenu}>
                     <a href="#about" onClick={temporarilyDisableTransitions}>
                         About

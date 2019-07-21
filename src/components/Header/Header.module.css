@@ -14,7 +14,7 @@
 
 .header .container {
     display: grid;
-    grid-template-columns: max-content minmax(auto, 400px);
+    grid-template-columns: max-content minmax(auto, 800px) minmax(auto, 400px);
     justify-content: space-between;
     align-items: center;
     width: 100vw;
