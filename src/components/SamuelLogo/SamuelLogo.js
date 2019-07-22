@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import { join } from '../../utils/Helpers'
+import Triangles from '../Triangles'
 import styles from './SamuelLogo.module.css'
 
 const SamuelLogo = ({ type = 'default', style = {} }) => {
@@ -48,11 +49,7 @@ const SamuelLogo = ({ type = 'default', style = {} }) => {
             <p>Swedish orienteer and developer</p>
 
             <div className={styles.logoBg}>
-                <div className={styles.trianglesContainer}>
-                    <span className={join(styles.triangle, styles.t3)} />
-                    <span className={join(styles.triangle, styles.t2)} />
-                    <span className={join(styles.triangle, styles.t1)} />
-                </div>
+                <Triangles color="white" direction="top" />
             </div>
         </div>
     )
