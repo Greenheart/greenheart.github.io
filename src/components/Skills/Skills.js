@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
+import Triangles from '../Triangles'
 import styles from './Skills.module.css'
 
 const Skills = () => {
@@ -25,6 +26,7 @@ const Skills = () => {
                     .sort(byLevel)
                     .map(Skill)}
             </div>
+            <Triangles color="var(--orange)" direction="bottom" baseSize={30} />
         </section>
     )
 }

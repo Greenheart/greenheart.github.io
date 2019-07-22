@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Triangles from '../Triangles'
 import styles from './Projects.module.css'
 
 class Projects extends React.Component {
@@ -18,6 +19,11 @@ class Projects extends React.Component {
         return (
             <section className={styles.projects}>
                 <h2 id="projects">Projects</h2>
+                <Triangles
+                    color="var(--orange)"
+                    direction="bottom"
+                    baseSize={30}
+                />
             </section>
         )
     }
