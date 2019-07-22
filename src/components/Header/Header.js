@@ -27,8 +27,10 @@ const Header = () => {
             if (direction === 'up' && window.scrollY < scrollThreshold) {
                 headerRef.current.classList.remove(styles.scrolled)
                 logoRef.current.classList.remove('fadeIn')
+                logoRef.current.classList.add(styles.disabled)
             } else if (window.scrollY >= scrollThreshold) {
                 headerRef.current.classList.add(styles.scrolled)
+                logoRef.current.classList.remove(styles.disabled)
                 logoRef.current.classList.add('fadeIn')
             }
 
@@ -86,12 +88,21 @@ const Header = () => {
                         width="60"
                     />
                 </a>
-                <div
-                    ref={logoRef}
-                    className={join('animated', 'faster')}
-                    style={{ opacity: 0 }}
-                >
-                    <SamuelLogo type="small" style={{ paddingLeft: '1em' }} />
+                <div className={styles.smallLogoWrapper}>
+                    <a
+                        href="/"
+                        onClick={showIntroWithoutReload}
+                        ref={logoRef}
+                        className={join(
+                            styles.smallLogo,
+                            styles.disabled,
+                            'animated',
+                            'faster'
+                        )}
+                        style={{ opacity: 0, paddingLeft: '1em' }}
+                    >
+                        <SamuelLogo type="small" />
+                    </a>
                 </div>
                 <nav className={styles.mainMenu}>
                     <a href="#about" onClick={temporarilyDisableTransitions}>
