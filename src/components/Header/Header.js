@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import { throttleAnimationFrame } from '../../utils/Helpers'
 import SamuelLogo from '../SamuelLogo'
 import styles from './Header.module.css'
+import { join } from '../../utils/Helpers'
 
 const Header = () => {
     const data = useStaticQuery(graphql`
@@ -15,17 +16,23 @@ const Header = () => {
     `)
 
     const headerRef = useRef()
-    const [scrollThreshold] = useState(70)
+    const logoRef = useRef()
+    const scrollThreshold = 70
 
     useEffect(() => {
+        let lastScrollPos = window.scrollY
+
         const updateHeader = () => {
-            if (window.scrollY < scrollThreshold) {
+            const direction = window.scrollY < lastScrollPos ? 'up' : 'down'
+            if (direction === 'up' && window.scrollY < scrollThreshold) {
                 headerRef.current.classList.remove(styles.scrolled)
-                // fade in the logo
-            } else {
+                logoRef.current.classList.remove('fadeIn')
+            } else if (window.scrollY >= scrollThreshold) {
                 headerRef.current.classList.add(styles.scrolled)
-                // fade out the logo
+                logoRef.current.classList.add('fadeIn')
             }
+
+            lastScrollPos = window.scrollY
         }
 
         // This update ensures the header behaves as expected no matter what scrollY the page loads at.
@@ -35,11 +42,10 @@ const Header = () => {
         // Attach listener and return cleanup function to remove it.
         window.addEventListener('scroll', onScroll)
         return () => window.removeEventListener('scroll', onScroll)
-    }, [headerRef, scrollThreshold])
+    }, [headerRef, logoRef, scrollThreshold])
 
     const temporarilyDisableTransitions = () => {
-        const isTop = window.scrollY < scrollThreshold
-        if (isTop) {
+        if (window.scrollY < scrollThreshold) {
             // Go to section without showing CSS transition to prevent jumpy
             // animations caused by header & scroll animating at the same time.
             headerRef.current.classList.add(styles.noTransition)
@@ -80,7 +86,13 @@ const Header = () => {
                         width="60"
                     />
                 </a>
-                <SamuelLogo type="small" style={{ paddingLeft: '1em' }} />
+                <div
+                    ref={logoRef}
+                    className={join('animated', 'faster')}
+                    style={{ opacity: 0 }}
+                >
+                    <SamuelLogo type="small" style={{ paddingLeft: '1em' }} />
+                </div>
                 <nav className={styles.mainMenu}>
                     <a href="#about" onClick={temporarilyDisableTransitions}>
                         About
