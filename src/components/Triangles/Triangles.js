@@ -2,26 +2,38 @@ import React from 'react'
 
 import styles from './Triangles.module.css'
 
-const Triangles = ({ color = 'white', direction = 'top' }) => {
-    const sizes = [0.5, 0.8, 1.1]
+const Triangles = ({
+    color = 'white',
+    direction = 'top',
+    sizes = [0.5, 0.8, 1.1],
+    baseSize = 20.8,
+}) => {
     const triangles = []
 
     for (const size of sizes) {
+        const x = size * baseSize
         triangles.push(
             direction === 'top'
                 ? {
-                      borderTop: `${size}em solid ${color}`,
-                      borderRight: `${size}em solid transparent`,
+                      borderTop: `${x}px solid ${color}`,
+                      borderRight: `${x}px solid transparent`,
                   }
                 : {
-                      borderBottom: `${size}em solid ${color}`,
-                      borderLeft: `${size}em solid transparent`,
+                      borderBottom: `${x}px solid ${color}`,
+                      borderLeft: `${x}px solid transparent`,
                   }
         )
     }
 
     return (
-        <div className={styles.trianglesContainer}>
+        <div
+            className={styles.trianglesContainer}
+            style={{
+                bottom: `${0.2 * baseSize}px`,
+                right: `${0.2 * baseSize}px`,
+                width: `${3.5 * baseSize}px`,
+            }}
+        >
             {triangles.map((style, i) => (
                 <Triangle style={style} key={i} />
             ))}
