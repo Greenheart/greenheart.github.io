@@ -10,10 +10,18 @@ const Contact = () => {
             <h2 id="contact">Contact</h2>
             <p>Do you have a project I might be interested in? Let's chat!</p>
             <div className={styles.links}>
-                <a href="https://github.com/Greenheart" target="_blank">
+                <a
+                    href="https://github.com/Greenheart"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <IoLogoGithub />
                 </a>
-                <a href="https://linkedin.com/in/samuelplumppu" target="_blank">
+                <a
+                    href="https://linkedin.com/in/samuelplumppu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <IoLogoLinkedin />
                 </a>
                 <a href="mailto:samuel.plumppu@gmail.com">
