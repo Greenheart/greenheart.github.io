@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Swiper from 'react-id-swiper'
 import 'react-id-swiper/lib/styles/css/swiper.css'
 
+import Project from '../Project'
 import Triangles from '../Triangles'
 import styles from './Projects.module.css'
 
@@ -35,6 +36,7 @@ const ProjectShowcase = () => {
                             tech
                             github
                             demo
+                            year
                         }
                         html
                     }
@@ -49,7 +51,7 @@ const ProjectShowcase = () => {
         <section className={styles.projectShowcase}>
             <Swiper {...props}>
                 {projects.map(p => (
-                    <div key={p.frontmatter.title}>{p.frontmatter.title}</div>
+                    <Project project={p} key={p.frontmatter.title} />
                 ))}
             </Swiper>
         </section>
