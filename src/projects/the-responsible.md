@@ -1,9 +1,9 @@
+---
 title: The Responsible
 tech: ['JavaScript', 'CSS', 'HTML']
 year: 2018
 github: https://github.com/Greenheart/text-game
 demo: https://samuelplumppu.se/text-game
-
 ---
 
 At one point, I wanted to be an author. At another, I wanted to be a developer. So I figured, why not just do both?

@@ -1,9 +1,9 @@
+---
 title: Iso Conquest
 tech: ['JavaScript', 'CSS', 'HTML']
 year: 2016 - 2018
 github: https://github.com/Greenheart/iso-conquest
 demo: https://samuelplumppu.se/iso-conquest
-
 ---
 
 In this minimalistic, turn based strategy game, your task is to seize control over the battlefield. It features gamemodes for PvP as well as experimental Player vs AI.

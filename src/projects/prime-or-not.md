@@ -1,9 +1,9 @@
+---
 title: Prime or Not?
 tech: ['JavaScript', 'CSS', 'HTML']
 year: 2017
 github: https://github.com/Greenheart/numbers
 demo: https://samuelplumppu.se/numbers
-
 ---
 
 Starting as a joke about how it would be to learn prime numbers in an app with a two button interface similar to Tinder, this idea turned into an actual prototype.
