@@ -1,7 +1,7 @@
 ---
 title: The not so Busy Business
 tech: ['Python']
-year: 2014
+year: '2014'
 github: https://github.com/Greenheart/cars_game
 ---
 

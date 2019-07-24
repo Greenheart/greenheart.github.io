@@ -1,7 +1,7 @@
 ---
 title: Prime or Not?
 tech: ['JavaScript', 'CSS', 'HTML']
-year: 2017
+year: '2017'
 github: https://github.com/Greenheart/numbers
 demo: https://samuelplumppu.se/numbers
 ---

@@ -1,7 +1,7 @@
 ---
 title: Achtung Panzer
 tech: ['Python', 'PyGame']
-year: 2015
+year: '2015'
 github: https://github.com/Greenheart/AchtungPanzer
 ---
 

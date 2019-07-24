@@ -1,7 +1,7 @@
 ---
 title: Goa Space Survival
 tech: ['JavaScript', 'Meteor', 'Phaser', 'Mongo DB']
-year: 2015
+year: '2015'
 github: https://github.com/Greenheart/goa-space-survival
 ---
 

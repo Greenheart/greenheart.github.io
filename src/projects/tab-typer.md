@@ -1,7 +1,7 @@
 ---
 title: Tab Typer
 tech: ['JavaScript', 'localForage.js', 'FileSaver.js', 'CSS', 'HTML']
-year: 2018
+year: '2018'
 github: https://github.com/Greenheart/tab-typer
 demo: https://samuelplumppu.se/tab-typer
 ---
