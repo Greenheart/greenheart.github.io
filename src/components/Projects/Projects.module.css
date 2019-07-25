@@ -2,9 +2,7 @@
     height: 400px;
 }
 
-.project-showcase {
-    max-width: 1000px;
-    height: 100%;
-    margin: 0 auto;
-    overflow: hidden;
+.carousel {
+    display: grid;
+    grid-template-columns: minmax(1fr, 1000px);
 }

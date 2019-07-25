@@ -1,7 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Swiper from 'react-id-swiper'
-import 'react-id-swiper/lib/styles/css/swiper.css'
+import Carousel from 'nuka-carousel'
 
 import Project from '../Project'
 import Triangles from '../Triangles'
@@ -18,14 +17,6 @@ const Projects = () => {
 }
 
 const ProjectShowcase = () => {
-    const props = {
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        loop: true,
-    }
-
     const data = useStaticQuery(graphql`
         {
             allMarkdownRemark {
@@ -48,13 +39,11 @@ const ProjectShowcase = () => {
     const projects = data.allMarkdownRemark.edges.map(p => p.node)
 
     return (
-        <section className={styles.projectShowcase}>
-            <Swiper {...props}>
-                {projects.map(p => (
-                    <Project project={p} key={p.frontmatter.title} />
-                ))}
-            </Swiper>
-        </section>
+        <Carousel wrapAround width="100%" transitionMode="fade">
+            {projects.map((p, i) => (
+                <Project project={p} key={i} />
+            ))}
+        </Carousel>
     )
 }
 
