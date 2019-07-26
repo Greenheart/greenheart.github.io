@@ -18,6 +18,7 @@ const Projects = () => {
 
 const ProjectShowcase = () => {
     // Fetch project data + images.
+    // GraphQL to fetch images can be generated with `/scripts/generateGraphQLForProjectImages.js`
     const data = useStaticQuery(graphql`
         {
             allMarkdownRemark {
@@ -116,7 +117,7 @@ const ProjectShowcase = () => {
 // This object has two responsibilities:
 //   1) Set the right image for each project
 //   2) Decide the order that projects are shown. Reorder properties to change it.
-const projectImages = {
+export const projectImages = {
     isoConquest: 'iso-conquest.png',
     tabTyper: 'tab-typer.png',
     theResponsible: 'the-responsible.png',
