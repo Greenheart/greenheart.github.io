@@ -47,16 +47,14 @@ const Header = () => {
     }, [headerRef, logoRef, scrollThreshold])
 
     const temporarilyDisableTransitions = () => {
-        if (window.scrollY < scrollThreshold) {
-            // Go to section without showing CSS transition to prevent jumpy
-            // animations caused by header & scroll animating at the same time.
-            headerRef.current.classList.add(styles.noTransition)
+        // Go to section without showing CSS transition to prevent jumpy
+        // animations caused by header & scroll animating at the same time.
+        headerRef.current.classList.add(styles.noTransition)
 
-            window.setTimeout(
-                () => headerRef.current.classList.remove(styles.noTransition),
-                500
-            )
-        }
+        window.setTimeout(
+            () => headerRef.current.classList.remove(styles.noTransition),
+            500
+        )
     }
 
     const showIntroWithoutReload = event => {
@@ -70,6 +68,15 @@ const Header = () => {
         }
 
         window.scrollTo(0, 0)
+        event.preventDefault()
+        return false
+    }
+
+    const goToSection = event => {
+        if (window.scrollY < scrollThreshold) {
+            temporarilyDisableTransitions()
+        }
+        document.querySelector(event.target.hash).scrollIntoView()
         event.preventDefault()
         return false
     }
@@ -105,16 +112,16 @@ const Header = () => {
                     </a>
                 </div>
                 <nav className={styles.mainMenu}>
-                    <a href="#about" onClick={temporarilyDisableTransitions}>
+                    <a href="#about" onClick={goToSection}>
                         About
                     </a>
-                    <a href="#projects" onClick={temporarilyDisableTransitions}>
+                    <a href="#projects" onClick={goToSection}>
                         Projects
                     </a>
-                    <a href="#skills" onClick={temporarilyDisableTransitions}>
+                    <a href="#skills" onClick={goToSection}>
                         Skills
                     </a>
-                    <a href="#contact" onClick={temporarilyDisableTransitions}>
+                    <a href="#contact" onClick={goToSection}>
                         Contact
                     </a>
                 </nav>
