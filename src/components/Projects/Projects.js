@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Carousel from 'nuka-carousel'
+import Carousel from '@brainhubeu/react-carousel'
+import '@brainhubeu/react-carousel/lib/style.css'
 
 import Project from '../Project'
 import Triangles from '../Triangles'
@@ -38,7 +39,7 @@ const ProjectShowcase = () => {
     const projects = data.allMarkdownRemark.edges.map(p => p.node)
 
     return (
-        <Carousel wrapAround width="100%" transitionMode="fade">
+        <Carousel infinite arrows keepDirectionWhenDragging>
             {projects.map((p, i) => (
                 <Project project={p} key={i} />
             ))}
