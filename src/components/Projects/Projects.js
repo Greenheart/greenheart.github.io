@@ -28,6 +28,7 @@ const ProjectShowcase = () => {
                             github
                             demo
                             year
+                            id
                         }
                         html
                     }
@@ -36,12 +37,30 @@ const ProjectShowcase = () => {
         }
     `)
 
-    const projects = data.allMarkdownRemark.edges.map(p => p.node)
+    const getProjectById = (id, projects = data.allMarkdownRemark.edges) => ({
+        ...(projects.find(project => {
+            return project.node.frontmatter.id === id
+        }) || {}),
+    })
+    const getImageById = (id, images = data) => images[id]
+
+    const projects = [
+        'iso-conquest',
+        'tab-typer',
+        'the-responsible',
+        'prime-or-not',
+        'goa-space-survival',
+        'achtung-panzer',
+        'the-not-so-busy-business',
+    ].map(id => ({
+        ...getProjectById(id).node,
+        img: getImageById(id),
+    }))
 
     return (
         <Carousel infinite arrows keepDirectionWhenDragging>
-            {projects.map((p, i) => (
-                <Project project={p} key={i} />
+            {projects.map(p => (
+                <Project project={p} key={p.frontmatter.id} />
             ))}
         </Carousel>
     )
