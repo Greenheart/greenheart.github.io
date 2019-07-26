@@ -4,11 +4,10 @@ import Carousel from 'nuka-carousel'
 
 import Project from '../Project'
 import Triangles from '../Triangles'
-import styles from './Projects.module.css'
 
 const Projects = () => {
     return (
-        <section className={styles.projects}>
+        <section>
             <h2 id="projects">Projects</h2>
             <ProjectShowcase />
             <Triangles color="var(--orange)" direction="bottom" baseSize={30} />

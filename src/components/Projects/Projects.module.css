@@ -1,7 +1,3 @@
-.projects {
-    height: 400px;
-}
-
 .carousel {
     display: grid;
     grid-template-columns: minmax(1fr, 1000px);

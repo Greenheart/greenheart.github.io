@@ -1,11 +1,10 @@
 import React from 'react'
 
 import Triangles from '../Triangles'
-import styles from './About.module.css'
 
 const About = () => {
     return (
-        <section className={styles.about}>
+        <section>
             <h2 id="about">About</h2>
             <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
