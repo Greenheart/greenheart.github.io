@@ -4,7 +4,7 @@ tech: ['JavaScript', 'localForage.js', 'FileSaver.js', 'CSS', 'HTML']
 year: '2018'
 github: https://github.com/Greenheart/tab-typer
 demo: https://samuelplumppu.se/tab-typer
-id: tab-typer
+id: tabTyper
 ---
 
 As the web platform matures and standardize over time, it's interesting to see what can be done without common libraries or frameworks. Even though modern tooling provides good structure and solutions for larger projects, they all rely on the fundamental web platform features.
