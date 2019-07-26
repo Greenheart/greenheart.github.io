@@ -11,7 +11,7 @@ const About = React.memo(() => (
             facilis blanditiis cum nostrum hic autem nam, in dolorem ducimus
             officia, officiis soluta corrupti.
         </p>
-        <Triangles color="var(--orange)" direction="bottom" baseSize={30} />
+        <Triangles color="var(--orange)" direction="bottom" />
     </section>
 ))
 

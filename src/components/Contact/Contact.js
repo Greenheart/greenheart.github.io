@@ -27,7 +27,7 @@ const Contact = React.memo(() => (
                 <IoMdMail />
             </a>
         </div>
-        <Triangles color="var(--orange)" direction="bottom" baseSize={30} />
+        <Triangles color="var(--orange)" direction="bottom" />
     </section>
 ))
 

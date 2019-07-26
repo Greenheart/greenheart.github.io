@@ -26,7 +26,7 @@ const Skills = React.memo(() => {
                     .sort(byLevel)
                     .map(Skill)}
             </div>
-            <Triangles color="var(--orange)" direction="bottom" baseSize={30} />
+            <Triangles color="var(--orange)" direction="bottom" />
         </section>
     )
 })
