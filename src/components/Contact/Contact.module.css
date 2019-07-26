@@ -2,8 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* TODO: Remove when temporary Layout min height has been removed. */
-    min-height: 100px !important;
 }
 
 .links {
