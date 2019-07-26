@@ -31,7 +31,7 @@ body {
         'skills'
         'contact';
     grid-gap: 2rem;
-    justify-content: center;
+    justify-items: center;
     margin-top: var(--header-height);
 }
 
@@ -39,11 +39,9 @@ body {
     position: relative;
     background: rgba(255, 255, 255, 0.97);
     padding: 2rem;
-    margin: 0 2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    width: 90vw;
     max-width: var(--max-content-width);
-    /* NOTE: For testing purposes before content is ready. (Unless the scroll snap needs it) */
-    min-height: calc(100vh - var(--content-offset));
 }
 
 .content > section h2 {
