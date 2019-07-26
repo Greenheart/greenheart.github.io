@@ -6,15 +6,13 @@ import '@brainhubeu/react-carousel/lib/style.css'
 import Project from '../Project'
 import Triangles from '../Triangles'
 
-const Projects = () => {
-    return (
-        <section>
-            <h2 id="projects">Projects</h2>
-            <ProjectShowcase />
-            <Triangles color="var(--orange)" direction="bottom" baseSize={30} />
-        </section>
-    )
-}
+const Projects = React.memo(() => (
+    <section>
+        <h2 id="projects">Projects</h2>
+        <ProjectShowcase />
+        <Triangles color="var(--orange)" direction="bottom" baseSize={30} />
+    </section>
+))
 
 const ProjectShowcase = () => {
     // Fetch project data + images.

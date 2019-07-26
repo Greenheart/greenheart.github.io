@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Triangles from '../Triangles'
 import styles from './Skills.module.css'
 
-const Skills = () => {
+const Skills = React.memo(() => {
     const data = useStaticQuery(graphql`
         query SkillsQuery {
             allSkillsJson {
@@ -29,7 +29,7 @@ const Skills = () => {
             <Triangles color="var(--orange)" direction="bottom" baseSize={30} />
         </section>
     )
-}
+})
 
 const getSkills = data => data.allSkillsJson.edges.map(skill => skill.node)
 const byLevel = (a, b) => b.level - a.level

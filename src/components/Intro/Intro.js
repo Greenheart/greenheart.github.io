@@ -4,7 +4,7 @@ import SamuelLogo from '../SamuelLogo'
 import Chevron from '../Chevron'
 import styles from './Intro.module.css'
 
-const Intro = () => (
+const Intro = React.memo(() => (
     <section className={styles.intro}>
         <div className={styles.logoContainer}>
             <SamuelLogo />
@@ -13,6 +13,6 @@ const Intro = () => (
             <Chevron animated />
         </a>
     </section>
-)
+))
 
 export default Intro
