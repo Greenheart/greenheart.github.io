@@ -8,9 +8,10 @@ import Triangles from '../Triangles'
 
 const Projects = React.memo(() => (
     <section>
+        <Triangles color="var(--jet)" direction="top" position="top" />
         <h2 id="projects">Projects</h2>
         <ProjectShowcase />
-        <Triangles color="var(--orange)" direction="bottom" />
+        <Triangles color="var(--jet)" direction="bottom" />
     </section>
 ))
 

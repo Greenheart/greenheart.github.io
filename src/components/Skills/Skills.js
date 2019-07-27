@@ -20,13 +20,14 @@ const Skills = React.memo(() => {
 
     return (
         <section>
+            <Triangles color="var(--jet)" direction="top" position="top" />
             <h2 id="skills">Skills</h2>
             <div className={styles.skillsContainer}>
                 {getSkills(data)
                     .sort(byLevel)
                     .map(Skill)}
             </div>
-            <Triangles color="var(--orange)" direction="bottom" />
+            <Triangles color="var(--jet)" direction="bottom" />
         </section>
     )
 })

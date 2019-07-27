@@ -6,6 +6,7 @@ import styles from './Contact.module.css'
 
 const Contact = React.memo(() => (
     <section className={styles.contact}>
+        <Triangles color="var(--jet)" direction="top" position="top" />
         <h2 id="contact">Contact</h2>
         <p>Do you have a project I might be interested in? Let's chat!</p>
         <div className={styles.links}>
@@ -27,7 +28,7 @@ const Contact = React.memo(() => (
                 <IoMdMail />
             </a>
         </div>
-        <Triangles color="var(--orange)" direction="bottom" />
+        <Triangles color="var(--jet)" direction="bottom" />
     </section>
 ))
 
