@@ -1,11 +1,19 @@
 import React from 'react'
+import Img from 'gatsby-image'
 
 import styles from './Project.module.css'
 
 const Project = ({ project }) => {
     return (
         <article className={styles.project}>
-            {/* TODO: Add project Image */}
+            <div className={styles.projectImage}>
+                <Img
+                    fluid={project.img.childImageSharp.fluid}
+                    alt={project.frontmatter.title}
+                    style={{ width: '100%', height: '100%' }}
+                    imgStyle={{ maxHeight: '400px', objectFit: 'contain' }}
+                />
+            </div>
             <h3>{project.frontmatter.title}</h3>
             <div>
                 <h4>Tech</h4>
