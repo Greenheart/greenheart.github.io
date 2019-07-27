@@ -17,11 +17,10 @@ const FullpageBackground = () => {
         }
     `)
 
-    const imageData = data.Tiomila2015.childImageSharp.fluid
     return (
         <BackgroundImage
             className={styles.background}
-            fluid={imageData}
+            fluid={data.Tiomila2015.childImageSharp.fluid}
             backgroundColor={`#040e18`}
             alt="Seconds after the start of orienteering relay Tiomila 2015."
             durationFadeIn={10}
