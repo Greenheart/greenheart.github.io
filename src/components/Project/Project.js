@@ -14,7 +14,9 @@ const Project = ({ project }) => {
                     imgStyle={{ maxHeight: '400px', objectFit: 'contain' }}
                 />
             </div>
-            <h3>{project.frontmatter.title}</h3>
+            <div className={styles.projectTitle}>
+                <h3>{project.frontmatter.title}</h3>
+            </div>
             <div>
                 <h4>Tech</h4>
                 <ul>
