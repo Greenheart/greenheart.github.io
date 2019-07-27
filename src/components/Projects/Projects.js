@@ -105,7 +105,7 @@ const ProjectShowcase = () => {
     }))
 
     return (
-        <Carousel infinite arrows keepDirectionWhenDragging>
+        <Carousel arrows keepDirectionWhenDragging>
             {projects.map(p => (
                 <Project project={p} key={p.frontmatter.id} />
             ))}
