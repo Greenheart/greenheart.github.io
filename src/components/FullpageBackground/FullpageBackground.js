@@ -24,6 +24,7 @@ const FullpageBackground = () => {
             backgroundColor={`#040e18`}
             alt="Seconds after the start of orienteering relay Tiomila 2015."
             durationFadeIn={10}
+            loading="eager"
         />
     )
 }
