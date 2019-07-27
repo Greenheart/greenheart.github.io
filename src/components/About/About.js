@@ -4,6 +4,7 @@ import Triangles from '../Triangles'
 
 const About = React.memo(() => (
     <section>
+        <Triangles color="var(--orange)" direction="top" position="top" />
         <h2 id="about">About</h2>
         <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt

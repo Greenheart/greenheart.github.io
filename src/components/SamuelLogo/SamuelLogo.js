@@ -49,7 +49,7 @@ const SamuelLogo = ({ type = 'default', style = {} }) => {
             <p>Swedish orienteer and developer</p>
 
             <div className={styles.logoBg}>
-                <Triangles color="white" direction="top" />
+                <Triangles color="white" direction="top" totalWidth={3.5} />
             </div>
         </div>
     )
