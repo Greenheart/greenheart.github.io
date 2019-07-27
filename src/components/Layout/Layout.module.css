@@ -30,7 +30,7 @@ body {
         'projects'
         'skills'
         'contact';
-    grid-gap: 2rem;
+    grid-gap: 6rem;
     justify-items: center;
     margin-top: var(--header-height);
 }
