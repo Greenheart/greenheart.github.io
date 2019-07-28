@@ -38,6 +38,7 @@ const Project = ({ project }) => {
                             <a
                                 href={project.frontmatter.github}
                                 title="View on GitHub"
+                                className="icon-link"
                             >
                                 <IoLogoGithub />
                             </a>
@@ -48,6 +49,7 @@ const Project = ({ project }) => {
                             <a
                                 href={project.frontmatter.demo}
                                 title="View demo"
+                                className="icon-link"
                             >
                                 <IoIosLink />
                             </a>

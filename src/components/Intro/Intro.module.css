@@ -15,10 +15,15 @@ section.intro {
     margin-left: 2rem;
 }
 
-.center-bottom {
+a.center-bottom {
     position: absolute;
     bottom: 0;
     left: 50%;
     padding: 2em;
     transform: translateX(-50%);
+}
+
+a.center-bottom:hover {
+    transition: none;
+    background: none;
 }

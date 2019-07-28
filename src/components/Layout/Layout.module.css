@@ -65,6 +65,19 @@ body {
     color: #fff;
 }
 
+.content a {
+    color: var(--bleu-de-france);
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.content a:hover {
+    color: #fff;
+    background: var(--bleu-de-france-darker-shade);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
 /* Improve site accesibility */
 @media (prefers-reduced-motion: reduce) {
     html {
