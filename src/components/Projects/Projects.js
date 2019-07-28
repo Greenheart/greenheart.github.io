@@ -6,6 +6,7 @@ import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io'
 
 import Project from '../Project'
 import Triangles from '../Triangles'
+import { join } from '../../utils/Helpers'
 import styles from './Projects.module.css'
 
 const Projects = React.memo(() => (
@@ -123,7 +124,7 @@ const ProjectShowcase = () => {
         <>
             <div className={styles.navButtons}>
                 <button
-                    className={styles.navButton}
+                    className={join(styles.navButton, styles.prev)}
                     onClick={() =>
                         setValue(
                             prevValue =>
@@ -135,7 +136,7 @@ const ProjectShowcase = () => {
                     <IoIosArrowBack />
                 </button>
                 <button
-                    className={styles.navButton}
+                    className={join(styles.navButton, styles.next)}
                     onClick={() =>
                         setValue(
                             prevValue => (prevValue + 1) % projectSlides.length

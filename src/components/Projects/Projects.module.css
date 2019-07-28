@@ -12,6 +12,32 @@
 }
 
 .nav-button {
-    padding: 5px;
+    padding: 0;
+    border: 0;
     cursor: pointer;
+    background: var(--bleu-de-france);
+    width: 3rem;
+    height: 3rem;
+    color: white;
+}
+
+.nav-button > svg {
+    width: 50%;
+    height: 50%;
+    transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+    background: var(--bleu-de-france-darker-shade);
+}
+
+.nav-button:hover > svg {
+    transition: all 0.3s ease;
+    /* width: 60%;
+    height: 60%; */
+    transform: translateX(8%);
+}
+
+.nav-button.prev:hover > svg {
+    transform: translateX(-8%);
 }
