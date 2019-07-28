@@ -30,4 +30,5 @@
 .project-details {
     display: grid;
     grid-template-areas: 'details description';
+    grid-template-columns: minmax(100px, 1fr) minmax(300px, 4fr);
 }
