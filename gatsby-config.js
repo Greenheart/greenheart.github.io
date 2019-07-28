@@ -52,7 +52,39 @@ module.exports = {
                 icons: [
                     {
                         src: 'images/favicon-32x32.png',
-                        sizes: '32x32 16x16',
+                        sizes: '32x32',
+                    },
+                    {
+                        src: 'images/compass-icon-square.svg',
+                        sizes: '48x48',
+                    },
+                    {
+                        src: 'images/compass-icon-square.svg',
+                        sizes: '72x72',
+                    },
+                    {
+                        src: 'images/compass-icon-square.svg',
+                        sizes: '96x96',
+                    },
+                    {
+                        src: 'images/compass-icon-square.svg',
+                        sizes: '144x144',
+                    },
+                    {
+                        src: 'images/compass-icon-square.svg',
+                        sizes: '192x192',
+                    },
+                    {
+                        src: 'images/compass-icon-square.svg',
+                        sizes: '256x256',
+                    },
+                    {
+                        src: 'images/compass-icon-square.svg',
+                        sizes: '384x384',
+                    },
+                    {
+                        src: 'images/compass-icon-square.svg',
+                        sizes: '512x512',
                     },
                 ],
             },
