@@ -1,4 +1,17 @@
-.carousel {
-    display: grid;
-    grid-template-columns: minmax(1fr, 1000px);
+.carousel-wrapper {
+    position: relative;
+}
+
+.nav-buttons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: absolute;
+    top: 400px;
+    z-index: 2;
+}
+
+.nav-button {
+    padding: 5px;
+    cursor: pointer;
 }

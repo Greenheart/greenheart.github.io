@@ -1,16 +1,20 @@
-import React, { useMemo } from 'react'
+import React, { useState, useMemo } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Carousel from '@brainhubeu/react-carousel'
 import '@brainhubeu/react-carousel/lib/style.css'
+import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io'
 
 import Project from '../Project'
 import Triangles from '../Triangles'
+import styles from './Projects.module.css'
 
 const Projects = React.memo(() => (
     <section>
         <Triangles color="var(--jet)" direction="top" position="top" />
         <h2 id="projects">Projects</h2>
-        <ProjectShowcase />
+        <div className={styles.carouselWrapper}>
+            <ProjectShowcase />
+        </div>
         <Triangles color="var(--jet)" direction="bottom" />
     </section>
 ))
@@ -102,8 +106,8 @@ const ProjectShowcase = () => {
     const projects = useMemo(
         () =>
             Object.keys(projectImages).map(id => ({
-        ...getProjectById(id).node,
-        img: getImageById(id),
+                ...getProjectById(id).node,
+                img: getImageById(id),
             })),
         [projectImages]
     )
@@ -113,12 +117,41 @@ const ProjectShowcase = () => {
         [projects]
     )
 
+    const [value, setValue] = useState(0)
+
     return (
-        <Carousel arrows keepDirectionWhenDragging>
-            {projects.map(p => (
-                <Project project={p} key={p.frontmatter.id} />
-            ))}
-        </Carousel>
+        <>
+            <div className={styles.navButtons}>
+                <button
+                    className={styles.navButton}
+                    onClick={() =>
+                        setValue(
+                            prevValue =>
+                                (prevValue - 1 + projectSlides.length) %
+                                projectSlides.length
+                        )
+                    }
+                >
+                    <IoIosArrowBack />
+                </button>
+                <button
+                    className={styles.navButton}
+                    onClick={() =>
+                        setValue(
+                            prevValue => (prevValue + 1) % projectSlides.length
+                        )
+                    }
+                >
+                    <IoIosArrowForward />
+                </button>
+            </div>
+            <Carousel
+                keepDirectionWhenDragging
+                value={value}
+                onChange={setValue}
+                slides={projectSlides}
+            />
+        </>
     )
 }
 
