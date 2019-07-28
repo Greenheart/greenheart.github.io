@@ -37,5 +37,25 @@ module.exports = {
                 pathToConfigModule: `src/utils/typography`,
             },
         },
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                name: 'Samuel Plumppu | System Developer',
+                short_name: 'Samuel Plumppu',
+                start_url: '/',
+                background_color: '#fff',
+                theme_color: '#f49e4c',
+                // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
+                // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+                display: 'standalone',
+                icon: 'src/images/compass-icon-square.svg', // This path is relative to the root of the site.
+                icons: [
+                    {
+                        src: 'images/favicon-32x32.png',
+                        sizes: '32x32 16x16',
+                    },
+                ],
+            },
+        },
     ],
 }
