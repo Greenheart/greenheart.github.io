@@ -6,10 +6,12 @@
         'image'
         'title'
         'details';
+    grid-template-rows: min-content 3rem auto;
+    gap: 1rem;
 }
 
 .project-image {
-    height: 400px;
+    height: var(--project-image-height);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,7 +21,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 2em;
+    height: 3em;
 }
 
 .project-title h3 {
@@ -30,5 +32,5 @@
 .project-details {
     display: grid;
     grid-template-areas: 'details description';
-    grid-template-columns: minmax(100px, 1fr) minmax(300px, 4fr);
+    grid-template-columns: minmax(100px, 1fr) minmax(300px, 3fr);
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import Img from 'gatsby-image'
 
+import { getCSSVariable } from '../../utils/Helpers'
 import styles from './Project.module.css'
 
 const Project = ({ project }) => {
@@ -11,7 +12,10 @@ const Project = ({ project }) => {
                     fluid={project.img.childImageSharp.fluid}
                     alt={project.frontmatter.title}
                     style={{ width: '100%', height: '100%' }}
-                    imgStyle={{ maxHeight: '400px', objectFit: 'contain' }}
+                    imgStyle={{
+                        maxHeight: getCSSVariable('--project-image-height'),
+                        objectFit: 'contain',
+                    }}
                 />
             </div>
             <div className={styles.projectTitle}>

@@ -7,7 +7,7 @@
     width: 100%;
     justify-content: space-between;
     position: absolute;
-    top: 400px;
+    top: calc(var(--project-image-height) + 1rem);
     z-index: 2;
 }
 
