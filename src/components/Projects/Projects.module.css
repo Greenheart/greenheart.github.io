@@ -33,8 +33,6 @@
 
 .nav-button:hover > svg {
     transition: all 0.3s ease;
-    /* width: 60%;
-    height: 60%; */
     transform: translateX(8%);
 }
 
