@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Carousel from '@brainhubeu/react-carousel'
 import '@brainhubeu/react-carousel/lib/style.css'
@@ -99,10 +99,19 @@ const ProjectShowcase = () => {
     })
     const getImageById = (id, images = data) => images[id]
 
-    const projects = Object.keys(projectImages).map(id => ({
+    const projects = useMemo(
+        () =>
+            Object.keys(projectImages).map(id => ({
         ...getProjectById(id).node,
         img: getImageById(id),
-    }))
+            })),
+        [projectImages]
+    )
+
+    const projectSlides = useMemo(
+        () => projects.map(p => <Project project={p} key={p.frontmatter.id} />),
+        [projects]
+    )
 
     return (
         <Carousel arrows keepDirectionWhenDragging>
