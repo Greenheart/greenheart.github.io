@@ -1,21 +1,39 @@
+.topics {
+    --topic-min-width: 350px;
+    --icon-size: 30px;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(var(--topic-min-width), 1fr)
+    );
+    margin-left: -2rem;
+}
+
 .topic {
     display: grid;
-    grid-template-columns: minmax(min-content, 10rem) minmax(min-content, 2fr);
+    grid-template-columns: minmax(min-content, 8rem) minmax(min-content, 2fr);
 }
 
 .icon {
-    color: #909e50;
-    color: #a2b15a;
-    color: #c5d86d;
     color: var(--bleu-de-france);
-    color: var(--orange);
     display: grid;
-    margin-left: -2rem;
     justify-content: center;
     align-items: center;
 }
 
 .icon svg {
-    width: 30px;
-    height: 30px;
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
+
+@media screen and (min-width: 1200px) {
+    .topics {
+        --topic-min-width: 450px;
+    }
+}
+
+@media screen and (min-width: 814px) {
+    .topics {
+        --icon-size: 40px;
+    }
 }
