@@ -46,8 +46,9 @@ const About = React.memo(() => (
                     <IoIosLeaf />
                 </p>
                 <p>
-                    Sustainability and environmental issues are key areas of my
-                    work. There's no programming on a dead planet.
+                    Sustainability and environmental issues are key areas I want
+                    to work with in the coming years. There's no programming on
+                    a dead planet.
                 </p>
             </div>
 

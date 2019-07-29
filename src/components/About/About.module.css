@@ -1,17 +1,19 @@
 .topics {
-    --topic-min-width: 350px;
     --icon-size: 30px;
+    --topic-columns: 2;
     display: grid;
     grid-template-columns: repeat(
-        auto-fit,
-        minmax(var(--topic-min-width), 1fr)
+        var(--topic-columns),
+        minmax(min-content, 1fr)
     );
-    margin-left: -2rem;
+    column-gap: 2rem;
+    gap: 2rem;
 }
 
 .topic {
     display: grid;
-    grid-template-columns: minmax(min-content, 8rem) minmax(min-content, 2fr);
+    grid-template-columns: minmax(min-content, 1fr);
+    align-content: start;
 }
 
 .icon {
@@ -26,14 +28,8 @@
     height: var(--icon-size);
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 500px) {
     .topics {
-        --topic-min-width: 450px;
-    }
-}
-
-@media screen and (min-width: 814px) {
-    .topics {
-        --icon-size: 40px;
+        --topic-columns: 1;
     }
 }
