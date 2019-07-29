@@ -83,4 +83,10 @@ body {
     html {
         scroll-behavior: auto;
     }
+
+    *,
+    ::before,
+    ::after {
+        transition: none !important;
+    }
 }

@@ -44,3 +44,9 @@
         transform: scale(1);
     }
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .chevron {
+        animation: none !important;
+    }
+}
