@@ -1,0 +1,21 @@
+.topic {
+    display: grid;
+    grid-template-columns: minmax(min-content, 10rem) minmax(min-content, 2fr);
+}
+
+.icon {
+    color: #909e50;
+    color: #a2b15a;
+    color: #c5d86d;
+    color: var(--bleu-de-france);
+    color: var(--orange);
+    display: grid;
+    margin-left: -2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon svg {
+    width: 30px;
+    height: 30px;
+}
