@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Carousel from '@brainhubeu/react-carousel'
 import '@brainhubeu/react-carousel/lib/style.css'
@@ -117,31 +117,43 @@ const ProjectShowcase = () => {
         () => projects.map(p => <Project project={p} key={p.frontmatter.id} />),
         [projects]
     )
-
     const [value, setValue] = useState(0)
+
+    const prevProject = () => {
+        setValue(
+            value => (value - 1 + projectSlides.length) % projectSlides.length
+        )
+    }
+
+    const nextProject = () => {
+        setValue(value => (value + 1) % projectSlides.length)
+    }
+
+    useEffect(() => {
+        const handleKeyboard = event => {
+            if (event.key === 'ArrowLeft') {
+                prevProject()
+            } else if (event.key === 'ArrowRight') {
+                nextProject()
+            }
+        }
+        window.addEventListener('keydown', handleKeyboard)
+
+        return () => window.removeEventListener('keydown', handleKeyboard)
+    }, [value])
 
     return (
         <>
             <div className={styles.navButtons}>
                 <button
                     className={join(styles.navButton, styles.prev)}
-                    onClick={() =>
-                        setValue(
-                            prevValue =>
-                                (prevValue - 1 + projectSlides.length) %
-                                projectSlides.length
-                        )
-                    }
+                    onClick={prevProject}
                 >
                     <IoIosArrowBack />
                 </button>
                 <button
                     className={join(styles.navButton, styles.next)}
-                    onClick={() =>
-                        setValue(
-                            prevValue => (prevValue + 1) % projectSlides.length
-                        )
-                    }
+                    onClick={nextProject}
                 >
                     <IoIosArrowForward />
                 </button>
