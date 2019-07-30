@@ -63,7 +63,7 @@ body {
     justify-content: center;
     align-content: center;
     padding: 1rem;
-    color: #fff;
+    white-space: nowrap;
 }
 
 .content a {
