@@ -25,3 +25,9 @@
     height: 100%;
     border-radius: 2px;
 }
+
+@media screen and (max-width: 600px) {
+    .skills-container {
+        padding: 0 1rem;
+    }
+}
