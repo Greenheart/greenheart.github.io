@@ -73,6 +73,7 @@ body {
     color: var(--link-blue);
     padding: 5px;
     transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .content a:hover {
