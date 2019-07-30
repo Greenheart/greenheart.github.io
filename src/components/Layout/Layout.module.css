@@ -67,14 +67,14 @@ body {
 }
 
 .content a {
-    color: var(--bleu-de-france);
+    color: var(--link-blue);
     padding: 5px;
     transition: all 0.3s ease;
 }
 
 .content a:hover {
     color: #fff;
-    background: var(--bleu-de-france-darker-shade);
+    background: var(--link-blue);
     text-decoration: none;
     transition: all 0.3s ease;
 }
