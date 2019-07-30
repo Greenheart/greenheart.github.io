@@ -27,3 +27,22 @@ a.center-bottom:hover {
     transition: none;
     background: none;
 }
+
+@media screen and (max-width: 600px) {
+    .logo-container {
+        transform: scale(0.9);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .logo-container {
+        transform: scale(0.8);
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .logo-container {
+        transform: scale(0.7);
+    }
+}
