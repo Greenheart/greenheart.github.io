@@ -1,7 +1,7 @@
 html {
     box-sizing: border-box;
     scroll-behavior: smooth;
-    overscroll-behavior: none;
+    overscroll-behavior-x: none;
 }
 
 *,
