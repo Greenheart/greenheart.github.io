@@ -12,7 +12,7 @@ import { join } from '../../utils/Helpers'
 import styles from './Projects.module.css'
 
 const Projects = React.memo(() => (
-    <section>
+    <section className={styles.projects}>
         <Triangles color="var(--jet)" direction="top" position="top" />
         <h2 id="projects">Projects</h2>
         <div className={styles.carouselWrapper}>

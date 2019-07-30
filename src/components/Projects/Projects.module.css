@@ -1,3 +1,7 @@
+section.projects {
+    padding: 2rem 0;
+}
+
 .carousel-wrapper {
     position: relative;
 }
@@ -7,6 +11,8 @@
     width: 100%;
     justify-content: space-between;
     position: absolute;
+    --hidden-padding: 1rem;
+    padding: 0 var(--hidden-padding);
     top: calc(var(--project-image-height) + 1rem);
 }
 
@@ -19,6 +25,23 @@
     height: 3rem;
     color: white;
     z-index: 2;
+}
+
+.nav-button::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    width: var(--hidden-padding);
+    height: 3rem;
+    background: var(--bone-white);
+}
+
+.nav-button:first-of-type::before {
+    left: 0rem;
+}
+
+.nav-button:last-of-type::before {
+    right: 0rem;
 }
 
 .nav-button > svg {
