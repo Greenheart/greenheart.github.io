@@ -4,6 +4,7 @@
     display: grid;
     grid-template-rows: min-content 3rem auto;
     gap: 1rem;
+    padding: 0 1rem;
 }
 
 .project-image {
@@ -30,6 +31,7 @@
     display: grid;
     grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 3fr);
     gap: 2rem;
+    padding: 0 1rem;
 }
 
 .project-sidebar {
@@ -91,6 +93,7 @@
         grid-template-columns: 1fr;
         grid-template-rows: min-content min-content;
         gap: 0;
+        padding: 0;
     }
 
     .project-sidebar {
