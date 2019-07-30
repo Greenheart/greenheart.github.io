@@ -1,7 +1,9 @@
-import React, { useState, useMemo, useEffect } from 'react'
+import React, { useMemo, useRef } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Carousel from '@brainhubeu/react-carousel'
-import '@brainhubeu/react-carousel/lib/style.css'
+
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io'
 
 import Project from '../Project'
@@ -113,57 +115,41 @@ const ProjectShowcase = () => {
         [projectImages]
     )
 
-    const projectSlides = useMemo(
-        () => projects.map(p => <Project project={p} key={p.frontmatter.id} />),
-        [projects]
+    const projectSlides = useMemo(() =>
+        projects.map(p => <Project project={p} key={p.frontmatter.id} />, [
+            projects,
+        ])
     )
-    const [value, setValue] = useState(0)
 
-    const prevProject = () => {
-        setValue(
-            value => (value - 1 + projectSlides.length) % projectSlides.length
-        )
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
     }
 
-    const nextProject = () => {
-        setValue(value => (value + 1) % projectSlides.length)
-    }
-
-    useEffect(() => {
-        const handleKeyboard = event => {
-            if (event.key === 'ArrowLeft') {
-                prevProject()
-            } else if (event.key === 'ArrowRight') {
-                nextProject()
-            }
-        }
-        window.addEventListener('keydown', handleKeyboard)
-
-        return () => window.removeEventListener('keydown', handleKeyboard)
-    }, [value])
+    const slider = useRef()
 
     return (
         <>
             <div className={styles.navButtons}>
                 <button
                     className={join(styles.navButton, styles.prev)}
-                    onClick={prevProject}
+                    onClick={e => slider.current.slickPrev()}
                 >
                     <IoIosArrowBack />
                 </button>
                 <button
                     className={join(styles.navButton, styles.next)}
-                    onClick={nextProject}
+                    onClick={e => slider.current.slickNext()}
                 >
                     <IoIosArrowForward />
                 </button>
             </div>
-            <Carousel
-                keepDirectionWhenDragging
-                value={value}
-                onChange={setValue}
-                slides={projectSlides}
-            />
+            <Slider ref={slider} {...settings}>
+                {projectSlides}
+            </Slider>
         </>
     )
 }
