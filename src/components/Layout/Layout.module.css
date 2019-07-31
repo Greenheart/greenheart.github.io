@@ -29,13 +29,13 @@ body {
 .content {
     display: grid;
     grid-template-areas:
+        'intro'
         'about'
         'projects'
         'skills'
         'contact';
     grid-gap: 6rem;
     justify-items: center;
-    margin-top: var(--header-height);
 }
 
 .content > section {
