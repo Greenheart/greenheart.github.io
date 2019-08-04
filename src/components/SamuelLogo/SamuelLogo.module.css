@@ -36,3 +36,27 @@
     /* transform: rotate3d(4, 1, 1, 14deg); */
     transform: rotate(0.5deg) skew(-3deg, 3deg);
 }
+
+@media screen and (max-width: 600px) {
+    .samuel-logo {
+        transform: scale(0.95);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .samuel-logo {
+        transform: scale(0.85);
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .samuel-logo {
+        transform: scale(0.79);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .samuel-logo {
+        transform: scale(0.74);
+    }
+}

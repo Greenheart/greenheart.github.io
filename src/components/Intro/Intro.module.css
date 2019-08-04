@@ -33,19 +33,8 @@ a.center-bottom:hover {
 
 @media screen and (max-width: 600px) {
     .logo-container {
-        transform: scale(0.9);
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .logo-container {
-        transform: scale(0.8);
         margin-left: 0;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .logo-container {
-        transform: scale(0.7);
+        margin-top: 6rem;
+        justify-self: center;
     }
 }
