@@ -7,7 +7,7 @@ import Triangles from '../Triangles'
 import styles from './About.module.css'
 
 const About = React.memo(() => (
-    <section>
+    <section className={styles.about}>
         <Triangles color="var(--jet)" direction="top" position="top" />
         <h2 id="about">About</h2>
         <p>

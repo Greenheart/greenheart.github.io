@@ -1,3 +1,7 @@
+section.about {
+    margin-top: calc(100vh + 6rem);
+}
+
 .topics {
     --icon-size: 30px;
     --topic-columns: 2;
@@ -26,6 +30,12 @@
 .icon svg {
     width: var(--icon-size);
     height: var(--icon-size);
+}
+
+@media screen and (max-width: 600px) {
+    section.about {
+        margin-top: calc(100vh + 3rem);
+    }
 }
 
 @media screen and (max-width: 500px) {
