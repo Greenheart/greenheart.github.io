@@ -135,10 +135,15 @@
 
     .header .container {
         padding: 1rem 0.5rem;
+        grid-template-columns: max-content auto max-content;
     }
 
     .header.scrolled .container {
         padding: 0 0.5rem;
+    }
+
+    .main-menu {
+        display: none;
     }
 }
 

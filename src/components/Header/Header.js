@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import { throttleAnimationFrame } from '../../utils/Helpers'
+import { throttleAnimationFrame, join } from '../../utils/Helpers'
 import SamuelLogo from '../SamuelLogo'
+import MobileMenu from '../MobileMenu/'
 import styles from './Header.module.css'
-import { join } from '../../utils/Helpers'
 
 const Header = () => {
     const data = useStaticQuery(graphql`
@@ -81,6 +81,8 @@ const Header = () => {
         return false
     }
 
+    const [menuIsOpen, setMenuIsOpen] = useState(false)
+
     return (
         <header className={styles.header} ref={headerRef}>
             <div className={styles.container}>
@@ -106,7 +108,10 @@ const Header = () => {
                             'animated',
                             'faster'
                         )}
-                        style={{ opacity: 0, paddingLeft: '1em' }}
+                        style={{
+                            opacity: menuIsOpen ? 1 : 0,
+                            paddingLeft: '1em',
+                        }}
                     >
                         <SamuelLogo type="small" />
                     </a>
@@ -125,6 +130,10 @@ const Header = () => {
                         Contact
                     </a>
                 </nav>
+                <MobileMenu
+                    goToSection={goToSection}
+                    setMenuIsOpen={setMenuIsOpen}
+                />
             </div>
         </header>
     )
