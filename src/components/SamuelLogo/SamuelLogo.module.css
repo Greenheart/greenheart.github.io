@@ -51,12 +51,18 @@
 
 @media screen and (max-width: 450px) {
     .samuel-logo {
-        transform: scale(0.79);
+        transform: scale(0.8);
     }
 }
 
 @media screen and (max-width: 400px) {
-    .samuel-logo {
-        transform: scale(0.74);
+    .samuel-logo p {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .samuel-logo p {
+        font-size: 1.2rem;
     }
 }
