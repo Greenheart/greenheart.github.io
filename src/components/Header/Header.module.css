@@ -142,13 +142,6 @@
     }
 }
 
-@media screen and (max-width: 500px) {
-    .header,
-    .header .container {
-        transition: none !important;
-    }
-}
-
 @media screen and (max-width: 400px) {
     .header .container {
         padding: 1rem 0;
@@ -156,5 +149,12 @@
 
     .header.scrolled .container {
         padding: 0;
+    }
+}
+
+@media screen and (hover: none) {
+    .header,
+    .header .container {
+        transition: none !important;
     }
 }
