@@ -18,11 +18,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 3em;
+    height: 3rem;
 }
 
 .project-title h3 {
-    padding: 0.3em;
+    padding: 0.3rem;
     margin: 0;
     background: var(--orange);
 }
@@ -103,5 +103,11 @@
 
     .links svg {
         --icon-size: 35px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .project-title {
+        font-size: 1.15rem;
     }
 }
