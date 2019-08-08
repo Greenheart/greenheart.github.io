@@ -138,6 +138,13 @@
     }
 }
 
+@media screen and (max-width: 500px) {
+    .header,
+    .header .container {
+        transition: none !important;
+    }
+}
+
 @media screen and (max-width: 400px) {
     .header .container {
         padding: 2rem 0;
