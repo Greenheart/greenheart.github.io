@@ -38,3 +38,9 @@ a.center-bottom:hover {
         justify-self: center;
     }
 }
+
+@media screen and (max-height: 500px) {
+    .logo-container {
+        margin-top: 4rem;
+    }
+}
