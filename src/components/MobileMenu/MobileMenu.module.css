@@ -4,6 +4,10 @@
     height: 100%;
 }
 
+.mobile-menu *:focus {
+    outline: none;
+}
+
 .button {
     height: 100%;
     display: flex;
