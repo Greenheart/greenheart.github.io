@@ -25,10 +25,15 @@ const MobileMenu = ({ goToSection, setMenuIsOpen }) => {
         },
     ]
 
+    const onClick = event => {
+        document.querySelector('button.hamburger').click()
+        goToSection(event)
+    }
+
     const menuItems = menuItemData.map((item, i) => (
         <li key={i}>
             <MenuItem className={styles.menuItem}>
-                <a href={item.href} onClick={goToSection}>
+                <a href={item.href} onClick={onClick}>
                     {item.text}
                 </a>
             </MenuItem>
@@ -40,8 +45,6 @@ const MobileMenu = ({ goToSection, setMenuIsOpen }) => {
         document.querySelector('button.hamburger').classList.toggle('is-active')
         document.documentElement.style.overflow = state.isOpen ? 'hidden' : ''
     }
-
-    // TODO: Investigate why this doesn't scroll to menu items on mobile.
 
     return (
         <Wrapper
