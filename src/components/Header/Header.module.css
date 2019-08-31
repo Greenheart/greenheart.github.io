@@ -163,18 +163,28 @@
         --expanded-header-height: 80px;
     }
 
+    .left {
+        grid-template-columns: none;
+    }
+
     .header .container {
         padding: 1rem;
         grid-template-columns: max-content auto max-content;
         position: relative;
     }
 
-    .small-logo {
+    .small-logo-wrapper {
         position: absolute;
         left: 50%;
         top: 0;
         transform: translateX(-50%);
-        padding: 0;
+        max-width: 260px;
+        width: 100%;
+    }
+
+    .small-logo {
+        padding: 0 !important;
+        width: 100%;
     }
 
     .header.scrolled .container {
@@ -209,10 +219,20 @@
         padding: 0;
     }
 
+    .small-logo-wrapper {
+        max-width: 220px;
+    }
+
     .logo {
         width: 50px;
         height: 50px;
         margin-left: 5px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .small-logo-wrapper {
+        max-width: 190px;
     }
 }
 
