@@ -30,6 +30,7 @@
         "typography": "^0.16.19"
     },
     "devDependencies": {
+        "gh-pages": "^2.1.1",
         "prettier": "^1.18.2"
     },
     "keywords": [
@@ -39,6 +40,7 @@
     "scripts": {
         "build": "gatsby build",
         "develop": "gatsby develop",
+        "deploy": "gatsby build && gh-pages -d public -b master",
         "LAN": "echo 'gatsby develop -H 84.217.192.215 -p 8000'",
         "format": "prettier --write src/**/*.{js,jsx}",
         "start": "npm run develop",
