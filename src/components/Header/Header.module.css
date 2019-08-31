@@ -16,14 +16,21 @@
 }
 
 .header .container {
-    display: grid;
-    grid-template-columns: max-content minmax(auto, 800px) minmax(auto, 400px);
+    display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100vw;
     max-width: var(--max-content-width);
     padding: 2rem;
     transition: padding 0.3s ease;
+}
+
+.left {
+    display: grid;
+    grid-template-columns: max-content 310px;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .header.scrolled {
@@ -119,13 +126,36 @@
 }
 
 .main-menu {
+    width: 100%;
+    max-width: 400px;
     height: 100%;
     display: grid;
+    justify-self: flex-end;
     grid-template-columns: repeat(4, 1fr);
 }
 
 .no-transition {
     transition: none !important;
+}
+
+@media screen and (max-width: 836px) {
+    .left {
+        grid-template-columns: max-content 250px;
+    }
+
+    .main-menu {
+        max-width: 350px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .left {
+        grid-template-columns: max-content 200px;
+    }
+
+    .main-menu {
+        max-width: 300px;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -134,8 +164,17 @@
     }
 
     .header .container {
-        padding: 1rem 0.5rem;
+        padding: 1rem;
         grid-template-columns: max-content auto max-content;
+        position: relative;
+    }
+
+    .small-logo {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        padding: 0;
     }
 
     .header.scrolled .container {
@@ -147,13 +186,33 @@
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
+    .header {
+        height: var(--header-height);
+    }
+
     .header .container {
-        padding: 1rem 0;
+        padding: 0.5rem;
     }
 
     .header.scrolled .container {
         padding: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .header .container {
+        padding: 0;
+    }
+
+    .header.scrolled .container {
+        padding: 0;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+        margin-left: 5px;
     }
 }
 

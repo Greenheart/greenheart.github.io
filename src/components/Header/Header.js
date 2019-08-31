@@ -86,35 +86,37 @@ const Header = () => {
     return (
         <header className={styles.header} ref={headerRef}>
             <div className={styles.container}>
-                <a
-                    href="/"
-                    className={styles.logo}
-                    onClick={showIntroWithoutReload}
-                >
-                    <img
-                        src={data.compass.publicURL}
-                        alt="Compass logo"
-                        width="60"
-                    />
-                </a>
-                <div className={styles.smallLogoWrapper}>
+                <div className={styles.left}>
                     <a
                         href="/"
+                        className={styles.logo}
                         onClick={showIntroWithoutReload}
-                        ref={logoRef}
-                        className={join(
-                            styles.smallLogo,
-                            styles.disabled,
-                            'animated',
-                            'faster'
-                        )}
-                        style={{
-                            opacity: menuIsOpen ? 1 : 0,
-                            paddingLeft: '1em',
-                        }}
                     >
-                        <SamuelLogo type="small" />
+                        <img
+                            src={data.compass.publicURL}
+                            alt="Compass logo"
+                            width="60"
+                        />
                     </a>
+                    <div className={styles.smallLogoWrapper}>
+                        <a
+                            href="/"
+                            onClick={showIntroWithoutReload}
+                            ref={logoRef}
+                            className={join(
+                                styles.smallLogo,
+                                styles.disabled,
+                                'animated',
+                                'faster'
+                            )}
+                            style={{
+                                opacity: menuIsOpen ? 1 : 0,
+                                paddingLeft: '1em',
+                            }}
+                        >
+                            <SamuelLogo type="small" />
+                        </a>
+                    </div>
                 </div>
                 <nav className={styles.mainMenu}>
                     <a href="#about" onClick={goToSection}>

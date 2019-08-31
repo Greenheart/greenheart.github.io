@@ -42,7 +42,7 @@
     height: 100%;
     width: 100%;
     z-index: -1;
-    padding-top: 10vh;
+    padding-top: 20vh;
     background: var(--bone-white);
 }
 
@@ -69,5 +69,19 @@
 @media screen and (max-width: 600px) {
     .mobile-menu {
         display: block;
+        position: absolute;
+        right: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .mobile-menu {
+        right: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .mobile-menu {
+        right: 0;
     }
 }
