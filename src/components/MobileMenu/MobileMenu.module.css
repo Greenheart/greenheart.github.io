@@ -5,12 +5,28 @@
 }
 
 .button {
-    /* height: 60px !important; */
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
+    outline: none;
+}
+
+.button > button {
+    display: inline-flex;
+    height: 100%;
+    align-items: center;
+    padding: 1rem 0.38rem;
+}
+
+.button > button:hover {
+    opacity: 1 !important;
+}
+
+.button > button span span,
+.button > button span span::before,
+.button > button span span::after {
+    background-color: var(--jet) !important;
 }
 
 .items {

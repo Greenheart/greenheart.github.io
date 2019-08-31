@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Wrapper, Menu, MenuItem } from 'react-aria-menubutton'
 
 import styles from './MobileMenu.module.css'
+import 'hamburgers/dist/hamburgers.css'
 
 // IDEA: reuse menu items from normal navigation to keep a single source of data and links.
 const MobileMenu = ({ goToSection, setMenuIsOpen }) => {
@@ -36,6 +37,7 @@ const MobileMenu = ({ goToSection, setMenuIsOpen }) => {
 
     const preventBackgroundScroll = state => {
         setMenuIsOpen(state.isOpen)
+        document.querySelector('button.hamburger').classList.toggle('is-active')
         document.documentElement.style.overflow = state.isOpen ? 'hidden' : ''
     }
 
@@ -46,7 +48,13 @@ const MobileMenu = ({ goToSection, setMenuIsOpen }) => {
             className={styles.mobileMenu}
             onMenuToggle={preventBackgroundScroll}
         >
-            <Button className={styles.button}>click me</Button>
+            <Button className={styles.button}>
+                <button class="hamburger hamburger--slider" type="button">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </Button>
             <Menu className={styles.items}>
                 <ul>{menuItems}</ul>
             </Menu>
