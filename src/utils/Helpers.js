@@ -1,8 +1,5 @@
 const join = (...classes) => classes.join(' ')
 
-const getCSSVariable = (name, target = document.body) =>
-    getComputedStyle(target).getPropertyValue(name)
-
 const throttleAnimationFrame = fn => {
     let ticking = false
     return (...args) => {

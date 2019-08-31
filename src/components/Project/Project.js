@@ -14,7 +14,7 @@ const Project = ({ project }) => {
                     alt={project.frontmatter.title}
                     style={{ width: '100%', height: '100%' }}
                     imgStyle={{
-                        maxHeight: getCSSVariable('--project-image-height'),
+                        maxHeight: 'var(--project-image-height)',
                         objectFit: 'contain',
                     }}
                 />
