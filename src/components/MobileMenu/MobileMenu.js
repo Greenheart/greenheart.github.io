@@ -26,6 +26,7 @@ const MobileMenu = ({ goToSection, setMenuIsOpen }) => {
     ]
 
     const onClick = event => {
+        document.querySelector('button.hamburger').click()
         goToSection(event)
     }
 
