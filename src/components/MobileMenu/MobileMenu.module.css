@@ -84,3 +84,9 @@
         right: 0;
     }
 }
+
+@media screen and (max-height: 600px) {
+    .menu-item a {
+        padding: 0.8rem 0;
+    }
+}
