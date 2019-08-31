@@ -101,19 +101,24 @@ const ProjectShowcase = () => {
         }
     `)
 
-    const getProjectById = (id, projects = data.allMarkdownRemark.edges) => ({
-        ...(projects.find(project => project.node.frontmatter.id === id) || {}),
-    })
-    const getImageById = (id, images = data) => images[id]
+    const projects = useMemo(() => {
+        const getProjectById = (
+            id,
+            projects = data.allMarkdownRemark.edges
+        ) => ({
+            ...(projects.find(project => project.node.frontmatter.id === id) ||
+                {}),
+        })
+        const getImageById = (id, images = data) => images[id]
 
-    const projects = useMemo(
-        () =>
-            Object.keys(projectImages).map(id => ({
-                ...getProjectById(id).node,
-                img: getImageById(id),
-            })),
-        [projectImages]
-    )
+        return Object.keys(projectImages).map(id => ({
+            ...getProjectById(id).node,
+            img: getImageById(id),
+        }))
+        // Disable warning about external dependency projectImages for thie useMemo()
+        // since it doesn't apply in this case, where projectImages never is mutated.
+        // eslint-disable-next-line
+    }, [projectImages, data])
 
     const projectSlides = useMemo(
         () => projects.map(p => <Project project={p} key={p.frontmatter.id} />),
