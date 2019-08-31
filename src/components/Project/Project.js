@@ -2,7 +2,6 @@ import React from 'react'
 import Img from 'gatsby-image'
 import { IoLogoGithub, IoIosLink } from 'react-icons/io'
 
-import { getCSSVariable } from '../../utils/Helpers'
 import styles from './Project.module.css'
 
 const Project = ({ project }) => {

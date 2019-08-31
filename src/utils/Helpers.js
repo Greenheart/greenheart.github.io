@@ -13,4 +13,4 @@ const throttleAnimationFrame = fn => {
     }
 }
 
-export { join, getCSSVariable, throttleAnimationFrame }
+export { join, throttleAnimationFrame }
