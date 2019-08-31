@@ -21,6 +21,7 @@
     height: 100%;
     align-items: center;
     padding: 1rem 0.38rem;
+    transition-duration: 0.3s;
 }
 
 .button > button:hover {
@@ -31,6 +32,7 @@
 .button > button span span::before,
 .button > button span span::after {
     background-color: var(--jet) !important;
+    transition-duration: 0.3s;
 }
 
 .items {
