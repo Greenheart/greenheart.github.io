@@ -115,10 +115,9 @@ const ProjectShowcase = () => {
         [projectImages]
     )
 
-    const projectSlides = useMemo(() =>
-        projects.map(p => <Project project={p} key={p.frontmatter.id} />, [
-            projects,
-        ])
+    const projectSlides = useMemo(
+        () => projects.map(p => <Project project={p} key={p.frontmatter.id} />),
+        [projects]
     )
 
     const settings = {
