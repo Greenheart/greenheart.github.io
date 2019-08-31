@@ -11,8 +11,8 @@ const About = React.memo(() => (
         <Triangles color="var(--jet)" direction="top" position="top" />
         <h2 id="about">About</h2>
         <p>
-            Hi! I'm Samuel, an orienteer, system developer and open source
-            enthusiast currently living in Stockholm, Sweden.
+            Hi! I'm Samuel &mdash; a Swedish orienteer, system developer and
+            open source enthusiast currently living in Stockholm.
         </p>
 
         <div className={styles.topics}>
@@ -22,8 +22,8 @@ const About = React.memo(() => (
                 </p>
                 <p>
                     I mostly work with full stack JavaScript, but I'm also
-                    comfortable with other tech stacks. It all depends on what's
-                    a good solution to the problem.
+                    comfortable with other technologies. It all depends on
+                    what's a good solution to the problem.
                 </p>
             </div>
 
