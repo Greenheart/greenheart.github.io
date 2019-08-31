@@ -49,9 +49,9 @@ const MobileMenu = ({ goToSection, setMenuIsOpen }) => {
             onMenuToggle={preventBackgroundScroll}
         >
             <Button className={styles.button}>
-                <button class="hamburger hamburger--slider" type="button">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
+                <button className="hamburger hamburger--slider" type="button">
+                    <span className="hamburger-box">
+                        <span className="hamburger-inner"></span>
                     </span>
                 </button>
             </Button>
