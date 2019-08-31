@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import { join } from '../../utils/Helpers'
@@ -14,6 +14,11 @@ const SamuelLogo = ({ type = 'default', style = {} }) => {
         }
     `)
     const [hasLoaded, setHasLoaded] = useState(false)
+
+    useEffect(() => {
+        // Animate the logo on page load.
+        setHasLoaded(true)
+    }, [setHasLoaded])
 
     return type === 'small' ? (
         <img

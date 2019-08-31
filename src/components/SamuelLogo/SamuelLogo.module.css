@@ -3,6 +3,7 @@
     position: relative;
     background: transparent;
     z-index: 2;
+    margin: 0;
 }
 
 .samuel-logo p {
