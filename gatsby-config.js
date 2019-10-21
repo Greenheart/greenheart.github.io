@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
-        title: `Samuel Plumppu | System Developer`,
-        description: `Swedish orienteer and system developer.`,
+        title: `Samuel Plumppu | System Developer interested in Climate and Sustainability`,
+        description: `Swedish orienteer and system developer interested in climate and sustainability.`,
         author: `Samuel Plumppu`,
     },
     plugins: [
