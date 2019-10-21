@@ -41,7 +41,7 @@
         "build": "gatsby build",
         "develop": "gatsby develop",
         "deploy": "gatsby build && gh-pages -d public -b master",
-        "LAN": "echo 'gatsby develop -H 84.217.192.215 -p 8000'",
+        "LAN": "echo 'gatsby develop -H LOCAL_IP -p 8000'",
         "format": "prettier --write src/**/*.{js,jsx}",
         "start": "npm run develop",
         "serve": "gatsby serve",
