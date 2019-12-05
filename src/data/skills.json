@@ -17,11 +17,31 @@
     },
     {
         "skill": "React",
-        "level": 6
+        "level": 7
     },
     {
         "skill": "Node.js",
+        "level": 6
+    },
+    {
+        "skill": "Gatsby",
         "level": 5
+    },
+    {
+        "skill": "GraphQL",
+        "level": 6
+    },
+    {
+        "skill": "Next.js",
+        "level": 5
+    },
+    {
+        "skill": "PostgreSQL",
+        "level": 4
+    },
+    {
+        "skill": "Redis",
+        "level": 3
     },
     {
         "skill": "C#",
@@ -37,14 +57,6 @@
     },
     {
         "skill": "PHP",
-        "level": 4
-    },
-    {
-        "skill": "Gatsby",
-        "level": 4
-    },
-    {
-        "skill": "GraphQL",
         "level": 4
     }
 ]
