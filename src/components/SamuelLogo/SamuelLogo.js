@@ -50,6 +50,7 @@ const SamuelLogo = ({ type = 'default', style = {} }) => {
                         : styles.samuelLogo
                 }
                 onLoad={() => setHasLoaded(true)}
+                role="presentation"
             />
             <p>Swedish orienteer and developer</p>
 
