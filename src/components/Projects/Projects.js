@@ -43,6 +43,13 @@ const ProjectShowcase = () => {
                 }
             }
 
+            xkcdCacher: file(relativePath: { eq: "xkcd-cacher.png" }) {
+                childImageSharp {
+                    fluid(quality: 90, maxWidth: 1000) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
             isoConquest: file(relativePath: { eq: "iso-conquest.png" }) {
                 childImageSharp {
                     fluid(quality: 90, maxWidth: 1000) {
@@ -163,7 +170,8 @@ const ProjectShowcase = () => {
 // This object has two responsibilities:
 //   1) Set the right image for each project
 //   2) Decide the order that projects are shown. Reorder properties to change it.
-export const projectImages = {
+const projectImages = {
+    xkcdCacher: 'xkcd-cacher.png',
     isoConquest: 'iso-conquest.png',
     tabTyper: 'tab-typer.png',
     theResponsible: 'the-responsible.png',
