@@ -1,7 +1,7 @@
 ---
 title: Swipe for Future
 tech: ['TypeScript', 'React', 'react-spring', 'styled-components']
-year: '2019-2020'
+year: '2019 - 2020'
 github: https://github.com/Greenheart/swipeforfuture.com
 demo: https://swipeforfuture.com
 id: swipeForFuture
