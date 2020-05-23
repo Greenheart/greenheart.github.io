@@ -43,6 +43,15 @@ const ProjectShowcase = () => {
                 }
             }
 
+            swipeForFuture: file(
+                relativePath: { eq: "Swipe for Future 2020-05-23.png" }
+            ) {
+                childImageSharp {
+                    fluid(quality: 90, maxWidth: 1000) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
             xkcdCacher: file(relativePath: { eq: "xkcd-cacher.png" }) {
                 childImageSharp {
                     fluid(quality: 90, maxWidth: 1000) {
@@ -171,6 +180,7 @@ const ProjectShowcase = () => {
 //   1) Set the right image for each project
 //   2) Decide the order that projects are shown. Reorder properties to change it.
 const projectImages = {
+    swipeForFuture: 'Swipe for Future 2020-05-23.png',
     xkcdCacher: 'xkcd-cacher.png',
     isoConquest: 'iso-conquest.png',
     tabTyper: 'tab-typer.png',
