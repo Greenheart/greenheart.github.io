@@ -21,7 +21,7 @@ const About = React.memo(() => (
                     <IoIosCode />
                 </p>
                 <p>
-                    I mostly work with full stack JavaScript, but I'm also
+                    I mostly work with full stack TypeScript, but I'm also
                     comfortable with other technologies. It all depends on
                     what's a good solution to the problem.
                 </p>
