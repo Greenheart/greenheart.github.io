@@ -2,7 +2,11 @@
     "name": "greenheart.github.io",
     "version": "3.0.0",
     "description": "2021 version of my personal webpage",
-    "scripts": {},
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Greenheart/greenheart.github.io.git"
@@ -10,5 +14,15 @@
     "author": "Samuel Plumppu",
     "license": "SEE LICENSE IN LICENSE",
     "homepage": "https://samuelplumppu.se",
-    "private": true
+    "private": true,
+    "dependencies": {
+        "next": "^10.0.4",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1"
+    },
+    "devDependencies": {
+        "@types/node": "^14.14.16",
+        "@types/react": "^17.0.0",
+        "typescript": "^4.1.3"
+    }
 }
