@@ -1,9 +1,11 @@
 import { FC } from 'react'
+import Footer from './Footer'
 
 const Layout: FC<LayoutProps> = ({ children }) => (
-    <div className="layout" style={{ background: 'lightskyblue' }}>
+    <main className="layout" style={{ background: 'lightskyblue' }}>
         {children}
-    </div>
+        <Footer />
+    </main>
 )
 
 interface LayoutProps {
