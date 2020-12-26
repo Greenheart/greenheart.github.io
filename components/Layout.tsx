@@ -1,11 +1,14 @@
 import { FC } from 'react'
+
 import Footer from './Footer'
+import Header from './Header'
 
 const Layout: FC<LayoutProps> = ({ children }) => (
-    <main>
-        {children}
+    <>
+        <Header />
+        <main>{children}</main>
         <Footer />
-    </main>
+    </>
 )
 
 interface LayoutProps {
