@@ -1,9 +1,7 @@
 import { FC } from 'react'
 
 const BlogPost: FC<BlogPostProps> = ({ children }) => (
-    <div className="prose lg:prose-xl" style={{ background: 'goldenrod' }}>
-        {children}
-    </div>
+    <div className="prose lg:prose-xl">{children}</div>
 )
 
 interface BlogPostProps {
