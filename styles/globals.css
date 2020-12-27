@@ -1,3 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --orange: #f49e4c;
+}
+
+@layer components {
+    .menu-link {
+        position: relative;
+        @apply px-2 flex items-center justify-center text-xl font-thin;
+    }
+
+    .menu-link::before,
+    .menu-link::after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        background: var(--orange);
+        width: 90%;
+        z-index: 2;
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        transition: all 0.3s;
+    }
+
+    .menu-link::before {
+        top: 0.1em;
+        transform-origin: left;
+    }
+
+    .menu-link::after {
+        bottom: 0.1em;
+        transform-origin: right;
+    }
+
+    .menu-link:hover::before,
+    .menu-link:active::before {
+        box-shadow: 0 0.5em 1em var(--orange);
+        transform: translateX(-50%) scaleX(1);
+    }
+
+    .menu-link:hover::after,
+    .menu-link:active::after {
+        box-shadow: 0 -0.5em 1em var(--orange);
+        transform: translateX(-50%) scaleX(1);
+    }
+}

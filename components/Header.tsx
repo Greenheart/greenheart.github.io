@@ -1,14 +1,14 @@
 import Link from 'next/link'
 
 const Header = () => (
-    <header className="flex justify-between p-1 bg-white">
+    <header className="flex justify-between py-0.5 px-4 bg-white">
         <div className="flex w-md items-center space-x-4">
             <Link href="/">
                 <a>
                     <img
                         src="/images/compass-icon-square.svg"
                         alt="Compass logo"
-                        className="w-16 h-16"
+                        className="w-14 h-14"
                     />
                 </a>
             </Link>
@@ -22,14 +22,15 @@ const Header = () => (
                 </a>
             </Link>
         </div>
-        <nav className="flex justify-between">
+
+        <nav className="grid self-stretch content-center grid-cols-3 grid-rows-1">
             <Link href="/about">
-                <a className="flex items-center px-4">About</a>
+                <a className="menu-link">About</a>
             </Link>
             <Link href="/blog">
-                <a className="flex items-center px-4">Blog</a>
+                <a className="menu-link">Blog</a>
             </Link>
-            <a className="flex items-center px-4">Contact</a>
+            <a className="menu-link">Contact</a>
         </nav>
     </header>
 )
