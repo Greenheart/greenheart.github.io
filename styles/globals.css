@@ -10,7 +10,6 @@
     .menu-link {
         position: relative;
         background: transparent;
-        @apply px-2 flex items-center justify-center text-xl font-thin;
     }
 
     .menu-link::before,

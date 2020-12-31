@@ -1,5 +1,10 @@
 import Link from 'next/link'
 
+const menuLinkProps = {
+    className:
+        'menu-link px-2 flex items-center justify-center text-xl font-thin',
+}
+
 const Header = () => (
     <header className="flex justify-between py-0.5 px-4 bg-white">
         <div className="flex w-md items-center space-x-4">
@@ -25,12 +30,12 @@ const Header = () => (
 
         <nav className="grid self-stretch content-center grid-cols-3 grid-rows-1">
             <Link href="/about">
-                <a className="menu-link">About</a>
+                <a {...menuLinkProps}>About</a>
             </Link>
             <Link href="/blog">
-                <a className="menu-link">Blog</a>
+                <a {...menuLinkProps}>Blog</a>
             </Link>
-            <a className="menu-link">Contact</a>
+            <a {...menuLinkProps}>Contact</a>
         </nav>
     </header>
 )
