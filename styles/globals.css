@@ -9,6 +9,7 @@
 @layer components {
     .menu-link {
         position: relative;
+        background: transparent;
         @apply px-2 flex items-center justify-center text-xl font-thin;
     }
 
@@ -26,24 +27,24 @@
     }
 
     .menu-link::before {
-        top: 0.1em;
+        top: 0.1rem;
         transform-origin: left;
     }
 
     .menu-link::after {
-        bottom: 0.1em;
+        bottom: 0.1rem;
         transform-origin: right;
     }
 
     .menu-link:hover::before,
     .menu-link:active::before {
-        box-shadow: 0 0.5em 1em var(--orange);
+        box-shadow: 0 0.5rem 1rem var(--orange);
         transform: translateX(-50%) scaleX(1);
     }
 
     .menu-link:hover::after,
     .menu-link:active::after {
-        box-shadow: 0 -0.5em 1em var(--orange);
+        box-shadow: 0 -0.5rem 1rem var(--orange);
         transform: translateX(-50%) scaleX(1);
     }
 }
