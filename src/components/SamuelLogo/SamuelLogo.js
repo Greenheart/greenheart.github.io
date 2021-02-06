@@ -46,7 +46,7 @@ const SamuelLogo = ({ type = 'default', style = {} }) => {
                 )}
                 className={
                     hasLoaded
-                        ? join(styles.logo, 'animated', 'fadeInLeft', 'faster')
+                        ? join(styles.logo, 'animate__animated', 'animate__fadeInLeft', 'animate__faster')
                         : styles.samuelLogo
                 }
                 onLoad={() => setHasLoaded(true)}

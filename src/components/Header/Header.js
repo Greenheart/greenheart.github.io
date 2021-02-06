@@ -106,8 +106,8 @@ const Header = () => {
                             className={join(
                                 styles.smallLogo,
                                 styles.disabled,
-                                'animated',
-                                'faster'
+                                'animate__animated',
+                                'animate__faster'
                             )}
                             style={{
                                 opacity: menuIsOpen ? 1 : 0,
