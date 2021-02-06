@@ -21,7 +21,6 @@ const FullpageBackground = () => {
         <BackgroundImage
             className={styles.background}
             fluid={data.Tiomila2015.childImageSharp.fluid}
-            backgroundColor={`#040e18`}
             alt="Seconds after the start of orienteering relay Tiomila 2015."
             durationFadeIn={10}
             loading="eager"
