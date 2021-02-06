@@ -26,12 +26,12 @@ const Header = () => {
             const direction = window.scrollY < lastScrollPos ? 'up' : 'down'
             if (direction === 'up' && window.scrollY < scrollThreshold) {
                 headerRef.current.classList.remove(styles.scrolled)
-                logoRef.current.classList.remove('fadeIn')
+                logoRef.current.classList.remove('animated__fadeIn')
                 logoRef.current.classList.add(styles.disabled)
             } else if (window.scrollY >= scrollThreshold) {
                 headerRef.current.classList.add(styles.scrolled)
                 logoRef.current.classList.remove(styles.disabled)
-                logoRef.current.classList.add('fadeIn')
+                logoRef.current.classList.add('animated__fadeIn')
             }
 
             lastScrollPos = window.scrollY
