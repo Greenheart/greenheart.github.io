@@ -1,9 +1,9 @@
 {
-    "name": "gatsby-starter-default",
+    "name": "greenheart.github.io",
     "private": true,
-    "description": "A simple starter to get up and developing quickly with Gatsby",
-    "version": "0.1.0",
-    "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+    "description": "Personal webpage",
+    "version": "3.0.0-alpha1",
+    "author": "Samuel Plumppu",
     "dependencies": {
         "animate.css": "^4.1.1",
         "gatsby": "^2.32.3",
@@ -23,7 +23,7 @@
         "react-aria-menubutton": "^7.0.1",
         "react-dom": "^17.0.1",
         "react-helmet": "^6.1.0",
-        "react-icons": "^4.1.0",
+        "react-icons": "^4.2.0",
         "react-slick": "^0.28.0",
         "react-typography": "^0.16.19",
         "slick-carousel": "^1.8.1",
@@ -33,9 +33,6 @@
         "gh-pages": "^3.1.0",
         "prettier": "^2.2.1"
     },
-    "keywords": [
-        "gatsby"
-    ],
     "license": "MIT",
     "scripts": {
         "build": "rm -rf public && gatsby build",
@@ -44,14 +41,6 @@
         "LAN": "echo 'gatsby develop -H LOCAL_IP -p 8000'",
         "format": "prettier --write src/**/*.{js,jsx}",
         "start": "npm run develop",
-        "serve": "gatsby serve",
-        "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-    },
-    "bugs": {
-        "url": "https://github.com/gatsbyjs/gatsby/issues"
+        "serve": "gatsby serve"
     }
 }
