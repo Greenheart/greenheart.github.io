@@ -11,19 +11,24 @@
     export let tags = ['']
 </script>
 
-<h1 class="bg-red-300">{title}</h1>
-<time datetime={date}>{formatDate(date)}</time>
+<!-- TODO: Add dynamic meta tags based on post content. -->
+<!-- TODO: Add default OG image for all pages on the site -->
+<!-- TODO: Add option to override OG image for posts -->
 
-<div class="my-8 flex space-x-2 uppercase">
-    {#each tags as tag}
-        <div class="p-1 bg-green-400 text-xs rounded-sm leading-3">{tag}</div>
-    {/each}
-</div>
+<article class="prose lg:prose-lg mx-auto p-4 text-sm sm:text-base">
+    <h1>{title}</h1>
+    <time datetime={date}>{formatDate(date)}</time>
 
-<slot />
+    <div class="my-2 flex space-x-2 uppercase">
+        {#each tags as tag}
+            <div class="p-1 bg-green-400 text-xs rounded-sm leading-3">
+                {tag}
+            </div>
+        {/each}
+    </div>
 
-<!-- TODO: Add tailwind typography plugin -->
-<!-- TODO: create post layout -->
+    <slot />
+</article>
 
 <!-- IDEA: Add links to more posts at the bottom of every post -->
 <!-- IDEA: Add short info about me at the bottom of every post, linking to home/about for more details -->
