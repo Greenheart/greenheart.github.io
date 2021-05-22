@@ -7,7 +7,7 @@
     const links = [{ text: 'Blog', href: '/blog' }, { text: 'About', href: '/about' }]
 </script>
 
-<header class="flex flex-1 justify-between p-4">
+<header class="flex flex-1 justify-between p-4 max-w-6xl mx-auto">
     <a href="/" sveltekit:prefetch class="font-semibold">Samuel Plumppu</a>
     <nav class="flex space-x-4">
         {#each links as link}
@@ -16,10 +16,10 @@
     </nav>
 </header>
 
-<div class="container mx-auto">
+<div class="container mx-auto max-w-6xl p-4">
     <slot />
 </div>
 
-<footer class="p-4 text-center mt-8">
+<footer class="p-4 text-center mt-8 max-w-6xl mx-auto">
     Samuel Plumppu © 2015 - {new Date().getFullYear()}
 </footer>
