@@ -1,9 +1,13 @@
 ---
 title: This is the title!
+date: 2021-05-22
+tags: ['svelte', 'typescript']
 ---
 
-<script>
-    import Example from '$lib/Example.svelte.md'
-</script>
-
-<Example />
+```ts
+function foo(bar) {
+    var a = 42,
+        b = 'Prism';
+    return a + bar(b);
+}
+```

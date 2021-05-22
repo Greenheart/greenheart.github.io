@@ -31,5 +31,8 @@
         "tslib": "^2.2.0",
         "typescript": "^4.2.4"
     },
-    "type": "module"
+    "type": "module",
+    "dependencies": {
+        "prism-themes": "^1.7.0"
+    }
 }
