@@ -4,3 +4,6 @@
 </script>
 
 <slot />
+
+<!-- TODO: Base layout for all pages -->
+<!-- TODO: Add navigation, footer -->
