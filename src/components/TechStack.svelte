@@ -2,6 +2,7 @@
     import { fade } from 'svelte/transition'
     import { flip } from 'svelte/animate'
     import { quintOut } from 'svelte/easing'
+    import { onMount } from 'svelte'
     import MediaQuery from 'svelte-media-query'
 
     import type { TechStack } from '$lib/interfaces'
@@ -40,6 +41,8 @@
 
 <script lang="ts">
     let selected: keyof TechStack = 'Current'
+    let ready = false
+    onMount(() => (ready = true))
 
     function setFilter(filter: keyof TechStack) {
         selected = filter
@@ -73,31 +76,36 @@
     </div>
 
     <!-- Workaround to replace flexbox gap: https://gist.github.com/OliverJAsh/7f29d0fa1d35216ec681d2949c3fe8b7 -->
-    <div class="flex flex-wrap mt-4 max-w-prose -ml-2 -mb-2 justify-center">
-        <MediaQuery query="(prefers-reduced-motion: reduce)" let:matches>
-            {#if matches}
-                {#each tech[selected] as technology (technology)}
-                    <span class="pl-2 pb-5">
-                        <span class="p-2 bg-green-200">
-                            {technology}
+    <div
+        class="flex flex-wrap mt-4 max-w-prose -ml-2 -mb-2 justify-center"
+        class:hidden={!ready}
+    >
+        {#if ready}
+            <MediaQuery query="(prefers-reduced-motion: reduce)" let:matches>
+                {#if matches}
+                    {#each tech[selected] as technology (technology)}
+                        <span class="pl-2 pb-5">
+                            <span class="p-2 bg-green-200">
+                                {technology}
+                            </span>
                         </span>
-                    </span>
-                {/each}
-            {:else}
-                {#each tech[selected] as technology, index (technology)}
-                    <span
-                        class="pl-2 pb-5"
-                        animate:flip={{ duration: 300, easing: quintOut }}
-                    >
+                    {/each}
+                {:else}
+                    {#each tech[selected] as technology, index (technology)}
                         <span
-                            class="p-2 bg-green-200"
-                            in:fade={{ delay: index * 35, duration: 300 }}
+                            class="pl-2 pb-5"
+                            animate:flip={{ duration: 300, easing: quintOut }}
                         >
-                            {technology}
+                            <span
+                                class="p-2 bg-green-200"
+                                in:fade={{ delay: index * 35, duration: 300 }}
+                            >
+                                {technology}
+                            </span>
                         </span>
-                    </span>
-                {/each}
-            {/if}
-        </MediaQuery>
+                    {/each}
+                {/if}
+            </MediaQuery>
+        {/if}
     </div>
 </section>
