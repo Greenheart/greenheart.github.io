@@ -15,7 +15,7 @@
         Hey! I'm Samuel.
     </h1>
     <h2
-        class="text-xl sm:text-3xl lg:text-4xl leading-6 font-black tracking-tight mb-12 justfiy-self-center"
+        class="text-xl sm:text-3xl lg:text-4xl leading-6 font-black tracking-tight mb-12"
     >
         <div
             class="bg-gradient-to-tr from-green-400 to-blue-500 transform -skew-y-1 p-2"
@@ -58,8 +58,42 @@
 
 <hr class="my-16 max-w-sm mx-auto" />
 
-<!-- IDEA: Core value proposition -->
-<!-- Attention to detail, UX, humane tech & ethical design, mentorship and team growth, quick learner -->
+<section class="max-w-prose mx-auto">
+    <h2
+        class="text-xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none justify-self-center text-center mb-6"
+    >
+        What I bring
+    </h2>
+
+    <p class="text-xl sm:text-2xl mb-8">
+        Working with early stage startups and teams with limited resources has
+        taught me to focus on the work with the highest impact. This allows me
+        to contribute with more than just code to help the team succeed.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-0">
+        <ul
+            class="text-base font-extralight tracking-wide flex flex-col items-center space-y-2"
+        >
+            <li>Product strategy</li>
+            <li>Attention to detail</li>
+            <li>Mentorship & team growth</li>
+            <li>Design systems</li>
+            <li>Community building</li>
+        </ul>
+        <ul
+            class="text-base font-extralight tracking-wide flex flex-col items-center space-y-2"
+        >
+            <li>UI/UX design</li>
+            <li>Humane tech & ethical design</li>
+            <li>Quick learning</li>
+            <li>Modern web build tools</li>
+            <li>Improved development practices</li>
+        </ul>
+    </div>
+</section>
+
+<hr class="my-16 max-w-sm mx-auto" />
 
 <!-- TODO: List 3 latest posts. CTA link to see all posts on the /blog page -->
 <!-- TODO: Contact info. Potentially add a contact form to connect securely -->
