@@ -43,9 +43,11 @@
         Let's co-create a sustainable future!
     </h2>
 
+    <!-- TODO: Replace with better contact solution -->
     <a
-        href="/contact"
-        sveltekit:prefetch
+        href="mailto:samuel.plumppu@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
         class="mt-6 bg-gradient-to-tr from-green-400 to-blue-500 py-3 px-8 inline-block rounded-md shadow-lg hover:shadow-xl transform-gpu hover:scale-105 duration-150 justify-self-center text-black font-black"
     >
         <span class="filter drop-shadow-lg">Get in touch</span>
