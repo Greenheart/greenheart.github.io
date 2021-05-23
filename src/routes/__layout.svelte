@@ -3,27 +3,27 @@
     import 'prism-themes/themes/prism-night-owl.css'
 </script>
 
-<script>
+<!-- <script>
     const links = [
         { text: 'Blog', href: '/blog' },
         { text: 'About', href: '/about' },
     ]
-</script>
+</script> -->
 
 <svelte:head>
     <title>Samuel Plumppu | Sustainability Entrepreneur & Fullstack Developer</title>
 </svelte:head>
 
-<header class="flex flex-1 justify-between p-4 max-w-6xl mx-auto">
+<!-- <header class="flex flex-1 justify-between p-4 max-w-6xl mx-auto">
     <a href="/" sveltekit:prefetch class="font-semibold">Samuel Plumppu</a>
     <nav class="flex space-x-4">
         {#each links as link}
             <a href={link.href} sveltekit:prefetch>{link.text}</a>
         {/each}
     </nav>
-</header>
+</header> -->
 
-<div class="container mx-auto max-w-6xl p-4">
+<div class="container mx-auto max-w-6xl p-4 mt-8">
     <slot />
 </div>
 
