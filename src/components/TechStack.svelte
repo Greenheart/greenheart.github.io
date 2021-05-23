@@ -87,7 +87,7 @@
                     {#each tech[selected] as technology (technology)}
                         <span class="pl-2 pb-5">
                             <span
-                                class="p-2 bg-prussianBlue text-white font-extralight rounded-sm"
+                                class="p-2 bg-prussianBlue text-white font-extralight rounded-sm tracking-wide"
                             >
                                 {technology}
                             </span>
@@ -100,7 +100,7 @@
                             animate:flip={{ duration: 300, easing: quintOut }}
                         >
                             <span
-                                class="p-2 bg-prussianBlue text-white font-extralight rounded-sm"
+                                class="p-2 bg-prussianBlue text-white font-extralight rounded-sm tracking-wide"
                                 in:fade={{ delay: index * 35, duration: 300 }}
                             >
                                 {technology}

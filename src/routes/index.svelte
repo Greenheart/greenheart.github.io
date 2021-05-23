@@ -71,9 +71,9 @@
         to contribute with more than just code to help the team succeed.
     </p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-0">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center">
         <ul
-            class="font-extralight tracking-wide flex flex-col items-center space-y-2"
+            class="font-extralight tracking-wide flex flex-col items-center space-y-2 bg-beauBlue p-4 w-80 sm:w-72"
         >
             <li>Product strategy</li>
             <li>Attention to detail</li>
@@ -82,7 +82,7 @@
             <li>Community building</li>
         </ul>
         <ul
-            class="font-extralight tracking-wide flex flex-col items-center space-y-2"
+            class="font-extralight tracking-wide flex flex-col items-center space-y-2 bg-beauBlue p-4 w-80 sm:w-72"
         >
             <li>UI/UX design</li>
             <li>Humane tech & ethical design</li>
