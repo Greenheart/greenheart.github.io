@@ -1,5 +1,5 @@
 <script context="module">
-    import { formatDate } from '$lib/util'
+    import { formatDate } from '$lib/formatDate'
 </script>
 
 <script>
