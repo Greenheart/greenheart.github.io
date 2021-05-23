@@ -11,7 +11,9 @@
 </script> -->
 
 <svelte:head>
-    <title>Samuel Plumppu | Sustainability Entrepreneur & Fullstack Developer</title>
+    <title>
+        Samuel Plumppu | Sustainability Entrepreneur & Fullstack Developer
+    </title>
 </svelte:head>
 
 <!-- <header class="flex flex-1 justify-between p-4 max-w-6xl mx-auto">

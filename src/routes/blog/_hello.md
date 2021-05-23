@@ -24,6 +24,6 @@ function foo(bar) {
 
 ## Content goals:
 
-- Write about projects I've been working on
-- Write about ideas I've been exploring
-- Document quick tips to help with development and productivity
+-   Write about projects I've been working on
+-   Write about ideas I've been exploring
+-   Document quick tips to help with development and productivity
