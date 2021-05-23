@@ -15,7 +15,7 @@
 <!-- TODO: Add default OG image for all pages on the site -->
 <!-- TODO: Add option to override OG image for posts -->
 
-<article class="prose lg:prose-lg mx-auto text-sm sm:text-base">
+<article class="prose lg:prose-lg mx-auto text-base">
     <h1>{title}</h1>
     <time datetime={date}>{formatDate(date)}</time>
 
