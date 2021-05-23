@@ -30,6 +30,7 @@
             'PHP',
             'Gatsby',
             'Meteor',
+            'Angular.js',
             'Redis',
             'Mongo DB',
         ],
@@ -51,7 +52,7 @@
 
 <section class="flex flex-col h-72 xs:h-56 sm:h-52 md:h-48 items-center">
     <h2
-        class="mb-6 text-xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none justify-self-center text-center"
+        class="mb-6 text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none justify-self-center text-center"
     >
         My Tech Stack
     </h2>

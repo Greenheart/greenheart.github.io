@@ -38,7 +38,7 @@
     </p>
 
     <h2
-        class="mt-2 text-xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none justify-self-center text-center"
+        class="mt-2 text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none justify-self-center text-center"
     >
         Let's co-create a sustainable future!
     </h2>
@@ -60,7 +60,7 @@
 
 <section class="max-w-prose mx-auto">
     <h2
-        class="text-xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none justify-self-center text-center mb-6"
+        class="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none justify-self-center text-center mb-6"
     >
         What I bring
     </h2>
@@ -73,7 +73,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-0">
         <ul
-            class="text-base font-extralight tracking-wide flex flex-col items-center space-y-2"
+            class="font-extralight tracking-wide flex flex-col items-center space-y-2"
         >
             <li>Product strategy</li>
             <li>Attention to detail</li>
@@ -82,7 +82,7 @@
             <li>Community building</li>
         </ul>
         <ul
-            class="text-base font-extralight tracking-wide flex flex-col items-center space-y-2"
+            class="font-extralight tracking-wide flex flex-col items-center space-y-2"
         >
             <li>UI/UX design</li>
             <li>Humane tech & ethical design</li>
