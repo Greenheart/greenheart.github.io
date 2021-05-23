@@ -87,11 +87,11 @@
                 {#each tech[selected] as technology, index (technology)}
                     <span
                         class="pl-2 pb-5"
-                        animate:flip={{ duration: 200, easing: quintOut }}
+                        animate:flip={{ duration: 300, easing: quintOut }}
                     >
                         <span
                             class="p-2 bg-green-200"
-                            in:fade={{ delay: index * 35, duration: 200 }}
+                            in:fade={{ delay: index * 35, duration: 300 }}
                         >
                             {technology}
                         </span>
