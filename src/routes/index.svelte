@@ -64,7 +64,7 @@
     <h2
         class="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none justify-self-center text-center mb-6"
     >
-        What I bring
+        Additional Skills
     </h2>
 
     <p class="text-xl sm:text-2xl mb-8">
@@ -75,7 +75,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center">
         <ul
-            class="font-extralight tracking-wide flex flex-col items-center space-y-2 bg-beauBlue p-4 w-80 sm:w-72"
+            class="font-extralight tracking-wide flex flex-col items-center space-y-2 bg-beauBlue p-4 w-80 sm:w-72 shadow-lg rounded-sm"
         >
             <li>Product strategy</li>
             <li>Attention to detail</li>
@@ -84,7 +84,7 @@
             <li>Community building</li>
         </ul>
         <ul
-            class="font-extralight tracking-wide flex flex-col items-center space-y-2 bg-beauBlue p-4 w-80 sm:w-72"
+            class="font-extralight tracking-wide flex flex-col items-center space-y-2 bg-beauBlue p-4 w-80 sm:w-72 shadow-lg rounded-sm"
         >
             <li>UI/UX design</li>
             <li>Humane tech & ethical design</li>
