@@ -56,6 +56,8 @@
 
 <TechStack />
 
+<hr class="my-16 max-w-sm mx-auto" />
+
 <!-- IDEA: Core value proposition -->
 <!-- Attention to detail, UX, humane tech & ethical design, mentorship and team growth, quick learner -->
 
