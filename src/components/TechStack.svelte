@@ -1,5 +1,7 @@
 <script context="module" lang="ts">
     import { fade } from 'svelte/transition'
+    import { flip } from 'svelte/animate'
+    import { quintOut } from 'svelte/easing'
 
     import type { TechStack } from '$lib/interfaces'
 
@@ -71,12 +73,11 @@
 
     <!-- Workaround to replace flexbox gap: https://gist.github.com/OliverJAsh/7f29d0fa1d35216ec681d2949c3fe8b7 -->
     <div class="flex flex-wrap mt-4 max-w-prose -ml-2 -mb-2 justify-center">
-        {#each tech[selected] as technology, index}
-            <span class="pl-2 pb-5">
-                <span class="p-2 bg-green-200" in:fade={{ delay: index * 40 }}>
+        {#each tech[selected] as technology, index (technology)}
+            <span class="pl-2 pb-5" animate:flip={{ duration: 200, easing: quintOut }}>
+                <span class="p-2 bg-green-200" in:fade={{ delay: index * 35, duration: 200 }}>
                     {technology}
                 </span>
-                <!-- IDEA: Is is possible to ensure transition plays for all elements when the toggle happens? -->
             </span>
         {/each}
     </div>
