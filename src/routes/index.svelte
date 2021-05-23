@@ -46,17 +46,17 @@
     <a
         href="/contact"
         sveltekit:prefetch
-        class="mt-6 bg-green-400 py-3 px-8 inline-block rounded-md shadow-sm hover:shadow-xl justify-self-center text-black font-black"
+        class="mt-6 bg-gradient-to-tr from-green-400 to-blue-500 py-3 px-8 inline-block rounded-md shadow-lg hover:shadow-xl transform-gpu hover:scale-105 duration-150 justify-self-center text-black font-black"
     >
         <span class="filter drop-shadow-lg">Get in touch</span>
     </a>
 </section>
 
-<hr class="my-16 max-w-sm mx-auto" />
+<hr class="my-16 max-w-sm mx-auto border-prussianBlue" />
 
 <TechStack />
 
-<hr class="my-16 max-w-sm mx-auto" />
+<hr class="my-16 max-w-sm mx-auto border-prussianBlue" />
 
 <section class="max-w-prose mx-auto">
     <h2
@@ -93,7 +93,7 @@
     </div>
 </section>
 
-<hr class="my-16 max-w-sm mx-auto" />
+<hr class="my-16 max-w-sm mx-auto border-prussianBlue" />
 
 <!-- TODO: List 3 latest posts. CTA link to see all posts on the /blog page -->
 <!-- TODO: Contact info. Potentially add a contact form to connect securely -->

@@ -8,6 +8,12 @@ module.exports = {
             xs: '475px',
             ...defaultTheme.screens,
         },
+        extend: {
+            colors: {
+                prussianBlue: '#1C3144',
+                beauBlue: '#D4E1ED',
+            },
+        },
     },
     plugins: [require('@tailwindcss/typography')],
 }

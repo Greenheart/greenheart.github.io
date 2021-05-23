@@ -50,24 +50,24 @@
     }
 </script>
 
-<section class="flex flex-col h-72 xs:h-56 sm:h-52 md:h-48 items-center">
+<section class="flex flex-col h-80 xs:h-60 sm:h-56 items-center">
     <h2
         class="mb-6 text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none justify-self-center text-center"
     >
         My Tech Stack
     </h2>
 
-    <div class="grid grid-cols-3 w-72 mx-auto">
+    <div class="grid grid-cols-3 w-72 mx-auto mb-6 gap-2">
         {#each filters as filter}
             {#if filter === selected}
                 <button
-                    class="bg-gray-200 px-3 py-2 underline focus:outline-none"
+                    class="bg-beauBlue px-3 py-2 focus:outline-none shadow-lg rounded-sm"
                 >
                     {filter}
                 </button>
             {:else}
                 <button
-                    class="px-3 py-2 hover:underline focus:outline-none hover:bg-gray-200 active:bg-gray-300"
+                    class="px-3 py-2 focus:outline-none hover:bg-beauBlue hover:shadow-lg rounded-sm"
                     on:click={() => setFilter(filter)}
                 >
                     {filter}
@@ -86,7 +86,9 @@
                 {#if matches}
                     {#each tech[selected] as technology (technology)}
                         <span class="pl-2 pb-5">
-                            <span class="p-2 bg-green-200">
+                            <span
+                                class="p-2 bg-prussianBlue text-white font-extralight rounded-sm"
+                            >
                                 {technology}
                             </span>
                         </span>
@@ -98,7 +100,7 @@
                             animate:flip={{ duration: 300, easing: quintOut }}
                         >
                             <span
-                                class="p-2 bg-green-200"
+                                class="p-2 bg-prussianBlue text-white font-extralight rounded-sm"
                                 in:fade={{ delay: index * 35, duration: 300 }}
                             >
                                 {technology}
