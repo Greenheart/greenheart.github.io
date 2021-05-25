@@ -11,9 +11,9 @@
     "private": true,
     "scripts": {
         "start": "svelte-kit dev",
-        "build": "svelte-kit build",
+        "build": "svelte-kit build && touch build/.nojekyll",
         "preview": "svelte-kit preview",
-        "deploy": "npm run build && gh-pages -d build -b master",
+        "deploy": "npm run build && gh-pages -d build -b master -t",
         "lint": "prettier --check --plugin-search-dir=. .",
         "format": "prettier --write --plugin-search-dir=. ."
     },
