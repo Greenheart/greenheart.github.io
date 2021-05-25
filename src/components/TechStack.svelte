@@ -37,7 +37,7 @@
         Learning: ['SvelteKit', 'React Native', 'KeystoneJS'],
     }
 
-    const filters: Array<keyof TechStack> = ['Learning', 'Current', 'Past']
+    const filters: Array<keyof TechStack> = ['Past', 'Current', 'Learning']
 </script>
 
 <script lang="ts">
