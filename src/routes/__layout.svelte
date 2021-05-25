@@ -1,6 +1,9 @@
 <script context="module" lang="ts">
     import '../global.css'
     import 'prism-themes/themes/prism-night-owl.css'
+
+    import DiGithubBadge from 'svelte-icons/di/DiGithubBadge.svelte'
+    import FaLinkedIn from 'svelte-icons/fa/FaLinkedIn.svelte'
 </script>
 
 <!-- <script>
@@ -29,6 +32,15 @@
     <slot />
 </div>
 
-<footer class="p-4 text-center mt-8 max-w-6xl mx-auto">
+<footer class="p-4 text-center mt-8 max-w-6xl mx-auto font-extralight">
     Samuel Plumppu © 2015 - {new Date().getFullYear()}
+
+    <div class="flex justify-center space-x-4 items-center my-8">
+        <a href="https://github.com/Greenheart" target="_blank" rel="noopener noreferrer" class="w-10 h-10">
+            <DiGithubBadge />
+        </a>
+        <a href="https://linkedin.com/in/samuelplumppu" target="_blank" rel="noopener noreferrer" class="w-8 h-8">
+            <FaLinkedIn />
+        </a>
+    </div>
 </footer>

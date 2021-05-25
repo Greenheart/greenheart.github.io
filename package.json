@@ -38,6 +38,7 @@
     },
     "type": "module",
     "dependencies": {
+        "svelte-icons": "^2.1.0",
         "svelte-media-query": "^1.0.0"
     }
 }
