@@ -39,7 +39,7 @@
     <slot />
 </div>
 
-<footer class="p-4 text-center mt-8 max-w-6xl mx-auto font-extralight">
+<footer class="p-4 text-center mt-8 max-w-6xl mx-auto font-light">
     Samuel Plumppu © 2015 - {new Date().getFullYear()}
 
     <div class="flex justify-center space-x-4 items-center my-8">
