@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
     import TechStack from '../components/TechStack.svelte'
+    import CTALink from '../components/CTALink.svelte'
 </script>
 
 <img
@@ -44,14 +45,7 @@
     </h2>
 
     <!-- TODO: Replace with better contact solution -->
-    <a
-        href="mailto:samuel.plumppu@gmail.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="mt-6 bg-gradient-to-tr from-green-400 to-blue-500 py-3 px-8 inline-block rounded-md shadow-lg hover:shadow-xl transform-gpu hover:scale-105 duration-150 justify-self-center text-black font-black"
-    >
-        <span class="filter drop-shadow-lg">Get in touch</span>
-    </a>
+    <CTALink href="mailto:samuel.plumppu@gmail.com">Get in touch</CTALink>
 </section>
 
 <hr class="my-16 max-w-sm mx-auto border-prussianBlue" />
@@ -105,14 +99,7 @@
     </h2>
 
     <!-- TODO: Replace with better contact solution -->
-    <a
-        href="mailto:samuel.plumppu@gmail.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="mt-6 bg-gradient-to-tr from-green-400 to-blue-500 py-3 px-8 inline-block rounded-md shadow-lg hover:shadow-xl transform-gpu hover:scale-105 duration-150 justify-self-center text-black font-black"
-    >
-        <span class="filter drop-shadow-lg">Get in touch</span>
-    </a>
+    <CTALink href="mailto:samuel.plumppu@gmail.com">Get in touch</CTALink>
 </section>
 
 <!-- TODO: List 3 latest posts. CTA link to see all posts on the /blog page -->
