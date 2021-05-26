@@ -34,12 +34,12 @@
         maximize our positive impact in the world.
     </p>
     <p class="text-xl sm:text-2xl mb-4">
-        I'm passionate about how open source communities can support a sustainable
-        future, where both humanity and the living planet thrive.
+        I'm passionate about how open source communities can support a
+        sustainable future, where both humanity and the living planet thrive.
     </p>
 
     <h2
-        class="mt-2 text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none justify-self-center text-center"
+        class="mt-2 text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none text-center"
     >
         Let's co-create a sustainable future!
     </h2>
@@ -56,7 +56,7 @@
 
 <section class="max-w-prose mx-auto">
     <h2
-        class="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none justify-self-center text-center mb-6"
+        class="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none text-center mb-6"
     >
         Additional Skills
     </h2>
@@ -91,9 +91,9 @@
 
 <hr class="my-16 max-w-sm mx-auto border-prussianBlue" />
 
-<section class="grid text-center justify-center">
+<section class="grid text-center justify-center grid-cols-1">
     <h2
-        class="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none justify-self-center text-center"
+        class="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none text-center"
     >
         Let's co-create a sustainable future!
     </h2>
