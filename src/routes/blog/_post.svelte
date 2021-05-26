@@ -1,5 +1,7 @@
 <script context="module">
     import { formatDate } from '$lib/formatDate'
+
+    import 'prism-themes/themes/prism-night-owl.css'
 </script>
 
 <script>

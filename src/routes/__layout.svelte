@@ -1,6 +1,5 @@
 <script context="module" lang="ts">
     import '../global.css'
-    import 'prism-themes/themes/prism-night-owl.css'
 
     import DiGithubBadge from 'svelte-icons/di/DiGithubBadge.svelte'
     import FaLinkedIn from 'svelte-icons/fa/FaLinkedIn.svelte'
