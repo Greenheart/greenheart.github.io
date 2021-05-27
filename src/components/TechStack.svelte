@@ -61,13 +61,13 @@
         {#each filters as filter}
             {#if filter === selected}
                 <button
-                    class="bg-pacificBlue px-3 py-2 focus:outline-none shadow-lg rounded-sm"
+                    class="bg-white px-3 py-2 focus:outline-none shadow-lg rounded-sm"
                 >
                     {filter}
                 </button>
             {:else}
                 <button
-                    class="px-3 py-2 focus:outline-none hover:bg-pacificBlue hover:shadow-lg rounded-sm"
+                    class="px-3 py-2 focus:outline-none hover:bg-white hover:shadow-lg rounded-sm"
                     on:click={() => setFilter(filter)}
                 >
                     {filter}
@@ -87,7 +87,7 @@
                     {#each tech[selected] as technology (technology)}
                         <span class="pl-2 pb-5">
                             <span
-                                class="p-2 bg-ming font-extralight rounded-sm tracking-wide"
+                                class="p-2 bg-ming font-light rounded-sm tracking-wide"
                             >
                                 {technology}
                             </span>
@@ -100,7 +100,7 @@
                             animate:flip={{ duration: 300, easing: quintOut }}
                         >
                             <span
-                                class="p-2 bg-ming font-extralight rounded-sm tracking-wide"
+                                class="p-2 bg-ming font-light rounded-sm tracking-wide"
                                 in:fade={{ delay: index * 35, duration: 300 }}
                             >
                                 {technology}
