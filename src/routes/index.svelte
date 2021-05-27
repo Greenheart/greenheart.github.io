@@ -19,7 +19,7 @@
         class="text-xl sm:text-3xl lg:text-4xl leading-6 font-black tracking-tight mb-12"
     >
         <div
-            class="bg-gradient-to-tr from-green-400 to-blue-500 transform -skew-y-1 p-2"
+            class="bg-pacificBlue transform -skew-y-1 p-2 shadow-lg"
         >
             <span class="whitespace-nowrap">Sustainability Entrepreneur</span>
             &
@@ -48,11 +48,11 @@
     <CTALink href="mailto:samuel.plumppu@gmail.com">Get in touch</CTALink>
 </section>
 
-<hr class="my-16 max-w-sm mx-auto border-prussianBlue" />
+<hr class="my-16 max-w-sm mx-auto border-ming" />
 
 <TechStack />
 
-<hr class="my-16 max-w-sm mx-auto border-prussianBlue" />
+<hr class="my-16 max-w-sm mx-auto border-ming" />
 
 <section class="max-w-prose mx-auto">
     <h2
@@ -69,7 +69,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center">
         <ul
-            class="font-light tracking-wide flex flex-col items-center space-y-2 bg-beauBlue p-4 w-80 sm:w-72 shadow-lg rounded-sm"
+            class="font-light tracking-wide flex flex-col items-center space-y-2 bg-pacificBlue p-4 w-80 sm:w-72 shadow-lg rounded-sm"
         >
             <li>Product strategy</li>
             <li>Attention to detail</li>
@@ -78,7 +78,7 @@
             <li>Community building</li>
         </ul>
         <ul
-            class="font-light tracking-wide flex flex-col items-center space-y-2 bg-beauBlue p-4 w-80 sm:w-72 shadow-lg rounded-sm"
+            class="font-light tracking-wide flex flex-col items-center space-y-2 bg-pacificBlue p-4 w-80 sm:w-72 shadow-lg rounded-sm"
         >
             <li>UI/UX design</li>
             <li>Humane tech & ethical design</li>
@@ -89,7 +89,7 @@
     </div>
 </section>
 
-<hr class="my-16 max-w-sm mx-auto border-prussianBlue" />
+<hr class="my-16 max-w-sm mx-auto border-ming" />
 
 <section class="grid text-center justify-center grid-cols-1">
     <h2

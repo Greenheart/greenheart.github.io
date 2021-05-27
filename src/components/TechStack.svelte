@@ -61,13 +61,13 @@
         {#each filters as filter}
             {#if filter === selected}
                 <button
-                    class="bg-beauBlue px-3 py-2 focus:outline-none shadow-lg rounded-sm"
+                    class="bg-pacificBlue px-3 py-2 focus:outline-none shadow-lg rounded-sm"
                 >
                     {filter}
                 </button>
             {:else}
                 <button
-                    class="px-3 py-2 focus:outline-none hover:bg-beauBlue hover:shadow-lg rounded-sm"
+                    class="px-3 py-2 focus:outline-none hover:bg-pacificBlue hover:shadow-lg rounded-sm"
                     on:click={() => setFilter(filter)}
                 >
                     {filter}
@@ -78,7 +78,7 @@
 
     <!-- Workaround to replace flexbox gap: https://gist.github.com/OliverJAsh/7f29d0fa1d35216ec681d2949c3fe8b7 -->
     <div
-        class="flex flex-wrap mt-4 max-w-prose -ml-2 -mb-2 justify-center"
+        class="flex flex-wrap mt-4 max-w-prose -ml-2 -mb-2 justify-center text-white"
         class:hidden={!ready}
     >
         {#if ready}
@@ -87,7 +87,7 @@
                     {#each tech[selected] as technology (technology)}
                         <span class="pl-2 pb-5">
                             <span
-                                class="p-2 bg-prussianBlue text-white font-extralight rounded-sm tracking-wide"
+                                class="p-2 bg-ming font-extralight rounded-sm tracking-wide"
                             >
                                 {technology}
                             </span>
@@ -100,7 +100,7 @@
                             animate:flip={{ duration: 300, easing: quintOut }}
                         >
                             <span
-                                class="p-2 bg-prussianBlue text-white font-extralight rounded-sm tracking-wide"
+                                class="p-2 bg-ming font-extralight rounded-sm tracking-wide"
                                 in:fade={{ delay: index * 35, duration: 300 }}
                             >
                                 {technology}

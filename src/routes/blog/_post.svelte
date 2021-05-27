@@ -23,7 +23,7 @@
 
     <div class="my-2 flex space-x-2 uppercase">
         {#each tags as tag}
-            <span class="p-1 bg-green-400 text-xs rounded-sm leading-3">
+            <span class="p-1 bg-mantis text-xs rounded-sm leading-3">
                 {tag}
             </span>
         {/each}
