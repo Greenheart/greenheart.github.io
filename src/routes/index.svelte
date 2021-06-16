@@ -18,9 +18,7 @@
     <h2
         class="text-xl sm:text-3xl lg:text-4xl leading-6 font-black tracking-tight mb-12"
     >
-        <div
-            class="bg-mantis transform -skew-y-1 p-2 shadow-2xl"
-        >
+        <div class="bg-mantis transform -skew-y-1 p-2 shadow-2xl">
             <span class="whitespace-nowrap">Sustainability Entrepreneur</span>
             &
             <span class="whitespace-nowrap">Fullstack Developer.</span>
