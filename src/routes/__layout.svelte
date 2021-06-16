@@ -1,7 +1,9 @@
 <script context="module" lang="ts">
-    import '../global.css'
+    import Link from '../components/Link.svelte'
+
     import LinkedIn from '../../static/images/linkedin.svg'
     import GitHub from '../../static/images/github.svg'
+    import '../global.css'
 </script>
 
 <script>
@@ -21,7 +23,7 @@
     <a href="/" sveltekit:prefetch class="font-semibold">Samuel Plumppu</a>
     <nav class="flex space-x-4">
         {#each links as link}
-            <a href={link.href} sveltekit:prefetch>{link.text}</a>
+            <Link href={link.href} sveltekit:prefetch>{link.text}</Link>
         {/each}
     </nav>
 </header>
