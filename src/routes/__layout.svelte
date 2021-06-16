@@ -40,6 +40,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="w-10 h-10"
+            aria-label="See my profile on GitHub"
         >
             <DiGithubBadge />
         </a>
@@ -48,6 +49,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="w-8 h-8"
+            aria-label="Connect with me on LinkedIn"
         >
             <FaLinkedIn />
         </a>
