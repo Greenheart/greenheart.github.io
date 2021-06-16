@@ -4,12 +4,12 @@
     import GitHub from '../../static/images/github.svg'
 </script>
 
-<!-- <script>
+<script>
     const links = [
         { text: 'Blog', href: '/blog' },
-        { text: 'About', href: '/about' },
+        // { text: 'About', href: '/about' },
     ]
-</script> -->
+</script>
 
 <svelte:head>
     <title>
@@ -17,14 +17,14 @@
     </title>
 </svelte:head>
 
-<!-- <header class="flex flex-1 justify-between p-4 max-w-6xl mx-auto">
+<header class="flex flex-1 justify-between p-4 max-w-6xl mx-auto">
     <a href="/" sveltekit:prefetch class="font-semibold">Samuel Plumppu</a>
     <nav class="flex space-x-4">
         {#each links as link}
             <a href={link.href} sveltekit:prefetch>{link.text}</a>
         {/each}
     </nav>
-</header> -->
+</header>
 
 <div class="container mx-auto max-w-6xl p-4 mt-8">
     <slot />

@@ -14,6 +14,8 @@ function foo(bar) {
 }
 ```
 
+[Link example](/)
+
 ## Development goals
 
 1. Rapid development with modern tooling (Svelte, Vite, Tailwind CSS)
