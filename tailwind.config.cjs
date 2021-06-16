@@ -23,6 +23,37 @@ module.exports = {
                 DEFAULT: {
                     css: {
                         color: theme('colors.black'),
+                        h1: {
+                            color: theme('colors.black'),
+                        },
+                        h2: {
+                            color: theme('colors.black'),
+                        },
+                        h3: {
+                            color: theme('colors.black'),
+                        },
+                        h4: {
+                            color: theme('colors.black'),
+                        },
+                        h5: {
+                            color: theme('colors.black'),
+                        },
+                        h6: {
+                            color: theme('colors.black'),
+                        },
+                        'ol > li::before': {
+                            color: theme('colors.black'),
+                        },
+                        'ul > li::before': {
+                            backgroundColor: theme('colors.black'),
+                        },
+                        hr: {
+                            color: theme('colors.black'),
+                        },
+                        blockquote: {
+                            color: theme('colors.black'),
+                        },
+
                         a: {
                             position: 'relative',
                             textDecoration: 'none',
