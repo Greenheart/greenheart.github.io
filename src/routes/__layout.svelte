@@ -1,8 +1,7 @@
 <script context="module" lang="ts">
     import '../global.css'
-
-    import DiGithubBadge from 'svelte-icons/di/DiGithubBadge.svelte'
-    import FaLinkedIn from 'svelte-icons/fa/FaLinkedIn.svelte'
+    import LinkedIn from '../../static/images/linkedin.svg'
+    import GitHub from '../../static/images/github.svg'
 </script>
 
 <!-- <script>
@@ -39,19 +38,17 @@
             href="https://github.com/Greenheart"
             target="_blank"
             rel="noopener noreferrer"
-            class="w-10 h-10"
             aria-label="See my profile on GitHub"
         >
-            <DiGithubBadge />
+            <img src={GitHub} alt="GitHub" class="w-8 h-8" />
         </a>
         <a
             href="https://linkedin.com/in/samuelplumppu"
             target="_blank"
             rel="noopener noreferrer"
-            class="w-8 h-8"
             aria-label="Connect with me on LinkedIn"
         >
-            <FaLinkedIn />
+            <img src={LinkedIn} alt="LinkedIn" class="w-8 h-8" />
         </a>
     </div>
 </footer>
