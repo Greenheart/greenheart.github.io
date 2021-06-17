@@ -1,4 +1,5 @@
 <script context="module">
+    import Tags from '../../components/Tags.svelte'
     import { formatDate } from '$lib/formatDate'
     // Override default components used to render posts: https://mdsvex.com/docs#custom-components
     import { default as a } from '../../components/Link.svelte'
@@ -24,13 +25,7 @@
     <h1>{title}</h1>
     <time datetime={date}>{formatDate(date)}</time>
 
-    <div class="my-2 flex space-x-2 uppercase">
-        {#each tags as tag}
-            <span class="p-1 bg-mantis text-xs rounded-sm leading-3">
-                {tag}
-            </span>
-        {/each}
-    </div>
+    <Tags {tags} class="my-2" />
 
     <slot />
 </article>
