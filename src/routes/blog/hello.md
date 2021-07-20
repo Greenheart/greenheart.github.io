@@ -1,7 +1,7 @@
 ---
 title: This is the title. And this is a really long one which still will look pretty good.
 date: 2021-05-22
-tags: ['svelte', 'typescript']
+tags: ['Svelte', 'TypeScript']
 ---
 
 This will be a good start. Just check this code sample:

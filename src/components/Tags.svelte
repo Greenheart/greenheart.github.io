@@ -10,7 +10,7 @@
 
 <div class={classes}>
     {#each tags as tag}
-        <span class="p-1 bg-mantis text-xs rounded-sm leading-3 uppercase">
+        <span class="p-1 bg-mantis text-xs rounded-sm leading-3">
             {tag}
         </span>
     {/each}
