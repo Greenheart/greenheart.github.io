@@ -20,7 +20,7 @@
 </svelte:head>
 
 <header class="flex flex-1 justify-between p-4 max-w-6xl mx-auto">
-    <a href="/" sveltekit:prefetch class="font-semibold">Samuel Plumppu</a>
+    <a href="/" sveltekit:prefetch class="font-semibold grid place-items-center">Samuel Plumppu</a>
     <nav class="flex space-x-4">
         {#each links as link}
             <Link href={link.href} sveltekit:prefetch>{link.text}</Link>
