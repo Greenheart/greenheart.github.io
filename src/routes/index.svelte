@@ -28,7 +28,7 @@
 
 <section class="grid grid-cols-1 max-w-prose mx-auto">
     <p class="text-xl sm:text-2xl mb-4">
-        For 5+ years, I've worked with teams of designers and developers to
+        Since 2015, I've worked with teams of designers and developers to
         maximize our positive impact in the world.
     </p>
     <p class="text-xl sm:text-2xl mb-4">
