@@ -3,7 +3,6 @@
     import { flip } from 'svelte/animate'
     import { quintOut } from 'svelte/easing'
     import { onMount } from 'svelte'
-    import MediaQuery from 'svelte-media-query'
 
     import type { TechStack } from '$lib/interfaces'
 
@@ -82,33 +81,19 @@
         class:hidden={!ready}
     >
         {#if ready}
-            <MediaQuery query="(prefers-reduced-motion: reduce)" let:matches>
-                {#if matches}
-                    {#each tech[selected] as technology (technology)}
-                        <span class="pl-2 pb-5">
-                            <span
-                                class="p-2 bg-ming font-light rounded-sm tracking-wide"
-                            >
-                                {technology}
-                            </span>
-                        </span>
-                    {/each}
-                {:else}
-                    {#each tech[selected] as technology, index (technology)}
-                        <span
-                            class="pl-2 pb-5"
-                            animate:flip={{ duration: 300, easing: quintOut }}
-                        >
-                            <span
-                                class="p-2 bg-ming font-light rounded-sm tracking-wide"
-                                in:fade={{ delay: index * 35, duration: 300 }}
-                            >
-                                {technology}
-                            </span>
-                        </span>
-                    {/each}
-                {/if}
-            </MediaQuery>
+            {#each tech[selected] as technology, index (technology)}
+                <span
+                    class="pl-2 pb-5"
+                    animate:flip={{ duration: 300, easing: quintOut }}
+                >
+                    <span
+                        class="p-2 bg-ming font-light rounded-sm tracking-wide"
+                        in:fade={{ delay: index * 35, duration: 300 }}
+                    >
+                        {technology}
+                    </span>
+                </span>
+            {/each}
         {/if}
     </div>
 </section>
