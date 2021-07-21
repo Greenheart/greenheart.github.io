@@ -3,6 +3,10 @@ import mdsvexConfig from './mdsvex.config.js'
 import preprocess from 'svelte-preprocess'
 import adapter from '@sveltejs/adapter-static'
 
+// Fix Tailwind CSS live reloading
+// Deatils: https://github.com/svelte-add/svelte-add/issues/67
+process.env.TAILWIND_MODE = process.env.NODE_ENV === "development" ? "watch" : "build"
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
     extensions: ['.svelte', ...mdsvexConfig.extensions],
