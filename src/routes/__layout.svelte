@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
     import Link from '../components/Link.svelte'
+    import EncryptedEmail from '../components/EncryptedEmail.svelte'
 
     import LinkedIn from '../../static/images/linkedin.svg'
     import GitHub from '../../static/images/github.svg'
@@ -20,7 +21,7 @@
 </svelte:head>
 
 <header class="flex flex-1 justify-between p-4 max-w-6xl mx-auto">
-    <a href="/" sveltekit:prefetch class="font-semibold grid place-items-center">Samuel Plumppu</a>
+    <Link href="/" sveltekit:prefetch>Samuel Plumppu</Link>
     <nav class="flex space-x-4">
         {#each links as link}
             <Link href={link.href} sveltekit:prefetch>{link.text}</Link>
@@ -32,8 +33,17 @@
     <slot />
 </div>
 
-<footer class="p-4 text-center mt-8 max-w-6xl mx-auto font-light">
-    Samuel Plumppu © 2015 - {new Date().getFullYear()}
+<footer class="container px-4 pb-4 text-center max-w-6xl mx-auto font-light">
+    <hr class="my-16 max-w-sm mx-auto border-ming" id="contact" />
+    <h2
+        class="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none mb-6"
+    >
+        Let's co-create a sustainable future!
+    </h2>
+
+    <EncryptedEmail />
+
+    <p class="mt-8">Samuel Plumppu © 2015 - {new Date().getFullYear()}</p>
 
     <div class="flex justify-center space-x-4 items-center my-8">
         <a

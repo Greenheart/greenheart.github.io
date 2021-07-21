@@ -42,8 +42,14 @@
         Let's co-create a sustainable future!
     </h2>
 
-    <!-- TODO: Replace with better contact solution -->
-    <CTALink href="mailto:samuel.plumppu@gmail.com">Get in touch</CTALink>
+    <CTALink
+        href="#contact"
+        on:click={() => {
+            document
+                .querySelector('#contact')
+                ?.scrollIntoView({ behavior: 'smooth' })
+        }}>Contact me</CTALink
+    >
 </section>
 
 <hr class="my-16 max-w-sm mx-auto border-ming" />
@@ -85,19 +91,6 @@
             <li>Improved development practices</li>
         </ul>
     </div>
-</section>
-
-<hr class="my-16 max-w-sm mx-auto border-ming" />
-
-<section class="grid text-center justify-center grid-cols-1">
-    <h2
-        class="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none text-center"
-    >
-        Let's co-create a sustainable future!
-    </h2>
-
-    <!-- TODO: Replace with better contact solution -->
-    <CTALink href="mailto:samuel.plumppu@gmail.com">Get in touch</CTALink>
 </section>
 
 <!-- TODO: List 3 latest posts. CTA link to see all posts on the /blog page -->
