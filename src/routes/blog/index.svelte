@@ -1,24 +1,22 @@
-<script lang="ts">
-    import type { BlogPost } from '../../lib/interfaces'
-    import Tags from '../../components/Tags.svelte'
+<script lang="ts" context="module">
+    import type { LoadInput } from '@sveltejs/kit'
 
-    const posts: BlogPost[] = [
-        {
-            date: '2021-05-22',
-            title: 'My first post',
-            tags: ['Svelte', 'TypeScript'],
-        },
-        {
-            date: '2021-06-17',
-            title: 'Another post',
-            tags: ['React', 'Redux Toolkit'],
-        },
-        {
-            date: '2021-07-20',
-            title: 'This is the title. And this is a really long one which still will look pretty good.',
-            tags: ['TypeScript', 'Node.js'],
-        },
-    ]
+    import type { BlogPost } from '$lib/interfaces'
+    import Tags from '../../components/Tags.svelte'
+    import { formatDate } from '$lib/formatDate'
+
+    export async function load({ fetch }: LoadInput) {
+        try {
+            const posts = await fetch('/blog.json').then((res) => res.json())
+            return { props: { posts } }
+        } catch (error) {
+            console.error(error)
+        }
+    }
+</script>
+
+<script lang="ts">
+    export let posts: BlogPost[] = []
 </script>
 
 <!-- TODO: Add /tags/index.svelte - List all tags and how many posts that exist with each, sort by most posts at the top -->
@@ -34,14 +32,16 @@
 
 <section class="grid grid-cols-1 max-w-prose mx-auto gap-6">
     {#each posts as post}
-        <article class="p-4 bg-white shadow-lg rounded-md">
+        <article class="p-4 bg-white shadow-lg rounded-md hover:shadow-xl">
             <h2
                 class="text-xl xs:text-2xl md:text-3xl leading-none font-black tracking tight mb-4"
             >
-                {post.title}
+                <a href={'/blog/' + post.slug} sveltekit:prefetch
+                    >{post.title}</a
+                >
             </h2>
             <div class="flex justify-between">
-                <time datetime={post.date}>{post.date}</time>
+                <time datetime={post.date}>{formatDate(post.date)}</time>
                 {#if post.tags}
                     <Tags tags={post.tags} />
                 {/if}
@@ -49,6 +49,3 @@
         </article>
     {/each}
 </section>
-
-<!-- TODO: Add util that fetches all posts, and parses their frontmatter to make it available for svelte code -->
-<!-- TODO: Add /blog/index.svelte - List all blog posts, latest first -->
