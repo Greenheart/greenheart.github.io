@@ -6,7 +6,6 @@ export interface RawBlogPost {
 
 export interface BlogPost extends RawBlogPost {
     slug: string
-    readingTime: string
 }
 
 export interface TechStack {

@@ -1,7 +1,6 @@
 import { readFileSync, readdirSync } from 'fs'
 import { resolve } from 'path'
 import matter from 'gray-matter'
-import readingTime from 'reading-time'
 
 import type { RawBlogPost } from '$lib/interfaces'
 
@@ -19,7 +18,6 @@ const posts = readdirSync(blogDir)
         return {
             ...(frontmatter.data as RawBlogPost),
             slug: file.replace('.md', ''),
-            readingTime: readingTime(frontmatter.content).text,
         }
     })
 
