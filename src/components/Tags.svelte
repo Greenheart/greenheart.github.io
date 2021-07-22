@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-    import type { BlogPost } from '../lib/interfaces'
+    import type { BlogPost } from '$lib/interfaces'
 </script>
 
 <script lang="ts">

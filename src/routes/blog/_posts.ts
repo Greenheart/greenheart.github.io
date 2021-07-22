@@ -3,7 +3,7 @@ import { resolve } from 'path'
 import matter from 'gray-matter'
 import readingTime from 'reading-time'
 
-import type { RawBlogPost } from '../../lib/interfaces'
+import type { RawBlogPost } from '$lib/interfaces'
 
 const blogDir = resolve(process.cwd(), 'src', 'routes', 'blog')
 
