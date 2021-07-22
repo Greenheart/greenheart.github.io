@@ -21,7 +21,7 @@
         <div class="bg-mantis transform -skew-y-1 p-2 shadow-2xl">
             <span class="whitespace-nowrap">Sustainability Entrepreneur</span>
             &
-            <span class="whitespace-nowrap">Fullstack Developer.</span>
+            <span class="whitespace-nowrap">Fullstack Developer</span>
         </div>
     </h2>
 </section>
