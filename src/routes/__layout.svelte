@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
-    import Link from '../components/Link.svelte'
-    import EncryptedEmail from '../components/EncryptedEmail.svelte'
+    import Link from '$components/Link.svelte'
+    import EncryptedEmail from '$components/EncryptedEmail.svelte'
 
     import LinkedIn from '../../static/images/linkedin.svg'
     import GitHub from '../../static/images/github.svg'

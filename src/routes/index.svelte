@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
-    import TechStack from '../components/TechStack.svelte'
-    import CTALink from '../components/CTALink.svelte'
+    import TechStack from '$components/TechStack.svelte'
+    import CTALink from '$components/CTALink.svelte'
 </script>
 
 <img

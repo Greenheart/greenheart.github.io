@@ -1,8 +1,8 @@
 <script context="module">
-    import Tags from '../../components/Tags.svelte'
+    import Tags from '$components/Tags.svelte'
     import { formatDate } from '$lib/formatDate'
     // Override default components used to render posts: https://mdsvex.com/docs#custom-components
-    import { default as a } from '../../components/Link.svelte'
+    import { default as a } from '$components/Link.svelte'
     export { a }
 
     import 'prism-themes/themes/prism-night-owl.css'

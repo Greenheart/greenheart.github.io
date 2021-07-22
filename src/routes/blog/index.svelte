@@ -2,7 +2,7 @@
     import type { LoadInput } from '@sveltejs/kit'
 
     import type { BlogPost } from '$lib/interfaces'
-    import Tags from '../../components/Tags.svelte'
+    import Tags from '$components/Tags.svelte'
     import { formatDate } from '$lib/formatDate'
 
     export async function load({ fetch }: LoadInput) {
