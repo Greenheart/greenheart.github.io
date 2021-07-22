@@ -1,6 +1,6 @@
 import { readFileSync, readdirSync } from 'fs'
 import { resolve } from 'path'
-import matter from 'gray-matter'
+import frontmatter from 'gray-matter'
 
 import type { RawBlogPost } from '$lib/interfaces'
 
@@ -9,14 +9,12 @@ const blogDir = resolve(process.cwd(), 'src', 'routes', 'blog')
 const posts = readdirSync(blogDir)
     .filter((e) => e.endsWith('.md'))
     .map((file) => {
-        const raw = readFileSync(resolve(blogDir, file), {
+        const post = readFileSync(resolve(blogDir, file), {
             encoding: 'utf8',
         })
 
-        const frontmatter = matter(raw)
-
         return {
-            ...(frontmatter.data as RawBlogPost),
+            ...(frontmatter(post).data as RawBlogPost),
             slug: file.replace('.md', ''),
         }
     })
