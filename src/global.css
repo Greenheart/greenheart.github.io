@@ -16,6 +16,14 @@
 @tailwind components;
 
 @layer components {
+    .link {
+        padding: .5rem;
+    }
+
+    .prose .link {
+        padding: .1rem;
+    }
+
     .link,
     .prose .link {
         position: relative;
@@ -23,30 +31,28 @@
         line-height: 1;
         z-index: 0;
         color: var(--black);
-        display: inline-block;
+        display: inline;
         overflow: hidden;
-        padding: .5rem;
     }
 
     .link::before,
     .prose .link::before {
         position: absolute;
         z-index: -1;
-        top: 0;
+        bottom: 0;
         left: 0;
-        height: 100%;
+        height: 2px;
         width: 100%;
         content: ' ';
         display: inline-block;
-        transform: translateY(calc(100% - 2px));
         background: var(--mantis);
-        transition: transform 0.15s ease-out;
+        transition: height 0.15s ease-out;
     }
 
     .link:hover::before,
     .prose .link:hover::before {
-        transform: translateY(0);
-        transition: transform 0.15s ease-out;
+        transition: height 0.15s ease-out;
+        height: 100%;
     }
 }
 
