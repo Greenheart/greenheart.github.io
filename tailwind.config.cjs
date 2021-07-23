@@ -53,6 +53,18 @@ module.exports = {
                         blockquote: {
                             color: theme('colors.black'),
                         },
+                        'code::before': {
+                            content: '',
+                        },
+                        'code::after': {
+                            content: '',
+                        },
+                        'code': {
+                            background: '#011627',
+                            color: theme('colors.white'),
+                            padding: 4,
+                            borderRadius: '4px',
+                        },
                     },
                 },
             }),
