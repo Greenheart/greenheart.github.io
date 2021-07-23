@@ -6,7 +6,7 @@
 <img
     src="/images/samuel.png"
     alt="Samuel"
-    class="rounded-full shadow-2xl mx-auto w-32 h-32 sm:w-40 sm:h-40 mb-8"
+    class="rounded-full shadow-2xl mx-auto w-32 h-32 sm:w-40 sm:h-40 my-8"
 />
 
 <section class="grid text-center justify-center">

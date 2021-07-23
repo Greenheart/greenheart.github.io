@@ -29,7 +29,7 @@
     </nav>
 </header>
 
-<div class="container mx-auto max-w-6xl p-4 mt-8">
+<div class="container mx-auto max-w-6xl p-4">
     <slot />
 </div>
 
