@@ -1,6 +1,6 @@
 ---
 title: Use Firefox Bookmark Keywords to Quickly Get to Websites You Visit Often with Only 4 Keystrokes
-date: 2021-07-23
+date: 2021-07-22
 tags: ['Firefox', 'Productivity']
 ---
 
