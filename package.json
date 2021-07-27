@@ -35,6 +35,7 @@
         "svelte": "^3.40.1",
         "svelte-preprocess": "^4.7.4",
         "tailwindcss": "^2.2.6",
+        "title-case": "^3.0.3",
         "tslib": "^2.3.0",
         "typescript": "^4.3.5"
     },
