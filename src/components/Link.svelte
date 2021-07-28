@@ -10,15 +10,17 @@
 
     const classes = [$$props.class ?? '', 'link'].join(' ').trim()
 
-    let isExternal = {}
+    let additionalProps: object
 
     onMount(() => {
         if (isExternalURL(href)) {
-            isExternal = { rel: 'noopener noreferrer', target: '_blank' }
+            additionalProps = { rel: 'noopener noreferrer', target: '_blank' }
+        } else {
+            additionalProps = { 'sveltekit:prefetch': true }
         }
     })
 </script>
 
-<a {href} {style} class={classes} {...$$props} {...isExternal}>
+<a {href} {style} class={classes} {...$$props} {...additionalProps}>
     <slot />
 </a>
