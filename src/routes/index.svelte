@@ -35,9 +35,11 @@
         I'm passionate about how open source communities can support a
         sustainable future, where both humanity and the living planet thrive.
     </p>
+</section>
 
+<div class="grid pt-2">
     <h2
-        class="mt-2 text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none text-center"
+        class="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none text-center"
     >
         Let's co-create a sustainable future!
     </h2>
@@ -50,7 +52,7 @@
                 ?.scrollIntoView({ behavior: 'smooth' })
         }}>Contact me</CTALink
     >
-</section>
+</div>
 
 <hr class="my-16 max-w-sm mx-auto border-ming" />
 
