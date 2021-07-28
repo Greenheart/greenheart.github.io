@@ -16,3 +16,5 @@ if (MULTIPLE) {
 } else {
     console.log(titleCase(process.argv.slice(2).join(' ')))
 }
+
+// IDEA: Copy output to clipboard and simply write a message to the console that it has been done.

@@ -43,3 +43,6 @@ const formatted = prettier.format(code, {
 })
 
 await writeFile(output, formatted, { encoding: 'utf-8' })
+
+
+// IDEA: Copy output to clipboard and write to console that it has been done.
