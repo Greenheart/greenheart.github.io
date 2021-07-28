@@ -22,6 +22,7 @@ module.exports = {
             typography: (theme) => ({
                 DEFAULT: {
                     css: {
+                        maxWidth: '75ch',
                         color: theme('colors.black'),
                         h1: {
                             color: theme('colors.black'),
@@ -59,7 +60,7 @@ module.exports = {
                         'code::after': {
                             content: '',
                         },
-                        'code': {
+                        code: {
                             background: '#011627',
                             color: theme('colors.white'),
                             padding: 4,
