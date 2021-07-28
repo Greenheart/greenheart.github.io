@@ -69,6 +69,9 @@ module.exports = {
                             wordBreak: 'break-word',
                             whiteSpace: 'nowrap',
                         },
+                        strong: {
+                            color: theme('colors.black')
+                        }
                     },
                 },
             }),
