@@ -4,3 +4,6 @@ node_modules
 /build
 /functions
 .env
+
+scripts/format-output.txt
+scripts/format-input.txt
