@@ -4,11 +4,12 @@ date: 2021-07-27
 tags: ['Code Snippet', 'JavaScript', 'Node.js']
 ---
 
-A Node.js function to rename the file extension for matching files in a directory using [fs-extra](https://www.npmjs.com/package/fs-extra).
+A Node.js script to rename the file extension for all matching files in a directory.
 
 ```js
-import { move } from 'fs-extra'
-import { readdir } from 'fs/promises'
+#!/usr/bin/env node
+
+import { readdir, rename } from 'fs/promises'
 import { resolve } from 'path'
 
 /**
@@ -37,7 +38,7 @@ async function updateFileExtensions({
             const after = beforeExt.length
                 ? before.replace(beforeExt, afterExt)
                 : before + afterExt
-            return move(before, after)
+            return rename(before, after)
         }),
     )
 
@@ -47,8 +48,8 @@ async function updateFileExtensions({
 const renamedCount = await updateFileExtensions({
     baseDir: resolve(process.cwd(), 'images'),
     shouldRenameFile: (f) => f.length === 64,
-    before: '',
-    after: '.jpg',
+    beforeExt: '',
+    afterExt: '.jpg',
 })
 
 console.log(renamedCount)
