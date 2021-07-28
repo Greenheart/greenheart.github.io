@@ -65,6 +65,7 @@ module.exports = {
                             color: theme('colors.white'),
                             padding: 4,
                             borderRadius: '4px',
+                            marginRight: '1px',
                         },
                     },
                 },
