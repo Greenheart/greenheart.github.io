@@ -66,6 +66,8 @@ module.exports = {
                             padding: 4,
                             borderRadius: '4px',
                             marginRight: '1px',
+                            wordBreak: 'break-word',
+                            whiteSpace: 'nowrap',
                         },
                     },
                 },
