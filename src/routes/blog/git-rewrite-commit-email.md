@@ -1,7 +1,7 @@
 ---
 title: Update Your Git Commit Email Address Before Pushing to Remote Repository
 date: 2021-07-23
-tags: ['Git', 'Quick Tip']
+tags: ['Git', 'Code Snippet']
 ---
 
 Here's a quick way to update commit author email and display name for previous commits in a local project.
