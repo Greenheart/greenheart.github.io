@@ -21,10 +21,10 @@
 </svelte:head>
 
 <header class="flex flex-1 justify-between p-4 max-w-6xl mx-auto">
-    <Link href="/" sveltekit:prefetch>Samuel Plumppu</Link>
+    <Link href="/">Samuel Plumppu</Link>
     <nav class="flex space-x-4">
         {#each links as link}
-            <Link href={link.href} sveltekit:prefetch>{link.text}</Link>
+            <Link href={link.href}>{link.text}</Link>
         {/each}
     </nav>
 </header>
