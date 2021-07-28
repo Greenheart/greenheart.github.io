@@ -2,13 +2,13 @@
 
 @layer base {
     :root {
-        --pacificBlue: #46B4C7;
-        --ming: #256D7A;
-        --cedarChest: #C76350;
-        --mantis: #5AC75F;
-        --fernGreen: #3D7A40;
+        --pacificBlue: #46b4c7;
+        --ming: #256d7a;
+        --cedarChest: #c76350;
+        --mantis: #5ac75f;
+        --fernGreen: #3d7a40;
         --white: #fff;
-        --honeydew: #D6EAD7;
+        --honeydew: #d6ead7;
         --black: #000;
     }
 }
@@ -16,43 +16,30 @@
 @tailwind components;
 
 @layer components {
-    .link {
-        padding: .5rem;
-    }
-
-    .prose .link {
-        padding: .1rem;
-    }
-
     .link,
     .prose .link {
-        position: relative;
-        text-decoration: none;
-        line-height: 1;
-        z-index: 0;
         color: var(--black);
-        display: inline;
-        overflow: hidden;
+        line-height: 1;
+        padding: 0.5rem;
+        background: linear-gradient(
+            to bottom,
+            var(--mantis) 0%,
+            var(--mantis) 100%
+        );
+        background-position: 0 100%;
+        background-repeat: repeat-x;
+        background-size: 2px 2px;
+        transition: background-size 0.15s ease-out;
+        text-decoration: none;
     }
 
-    .link::before,
-    .prose .link::before {
-        position: absolute;
-        z-index: -1;
-        bottom: 0;
-        left: 0;
-        height: 2px;
-        width: 100%;
-        content: ' ';
-        display: inline-block;
-        background: var(--mantis);
-        transition: height 0.15s ease-out;
+    .link:hover,
+    .prose .link:hover {
+        background-size: 2px 100%;
     }
 
-    .link:hover::before,
-    .prose .link:hover::before {
-        transition: height 0.15s ease-out;
-        height: 100%;
+    .prose .link {
+        padding: 0.1rem;
     }
 }
 
