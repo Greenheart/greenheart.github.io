@@ -1,8 +1,9 @@
 import { mdsvex } from 'mdsvex'
-import mdsvexConfig from './mdsvex.config.js'
 import preprocess from 'svelte-preprocess'
 import adapter from '@sveltejs/adapter-static'
 import { resolve } from 'path'
+
+import mdsvexConfig from './mdsvex.config.js'
 
 // Fix Tailwind CSS live reloading
 // Deatils: https://github.com/svelte-add/svelte-add/issues/67
@@ -27,6 +28,7 @@ export default {
             resolve: {
                 alias: {
                     $components: resolve('./src/components'),
+                    $data: resolve('./src/data'),
                 }
             }
         }
