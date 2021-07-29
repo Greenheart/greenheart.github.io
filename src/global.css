@@ -38,6 +38,19 @@
         background-size: 2px 100%;
     }
 
+    @media (hover: none) {
+        .link:hover,
+        .prose .link:hover {
+            background-size: 2px 2px;
+        }
+
+        .link:active,
+        .prose .link:active {
+            background-size: 2px 100%;
+            transition: none;
+        }
+    }
+
     .prose .link {
         padding: 0.1rem;
     }
