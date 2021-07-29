@@ -23,22 +23,14 @@ In order to make the generator work in both browsers and Node.js, we need an abs
  */
 async function loadCrypto() {
     if (
-        (window && window.crypto) ||
+        (typeof window !== 'undefined' && window.crypto) ||
         (globalThis && globalThis.crypto)
     ) {
-        // Running in browsers released after 2014, and other
+        // Running in browsers released after 2017, and other
         // runtimes with `globalThis` like Deno or CloudFlare Workers
-        const subtle =
-            window.crypto.subtle ||
-            window.crypto.webkitSubtle ||
-            globalThis.crypto.subtle
+        const crypto = window.crypto || globalThis.crypto
 
-        return new Promise((resolve) =>
-            resolve({
-                getRandomValues: window.crypto.getRandomValues,
-                subtle,
-            }),
-        )
+        return new Promise((resolve) => resolve(crypto))
     } else {
         // Running in Node.js >= 15
         const nodeCrypto = await import('crypto')
