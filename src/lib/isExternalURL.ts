@@ -6,6 +6,5 @@
 export default function isExternalURL(href: string): boolean {
     const a = document.createElement('a')
     a.href = href
-    console.log(window.location.host, a.host)
     return window.location.host !== a.host
 }
