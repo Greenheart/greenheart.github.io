@@ -1,20 +1,18 @@
 #!/usr/bin/env node
 
 import { titleCase } from 'title-case'
+import { write } from 'clipboardy'
 
-/**
- * Title case strings. Useful for blog post heading formatting.
-*/
+/** Title case strings. Useful for blog post heading formatting. */
 
-/**
- * Change to `true` to format multiple titles at once.
- */
+/** Change to `true` to format multiple titles at once. */
 const MULTIPLE = false
+const input = process.argv.slice(2)
 
 if (MULTIPLE) {
-    process.argv.slice(2).forEach((arg) => console.log(titleCase(arg)))
+    write(input.map((arg) => titleCase(arg)).join('\n'))
 } else {
-    console.log(titleCase(process.argv.slice(2).join(' ')))
+    write(titleCase(input.join(' ')))
 }
 
-// IDEA: Copy output to clipboard and simply write a message to the console that it has been done.
+console.log('✅ Copied formatted title to the clipboard!')
