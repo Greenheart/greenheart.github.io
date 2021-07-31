@@ -10,9 +10,9 @@
 
 ## Writing Best Practices
 
-- Use the title casing script to format headings.
-- Format code blocks with `node script/format-code.js` to ensure they are consistent and avoid horizontal scroll bars as long as possible. See the script for further instructions.
-- Use `<!-- prettier-ignore-start -->` and `<!-- prettier-ignore-end -->` to prevent the main Prettier instance of the codebase to re-format the inline code blocks after they have been formatted with the manual script.
+- Use `node scripts/title-case.js` to format headings.
+- Use `node scripts/format-code.js` to ensure code has a consistent style.
+- Use `<!-- prettier-ignore-start -->` and `<!-- prettier-ignore-end -->` to wrap code blocks in blog posts to prevent the main Prettier instance of the codebase to re-format the code blocks after they already have been formatted with `node scripts/format-code.js`.
 
 ## Credits
 

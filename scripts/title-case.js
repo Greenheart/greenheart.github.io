@@ -1,18 +1,25 @@
 #!/usr/bin/env node
 
+/**
+ * Title Case Headings.
+ * 
+ * Why?
+ *
+ * 1. Ensure consistent heading style in all posts.
+ *
+ * Usage:
+ *
+ * 1. Copy the heading you want to format
+ * 3. Run `node scripts/title-case.js` to format and copy the result to the clipboard.
+ * 4. Paste the heading anywhere.
+ */
+
 import { titleCase } from 'title-case'
-import { write } from 'clipboardy'
+import { read, write } from 'clipboardy'
 
-/** Title case strings. Useful for blog post heading formatting. */
+const input = await read()
+const result = titleCase(input)
+console.log(result)
+await write(result)
 
-/** Change to `true` to format multiple titles at once. */
-const MULTIPLE = false
-const input = process.argv.slice(2)
-
-if (MULTIPLE) {
-    write(input.map((arg) => titleCase(arg)).join('\n'))
-} else {
-    write(titleCase(input.join(' ')))
-}
-
-console.log('✅ Copied formatted title to the clipboard!')
+console.log('\n✅ Copied formatted title to the clipboard!')
