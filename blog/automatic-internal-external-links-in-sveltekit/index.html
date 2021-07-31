@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+        Samuel Plumppu | Sustainability Entrepreneur &amp; Fullstack Developer
+    </title>
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-3d60917e.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-d3a3d99b.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-9f053d9f.js">
+		<link rel="modulepreload" href="/./_app/chunks/Link-296b70ba.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/automatic-internal-external-links-in-sveltekit.md-5817e2c8.js">
+		<link rel="modulepreload" href="/./_app/chunks/_post-53688762.js">
+		<link rel="modulepreload" href="/./_app/chunks/Tags-f1d3d92f.js">
+		<link rel="stylesheet" href="/./_app/assets/start-0826e215.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-41c8e93d.css">
+		<link rel="stylesheet" href="/./_app/assets/_post-0df19b9d.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-3d60917e.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/pages/__layout.svelte-9f053d9f.js"),
+						import("/./_app/pages/blog/automatic-internal-external-links-in-sveltekit.md-5817e2c8.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/blog/automatic-internal-external-links-in-sveltekit",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+</head>
+
+<body class="bg-honeydew">
+    <div id="svelte">
+
+
+
+
+<header class="flex flex-1 justify-between p-4 max-w-6xl mx-auto"><a href="/" style="" class="link">Samuel Plumppu</a>
+    <nav class="flex space-x-4"><a href="/blog" style="" class="link">Blog</a></nav></header>
+
+<div class="container mx-auto max-w-6xl p-4">
+
+
+
+<h1 class="font-black text-4xl lg:text-5xl mx-auto text-center">Automatic Internal and External Links in SvelteKit</h1>
+
+<article class="prose lg:prose-lg mx-auto text-base mt-4"><time datetime="2021-07-31T00:00:00.000Z">31 July 2021</time>
+
+    <div class="flex space-x-2 items-center my-2"><span class="p-1 bg-mantis text-xs rounded-sm leading-3">TypeScript
+        </span><span class="p-1 bg-mantis text-xs rounded-sm leading-3">Svelte
+        </span><span class="p-1 bg-mantis text-xs rounded-sm leading-3">SvelteKit
+        </span><span class="p-1 bg-mantis text-xs rounded-sm leading-3">Code Snippet
+        </span></div>
+    <p>Markdown content on blogs often require you to support both internal and external links at the same time. Most of the times, you need separate behaviors for the different kinds, like for example prefetching internal links to improve page load times on your blog, while simultaneously opening external links in separate tabs without prefetching but instead with other attributes like <code>rel=&quot;noopener noreferrer&quot;</code>.</p>
+<p>Fortunately, Svelte and SvelteKit provides a good solution to this problem.</p>
+<p>First of all, we need to test if a given URL is external. This can be solved with a helper function like this:</p>
+<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token comment">/**
+ * Test if an URL is external.
+ *
+ * @param href &#123;string&#125; The URL to test.
+ * @returns True if the link is external, and false otherwise.
+ */</span>
+<span class="token keyword">function</span> <span class="token function">isExternalURL</span><span class="token punctuation">(</span>href<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> a <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span>
+    a<span class="token punctuation">.</span>href <span class="token operator">=</span> href
+    <span class="token keyword">return</span> window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>host <span class="token operator">!==</span> a<span class="token punctuation">.</span>host
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
+<p>Then you can use <code>isExternalURL()</code> to create a Svelte <code>&lt;Link /&gt;</code> component that automatically handles the right attributes for both internal and external links. And with SvelteKit’s <code>sveltekit:prefetch</code> directive, your users will get a really smooth experience browsing your website, without compromising on how you handle external links.</p>
+<h2>Finished SvelteKit <code>&lt;Link /&gt;</code> Component</h2>
+<pre class="language-svelte"><!-- HTML_TAG_START --><code class="language-svelte"><span class="token comment">&lt;!-- Link.svelte --></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ts<span class="token punctuation">"</span></span> <span class="token attr-name">context</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> onMount <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'svelte'</span>
+
+    <span class="token comment">/**
+     * Test if an URL is external.
+     *
+     * @param href &#123;string&#125; The URL to test.
+     * @returns True if the link is external, and false otherwise.
+     */</span>
+    <span class="token keyword">function</span> <span class="token function">isExternalURL</span><span class="token punctuation">(</span><span class="token parameter">href<span class="token operator">:</span> string</span><span class="token punctuation">)</span><span class="token operator">:</span> boolean <span class="token punctuation">&#123;</span>
+        <span class="token keyword">const</span> a <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span>
+        a<span class="token punctuation">.</span>href <span class="token operator">=</span> href
+        <span class="token keyword">return</span> window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>host <span class="token operator">!==</span> a<span class="token punctuation">.</span>host
+    <span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ts<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">export</span> <span class="token keyword">let</span> style <span class="token operator">=</span> <span class="token string">''</span>
+    <span class="token keyword">export</span> <span class="token keyword">let</span> href <span class="token operator">=</span> <span class="token string">''</span>
+
+    <span class="token keyword">const</span> classes <span class="token operator">=</span> <span class="token punctuation">[</span>$$props<span class="token punctuation">.</span>class <span class="token operator">??</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">'link'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">let</span> additionalProps<span class="token operator">:</span> object
+
+    <span class="token function">onMount</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isExternalURL</span><span class="token punctuation">(</span>href<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            additionalProps <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+                rel<span class="token operator">:</span> <span class="token string">'noopener noreferrer'</span><span class="token punctuation">,</span>
+                target<span class="token operator">:</span> <span class="token string">'_blank'</span><span class="token punctuation">,</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            additionalProps <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+                <span class="token string">'sveltekit:prefetch'</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>href<span class="token punctuation">&#125;</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>style<span class="token punctuation">&#125;</span></span> <span class="token attr-name">class=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>classes<span class="token punctuation">&#125;</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token operator">...</span>$$props<span class="token punctuation">&#125;</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token operator">...</span>additionalProps<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre>
+<h2>Some Thoughts About This Implementation</h2>
+<ol><li>It uses two separate script contexts: One with <code>context=&quot;module&quot;</code> in order to only import external dependencies and create functions once during the runtime, and the other one for the component context which handles component instances and re-renders.</li>
+<li><code>$$props.class</code> is an unfortunate workaround to support external classes passed down via the regular class attribute, since <code>class</code> is a reserved keyword in JavaScript. If you know a better solution for this, feel free to reach out to me!</li></ol></article>
+
+
+</div>
+
+<footer class="container px-4 pb-4 text-center max-w-6xl mx-auto font-light"><hr class="my-16 max-w-sm mx-auto border-ming" id="contact">
+    <h2 class="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none mb-6">Let&#39;s co-create a sustainable future!
+    </h2>
+
+    <a href="#" class="bg-mantis  py-3 px-8 inline-flex rounded-md shadow-lg hover:shadow-xl transform-gpu hover:scale-105 duration-150 justify-self-center text-black font-black justify-center"><span class="whitespace-nowrap">Show Email</span></a>
+
+    <p class="mt-8">Samuel Plumppu © 2015 - 2021</p>
+
+    <div class="flex justify-center space-x-4 items-center my-8"><a href="https://github.com/Greenheart" target="_blank" rel="noopener noreferrer" aria-label="See my profile on GitHub"><img src="/_app/assets/github.4ea99f48.svg" alt="GitHub" class="w-8 h-8"></a>
+        <a href="https://linkedin.com/in/samuelplumppu" target="_blank" rel="noopener noreferrer" aria-label="Connect with me on LinkedIn"><img src="/_app/assets/linkedin.9dac6797.svg" alt="LinkedIn" class="w-8 h-8"></a></div></footer>
+
+
+
+	
+</div>
+</body>
+
+<style>
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            transition-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            animation-delay: 0.01ms !important;
+        }
+    }
+</style>
+</html>
