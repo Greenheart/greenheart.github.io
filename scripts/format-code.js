@@ -23,15 +23,15 @@
 
 import prettier from 'prettier'
 import { fileURLToPath } from 'url'
-import { readFile, writeFile } from 'fs/promises'
+import { readFile } from 'fs/promises'
+import { write } from 'clipboardy'
 
 const base = fileURLToPath(import.meta.url)
 const input = base.replace(/code\.js$/, 'input.txt')
-const output = base.replace(/code\.js$/, 'output.txt')
 
 const code = await readFile(input, { encoding: 'utf-8' })
 const formatted = prettier.format(code, {
-    plugins: ['prettier-plugin-jsdoc'],
+    plugins: ['prettier-plugin-jsdoc', 'prettier-plugin-svelte'],
     semi: false,
     singleQuote: true,
     tabWidth: 4,
@@ -39,10 +39,8 @@ const formatted = prettier.format(code, {
     printWidth: 70,
     proseWrap: 'always',
     // Any parser from https://prettier.io/docs/en/options.html#parser
-    parser: 'typescript',
+    parser: 'svelte',
 })
 
-await writeFile(output, formatted, { encoding: 'utf-8' })
-
-
-// IDEA: Copy output to clipboard and write to console that it has been done.
+await write(formatted)
+console.log('✅ Copied formatted code to the clipboard!')
