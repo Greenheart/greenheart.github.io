@@ -23,7 +23,7 @@
 
 <h1 class="font-black text-4xl lg:text-5xl mx-auto text-center">{title}</h1>
 
-<article class="prose lg:prose-lg mx-auto text-base mt-4">
+<article class="prose lg:prose-lg xl:prose-xl 2xl:prose-2xl mx-auto text-base mt-4">
     <time datetime={date}>{formatDate(date)}</time>
 
     <Tags {tags} class="my-2" />
