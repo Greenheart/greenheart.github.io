@@ -10,7 +10,7 @@
     "homepage": "https://samuelplumppu.se",
     "private": true,
     "scripts": {
-        "start": "svelte-kit dev",
+        "dev": "svelte-kit dev",
         "build": "svelte-kit build && node scripts/postbuild.js",
         "preview": "svelte-kit preview",
         "deploy": "npm run build && gh-pages -d build -b master -t",
