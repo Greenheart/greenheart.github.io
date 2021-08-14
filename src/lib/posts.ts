@@ -7,7 +7,8 @@ import type { RawBlogPost } from '$lib/interfaces'
 const blogDir = resolve(process.cwd(), 'src', 'routes', 'blog')
 
 const posts = readdirSync(blogDir)
-    .filter((e) => e.endsWith('.md'))
+    // Hide draft posts starting with `_`
+    .filter((e) => e.endsWith('.md') && !e.startsWith('_'))
     .map((file) => {
         const post = readFileSync(resolve(blogDir, file), {
             encoding: 'utf8',
