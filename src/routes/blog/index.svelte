@@ -32,7 +32,7 @@
     </h1>
 </section>
 
-<section class="grid grid-cols-1 max-w-prose mx-auto gap-6">
+<section class="grid grid-cols-1 max-w-screen-md mx-auto gap-6">
     {#each posts as post}
         <article class="p-4 bg-white shadow-lg rounded-md hover:shadow-xl">
             <h2
