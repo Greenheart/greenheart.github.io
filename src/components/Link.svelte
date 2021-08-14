@@ -5,12 +5,9 @@
 </script>
 
 <script lang="ts">
-    export let style = ''
     export let href = ''
-
-    const classes = [$$props.class ?? '', 'link'].join(' ').trim()
-
     let additionalProps: object
+    const classes = [$$props.class ?? '', 'link'].join(' ').trim()
 
     onMount(() => {
         if (isExternalURL(href)) {
@@ -21,6 +18,6 @@
     })
 </script>
 
-<a {href} {style} class={classes} {...$$props} {...additionalProps}>
+<a {href} class={classes} {...$$props} {...additionalProps}>
     <slot />
 </a>

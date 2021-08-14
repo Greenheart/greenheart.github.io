@@ -48,12 +48,9 @@ Then you can use `isExternalURL()` to create a Svelte `<Link />` component that 
 </script>
 
 <script lang="ts">
-    export let style = ''
     export let href = ''
-
-    const classes = [$$props.class ?? '', 'link'].join(' ').trim()
-
     let additionalProps: object
+    const classes = [$$props.class ?? '', 'default'].join(' ').trim()
 
     onMount(() => {
         if (isExternalURL(href)) {
@@ -69,7 +66,7 @@ Then you can use `isExternalURL()` to create a Svelte `<Link />` component that 
     })
 </script>
 
-<a {href} {style} class={classes} {...$$props} {...additionalProps}>
+<a {href} class={classes} {...$$props} {...additionalProps}>
     <slot />
 </a>
 ```
@@ -77,4 +74,4 @@ Then you can use `isExternalURL()` to create a Svelte `<Link />` component that 
 ## Some Thoughts About This Implementation
 
 1. It uses two separate script contexts: One with `context="module"` in order to only import external dependencies and create functions once during the runtime, and the other one for the component context which handles component instances and re-renders.
-2. `$$props.class` is an unfortunate workaround to support external classes passed down via the regular class attribute, since `class` is a reserved keyword in JavaScript. If you know a better solution for this, feel free to reach out to me!
+2. `$$props.class` is an unfortunate workaround to support external classes passed down via the regular class attribute, since `class` is a reserved keyword in JavaScript. Let me know if you have a better solution for this!
