@@ -9,22 +9,22 @@
 
 		
 
-		<link rel="modulepreload" href="/./_app/start-3d60917e.js">
-		<link rel="modulepreload" href="/./_app/chunks/vendor-d3a3d99b.js">
-		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-9f053d9f.js">
-		<link rel="modulepreload" href="/./_app/chunks/Link-296b70ba.js">
-		<link rel="modulepreload" href="/./_app/pages/blog/automatic-internal-external-links-in-sveltekit.md-5817e2c8.js">
-		<link rel="modulepreload" href="/./_app/chunks/_post-53688762.js">
-		<link rel="modulepreload" href="/./_app/chunks/Tags-f1d3d92f.js">
-		<link rel="stylesheet" href="/./_app/assets/start-0826e215.css">
-		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-41c8e93d.css">
-		<link rel="stylesheet" href="/./_app/assets/_post-0df19b9d.css">
+		<link rel="modulepreload" href="/_app/start-35d73ea4.js">
+		<link rel="modulepreload" href="/_app/chunks/vendor-49daea19.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-c10e0891.js">
+		<link rel="modulepreload" href="/_app/chunks/Link-666b6af4.js">
+		<link rel="modulepreload" href="/_app/pages/blog/automatic-internal-external-links-in-sveltekit.md-bdec98b8.js">
+		<link rel="modulepreload" href="/_app/chunks/_post-2795fb03.js">
+		<link rel="modulepreload" href="/_app/chunks/Tags-522f9d05.js">
+		<link rel="stylesheet" href="/_app/assets/start-0826e215.css">
+		<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-eecc4014.css">
+		<link rel="stylesheet" href="/_app/assets/_post-0df19b9d.css">
 
 		<script type="module">
-			import { start } from "/./_app/start-3d60917e.js";
+			import { start } from "/_app/start-35d73ea4.js";
 			start({
 				target: document.querySelector("#svelte"),
-				paths: {"base":"","assets":"/."},
+				paths: {"base":"","assets":""},
 				session: {},
 				host: location.host,
 				route: true,
@@ -34,8 +34,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/./_app/pages/__layout.svelte-9f053d9f.js"),
-						import("/./_app/pages/blog/automatic-internal-external-links-in-sveltekit.md-5817e2c8.js")
+						import("/_app/pages/__layout.svelte-c10e0891.js"),
+						import("/_app/pages/blog/automatic-internal-external-links-in-sveltekit.md-bdec98b8.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -54,8 +54,8 @@
 
 
 
-<header class="flex flex-1 justify-between p-4 max-w-6xl mx-auto"><a href="/" style="" class="link">Samuel Plumppu</a>
-    <nav class="flex space-x-4"><a href="/blog" style="" class="link">Blog</a></nav></header>
+<header class="flex flex-1 justify-between p-4 max-w-6xl mx-auto"><a href="/" class="link">Samuel Plumppu</a>
+    <nav class="flex space-x-4"><a href="/blog" class="link">Blog</a></nav></header>
 
 <div class="container mx-auto max-w-6xl p-4">
 
@@ -63,12 +63,12 @@
 
 <h1 class="font-black text-4xl lg:text-5xl mx-auto text-center">Automatic Internal and External Links in SvelteKit</h1>
 
-<article class="prose lg:prose-lg mx-auto text-base mt-4"><time datetime="2021-07-31T00:00:00.000Z">31 July 2021</time>
+<article class="prose lg:prose-lg xl:prose-xl 2xl:prose-2xl mx-auto text-base mt-4"><time datetime="2021-07-31T00:00:00.000Z">31 July 2021</time>
 
-    <div class="flex space-x-2 items-center my-2"><span class="p-1 bg-mantis text-xs rounded-sm leading-3">TypeScript
-        </span><span class="p-1 bg-mantis text-xs rounded-sm leading-3">Svelte
-        </span><span class="p-1 bg-mantis text-xs rounded-sm leading-3">SvelteKit
-        </span><span class="p-1 bg-mantis text-xs rounded-sm leading-3">Code Snippet
+    <div class="flex space-x-2 items-center my-2"><span class="p-1 bg-mantis text-xs md:text-sm rounded-sm leading-3">TypeScript
+        </span><span class="p-1 bg-mantis text-xs md:text-sm rounded-sm leading-3">Svelte
+        </span><span class="p-1 bg-mantis text-xs md:text-sm rounded-sm leading-3">SvelteKit
+        </span><span class="p-1 bg-mantis text-xs md:text-sm rounded-sm leading-3">Code Snippet
         </span></div>
     <p>Markdown content on blogs often require you to support both internal and external links at the same time. Most of the times, you need separate behaviors for the different kinds, like for example prefetching internal links to improve page load times on your blog, while simultaneously opening external links in separate tabs without prefetching but instead with other attributes like <code>rel=&quot;noopener noreferrer&quot;</code>.</p>
 <p>Fortunately, Svelte and SvelteKit provides a good solution to this problem.</p>
@@ -105,12 +105,9 @@
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ts<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
-    <span class="token keyword">export</span> <span class="token keyword">let</span> style <span class="token operator">=</span> <span class="token string">''</span>
     <span class="token keyword">export</span> <span class="token keyword">let</span> href <span class="token operator">=</span> <span class="token string">''</span>
-
-    <span class="token keyword">const</span> classes <span class="token operator">=</span> <span class="token punctuation">[</span>$$props<span class="token punctuation">.</span>class <span class="token operator">??</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">'link'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-
     <span class="token keyword">let</span> additionalProps<span class="token operator">:</span> object
+    <span class="token keyword">const</span> classes <span class="token operator">=</span> <span class="token punctuation">[</span>$$props<span class="token punctuation">.</span>class <span class="token operator">??</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">'default'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
     <span class="token function">onMount</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isExternalURL</span><span class="token punctuation">(</span>href<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -126,12 +123,12 @@
     <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>href<span class="token punctuation">&#125;</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>style<span class="token punctuation">&#125;</span></span> <span class="token attr-name">class=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>classes<span class="token punctuation">&#125;</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token operator">...</span>$$props<span class="token punctuation">&#125;</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token operator">...</span>additionalProps<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token language-javascript"><span class="token punctuation">&#123;</span>href<span class="token punctuation">&#125;</span></span> <span class="token attr-name">class=</span><span class="token language-javascript"><span class="token punctuation">&#123;</span>classes<span class="token punctuation">&#125;</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token operator">...</span>$$props<span class="token punctuation">&#125;</span></span> <span class="token language-javascript"><span class="token punctuation">&#123;</span><span class="token operator">...</span>additionalProps<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre>
 <h2>Some Thoughts About This Implementation</h2>
 <ol><li>It uses two separate script contexts: One with <code>context=&quot;module&quot;</code> in order to only import external dependencies and create functions once during the runtime, and the other one for the component context which handles component instances and re-renders.</li>
-<li><code>$$props.class</code> is an unfortunate workaround to support external classes passed down via the regular class attribute, since <code>class</code> is a reserved keyword in JavaScript. If you know a better solution for this, feel free to reach out to me!</li></ol></article>
+<li><code>$$props.class</code> is an unfortunate workaround to support external classes passed down via the regular class attribute, since <code>class</code> is a reserved keyword in JavaScript. Let me know if you have a better solution for this!</li></ol></article>
 
 
 </div>
