@@ -2,8 +2,6 @@
     import Link from '$components/Link.svelte'
     import EncryptedEmail from '$components/EncryptedEmail.svelte'
 
-    import LinkedIn from '../../static/images/linkedin.svg'
-    import GitHub from '../../static/images/github.svg'
     import '../global.css'
 </script>
 
@@ -52,7 +50,7 @@
             rel="noopener noreferrer"
             aria-label="See my profile on GitHub"
         >
-            <img src={GitHub} alt="GitHub" class="w-8 h-8" />
+            <img src="/images/github.svg" alt="GitHub" class="w-8 h-8" />
         </a>
         <a
             href="https://linkedin.com/in/samuelplumppu"
@@ -60,7 +58,7 @@
             rel="noopener noreferrer"
             aria-label="Connect with me on LinkedIn"
         >
-            <img src={LinkedIn} alt="LinkedIn" class="w-8 h-8" />
+            <img src="/images/linkedin.svg" alt="LinkedIn" class="w-8 h-8" />
         </a>
     </div>
 </footer>
