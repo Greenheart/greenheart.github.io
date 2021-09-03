@@ -49,7 +49,7 @@ module.exports = {
                             backgroundColor: theme('colors.black'),
                         },
                         hr: {
-                            color: theme('colors.black'),
+                            borderColor: theme('colors.ming'),
                         },
                         blockquote: {
                             color: theme('colors.black'),
@@ -70,8 +70,8 @@ module.exports = {
                             whiteSpace: 'nowrap',
                         },
                         strong: {
-                            color: theme('colors.black')
-                        }
+                            color: theme('colors.black'),
+                        },
                     },
                 },
             }),
