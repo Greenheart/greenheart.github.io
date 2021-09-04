@@ -1,6 +1,7 @@
 <script context="module" lang="ts">
     import Link from '$components/Link.svelte'
     import EncryptedEmail from '$components/EncryptedEmail.svelte'
+    import { baseTitle } from '$lib/constants'
 
     import '../global.css'
 </script>
@@ -14,7 +15,7 @@
 
 <svelte:head>
     <title>
-        Samuel Plumppu | Sustainability Entrepreneur & Fullstack Developer
+        {baseTitle}
     </title>
 </svelte:head>
 
