@@ -7,7 +7,8 @@ import mdsvexConfig from './mdsvex.config.js'
 
 // Fix Tailwind CSS live reloading
 // Deatils: https://github.com/svelte-add/svelte-add/issues/67
-process.env.TAILWIND_MODE = process.env.NODE_ENV === "development" ? "watch" : "build"
+process.env.TAILWIND_MODE =
+    process.env.NODE_ENV === 'development' ? 'watch' : 'build'
 
 /** @type {import('@sveltejs/kit').Config} */
 export default {
@@ -21,16 +22,14 @@ export default {
         }),
     ],
     kit: {
-        // hydrate the <div id="svelte"> element in src/app.html
-        target: '#svelte',
         adapter: adapter(),
         vite: {
             resolve: {
                 alias: {
                     $components: resolve('./src/components'),
                     $data: resolve('./src/data'),
-                }
-            }
-        }
-    }
+                },
+            },
+        },
+    },
 }
