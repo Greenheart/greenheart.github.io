@@ -6,12 +6,11 @@ const tech: TechStack = {
         'React',
         'Node.js',
         'TypeScript',
+        'React Native',
         'JavaScript',
         'Storybook',
         'Next.js',
         'Tailwind CSS',
-        'HTML',
-        'CSS',
         'Docker',
         'PostgreSQL',
         'GraphQL',
@@ -27,7 +26,7 @@ const tech: TechStack = {
         'Redis',
         'Mongo DB',
     ],
-    Learning: ['SvelteKit', 'React Native', 'KeystoneJS'],
+    Learning: ['SvelteKit', 'KeystoneJS', 'Hathora', 'Phaser'],
 }
 
 export default tech
