@@ -131,7 +131,7 @@
 
 <hr class="my-16 max-w-sm mx-auto border-ming" />
 
-<section class="grid grid-cols-1 max-w-screen-md mx-auto gap-6">
+<section class="grid grid-cols-1 max-w-screen-md mx-auto">
     <h2
         class="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none text-center mb-6"
     >
