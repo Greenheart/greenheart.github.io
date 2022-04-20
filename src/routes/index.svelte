@@ -1,6 +1,34 @@
 <script context="module" lang="ts">
+    import type { LoadInput } from '@sveltejs/kit'
+
     import TechStack from '$components/TechStack.svelte'
     import CTALink from '$components/CTALink.svelte'
+    import PostListing from '$components/PostListing.svelte'
+    import type { BlogPost } from '$lib/interfaces'
+
+    export async function load({ fetch }: LoadInput) {
+        try {
+            // TODO: Use better solution for featured posts
+            const all: BlogPost[] = await fetch('/blog.json').then((res) =>
+                res.json(),
+            )
+            return {
+                props: {
+                    featuredPosts: all.filter(
+                        (post) =>
+                            post.slug ===
+                            'generate-password-in-browser-web-crypto-api',
+                    ),
+                },
+            }
+        } catch (error) {
+            console.error(error)
+        }
+    }
+</script>
+
+<script lang="ts">
+    export let featuredPosts: BlogPost[] = []
 </script>
 
 <img
@@ -73,10 +101,10 @@
     </p>
 
     <p class="text-xl sm:text-2xl mb-8">
-        I also want the solutions and experiences we create to truly bring
-        value to people and society. Technology is exciting, but never the end
-        goal. This desire to deliver all the way helps me contribute with more
-        than just code to help the team succeed.
+        I also want solutions and experiences we create to truly bring value to
+        people and society. Technology is exciting, but never the end goal. This
+        desire to deliver all the way helps me contribute with more than just
+        code to help the team succeed.
     </p>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center">
@@ -86,8 +114,8 @@
             <li>Product strategy</li>
             <li>Attention to detail</li>
             <li>Mentorship & team growth</li>
-            <li>Design systems</li>
             <li>Community building</li>
+            <li>Design systems</li>
         </ul>
         <ul
             class="font-light tracking-wide flex flex-col items-center space-y-2 bg-white p-4 w-80 sm:w-72 shadow-lg rounded-sm"
@@ -99,6 +127,22 @@
             <li>Improved development practices</li>
         </ul>
     </div>
+</section>
+
+<hr class="my-16 max-w-sm mx-auto border-ming" />
+
+<section class="grid grid-cols-1 max-w-screen-md mx-auto gap-6">
+    <h2
+        class="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none text-center mb-6"
+    >
+        Selected blog post
+    </h2>
+
+    <section class="grid grid-cols-1 max-w-screen-md mx-auto gap-6">
+        {#each featuredPosts as post}
+            <PostListing {post} />
+        {/each}
+    </section>
 </section>
 
 <!-- TODO: List 3 latest posts. CTA link to see all posts on the /blog page -->

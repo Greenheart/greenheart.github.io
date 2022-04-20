@@ -1,9 +1,8 @@
 <script lang="ts" context="module">
     import type { LoadInput } from '@sveltejs/kit'
 
+    import PostListing from '$components/PostListing.svelte'
     import type { BlogPost } from '$lib/interfaces'
-    import Tags from '$components/Tags.svelte'
-    import { formatDate } from '$lib/formatDate'
 
     export async function load({ fetch }: LoadInput) {
         try {
@@ -34,20 +33,6 @@
 
 <section class="grid grid-cols-1 max-w-screen-md mx-auto gap-6">
     {#each posts as post}
-        <a href={'/blog/' + post.slug} sveltekit:prefetch>
-            <article class="p-4 bg-white shadow-lg rounded-md hover:shadow-xl">
-                <h2
-                    class="text-xl xs:text-2xl md:text-3xl leading-none font-black tracking tight mb-4"
-                >
-                    {post.title}
-                </h2>
-                <div class="flex justify-between">
-                    <time datetime={post.date}>{formatDate(post.date)}</time>
-                    {#if post.tags}
-                        <Tags tags={post.tags} />
-                    {/if}
-                </div>
-            </article>
-        </a>
+        <PostListing {post} />
     {/each}
 </section>
