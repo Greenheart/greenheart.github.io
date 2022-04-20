@@ -64,13 +64,19 @@
     <h2
         class="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none text-center mb-6"
     >
-        Additional Skills
+        How I like to contribute
     </h2>
 
     <p class="text-xl sm:text-2xl mb-8">
-        Working with early stage startups and teams with limited resources has
-        taught me to focus on the work with the highest impact. This allows me
-        to contribute with more than just code to help the team succeed.
+        Working with early stage startups and limited resources has taught me to
+        focus on the work with the highest impact.
+    </p>
+
+    <p class="text-xl sm:text-2xl mb-8">
+        I also want the solutions and experiences we create to truly bring
+        value to people and society. Technology is exciting, but never the end
+        goal. This desire to deliver all the way helps me contribute with more
+        than just code to help the team succeed.
     </p>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center">
