@@ -6,7 +6,7 @@
     export let pl = import.meta.env.VITE_PAYLOAD
     export let pwd = import.meta.env.VITE_PASSWORD
 
-    if (!pl || !pwd) throw 'Missing data'
+    if (!pl || !pwd) throw 'EncryptedEmail.svelte: Missing data'
 
     let text = 'Show Email'
     let href = '#'
