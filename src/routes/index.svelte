@@ -109,7 +109,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center">
         <ul
-            class="font-light tracking-wide flex flex-col items-center space-y-2 bg-white p-4 w-80 sm:w-72 shadow-lg rounded-sm"
+            class="font-light tracking-wide flex flex-col items-center space-y-2 bg-white p-4 w-80 sm:w-[272px] shadow-lg rounded-sm"
         >
             <li>Product strategy</li>
             <li>Attention to detail</li>
@@ -118,7 +118,7 @@
             <li>Design systems</li>
         </ul>
         <ul
-            class="font-light tracking-wide flex flex-col items-center space-y-2 bg-white p-4 w-80 sm:w-72 shadow-lg rounded-sm"
+            class="font-light tracking-wide flex flex-col items-center space-y-2 bg-white p-4 w-80 sm:w-[272px] shadow-lg rounded-sm"
         >
             <li>UI/UX design</li>
             <li>Humane tech & ethical design</li>
