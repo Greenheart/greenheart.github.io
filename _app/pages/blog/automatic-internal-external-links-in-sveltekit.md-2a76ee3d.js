@@ -1,4 +1,4 @@
-import{S as Kn,i as Mn,s as An,D as mn,x as Fn,y as In,z as Hn,A as qn,B as $n,r as Jn,p as zn,C as Bn,R as Rn,e as c,t as e,k as v,c as r,a as i,h as o,d as s,m as g,b as Cn,g as u,F as a,n as Zn}from"../../chunks/index-95479843.js";import{P as Gn}from"../../chunks/_post-46eb72df.js";import"../../chunks/constants-662300d2.js";import"../../chunks/Tags-f7cdfcfc.js";function Nn(T){let t,h,f,b,l,k,m,N,A,$,Q,F,E,On=`<code class="language-ts"><span class="token comment">/**
+import{S as Kn,i as Mn,s as An,D as mn,x as Fn,y as In,z as Hn,A as qn,B as $n,r as Jn,p as zn,C as Bn,R as Rn,e as c,t as e,k as v,c as r,a as i,h as o,d as s,m as g,b as Cn,g as u,F as a,n as Zn}from"../../chunks/index-95479843.js";import{P as Gn}from"../../chunks/_post-e7a8c627.js";import"../../chunks/constants-051b5a2a.js";import"../../chunks/Tags-2078939d.js";function Nn(T){let t,h,f,b,l,k,m,N,A,$,Q,F,E,On=`<code class="language-ts"><span class="token comment">/**
  * Test if an URL is external.
  *
  * @param href &#123;string&#125; The URL to test.
