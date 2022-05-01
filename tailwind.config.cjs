@@ -41,10 +41,10 @@ module.exports = {
                         h6: {
                             color: theme('colors.black'),
                         },
-                        'ol > li::before': {
+                        'ol > li::marker': {
                             color: theme('colors.black'),
                         },
-                        'ul > li::before': {
+                        'ul > li::marker': {
                             backgroundColor: theme('colors.black'),
                         },
                         hr: {
