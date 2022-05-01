@@ -5,6 +5,7 @@
     import CTALink from '$components/CTALink.svelte'
     import PostListing from '$components/PostListing.svelte'
     import type { BlogPost } from '$lib/interfaces'
+    import Link from '$components/Link.svelte'
 
     export async function load({ fetch }: LoadInput) {
         try {
@@ -129,7 +130,7 @@
     <h2
         class="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none text-center mb-6"
     >
-        Selected blog post
+        Featured blog post{featuredPosts.length > 1 ? 's' : ''}
     </h2>
 
     <section class="grid grid-cols-1 max-w-screen-md mx-auto gap-6">
@@ -137,7 +138,10 @@
             <PostListing {post} />
         {/each}
     </section>
+
+    <div class="flex justify-center pt-6">
+        <Link href="/blog">See more</Link>
+    </div>
 </section>
 
-<!-- TODO: List 3 latest posts. CTA link to see all posts on the /blog page -->
 <!-- TODO: Contact info. Potentially add a contact form to connect securely -->
