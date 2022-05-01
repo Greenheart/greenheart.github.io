@@ -2,12 +2,14 @@
     import { onMount } from 'svelte'
 
     import isExternalURL from '$lib/isExternalURL'
+    import { cx } from '$lib/utils'
 </script>
 
 <script lang="ts">
     export let href = ''
     let additionalProps: object
-    const classes = [$$props.class ?? '', 'link'].join(' ').trim()
+    let className = ''
+    export { className as class }
 
     onMount(() => {
         if (isExternalURL(href)) {
@@ -18,6 +20,6 @@
     })
 </script>
 
-<a {href} class={classes} {...$$props} {...additionalProps}>
+<a {href} {...$$props} class={cx('link', className)} {...additionalProps}>
     <slot />
 </a>

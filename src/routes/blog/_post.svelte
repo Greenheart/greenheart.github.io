@@ -4,8 +4,8 @@
     import { baseTitle } from '$lib/constants'
 
     // Override default components used to render posts: https://mdsvex.com/docs#custom-components
-    import { default as a } from '$components/Link.svelte'
-    export { a }
+    import Link from '$components/Link.svelte'
+    export { Link as a }
 
     import 'prism-themes/themes/prism-night-owl.css'
 </script>
@@ -33,10 +33,23 @@
     class="prose lg:prose-lg xl:prose-xl 2xl:prose-2xl mx-auto text-base mt-4"
 >
     <time datetime={date}>{formatDate(date)}</time>
-
     <Tags {tags} class="my-2" />
     <slot />
 </article>
+
+<section
+    class="p-4 bg-white shadow-lg rounded-md mx-auto mt-12 max-w-md text-center"
+>
+    <h2
+        class="text-xl xs:text-2xl md:text-3xl leading-none font-black tracking-tight mb-4"
+    >
+        Thank you for reading! 🌱
+    </h2>
+    <p class="lg:text-lg">
+        <Link href="/blog" class="p-[0.1rem]">Read more posts</Link>
+        or <Link href="/" class="p-[0.1rem]">learn more</Link> about me.
+    </p>
+</section>
 
 <!-- IDEA: Add links to more posts at the bottom of every post -->
 <!-- IDEA: Add short info about me at the bottom of every post, linking to home/about for more details -->
