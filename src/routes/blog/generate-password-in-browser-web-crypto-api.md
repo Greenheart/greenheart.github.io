@@ -2,6 +2,7 @@
 title: Use the Web Crypto API to Generate a Cryptographically Secure Password in the Browser and Node.js
 date: 2021-07-28
 tags: ['JavaScript', 'Web Crypto API', 'Node.js']
+featured: true
 ---
 
 Strong, cryptographically safe passwords are an essential foundation to live a secure digital life. With an open source password manager like [Bitwarden](https://bitwarden.com/), it's never been more accessible to generate unique, strong passwords for every online account, and then storing them in your password vault.
