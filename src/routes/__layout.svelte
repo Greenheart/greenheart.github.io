@@ -9,7 +9,7 @@
 <script>
     const links = [
         { text: 'Blog', href: '/blog' },
-        // { text: 'About', href: '/about' },
+        { text: 'About', href: '/about' },
         // { text: 'Talks', href: '/talks' },
     ]
 </script>

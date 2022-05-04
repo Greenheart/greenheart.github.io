@@ -51,7 +51,8 @@
         }
     }
 
-    .prose .link {
+    .prose .link,
+    .link.compact {
         padding: 0.1rem;
     }
 }

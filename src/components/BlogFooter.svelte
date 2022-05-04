@@ -11,7 +11,7 @@
         Thank you for reading! 🌱
     </h2>
     <p class="lg:text-lg">
-        <Link href="/blog" class="p-[0.1rem]">Read more posts</Link>
-        or <Link href="/" class="p-[0.1rem]">learn more</Link> about me.
+        <Link href="/blog" compact>Read more posts</Link>
+        or <Link href="/" compact>learn more</Link> about me.
     </p>
 </section>

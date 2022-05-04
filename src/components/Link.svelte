@@ -6,6 +6,8 @@
 </script>
 
 <script lang="ts">
+    export let compact = false
+
     export let href = ''
     let additionalProps: object
     let className = ''
@@ -20,6 +22,11 @@
     })
 </script>
 
-<a {href} {...$$props} class={cx('link', className)} {...additionalProps}>
+<a
+    {href}
+    {...$$props}
+    class={cx('link', className, compact ? 'compact' : undefined)}
+    {...additionalProps}
+>
     <slot />
 </a>
