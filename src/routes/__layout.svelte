@@ -1,7 +1,7 @@
 <script context="module" lang="ts">
     import Link from '$components/Link.svelte'
     import EncryptedEmail from '$components/EncryptedEmail.svelte'
-    import { baseTitle } from '$lib/constants'
+    import { BASE_TITLE } from '$lib/constants'
 
     import '../global.css'
 </script>
@@ -10,12 +10,13 @@
     const links = [
         { text: 'Blog', href: '/blog' },
         // { text: 'About', href: '/about' },
+        // { text: 'Talks', href: '/talks' },
     ]
 </script>
 
 <svelte:head>
     <title>
-        {baseTitle}
+        {BASE_TITLE}
     </title>
 </svelte:head>
 

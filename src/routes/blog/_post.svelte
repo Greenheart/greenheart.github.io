@@ -2,7 +2,7 @@
     import Tags from '$components/Tags.svelte'
     import BlogFooter from '$components/BlogFooter.svelte'
     import { formatDate } from '$lib/formatDate'
-    import { baseTitle } from '$lib/constants'
+    import { BASE_TITLE } from '$lib/constants'
 
     // Override default components used to render posts: https://mdsvex.com/docs#custom-components
     import { default as a } from '$components/Link.svelte'
@@ -22,7 +22,7 @@
 </script>
 
 <svelte:head>
-    <title>{`${title} | ${baseTitle}`}</title>
+    <title>{`${title} | ${BASE_TITLE}`}</title>
 </svelte:head>
 
 <!-- TODO: Add dynamic meta tags based on post content. -->
