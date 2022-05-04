@@ -41,7 +41,19 @@
         Let's co-create a sustainable future!
     </h2>
 
+    <!-- IDEA: Contact securely with Matrix by default -->
+    <!-- Then use email as backup, but discouraged -->
+
+    <!-- IDEA: Update EncryptedEmail to work with a encrypted JSON payload, and then display EncryptedContact info (rename component and refactor) -->
+
+    <!--
+        Contact securely
+        - or -
+        Show email
+    -->
     <EncryptedEmail />
+
+    <!-- Maybe (but likely not) use logos for Matrix: https://github.com/vector-im/logos -->
 
     <p class="mt-8">Samuel Plumppu © 2015 - {new Date().getFullYear()}</p>
 
