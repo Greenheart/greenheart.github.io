@@ -1,8 +1,9 @@
 <script lang="ts">
-    // TODO: load all talks dynamically
+    // TODO: load all talks dynamically from the static folder
     const talks = [
         '2021-05-17-chalmers-sustainability-entrepreneurship',
         '2021-09-11-hackforfuture-co-creation',
+        '2022-05-09-chalmers-entrepreneurship-inner-development'
     ]
 </script>
 
