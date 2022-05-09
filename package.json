@@ -19,7 +19,7 @@
     },
     "devDependencies": {
         "@sveltejs/adapter-static": "^1.0.0-next.29",
-        "@sveltejs/kit": "^1.0.0-next.324",
+        "@sveltejs/kit": "^1.0.0-next.326",
         "@tailwindcss/typography": "^0.5.2",
         "autoprefixer": "^10.4.7",
         "clipboardy": "^3.0.0",
