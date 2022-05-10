@@ -13,7 +13,7 @@
 	<link rel="modulepreload" href="/_app/chunks/constants-fb6fef14.js">
 	<link rel="modulepreload" href="/_app/chunks/Link-90aa2cf3.js">
 	<link rel="modulepreload" href="/_app/chunks/utils-a0fbfa6c.js">
-	<link rel="modulepreload" href="/_app/pages/qr.svelte-b11d02d2.js">
+	<link rel="modulepreload" href="/_app/pages/talks/index.svelte-5919f570.js">
 </head>
 
 <body class="bg-honeydew">
@@ -25,9 +25,13 @@
 <header class="flex flex-1 justify-between p-4 max-w-6xl mx-auto"><a href="/" class="link">Samuel Plumppu</a>
     <nav class="flex space-x-4"><a href="/blog" class="link">Blog</a><a href="/about" class="link">About</a><a href="/talks" class="link">Talks</a></nav></header>
 
-<div class="container mx-auto max-w-6xl p-4 pb-0"><div class="flex text-center flex-col items-center"><h2 class="font-bold">Scan to connect with me</h2>
-    <a href="https://samuelplumppu.se" class="link">https://samuelplumppu.se</a>
-    <img src="/images/qr-sp.svg" class="w-64 h-64 pt-4" alt="QR code to easily share the website https://samuelplumppu.se on for example conferences and in presentations"></div></div>
+<div class="container mx-auto max-w-6xl p-4 pb-0"><h1 class="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl leading-none font-black tracking-tight mb-8">My talks
+</h1>
+
+<div class="flex flex-col space-y-2 items-start"><a href="/talks/2022-05-09-chalmers-entrepreneurship-inner-development/" class="link" sveltekit:reload>2022-05-09-chalmers-entrepreneurship-inner-development
+        </a><a href="/talks/2021-09-11-hackforfuture-co-creation/" class="link" sveltekit:reload>2021-09-11-hackforfuture-co-creation
+        </a><a href="/talks/2021-05-17-chalmers-sustainability-entrepreneurship/" class="link" sveltekit:reload>2021-05-17-chalmers-sustainability-entrepreneurship
+        </a></div></div>
 
 <footer class="container px-4 pb-4 text-center max-w-6xl mx-auto font-light"><hr class="my-16 max-w-sm mx-auto border-ming" id="contact">
     <h2 class="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none mb-6">Let&#39;s co-create a sustainable future!
@@ -49,10 +53,10 @@
         <a href="https://linkedin.com/in/samuelplumppu" target="_blank" rel="noopener noreferrer" aria-label="Connect with me on LinkedIn"><img src="/images/linkedin.svg" alt="LinkedIn" class="w-8 h-8"></a></div></footer>
 
 
-		<script type="module" data-hydrate="iqi7ok">
+		<script type="module" data-hydrate="4r3wbl">
 		import { start } from "/_app/start-a7baf25a.js";
 		start({
-			target: document.querySelector('[data-hydrate="iqi7ok"]').parentNode,
+			target: document.querySelector('[data-hydrate="4r3wbl"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -63,13 +67,13 @@
 				error: null,
 				nodes: [
 					import("/_app/pages/__layout.svelte-a6a692c4.js"),
-						import("/_app/pages/qr.svelte-b11d02d2.js")
+						import("/_app/pages/talks/index.svelte-5919f570.js")
 				],
 				params: {},
-				routeId: "qr"
+				routeId: "talks"
 			}
 		});
-	</script></div>
+	</script><script type="application/json" sveltekit:data-type="props">{"allTalks":["2022-05-09-chalmers-entrepreneurship-inner-development","2021-09-11-hackforfuture-co-creation","2021-05-17-chalmers-sustainability-entrepreneurship"]}</script></div>
 </body>
 
 <style>
