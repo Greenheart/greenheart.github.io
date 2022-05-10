@@ -12,6 +12,7 @@
     "scripts": {
         "dev": "svelte-kit dev",
         "build": "svelte-kit build",
+        "postbuild": "node scripts/postbuild.js",
         "preview": "svelte-kit preview",
         "deploy": "npm run build && gh-pages -d build -b master -t",
         "lint": "prettier --check --plugin-search-dir=. .",
