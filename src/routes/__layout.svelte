@@ -20,9 +20,10 @@
     </title>
 </svelte:head>
 
+<!-- TODO: Add proper mobile menu that works for w < 375px -->
 <header class="flex flex-1 justify-between p-4 max-w-6xl mx-auto">
     <Link href="/">Samuel Plumppu</Link>
-    <nav class="flex space-x-4">
+    <nav class="flex space-x-2 xs:space-x-4">
         {#each links as link}
             <Link href={link.href}>{link.text}</Link>
         {/each}
