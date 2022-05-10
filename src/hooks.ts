@@ -26,7 +26,11 @@ export const handle: Handle = async ({ event, resolve }) => {
                 location: event.url.pathname + '/',
             },
         })
-    } else if (event.url.href.endsWith('/') && !isTalk.test(event.url.href)) {
+    } else if (
+        event.url.pathname.length > 1 &&
+        event.url.href.endsWith('/') &&
+        !isTalk.test(event.url.href)
+    ) {
         console.log(
             '[handle]: Removing unwanted trailing slash:',
             event.url.href,
@@ -39,47 +43,3 @@ export const handle: Handle = async ({ event, resolve }) => {
 
     return resolve(event)
 }
-
-// IDEA: intercept requests and serve static files or render the Slidev SPA
-
-// Only remaining issue is getting the right path for static assets
-
-// export const handle: Handle = async ({ event, resolve }) => {
-//     // const response = await resolve(event, {
-//     //     ssr: !event.url.pathname.startsWith('/talks/20'),
-//     // })
-
-//     // return response
-
-//     if (event.url.pathname.startsWith('/talks/20')) {
-//         const slug = event.url.pathname.replace('/talks/', '')
-
-//         // const x = path.resolve('static', 'talks', slug)
-//         // console.log('HOOOKS X', x)
-
-//         console.log(allTalks, slug)
-
-//         if (!allTalks.includes(slug)) {
-//             // IDEA: Maybe it would be possible to rewrite the URL to allow the static assets
-//             console.log(slug, event)
-//             const response = await resolve(event)
-//             return response
-//         }
-
-//         const talk = await readFile(
-//             path.resolve('./static', 'talks', slug, 'index.html'),
-//             { encoding: 'utf-8' },
-//         )
-
-//         if (talk) {
-//             return new Response(talk, {
-//                 headers: { 'Content-Type': 'text/html' },
-//             })
-//         }
-
-//         return new Response('', { status: 404 })
-//     }
-
-//     const response = await resolve(event)
-//     return response
-// }
