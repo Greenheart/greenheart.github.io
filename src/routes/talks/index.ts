@@ -9,6 +9,6 @@ export const ALL_TALKS = await getDirectories('./static/talks')
 
 export async function get() {
     return {
-        body: { allTalks: ALL_TALKS },
+        body: { allTalks: ALL_TALKS.reverse() },
     }
 }

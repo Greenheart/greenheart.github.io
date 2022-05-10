@@ -8,7 +8,7 @@
     My talks
 </h1>
 
-<div class="flex flex-col space-y-2">
+<div class="flex flex-col space-y-2 items-start">
     {#each allTalks as talk}
         <a href={`/talks/${talk}/`} class="link" sveltekit:reload>
             {talk}
