@@ -1,5 +1,15 @@
 # greenheart.github.io
 
+## Building the site with talks included
+
+*NOTE:* This could be simplified in the future to allow fully automatic builds.
+
+1. Git clone the talks repo https://github.com/Greenheart/talks
+2. Run `npm install` in the subdirectory of each talk.
+3. From the root of the `talks` project, run `npm i && npm run build`
+4. Back in the website project, run `npm run build` to build project with all talks
+5. Verify build output and deploy.
+
 ## Email Spam Protection
 
 1. Make a copy of `.env.example` and name it `.env`.
