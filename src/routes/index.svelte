@@ -1,17 +1,15 @@
 <script context="module" lang="ts">
-    import type { LoadInput } from '@sveltejs/kit'
-
     import TechStack from '$components/TechStack.svelte'
     import CTALink from '$components/CTALink.svelte'
     import PostListing from '$components/PostListing.svelte'
     import type { BlogPost } from '$lib/interfaces'
     import Link from '$components/Link.svelte'
 
-    export async function load({ fetch }: LoadInput) {
+    export async function load({ fetch }: any) {
         try {
             // TODO: Use better solution for featured posts
-            const all: BlogPost[] = await fetch('/blog.json').then((res) =>
-                res.json(),
+            const all: BlogPost[] = await fetch('/blog.json').then(
+                (res: Response) => res.json(),
             )
             return {
                 props: { featuredPosts: all.filter((p) => p.featured) },
