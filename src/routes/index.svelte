@@ -55,6 +55,10 @@
     <p class="text-xl sm:text-2xl mb-4">
         I'm passionate about how open source communities can support a
         sustainable future, where both humanity and the living planet thrive.
+        Currently working on <Link href="https://idg.tools" compact
+            >IDG.tools</Link
+        > and
+        <Link href="https://relate-app.com/en" compact>Relate</Link>.
     </p>
 </section>
 
