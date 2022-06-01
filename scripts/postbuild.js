@@ -8,7 +8,7 @@ const getDirectories = async (source) =>
 
 export const ALL_TALKS = await getDirectories(resolve('static/talks'))
 
-const UNWANTED_FILES = ['.html', '__data.json']
+const UNWANTED_FILES = ['__data.json']
 
 // Remove weird build artifacts caused by combining SvelteKit `static` assets with rendered pages
 await Promise.all(
