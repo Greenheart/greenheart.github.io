@@ -10,7 +10,7 @@
 
 <div class="flex flex-col space-y-2 items-start">
     {#each allTalks as talk}
-        <a href={`/talks/${talk}/`} class="link" sveltekit:reload>
+        <a href={`/talks/${talk}/`} class="link" data-sveltekit-reload>
             {talk}
         </a>
     {/each}

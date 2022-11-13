@@ -15,9 +15,11 @@
 
     onMount(() => {
         if (isExternalURL(href)) {
-            additionalProps = { rel: 'noopener noreferrer', target: '_blank' }
-        } else {
-            additionalProps = { 'sveltekit:prefetch': true }
+            additionalProps = {
+                rel: 'noopener noreferrer',
+                target: '_blank',
+                'data-sveltekit-prefetch': 'off',
+            }
         }
     })
 </script>
