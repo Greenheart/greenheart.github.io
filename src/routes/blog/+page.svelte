@@ -1,21 +1,11 @@
 <script lang="ts" context="module">
-    import type { LoadInput } from '@sveltejs/kit'
-
     import PostListing from '$components/PostListing.svelte'
-    import type { BlogPost } from '$lib/interfaces'
-
-    export async function load({ fetch }: LoadInput) {
-        try {
-            const posts = await fetch('/blog.json').then((res) => res.json())
-            return { props: { posts } }
-        } catch (error) {
-            console.error(error)
-        }
-    }
+    import type { PageData } from './$types'
 </script>
 
 <script lang="ts">
-    export let posts: BlogPost[] = []
+    export let data: PageData
+    $: ({ posts } = data)
 </script>
 
 <!-- TODO: Add /tags/index.svelte - List all tags and how many posts that exist with each, sort by most posts at the top -->

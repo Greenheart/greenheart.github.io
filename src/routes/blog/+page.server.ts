@@ -1,7 +1,6 @@
 import posts from '$lib/posts'
 
-export function get() {
-    return {
-        body: posts,
-    }
+/** @type {import('./$types').PageServerLoad} */
+export async function load() {
+    return { posts }
 }

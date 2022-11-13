@@ -2,7 +2,7 @@ import { readFileSync, readdirSync } from 'fs'
 import { resolve } from 'path'
 import frontmatter from 'gray-matter'
 
-import type { RawBlogPost } from '$lib/interfaces'
+import type { BlogPost, RawBlogPost } from '$lib/interfaces'
 
 const blogDir = resolve(process.cwd(), 'src', 'routes', 'blog')
 
@@ -24,4 +24,4 @@ const latestFirst = posts.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
 )
 
-export default latestFirst
+export default latestFirst as BlogPost[]
