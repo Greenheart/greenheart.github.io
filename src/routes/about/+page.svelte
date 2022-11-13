@@ -16,7 +16,7 @@
     <img
         src="/images/Tiomila2015.jpg"
         alt="Nighttime start of the Tiomila 2015 orienteering relay"
-        class="max-w-5xl pb-4"
+        class="max-w-5xl pb-4 w-full"
     />
     <figcaption class="max-w-prose">
         Seconds after the start of Tiomila 2015, one of the world's largest
