@@ -2,26 +2,13 @@
     import TechStack from '$components/TechStack.svelte'
     import CTALink from '$components/CTALink.svelte'
     import PostListing from '$components/PostListing.svelte'
-    import type { BlogPost } from '$lib/interfaces'
     import Link from '$components/Link.svelte'
-
-    export async function load({ fetch }: any) {
-        try {
-            // TODO: Use better solution for featured posts
-            const all: BlogPost[] = await fetch('/blog.json').then(
-                (res: Response) => res.json(),
-            )
-            return {
-                props: { featuredPosts: all.filter((p) => p.featured) },
-            }
-        } catch (error) {
-            console.error(error)
-        }
-    }
+    import type { PageData } from './$types'
 </script>
 
 <script lang="ts">
-    export let featuredPosts: BlogPost[] = []
+    export let data: PageData
+    $: ({ featuredPosts } = data)
 </script>
 
 <img
