@@ -19,6 +19,7 @@
     export let title = ''
     export let date = ''
     export let tags = ['']
+    export const featured = false
 </script>
 
 <svelte:head>

@@ -1,5 +1,7 @@
 <script lang="ts">
-    export let allTalks: string[] = []
+    import type { PageData } from './$types'
+    export let data: PageData
+    $: ({ talks } = data)
 </script>
 
 <h1
@@ -9,7 +11,7 @@
 </h1>
 
 <div class="flex flex-col space-y-2 items-start">
-    {#each allTalks as talk}
+    {#each talks as talk}
         <a href={`/talks/${talk}/`} class="link" data-sveltekit-reload>
             {talk}
         </a>

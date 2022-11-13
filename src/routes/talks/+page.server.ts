@@ -1,14 +1,5 @@
-import { readdir } from 'fs/promises'
+import talks from '$lib/talks'
 
-const getDirectories = async (source: string) =>
-    (await readdir(source, { withFileTypes: true }))
-        .filter((dirent) => dirent.isDirectory())
-        .map((dirent) => dirent.name)
-
-export const ALL_TALKS = await getDirectories('./static/talks')
-
-export async function get() {
-    return {
-        body: { allTalks: ALL_TALKS.reverse() },
-    }
+export async function load() {
+    return { talks: talks.reverse() }
 }

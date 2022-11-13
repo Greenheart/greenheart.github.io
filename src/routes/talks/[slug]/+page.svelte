@@ -1,8 +1,9 @@
 <script lang="ts">
-    export let talk = ''
+    import type { PageData } from './$types'
+    export let data: PageData
 
-    const [, HEAD] = talk.match(/<head>([^]+)<\/head>/) ?? []
-    const [, BODY] = talk.match(/<body>([^]+)<\/body>/) ?? []
+    const [, HEAD] = data.talk.match(/<head>([^]+)<\/head>/) ?? []
+    const [, BODY] = data.talk.match(/<body>([^]+)<\/body>/) ?? []
 </script>
 
 <svelte:head>

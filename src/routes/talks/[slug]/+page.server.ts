@@ -1,24 +1,22 @@
 import { readFile } from 'fs/promises'
 import { resolve } from 'path'
+import talks from '$lib/talks'
+import { error } from '@sveltejs/kit'
 
-import { ALL_TALKS } from '../+page.server'
-
-export async function get({ params: { slug } }: { params: { slug: string } }) {
-    if (ALL_TALKS.includes(slug)) {
+/** @type {import('./$types').PageServerLoad} */
+export async function load({ params: { slug }, setHeaders }) {
+    if (talks.includes(slug)) {
         const talk = await readFile(
             resolve(process.cwd(), 'static', 'talks', slug, 'index.html'),
             { encoding: 'utf-8' },
         )
 
-        if (talk) {
-            return {
-                body: { talk },
-                headers: {
-                    location: `/talks/${slug}/`,
-                },
-            }
-        }
+        setHeaders({
+            location: `/talks/${slug}/`,
+        })
+
+        if (talk) return { talk }
     }
 
-    return { status: 404 }
+    throw error(404, 'Not found')
 }
