@@ -4,6 +4,8 @@
     import { BASE_TITLE } from '$lib/constants'
 
     import '../global.css'
+
+    export const prerender = true
 </script>
 
 <script>

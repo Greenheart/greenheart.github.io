@@ -1,7 +1,7 @@
 import { readFile } from 'fs/promises'
 import { resolve } from 'path'
 
-import { ALL_TALKS } from '../index'
+import { ALL_TALKS } from '../+page.server'
 
 export async function get({ params: { slug } }: { params: { slug: string } }) {
     if (ALL_TALKS.includes(slug)) {

@@ -1,30 +1,22 @@
 import { mdsvex } from 'mdsvex'
 import preprocess from 'svelte-preprocess'
 import adapter from '@sveltejs/adapter-static'
-import { resolve } from 'path'
 
-import mdsvexConfig from './mdsvex.config.js'
+const mdsvexConfig = {
+    extensions: ['.svelte.md', '.md'],
+    remarkPlugins: [],
+    rehypePlugins: [],
+    layout: {
+        blog: './src/routes/blog/_post.svelte',
+    },
+}
 
 /** @type {import('@sveltejs/kit').Config} */
 export default {
     extensions: ['.svelte', ...mdsvexConfig.extensions],
-    preprocess: [
-        mdsvex(mdsvexConfig),
-        preprocess({
-            postcss: true,
-        }),
-    ],
+    preprocess: [mdsvex(mdsvexConfig), preprocess({ postcss: true })],
     kit: {
         adapter: adapter(),
-        prerender: { default: true },
         trailingSlash: 'ignore',
-        vite: {
-            resolve: {
-                alias: {
-                    $components: resolve('./src/components'),
-                    $data: resolve('./src/data'),
-                },
-            },
-        },
     },
 }

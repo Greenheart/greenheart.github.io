@@ -8,7 +8,9 @@
     More about me
 </h1>
 
-<h2 class="text-2xl font-bold pb-4">One of my most exciting orienteering memories so far:</h2>
+<h2 class="text-2xl font-bold pb-4">
+    One of my most exciting orienteering memories so far:
+</h2>
 
 <figure class="flex flex-col items-center">
     <img
@@ -17,9 +19,9 @@
         class="max-w-5xl pb-4"
     />
     <figcaption class="max-w-prose">
-        Seconds after the start of Tiomila 2015, one of the world's largest relays. I ran the
-        first leg and somehow got to the top 5 as we left the arena, later
-        finishing the course as <Link
+        Seconds after the start of Tiomila 2015, one of the world's largest
+        relays. I ran the first leg and somehow got to the top 5 as we left the
+        arena, later finishing the course as <Link
             href="https://10mila.se/index.php/sv/?option=com_tiomilaresults&year=70&class=8&leg=1&total=1"
             compact
         >
