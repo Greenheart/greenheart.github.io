@@ -63,7 +63,7 @@
 <a
     {href}
     on:click|once|preventDefault|trusted={showEmail}
-    class="bg-mantis  py-3 px-8 inline-flex rounded-md shadow-lg hover:shadow-xl transform-gpu hover:scale-105 duration-150 justify-self-center text-black font-black justify-center"
+    class="bg-mantis py-3 px-8 inline-flex rounded-md shadow-lg hover:shadow-xl transform-gpu hover:scale-105 duration-150 justify-self-center text-black font-black justify-center"
 >
     <span class="whitespace-nowrap">
         {text}

@@ -60,14 +60,38 @@
 
     <p class="mt-8">Samuel Plumppu © 2015 - {new Date().getFullYear()}</p>
 
-    <div class="flex justify-center space-x-4 items-center my-8">
+    <div class="flex justify-center space-x-8 items-center my-8 flex-wrap">
+        <a
+            href="https://matrix.to/#/@Greenheart:matrix.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Message me securely with the Matrix protocol"
+        >
+            <img
+                src="/images/matrix-logo.svg"
+                alt="Matrix.org logo"
+                class="h-8"
+            />
+        </a>
         <a
             href="https://github.com/Greenheart"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="See my profile on GitHub"
+            aria-label="See my free software at GitHub"
         >
             <img src="/images/github.svg" alt="GitHub" class="w-8 h-8" />
+        </a>
+        <a
+            href="https://fosstodon.org/@Greenheart"
+            target="_blank"
+            rel="me noopener noreferrer"
+            aria-label="Follow me on Mastodon"
+        >
+            <img
+                src="/images/mastodon-logo.svg"
+                alt="Mastodon"
+                class="w-8 h-8"
+            />
         </a>
         <a
             href="https://linkedin.com/in/samuelplumppu"
