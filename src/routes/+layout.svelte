@@ -6,6 +6,7 @@
     import '../global.css'
 
     export const prerender = true
+    export const trailingSlash = 'ignore'
 </script>
 
 <script>
@@ -55,8 +56,6 @@
         Show email
     -->
     <EncryptedEmail />
-
-    <!-- Maybe (but likely not) use logos for Matrix: https://github.com/vector-im/logos -->
 
     <p class="mt-8">Samuel Plumppu © 2015 - {new Date().getFullYear()}</p>
 
