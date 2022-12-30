@@ -12,7 +12,6 @@
     "scripts": {
         "dev": "vite dev",
         "build": "vite build",
-        "postbuild": "node scripts/postbuild.js",
         "preview": "vite preview",
         "deploy": "npm run build && gh-pages -d build -b master -t",
         "lint": "prettier --check --plugin-search-dir=. .",
@@ -22,6 +21,7 @@
         "@sveltejs/adapter-static": "^1.0.0",
         "@sveltejs/kit": "^1.0.1",
         "@tailwindcss/typography": "^0.5.8",
+        "@types/node": "^18.11.18",
         "autoprefixer": "^10.4.13",
         "clipboardy": "^3.0.0",
         "cssnano": "^5.1.14",
