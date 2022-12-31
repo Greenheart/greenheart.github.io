@@ -1,5 +1,6 @@
 <script lang="ts">
     import Link from '$components/Link.svelte'
+    import Picture from '$components/Picture.svelte'
 </script>
 
 <h1
@@ -13,10 +14,13 @@
 </h2>
 
 <figure class="flex flex-col items-center">
-    <img
-        src="/images/Tiomila2015.webp"
+    <Picture
+        src="/images/Tiomila2015.jpg"
         alt="Nighttime start of the Tiomila 2015 orienteering relay"
+        sources={[{ srcset: '/images/Tiomila2015.webp', type: 'image/webp' }]}
         class="max-w-5xl pb-4 w-full"
+        width={1024}
+        height={576}
     />
     <figcaption class="max-w-prose">
         Seconds after the start of Tiomila 2015, one of the world's largest

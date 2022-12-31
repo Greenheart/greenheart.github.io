@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
     import TechStack from '$components/TechStack.svelte'
+    import Picture from '$components/Picture.svelte'
     import CTALink from '$components/CTALink.svelte'
     import PostListing from '$components/PostListing.svelte'
     import Link from '$components/Link.svelte'
@@ -11,10 +12,13 @@
     $: ({ featuredPosts } = data)
 </script>
 
-<img
-    src="/images/samuel.webp"
+<Picture
+    src="/images/samuel.jpg"
     alt="Samuel"
+    sources={[{ srcset: '/images/samuel.webp', type: 'image/webp' }]}
     class="rounded-full shadow-2xl mx-auto w-32 h-32 sm:w-40 sm:h-40 my-8"
+    width={160}
+    height={160}
 />
 
 <section class="grid text-center justify-center">
