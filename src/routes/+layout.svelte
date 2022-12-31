@@ -9,7 +9,7 @@
     export const trailingSlash = 'ignore'
 </script>
 
-<script>
+<script lang="ts">
     const links = [
         { text: 'Blog', href: '/blog' },
         { text: 'About', href: '/about' },

@@ -11,7 +11,7 @@
     import 'prism-themes/themes/prism-night-owl.css'
 </script>
 
-<script>
+<script lang="ts">
     // TODO: Update this layout to use TypeScript when mdsvex supports it.
     // See https://github.com/pngwn/MDsveX/issues/116
 
