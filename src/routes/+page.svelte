@@ -12,7 +12,7 @@
 </script>
 
 <img
-    src="/images/samuel.png"
+    src="/images/samuel.webp"
     alt="Samuel"
     class="rounded-full shadow-2xl mx-auto w-32 h-32 sm:w-40 sm:h-40 my-8"
 />

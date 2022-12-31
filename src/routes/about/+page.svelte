@@ -8,20 +8,20 @@
     More about me
 </h1>
 
-<h2 class="text-2xl font-bold pb-4">
+<h2 class="text-lg xs:text-2xl font-bold pb-4">
     One of my most exciting orienteering memories so far:
 </h2>
 
 <figure class="flex flex-col items-center">
     <img
-        src="/images/Tiomila2015.jpg"
+        src="/images/Tiomila2015.webp"
         alt="Nighttime start of the Tiomila 2015 orienteering relay"
         class="max-w-5xl pb-4 w-full"
     />
     <figcaption class="max-w-prose">
         Seconds after the start of Tiomila 2015, one of the world's largest
-        relays. I ran the first leg and somehow got to the top 5 as we left the
-        arena, later finishing the course as <Link
+        orienteering relays. I ran the first leg and somehow got to the top 5 as
+        we left the arena, later finishing the course as <Link
             href="https://10mila.se/index.php/sv/?option=com_tiomilaresults&year=70&class=8&leg=1&total=1"
             compact
         >
