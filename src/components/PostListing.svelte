@@ -1,6 +1,6 @@
 <script lang="ts">
     import Tags from './Tags.svelte'
-    import { formatDate } from '$lib/formatDate'
+    import { formatDate } from '$lib/utils'
     import type { BlogPost } from '$lib/interfaces'
 
     export let post: BlogPost

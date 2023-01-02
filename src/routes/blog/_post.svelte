@@ -1,7 +1,7 @@
 <script context="module">
     import Tags from '$components/Tags.svelte'
     import BlogFooter from '$components/BlogFooter.svelte'
-    import { formatDate } from '$lib/formatDate'
+    import { formatDate } from '$lib/utils'
     import { BASE_TITLE } from '$lib/constants'
 
     // Override default components used to render posts: https://mdsvex.com/docs#custom-components
