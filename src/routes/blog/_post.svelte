@@ -43,4 +43,10 @@
 <BlogFooter />
 
 <!-- IDEA: Add links to more posts at the bottom of every post -->
+
 <!-- IDEA: Add short info about me at the bottom of every post, linking to home/about for more details -->
+<style>
+    :global(.prose h2 code) {
+        color: white;
+    }
+</style>
