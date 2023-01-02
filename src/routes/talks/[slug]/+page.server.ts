@@ -3,7 +3,6 @@ import { resolve } from 'path'
 import talks from '$lib/talks'
 import { error } from '@sveltejs/kit'
 
-export const prerender = false
 export const trailingSlash = 'always'
 
 /** @type {import('./$types').PageServerLoad} */
