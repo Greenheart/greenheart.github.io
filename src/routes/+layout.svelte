@@ -3,9 +3,6 @@
     import Meta from '$components/Meta.svelte'
 
     import '../global.css'
-
-    export const prerender = true
-    export const trailingSlash = 'ignore'
 </script>
 
 <script lang="ts">
