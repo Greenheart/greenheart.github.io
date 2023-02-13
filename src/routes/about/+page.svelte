@@ -20,7 +20,7 @@
         sources={[{ srcset: '/images/Tiomila2015.webp', type: 'image/webp' }]}
         class="max-w-5xl pb-4 w-full"
         width={1024}
-        height={576}
+        height={661}
     />
     <figcaption class="max-w-prose">
         Seconds after the start of Tiomila 2015, one of the world's largest
