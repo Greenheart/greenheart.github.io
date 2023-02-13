@@ -5,6 +5,6 @@ const getDirectories = async (source: string) =>
         .filter((dirent) => dirent.isDirectory())
         .map((dirent) => dirent.name)
 
-const talks = await getDirectories('./static/talks')
+const talks = (await getDirectories('./static/talks')).reverse()
 
 export default talks

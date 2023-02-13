@@ -1,5 +1,6 @@
 import talks from '$lib/talks'
+import type { PageServerLoad } from './$types'
 
-export async function load() {
-    return { talks: talks.reverse() }
-}
+export const load = (() => ({
+    talks: talks.reverse(),
+})) satisfies PageServerLoad

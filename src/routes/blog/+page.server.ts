@@ -1,6 +1,4 @@
 import posts from '$lib/posts'
+import type { PageServerLoad } from './$types'
 
-/** @type {import('./$types').PageServerLoad} */
-export async function load() {
-    return { posts }
-}
+export const load = (() => ({ posts })) satisfies PageServerLoad

@@ -3,10 +3,11 @@ import { resolve } from 'path'
 import talks from '$lib/talks'
 import { error } from '@sveltejs/kit'
 
+import type { PageServerLoad } from './$types'
+
 export const trailingSlash = 'always'
 
-/** @type {import('./$types').PageServerLoad} */
-export async function load({ params: { slug }, setHeaders }) {
+export const load = (async ({ params: { slug }, setHeaders }) => {
     if (talks.includes(slug)) {
         const talk = await readFile(
             resolve(process.cwd(), 'static', 'talks', slug, 'index.html'),
@@ -22,4 +23,4 @@ export async function load({ params: { slug }, setHeaders }) {
     }
 
     throw error(404, 'Not found')
-}
+}) satisfies PageServerLoad

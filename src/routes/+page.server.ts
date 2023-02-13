@@ -1,8 +1,6 @@
 import posts from '$lib/posts'
+import type { PageServerLoad } from './$types'
 
-/** @type {import('./$types').PageServerLoad} */
-export async function load() {
-    return {
-        featuredPosts: posts.filter((p) => p.featured),
-    }
-}
+const featuredPosts = posts.filter((p) => p.featured)
+
+export const load = (() => ({ featuredPosts })) satisfies PageServerLoad
