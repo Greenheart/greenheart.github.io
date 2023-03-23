@@ -9,7 +9,7 @@
     export { className as class }
 </script>
 
-<div class={cx('flex space-x-2 items-center', className)}>
+<div class={cx('flex flex-wrap items-center gap-2', className)}>
     {#each tags as tag}
         <span class="p-1 bg-mantis text-xs md:text-sm rounded-sm leading-3">
             {tag}
