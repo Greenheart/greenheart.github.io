@@ -16,7 +16,7 @@
 <figure class="flex flex-col items-center">
     <Picture
         src="/images/Tiomila2015.jpg"
-        alt="Nighttime start of the Tiomila 2015 orienteering relay"
+        alt="Night time start of the Tiomila 2015 orienteering relay"
         sources={[{ srcset: '/images/Tiomila2015.webp', type: 'image/webp' }]}
         class="max-w-5xl pb-4 w-full"
         width={1024}
