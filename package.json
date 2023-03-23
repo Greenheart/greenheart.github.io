@@ -13,7 +13,7 @@
         "dev": "vite dev",
         "build": "vite build",
         "preview": "vite preview",
-        "deploy": "npm run build && gh-pages -d build -b master -t",
+        "gh-pages": "npm run build && gh-pages -d build -b master -t",
         "lint": "prettier --check --plugin-search-dir=. .",
         "format": "prettier --write --plugin-search-dir=. ."
     },
