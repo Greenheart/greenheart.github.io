@@ -2,7 +2,7 @@
 
 ## Building the site with talks included
 
-*NOTE:* This could be simplified in the future to allow fully automatic builds.
+_NOTE:_ This could be simplified in the future to allow fully automatic builds.
 
 1. Git clone the talks repo https://github.com/Greenheart/talks
 2. Run `npm install` in the subdirectory of each talk.
@@ -20,10 +20,10 @@
 
 ## Writing Best Practices
 
-- Use `node scripts/title-case.js` to format headings.
-- Use `node scripts/format-code.js` to ensure code has a consistent style.
-- Use `<!-- prettier-ignore-start -->` and `<!-- prettier-ignore-end -->` to wrap code blocks in blog posts to prevent the main Prettier instance of the codebase to re-format the code blocks after they already have been formatted with `node scripts/format-code.js`.
-- It's possible to prevent post drafts from rendering by prefixing the file with `_`.
+-   Use `node scripts/title-case.js` to format headings.
+-   Use `node scripts/format-code.js` to ensure code has a consistent style.
+-   Use `<!-- prettier-ignore-start -->` and `<!-- prettier-ignore-end -->` to wrap code blocks in blog posts to prevent the main Prettier instance of the codebase to re-format the code blocks after they already have been formatted with `node scripts/format-code.js`.
+-   It's possible to prevent post drafts from rendering by prefixing the file with `_`.
 
 ## Credits
 
