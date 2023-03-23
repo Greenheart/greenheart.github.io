@@ -3,32 +3,27 @@
 // @ts-nocheck
 import 'dotenv/config'
 import { base64 } from 'rfc4648'
-
-async function loadCrypto() {
-    const cryptoLocal = await import('crypto')
-    return cryptoLocal.webcrypto
-}
-
-const crypto = await loadCrypto()
+import { webcrypto } from 'crypto'
 
 /**
  * Encrypt a string and turn it into an encrypted payload.
  *
  * @param {string} content The data to encrypt
- * @param {string} password The password which will be used to encrypt + decrypt the content.
- * @returns an encrypted payload
+ * @param {string} password The password which will be used to encrypt + decrypt
+ *   the content.
+ * @returns An encrypted payload
  */
- export async function getEncryptedPayload(content, password) {
+export async function getEncryptedPayload(content, password) {
     const encoder = new TextEncoder()
-    const salt = crypto.getRandomValues(new Uint8Array(32))
-    const baseKey = await crypto.subtle.importKey(
+    const salt = webcrypto.getRandomValues(new Uint8Array(32))
+    const baseKey = await webcrypto.subtle.importKey(
         'raw',
         encoder.encode(password),
         'PBKDF2',
         false,
         ['deriveKey'],
     )
-    const key = await crypto.subtle.deriveKey(
+    const key = await webcrypto.subtle.deriveKey(
         { name: 'PBKDF2', salt, iterations: 2e5, hash: 'SHA-256' },
         baseKey,
         { name: 'AES-GCM', length: 256 },
@@ -36,9 +31,9 @@ const crypto = await loadCrypto()
         ['encrypt'],
     )
 
-    const iv = crypto.getRandomValues(new Uint8Array(16))
+    const iv = webcrypto.getRandomValues(new Uint8Array(16))
     const ciphertext = new Uint8Array(
-        await crypto.subtle.encrypt(
+        await webcrypto.subtle.encrypt(
             { name: 'AES-GCM', iv },
             key,
             encoder.encode(content),
@@ -52,7 +47,6 @@ const crypto = await loadCrypto()
 
     return base64.stringify(mergedData)
 }
-
 
 const text = process.env.VITE_EMAIL
 const pwd = process.env.VITE_PASSWORD
