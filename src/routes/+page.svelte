@@ -85,7 +85,7 @@
     <p class="text-xl sm:text-2xl mb-8">
         I want the digital experiences and solutions we create to truly bring
         value to people and society. Technology is exciting, but never the end
-        goal. This desire to deliver all the way helps me contribute with more
+        goal. This desire to take a holistic approach helps me contribute more
         than just code to help the team succeed.
     </p>
 
