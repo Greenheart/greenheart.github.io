@@ -40,16 +40,15 @@
 
 <section class="grid grid-cols-1 max-w-prose mx-auto">
     <p class="text-xl sm:text-2xl mb-4">
-        Since 2015, I've worked with teams of designers and developers to
-        maximize our positive impact in the world.
+        Since 2015, I've worked with early stage startups and non-profits to
+        create a future where both humanity and the living planet thrive
+        together.
     </p>
     <p class="text-xl sm:text-2xl mb-4">
-        I'm passionate about how open source communities can support a
-        sustainable future, where both humanity and the living planet thrive.
-        Currently working on <Link href="https://idg.tools" compact
-            >IDG.tools</Link
-        > and
-        <Link href="https://relate-app.com/en" compact>Relate</Link>.
+        With a strong passion for humane tech, free software communities and
+        empowering change makers to increase their impact, I'm currently the
+        Lead Developer of <Link href="https://idg.tools" compact>IDG.tools</Link
+        > and co-founder of Greenheart Co-operative.
     </p>
 </section>
 
@@ -84,35 +83,30 @@
     </h2>
 
     <p class="text-xl sm:text-2xl mb-8">
-        Working with early stage startups and limited resources has taught me to
-        focus on the work with the highest impact.
-    </p>
-
-    <p class="text-xl sm:text-2xl mb-8">
-        I also want experiences and solutions we create to truly bring value to
-        people and society. Technology is exciting, but never the end goal. This
-        desire to deliver all the way helps me contribute with more than just
-        code to help the team succeed.
+        I want the digital experiences and solutions we create to truly bring
+        value to people and society. Technology is exciting, but never the end
+        goal. This desire to deliver all the way helps me contribute with more
+        than just code to help the team succeed.
     </p>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center">
         <ul
-            class="font-light tracking-wide flex flex-col items-center space-y-2 bg-white p-4 w-80 sm:w-[282px] shadow-lg rounded-sm"
+            class="font-light tracking-wide flex flex-col items-center space-y-2 bg-white p-4 w-80 sm:w-[284px] shadow-lg rounded-sm"
         >
-            <li>Product strategy</li>
-            <li>Attention to detail</li>
-            <li>Mentorship & team growth</li>
-            <li>Community building</li>
-            <li>Design systems</li>
+            <li>Product Strategy</li>
+            <li>Attention to Detail</li>
+            <li>Mentorship & Team Growth</li>
+            <li>Community Building</li>
+            <li>Design Systems</li>
         </ul>
         <ul
-            class="font-light tracking-wide flex flex-col items-center space-y-2 bg-white p-4 w-80 sm:w-[282px] shadow-lg rounded-sm"
+            class="font-light tracking-wide flex flex-col items-center space-y-2 bg-white p-4 w-80 sm:w-[284px] shadow-lg rounded-sm"
         >
-            <li>UI/UX design</li>
-            <li>Humane tech & ethical design</li>
-            <li>Quick learning</li>
-            <li>Modern web build tools</li>
-            <li>Improved development practices</li>
+            <li>UI/UX Design</li>
+            <li>Humane Tech & Ethical Design</li>
+            <li>Systems Thinking</li>
+            <li>Privacy Advocacy</li>
+            <li>Improved Development Practices</li>
         </ul>
     </div>
 </section>
