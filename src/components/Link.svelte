@@ -18,7 +18,7 @@
             additionalProps = {
                 rel: 'noopener noreferrer',
                 target: '_blank',
-                'data-sveltekit-prefetch': 'off',
+                'data-sveltekit-preload-data': 'off',
             }
         }
     })
