@@ -60,13 +60,14 @@ module.exports = {
                             content: '',
                         },
                         code: {
-                            background: '#011627',
+                            background: theme('colors.ming'),
                             color: theme('colors.white'),
-                            padding: 4,
+                            padding: '2px 4px',
                             borderRadius: '4px',
                             marginRight: '1px',
                             wordBreak: 'break-word',
                             whiteSpace: 'nowrap',
+                            fontWeight: 500,
                         },
                         strong: {
                             color: theme('colors.black'),
