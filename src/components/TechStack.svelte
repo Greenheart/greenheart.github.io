@@ -24,7 +24,7 @@
     <h2
         class="mb-6 text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none text-center"
     >
-        My Tech Stack
+        My tech stack
     </h2>
 
     <div class="grid grid-cols-3 w-72 mx-auto mb-6 gap-2">
