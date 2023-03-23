@@ -127,7 +127,7 @@
     </section>
 
     <div class="flex justify-center pt-6">
-        <Link href="/blog">See more</Link>
+        <Link href="/blog">Blog archive</Link>
     </div>
 </section>
 
