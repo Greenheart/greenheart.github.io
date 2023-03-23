@@ -1,6 +1,7 @@
 import { mdsvex } from 'mdsvex'
 import { vitePreprocess } from '@sveltejs/kit/vite'
 import adapter from '@sveltejs/adapter-static'
+import { resolve } from 'path'
 
 const mdsvexConfig = {
     extensions: ['.svelte.md', '.md'],
@@ -17,5 +18,9 @@ export default {
     preprocess: [mdsvex(mdsvexConfig), vitePreprocess()],
     kit: {
         adapter: adapter(),
+        alias: {
+            $components: resolve('./src/components'),
+            $data: resolve('./src/data'),
+        },
     },
 }
