@@ -22,7 +22,7 @@ Show email
 -->
     <EncryptedEmail />
 
-    <p class="mt-8">Samuel Plumppu © 2015 - {new Date().getFullYear()}</p>
+    <p class="mt-8">© 2015 - {new Date().getFullYear()} Samuel Plumppu</p>
 
     <div class="flex justify-center space-x-8 items-center my-8 flex-wrap">
         <a
