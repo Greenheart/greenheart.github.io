@@ -20,18 +20,18 @@
     <meta http-equiv="content-security-policy" content="">
 		<link href="../_app/immutable/assets/_layout.d5de85c7.css" rel="stylesheet">
 		<link href="../_app/immutable/assets/_post.541d5f4f.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.e0482577.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.34e02ce4.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.dcc872af.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.e7a236db.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.da2eab39.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.1d0b9fbe.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.c6788ba7.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.41c905a7.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/_layout.svelte.a0f71b58.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/_layout.svelte.93f8a5d6.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/constants.94f7c113.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/Link.cdc7cac1.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/utils.0976737d.js">
 		<link rel="modulepreload" href="../_app/immutable/entry/blog-_slug_-page.svelte.1c12237a.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/blog-_slug_-page.ts.0d395251.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/_page.e4bdc8f3.js"><title>Improving Oh My Zsh Startup Time with Lazy Loading | Samuel Plumppu | Sustainability Entrepreneur &amp; Fullstack Developer</title><!-- HEAD_svelte-ffrimp_START --><!-- HEAD_svelte-ffrimp_END --><!-- HEAD_svelte-1k0szz9_START --><!-- HEAD_svelte-1k0szz9_END -->
+		<link rel="modulepreload" href="../_app/immutable/entry/blog-_slug_-page.ts.78f4e157.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_page.cabb8edf.js"><title>Improving Oh My Zsh Startup Time with Lazy Loading | Samuel Plumppu | Sustainability Entrepreneur &amp; Fullstack Developer</title><!-- HEAD_svelte-ffrimp_START --><!-- HEAD_svelte-ffrimp_END --><!-- HEAD_svelte-1k0szz9_START --><!-- HEAD_svelte-1k0szz9_END -->
 </head>
 
 <body class="bg-honeydew" data-sveltekit-preload-data="hover">
@@ -80,6 +80,9 @@ zstyle <span class="token string">':omz:plugins:nvm'</span> lazy <span class="to
 <span class="token keyword">fi</span>
 
 <span class="token builtin class-name">source</span> <span class="token variable">$ZSH</span>/oh-my-zsh.sh</code><!-- HTML_TAG_END --></pre>
+<h2>Add more commands that should load nvm</h2>
+<p>In the <a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm" rel="nofollow" class="link">documentation</a> for <code>nvm</code> plugin, there are also other features that can be useful. For example, this is how to make sure <code>npx</code> and <code>pnpx</code> work even in new terminals.</p>
+<pre class="language-shell"><!-- HTML_TAG_START --><code class="language-shell">zstyle <span class="token string">':omz:plugins:nvm'</span> lazy-cmd npx pnpx</code><!-- HTML_TAG_END --></pre>
 <p>Hopefully this saves some time, allowing you move at the speed of thought 💭</p></article>
 
 <section class="p-4 bg-white shadow-lg rounded-md mx-auto mt-12 max-w-md text-center"><h2 class="text-xl xs:text-2xl md:text-3xl leading-none font-black tracking-tight mb-4">Thank you for reading! 🌱
@@ -117,7 +120,7 @@ zstyle <span class="token string">':omz:plugins:nvm'</span> lazy <span class="to
 			
 			<script>
 				{
-					__sveltekit_1ram9xa = {
+					__sveltekit_1fp83fj = {
 						env: {},
 						base: new URL("..", location).pathname.slice(0, -1),
 						element: document.currentScript.parentElement
@@ -126,10 +129,10 @@ zstyle <span class="token string">':omz:plugins:nvm'</span> lazy <span class="to
 					const data = [{"type":"data","data":null,"uses":{},"slash":"ignore"},null];
 
 					Promise.all([
-						import("../_app/immutable/entry/start.e0482577.js"),
-						import("../_app/immutable/entry/app.da2eab39.js")
+						import("../_app/immutable/entry/start.34e02ce4.js"),
+						import("../_app/immutable/entry/app.c6788ba7.js")
 					]).then(([kit, app]) => {
-						kit.start(app, __sveltekit_1ram9xa.element, {
+						kit.start(app, __sveltekit_1fp83fj.element, {
 							node_ids: [0, 5],
 							data,
 							form: null,
