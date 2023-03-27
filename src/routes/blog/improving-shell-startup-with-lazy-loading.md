@@ -41,4 +41,12 @@ fi
 source $ZSH/oh-my-zsh.sh
 ```
 
+## Add more commands that should load nvm
+
+In the [documentation](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm) for `nvm` plugin, there are also other features that can be useful. For example, this is how to make sure `npx` and `pnpx` work even in new terminals.
+
+```shell
+zstyle ':omz:plugins:nvm' lazy-cmd npx pnpx
+```
+
 Hopefully this saves some time, allowing you move at the speed of thought 💭
