@@ -29,7 +29,7 @@
 		<link rel="modulepreload" href="../_app/immutable/chunks/constants.94f7c113.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/Link.c3d01ee6.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/utils.0976737d.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/5.7e2b856e.js"><title>Improving Oh My Zsh Startup Time with Lazy Loading | Samuel Plumppu | Sustainability Entrepreneur &amp; Fullstack Developer</title><!-- HEAD_svelte-ffrimp_START --><!-- HEAD_svelte-ffrimp_END --><!-- HEAD_svelte-1k0szz9_START --><!-- HEAD_svelte-1k0szz9_END -->
+		<link rel="modulepreload" href="../_app/immutable/nodes/5.7e2b856e.js"><title>Chalmers Guest Lecture on Social Entrepreneurship | Samuel Plumppu | Sustainability Entrepreneur &amp; Fullstack Developer</title><!-- HEAD_svelte-ffrimp_START --><!-- HEAD_svelte-ffrimp_END --><!-- HEAD_svelte-1k0szz9_START --><!-- HEAD_svelte-1k0szz9_END -->
 </head>
 
 <body class="bg-honeydew" data-sveltekit-preload-data="hover">
@@ -48,40 +48,24 @@
 
 
 
-<h1 class="font-black text-4xl lg:text-5xl mx-auto">Improving Oh My Zsh Startup Time with Lazy Loading</h1>
+<h1 class="font-black text-4xl lg:text-5xl mx-auto">Chalmers Guest Lecture on Social Entrepreneurship</h1>
 
-<article class="prose lg:prose-lg xl:prose-xl 2xl:prose-2xl mx-auto text-base mt-4"><time datetime="2023-03-23T00:00:00.000Z">23 March 2023</time>
-    <div class="flex flex-wrap items-center gap-2 my-2"><span class="p-1 bg-mantis text-xs md:text-sm rounded-sm leading-3">DX
-        </span><span class="p-1 bg-mantis text-xs md:text-sm rounded-sm leading-3">Code Snippet
+<article class="prose lg:prose-lg xl:prose-xl 2xl:prose-2xl mx-auto text-base mt-4"><time datetime="2023-05-08T00:00:00.000Z">8 May 2023</time>
+    <div class="flex flex-wrap items-center gap-2 my-2"><span class="p-1 bg-mantis text-xs md:text-sm rounded-sm leading-3">Entrepreneurship
+        </span><span class="p-1 bg-mantis text-xs md:text-sm rounded-sm leading-3">Co-operatives
+        </span><span class="p-1 bg-mantis text-xs md:text-sm rounded-sm leading-3">Economics
         </span></div>
-    <p>Using <a href="https://ohmyz.sh/" rel="nofollow" class="link">Oh My Zsh</a> is usually a great experience. However, adding heavy plugins (like <code>nvm</code>) to load at startup time can really hurt performance. Luckily there’s a way to lazy load them.</p>
-<h2>A Simple Solution</h2>
-<pre class="language-shell"><!-- HTML_TAG_START --><code class="language-shell"><span class="token comment"># ~/.zshrc</span>
-<span class="token assign-left variable">plugins</span><span class="token operator">=</span><span class="token punctuation">(</span>nvm <span class="token function">git</span><span class="token punctuation">)</span> <span class="token comment"># 1</span>
-zstyle <span class="token string">':omz:plugins:nvm'</span> lazy <span class="token function">yes</span> <span class="token comment"># 2</span>
-
-<span class="token builtin class-name">source</span> <span class="token variable">$ZSH</span>/oh-my-zsh.sh <span class="token comment"># 3</span></code><!-- HTML_TAG_END --></pre>
-<ol><li>Add the nvm plugin to your <code>.zshrc</code> file.</li>
-<li>Enable lazy loading for the <code>nvm</code> plugin.</li>
-<li>Make sure you source Oh My Zsh at the end.</li></ol>
-<p>This method reduced my shell startup time from <em>~1.5 s</em> to <em>~200 ms</em>. A <strong>huge</strong> improvement for a common action I perform many times daily.</p>
-<p>However, I soon realised some of my projects had external dependencies that relied on commands like <code>node</code> and <code>npm</code> (and other package managers) to always be defined in the shell environment. This caused weird crashes, since lazy loading <code>nvm</code> means commands like <code>node</code> and <code>npm</code> only gets enabled when they first got used.</p>
-<h2>Conditionally Lazy Loading for Specific Directories</h2>
-<p>Adding an if statement to avoid lazy loading in specific directories:</p>
-<pre class="language-shell"><!-- HTML_TAG_START --><code class="language-shell"><span class="token comment"># ~/.zshrc</span>
-<span class="token assign-left variable">plugins</span><span class="token operator">=</span><span class="token punctuation">(</span>nvm <span class="token function">git</span><span class="token punctuation">)</span>
-
-<span class="token comment"># This excludes any subdirectory of "/your-project/"</span>
-<span class="token comment"># =~ is used for RegExp matching.</span>
-<span class="token keyword">if</span> <span class="token operator">!</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token environment constant">$PWD</span> <span class="token operator">=~</span> <span class="token string">"/your-project/"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-  zstyle <span class="token string">':omz:plugins:nvm'</span> lazy <span class="token function">yes</span>
-<span class="token keyword">fi</span>
-
-<span class="token builtin class-name">source</span> <span class="token variable">$ZSH</span>/oh-my-zsh.sh</code><!-- HTML_TAG_END --></pre>
-<h2>Add more commands that should load nvm</h2>
-<p>In the <a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm" rel="nofollow" class="link">documentation</a> for <code>nvm</code> plugin, there are also other features that can be useful. For example, this is how to make sure <code>npx</code> and <code>pnpx</code> work even in new terminals.</p>
-<pre class="language-shell"><!-- HTML_TAG_START --><code class="language-shell">zstyle <span class="token string">':omz:plugins:nvm'</span> lazy-cmd npx pnpx</code><!-- HTML_TAG_END --></pre>
-<p>Hopefully this saves some time, allowing you move at the speed of thought 💭</p></article>
+    <p>Imagine ten minutes of observing a room full of passionate students as they share and discuss their visions for a sustainable future. So many emotions, hopes and dreams expressed even without hearing specific words. Imagine noticing how the room gradually warms up, and eventually reaches a point where the positive energy in some groups spread to others around them, reaching almost the entire room by the end of the exercise.</p>
+<p><strong>That’s the potential of generative social fields</strong> - to create conditions where people have positive social interactions that create a good feeling and atmosphere. This is not the only kind of social field, but it’s probably the easiest one to recognise. And by paying attention to how these generative social fields make us feel and influence how we think and act, maybe with time, we can start creating more of these positive interactions with people we meet in life.</p>
+<h2>Social Entrepreneurship in Practice</h2>
+<p>Today, I had the privilege to give my third guest lecture/workshop for students at Chalmers University of Technology, with the goal to explore social entrepreneurship in practice. Specifically focusing on how some friends and I co-founded the non-profit tech agency Greenheart Co-operative.</p>
+<p>This time was my most in-depth and cohesive presentation on this subject so far. <a href="https://samuelplumppu.se/talks/2023-05-08-chalmers-entrepreneurship/" rel="nofollow" class="link">See the presentation slides here</a>. I’m really happy with how it all turned out, and especially the questions and discussions this sparked (some of us kept going for a full hour after the official end)! I especially want to give a big thanks to my partner Sara (<a href="https://saranewmountain.earth" rel="nofollow" class="link">check out her website</a>) for your help and feedback to structure the presentation!</p>
+<p>Although it felt like we barely had time to scratch the surface of some topics, I’m really happy with the format of my presentation. And who knows - I might write more in-depth about social entrepreneurship and related topics in the future.</p>
+<h2>It Matters How We Show Up</h2>
+<p>Coming back to the social fields - it matters how we show up, because our interactions ripple out and influence our surroundings, just like we’re influenced by people around us.</p>
+<p>Given the potential to transform the energy in a room, today’s exercise to explore future visions could prove to be valuable in more ways. If you want to try it yourself, see <a href="https://samuelplumppu.se/talks/2023-05-08-chalmers-entrepreneurship/#/12" rel="nofollow" class="link">the second part of the presentation</a>. Maybe bringing this exercise into everyday life could help us strengthen (or even regain) our ability to imagine how things could be better. If anything, this kind of imagination is what social entrepreneurship is about.</p>
+<p>To imagine different futures, we need good conditions. For example by making time, finding a safe space and being fully present. But perhaps most importantly, it matters how we show up.</p>
+<p>So, let’s help each other show up in ways that allow us to imagine!</p></article>
 
 <section class="p-4 bg-white shadow-lg rounded-md mx-auto mt-12 max-w-md text-center"><h2 class="text-xl xs:text-2xl md:text-3xl leading-none font-black tracking-tight mb-4">Thank you for reading! 🌱
     </h2>

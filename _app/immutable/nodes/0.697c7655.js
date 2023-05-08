@@ -1,4 +1,4 @@
-import{S as te,i as re,s as ae,C as U,D as Se,h as d,k as v,q as K,l as $,m as x,r as O,n as u,b as M,E as p,F as Ge,G as Ie,H as Le,u as De,a as S,y as Q,c as G,z as Y,I as ee,A as X,g as I,d as F,B as Z,e as me,f as ye,J as Fe,v as we,K as xe,L as Ee,M as ke,N as Ae,O as Be}from"../chunks/index.21b00dcf.js";import{B as pe}from"../chunks/constants.94f7c113.js";import{L as Me}from"../chunks/Link.c3d01ee6.js";import{s as Ce}from"../chunks/singletons.449556af.js";function Pe(s){let e;return document.title=e=`
+import{S as te,i as re,s as ae,C as U,D as Se,h as d,k as v,q as K,l as $,m as x,r as O,n as u,b as M,E as p,F as Ge,G as Ie,H as Le,u as De,a as S,y as Q,c as G,z as Y,I as ee,A as X,g as I,d as F,B as Z,e as me,f as ye,J as Fe,v as we,K as xe,L as Ee,M as ke,N as Ae,O as Be}from"../chunks/index.21b00dcf.js";import{B as pe}from"../chunks/constants.94f7c113.js";import{L as Me}from"../chunks/Link.c3d01ee6.js";import{s as Ce}from"../chunks/singletons.aefaa6e0.js";function Pe(s){let e;return document.title=e=`
         `+pe+`
     `,{c:U,l(t){Se("svelte-ffrimp",document.head).forEach(d)},m:U,p(t,[r]){r&0&&e!==(e=`
         `+pe+`
