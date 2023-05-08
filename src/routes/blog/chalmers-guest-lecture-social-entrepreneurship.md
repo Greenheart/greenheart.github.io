@@ -2,6 +2,7 @@
 title: 'Chalmers Guest Lecture on Social Entrepreneurship'
 date: 2023-05-08
 tags: ['Entrepreneurship', 'Co-operatives', 'Economics']
+featured: true
 ---
 
 Imagine ten minutes of observing a room full of passionate students as they share and discuss their visions for a sustainable future. So many emotions, hopes and dreams expressed even without hearing specific words. Imagine noticing how the room gradually warms up, and eventually reaches a point where the positive energy in some groups spread to others around them, reaching almost the entire room by the end of the exercise.
