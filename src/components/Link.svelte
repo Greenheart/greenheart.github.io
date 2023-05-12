@@ -3,6 +3,9 @@
 
     import isExternalURL from '$lib/isExternalURL'
     import { cx } from '$lib/utils'
+    import { SITE_URL } from '$lib/constants'
+
+    const isTalk = (href: string) => href.includes(SITE_URL + '/talks/')
 </script>
 
 <script lang="ts">
@@ -14,11 +17,12 @@
     export { className as class }
 
     onMount(() => {
-        if (isExternalURL(href)) {
+        // Treat talks as external links to fully reload the page.
+        if (isExternalURL(href) || isTalk(href)) {
             additionalProps = {
-                rel: 'noopener noreferrer',
+                rel: 'external noopener noreferrer',
                 target: '_blank',
-                'data-sveltekit-preload-data': 'off',
+                'data-sveltekit-reload': true,
             }
         }
     })
