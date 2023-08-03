@@ -41,7 +41,7 @@
         "title-case": "^3.0.3",
         "tslib": "^2.5.0",
         "typescript": "^5.0.4",
-        "vite": "^4.3.5"
+        "vite": "^4.3.9"
     },
     "type": "module",
     "dependencies": {
