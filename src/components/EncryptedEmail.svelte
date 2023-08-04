@@ -3,13 +3,16 @@
 </script>
 
 <script lang="ts">
+    import { onMount } from 'svelte'
+
     export let pl = import.meta.env.VITE_PAYLOAD
     export let pwd = import.meta.env.VITE_PASSWORD
 
     if (!pl || !pwd) throw 'EncryptedEmail.svelte: Missing data'
 
-    let text = 'Show Email'
+    let label = 'Show Email'
     let href = '#'
+    let text = ''
 
     async function deriveKey(salt: Uint8Array, password: string) {
         const encoder = new TextEncoder()
@@ -18,14 +21,14 @@
             encoder.encode(password),
             'PBKDF2',
             false,
-            ['deriveKey'],
+            ['deriveKey']
         )
         return await crypto.subtle.deriveKey(
             { name: 'PBKDF2', salt, iterations: 2e5, hash: 'SHA-256' },
             baseKey,
             { name: 'AES-GCM', length: 256 },
             true,
-            ['decrypt'],
+            ['decrypt']
         )
     }
 
@@ -43,20 +46,21 @@
             await crypto.subtle.decrypt(
                 { name: 'AES-GCM', iv },
                 key,
-                ciphertext,
-            ),
+                ciphertext
+            )
         )
         if (!data) throw 'Malformed data'
 
         return decoder.decode(data)
     }
 
-    async function showEmail() {
-        text = 'Loading...'
+    onMount(async () => {
+        text = await decrypt(pl, pwd)
+    })
 
-        const email = await decrypt(pl, pwd)
-        href = 'mailto:' + email
-        text = email
+    async function showEmail() {
+        href = 'mailto:' + text
+        label = text
     }
 </script>
 
@@ -66,6 +70,6 @@
     class="bg-mantis py-3 px-8 inline-flex rounded-md shadow-lg hover:shadow-xl transform-gpu hover:scale-105 duration-150 justify-self-center text-black font-black justify-center"
 >
     <span class="whitespace-nowrap">
-        {text}
+        {label}
     </span>
 </a>
