@@ -41,7 +41,7 @@ Show email
             href="https://github.com/Greenheart"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="See my free software at GitHub"
+            aria-label="See my libre software at GitHub"
         >
             <img src="/images/github.svg" alt="GitHub" class="w-8 h-8" />
         </a>

@@ -45,7 +45,7 @@
         together.
     </p>
     <p class="text-xl sm:text-2xl mb-4">
-        With a strong passion for humane tech, free software communities and
+        With a strong passion for humane tech, libre software communities and
         empowering change makers to increase their impact, I'm currently the
         Lead Developer of <Link href="https://idg.tools" compact>IDG.tools</Link
         > and co-founder of <Link href="https://greenheart.coop" compact
