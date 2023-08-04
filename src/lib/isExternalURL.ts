@@ -1,5 +1,6 @@
 /**
  * Test if an URL is external.
+ *
  * @param href {string} The URL to test.
  * @returns True if the link is external, and false otherwise.
  */
