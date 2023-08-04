@@ -11,7 +11,7 @@ Imagine ten minutes of observing a room full of passionate students as they shar
 
 ## Social Entrepreneurship in Practice
 
-Today, I had the privilege to give my third guest lecture/workshop for students at Chalmers University of Technology, with the goal to explore social entrepreneurship in practice. Specifically focusing on how some friends and I co-founded the non-profit tech agency Greenheart Co-operative.
+Today, I had the privilege to give my third guest lecture/workshop for students at Chalmers University of Technology, with the goal to explore social entrepreneurship in practice. Specifically focusing on how some friends and I co-founded the non-profit tech agency [Greenheart Co-operative](https://greenheart.coop).
 
 This time was my most in-depth and cohesive presentation on this subject so far. [See the presentation slides here](https://samuelplumppu.se/talks/2023-05-08-chalmers-entrepreneurship/). I'm really happy with how it all turned out, and especially the questions and discussions this sparked (some of us kept going for a full hour after the official end)! I especially want to give a big thanks to my partner Sara ([check out her website](https://saranewmountain.earth)) for your help and feedback to structure the presentation!
 

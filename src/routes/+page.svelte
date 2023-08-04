@@ -48,7 +48,9 @@
         With a strong passion for humane tech, free software communities and
         empowering change makers to increase their impact, I'm currently the
         Lead Developer of <Link href="https://idg.tools" compact>IDG.tools</Link
-        > and co-founder of Greenheart Co-operative.
+        > and co-founder of <Link href="https://greenheart.coop" compact
+            >Greenheart Co-operative</Link
+        >.
     </p>
 </section>
 
