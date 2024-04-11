@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 // @ts-nocheck
-import 'dotenv/config'
 import { base64 } from 'rfc4648'
 import { webcrypto } from 'crypto'
 
