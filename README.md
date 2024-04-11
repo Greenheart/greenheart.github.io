@@ -5,9 +5,9 @@
 _NOTE:_ This could be simplified in the future to allow fully automatic builds.
 
 1. Git clone the talks repo https://github.com/Greenheart/talks
-2. Run `npm install` in the subdirectory of each talk.
+2. Run `npm install` in the subdirectory of each talk you want to build.
 3. From the root of the `talks` project, run `npm i && npm run build`
-4. Back in the website project, run `npm run build` to build project with all talks
+4. Back in the website project, run `pnpm build` to build project with all talks
 5. Verify build output and deploy.
 
 ## Email Spam Protection
