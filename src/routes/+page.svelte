@@ -1,12 +1,13 @@
 <script module lang="ts">
     import TechStack from '$components/TechStack.svelte'
     import Picture from '$components/Picture.svelte'
-    import CTALink from '$components/CTALink.svelte'
     import PostListing from '$components/PostListing.svelte'
     import Link from '$components/Link.svelte'
 </script>
 
 <script lang="ts">
+    import EncryptedEmail from '$components/EncryptedEmail.svelte'
+
     let { data } = $props()
     const { featuredPosts } = $derived(data)
 </script>
@@ -45,10 +46,10 @@
     </p>
     <p class="text-xl sm:text-2xl mb-4">
         With a strong passion for humane tech, libre software communities and
-        empowering change makers to increase their impact, I'm currently the
-        Lead Developer of <Link href="https://idg.tools" compact>IDG.tools</Link
-        > and founding member of <Link href="https://greenheart.coop" compact
-            >Greenheart Co-operative</Link
+        empowering change makers to increase their impact, I'm currently
+        Founding Member & Lead Developer at <Link
+            href="https://greenheart.coop"
+            compact>Greenheart Co-operative</Link
         >.
     </p>
 </section>
@@ -60,14 +61,7 @@
         Let's co-create a sustainable future!
     </h2>
 
-    <CTALink
-        href="#contact"
-        onclick={() => {
-            document
-                .querySelector('#contact')
-                ?.scrollIntoView({ behavior: 'smooth' })
-        }}>Contact me</CTALink
-    >
+    <EncryptedEmail class="mt-6" />
 </div>
 
 <hr class="my-16 max-w-sm mx-auto border-ming" />

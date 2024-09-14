@@ -62,7 +62,7 @@
         class?: string
         label?: string
     }
-    const { class: className = '', label = 'Contact' }: Props = $props()
+    const { class: className = '', label = 'Email me' }: Props = $props()
 
     let href = $state('#')
     let email = $state('')
