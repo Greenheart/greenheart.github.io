@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
     import { fade } from 'svelte/transition'
     import { flip } from 'svelte/animate'
     import { quintOut } from 'svelte/easing'

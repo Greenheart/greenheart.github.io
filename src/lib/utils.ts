@@ -1,4 +1,4 @@
-export const cx = (...classes: (string | undefined | false)[]) =>
+export const cx = (...classes: (string | undefined | false | null)[]) =>
     classes.filter(Boolean).join(' ').trim()
 
 const dateTimeFormat = new Intl.DateTimeFormat('en-GB', {
@@ -9,4 +9,12 @@ const dateTimeFormat = new Intl.DateTimeFormat('en-GB', {
 
 export function formatDate(date: string) {
     return dateTimeFormat.format(new Date(date))
+}
+
+export function once(fn: Function) {
+    return function (this: Function, event: Event) {
+        if (fn) fn.call(this, event)
+        // @ts-expect-error
+        fn = null
+    }
 }

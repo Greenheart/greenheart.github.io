@@ -1,18 +1,12 @@
-<script lang="ts" context="module">
+<script lang="ts" module>
     import { base64 } from 'rfc4648'
-</script>
 
-<script lang="ts">
-    import { onMount } from 'svelte'
+    let decrypted: Promise<string> | undefined = undefined
 
-    export let pl = import.meta.env.VITE_PAYLOAD
-    export let pwd = import.meta.env.VITE_PASSWORD
+    const pl = import.meta.env.VITE_PAYLOAD
+    const pwd = import.meta.env.VITE_PASSWORD
 
-    if (!pl || !pwd) throw 'EncryptedEmail.svelte: Missing data'
-
-    let label = 'Show Email'
-    let href = '#'
-    let text = ''
+    if (!pl || !pwd) throw new Error('EncryptedEmail.svelte: Missing data')
 
     async function deriveKey(salt: Uint8Array, password: string) {
         const encoder = new TextEncoder()
@@ -21,14 +15,14 @@
             encoder.encode(password),
             'PBKDF2',
             false,
-            ['deriveKey']
+            ['deriveKey'],
         )
         return await crypto.subtle.deriveKey(
             { name: 'PBKDF2', salt, iterations: 2e5, hash: 'SHA-256' },
             baseKey,
             { name: 'AES-GCM', length: 256 },
             true,
-            ['decrypt']
+            ['decrypt'],
         )
     }
 
@@ -46,28 +40,50 @@
             await crypto.subtle.decrypt(
                 { name: 'AES-GCM', iv },
                 key,
-                ciphertext
-            )
+                ciphertext,
+            ),
         )
         if (!data) throw 'Malformed data'
 
         return decoder.decode(data)
     }
 
-    onMount(async () => {
-        text = await decrypt(pl, pwd)
-    })
-
-    async function showEmail() {
-        href = 'mailto:' + text
-        label = text
+    export async function getDecryptedEmail(pl: string, password: string) {
+        // Only decrypt once and then re-use the result
+        return decrypted ? decrypted : decrypt(pl, password)
     }
+</script>
+
+<script lang="ts">
+    import { onMount } from 'svelte'
+    import { once } from '../lib/utils'
+
+    type Props = {
+        class?: string
+        label?: string
+    }
+    const { class: className = '', label = 'Contact' }: Props = $props()
+
+    let href = $state('#')
+    let email = $state('')
+
+    function showEmail(event: PointerEvent) {
+        event.preventDefault()
+        event.stopPropagation()
+        if (event.isTrusted) {
+            href = 'mailto:' + email
+        }
+    }
+
+    onMount(async () => {
+        email = await getDecryptedEmail(pl, pwd)
+    })
 </script>
 
 <a
     {href}
-    on:click|once|preventDefault|trusted={showEmail}
-    class="bg-mantis py-3 px-8 inline-flex rounded-md shadow-lg hover:shadow-xl transform-gpu hover:scale-105 duration-150 justify-self-center text-black font-black justify-center"
+    onpointerenter={once(showEmail)}
+    class="bg-mantis py-3 px-8 inline-flex rounded-md shadow-lg hover:shadow-xl transform-gpu hover:scale-105 duration-150 justify-self-center text-black font-black justify-center {className}"
 >
     <span class="whitespace-nowrap">
         {label}

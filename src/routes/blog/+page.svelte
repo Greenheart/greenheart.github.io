@@ -1,4 +1,4 @@
-<script lang="ts" context="module">
+<script lang="ts" module>
     import PostListing from '$components/PostListing.svelte'
     import type { PageData } from './$types'
 </script>

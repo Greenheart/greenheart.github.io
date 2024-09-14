@@ -2,14 +2,26 @@
     type ImageSource = Pick<HTMLSourceElement, 'srcset'> & {
         type: 'image/webp' | 'image/jpeg' | 'image/png'
     }
-    let className = ''
-    export let src: string
-    export let sources: ImageSource[] = []
-    export let alt: string
-    export let title: string | undefined = undefined
-    export let width: number | undefined
-    export let height: number | undefined
-    export { className as class }
+
+    type Props = {
+        class?: string
+        src: string
+        sources: ImageSource[]
+        alt: string
+        title?: string
+        width?: number
+        height?: number
+    }
+
+    let {
+        src,
+        class: className = '',
+        sources = [],
+        alt,
+        title,
+        width,
+        height,
+    }: Props = $props()
 </script>
 
 <picture>

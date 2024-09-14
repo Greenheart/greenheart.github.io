@@ -1,4 +1,4 @@
-<script context="module">
+<script module>
     import Tags from '$components/Tags.svelte'
     import BlogFooter from '$components/BlogFooter.svelte'
     import { formatDate } from '$lib/utils'
@@ -12,14 +12,20 @@
 </script>
 
 <script lang="ts">
+    import type { Snippet } from 'svelte'
+
     // TODO: Update this layout to use TypeScript when mdsvex supports it.
     // See https://github.com/pngwn/MDsveX/issues/116
 
-    // As a temporary fix, default values are used to describe the expected types
-    export let title = ''
-    export let date = ''
-    export let tags = ['']
-    export const featured = false
+    // As a temporary fix, we use the BlogLayoutWrapper.svelte to pass down the actual props
+
+    type Props = {
+        title: string
+        date: string
+        tags: string[]
+        children: Snippet
+    }
+    let { title, date, tags, children }: Props = $props()
 </script>
 
 <svelte:head>
@@ -37,7 +43,7 @@
 >
     <time datetime={date}>{formatDate(date)}</time>
     <Tags {tags} class="my-2" />
-    <slot />
+    {@render children()}
 </article>
 
 <BlogFooter />

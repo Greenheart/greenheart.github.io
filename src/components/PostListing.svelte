@@ -3,7 +3,10 @@
     import { formatDate } from '$lib/utils'
     import type { BlogPost } from '$lib/interfaces'
 
-    export let post: BlogPost
+    type Props = {
+        post: BlogPost
+    }
+    let { post }: Props = $props()
 </script>
 
 <a href={'/blog/' + post.slug}>

@@ -1,15 +1,14 @@
-<script context="module" lang="ts">
+<script module lang="ts">
     import TechStack from '$components/TechStack.svelte'
     import Picture from '$components/Picture.svelte'
     import CTALink from '$components/CTALink.svelte'
     import PostListing from '$components/PostListing.svelte'
     import Link from '$components/Link.svelte'
-    import type { PageData } from './$types'
 </script>
 
 <script lang="ts">
-    export let data: PageData
-    $: ({ featuredPosts } = data)
+    let { data } = $props()
+    const { featuredPosts } = $derived(data)
 </script>
 
 <Picture
@@ -63,7 +62,7 @@
 
     <CTALink
         href="#contact"
-        on:click={() => {
+        onclick={() => {
             document
                 .querySelector('#contact')
                 ?.scrollIntoView({ behavior: 'smooth' })

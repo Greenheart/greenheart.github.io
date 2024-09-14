@@ -1,12 +1,14 @@
-<script context="module" lang="ts">
+<script module lang="ts">
     import type { BlogPost } from '$lib/interfaces'
     import { cx } from '$lib/utils'
 </script>
 
 <script lang="ts">
-    export let tags: Required<BlogPost>['tags']
-    let className = ''
-    export { className as class }
+    type Props = {
+        tags: Required<BlogPost>['tags']
+        class?: string
+    }
+    let { tags, class: className }: Props = $props()
 </script>
 
 <div class={cx('flex flex-wrap items-center gap-2', className)}>

@@ -1,5 +1,6 @@
-<script lang="ts" context="module">
-    import { onMount } from 'svelte'
+<script lang="ts" module>
+    import { onMount, type Snippet } from 'svelte'
+    import type { HTMLAttributes } from 'svelte/elements'
 
     import isExternalURL from '$lib/isExternalURL'
     import { cx } from '$lib/utils'
@@ -9,12 +10,20 @@
 </script>
 
 <script lang="ts">
-    export let compact = false
+    interface Props extends HTMLAttributes<HTMLAnchorElement> {
+        compact?: boolean
+        href: string
+        children: Snippet
+    }
+    let {
+        compact = false,
+        href = '',
+        class: className,
+        children,
+        ...rest
+    }: Props = $props()
 
-    export let href = ''
-    let additionalProps: object
-    let className = ''
-    export { className as class }
+    let additionalProps = $state({})
 
     onMount(() => {
         // Treat talks as external links to fully reload the page.
@@ -30,9 +39,9 @@
 
 <a
     {href}
-    {...$$props}
+    {...rest}
     class={cx('link', className, compact ? 'compact' : undefined)}
     {...additionalProps}
 >
-    <slot />
+    {@render children()}
 </a>

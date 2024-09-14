@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
     import Link from '$components/Link.svelte'
     import Meta from '$components/Meta.svelte'
 
