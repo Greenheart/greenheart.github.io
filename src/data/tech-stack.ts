@@ -2,17 +2,18 @@ import type { TechStack } from '$lib/interfaces'
 
 const tech: TechStack = {
     Current: [
+        'TypeScript',
+        'Node.js',
         'Svelte',
         'React',
-        'Node.js',
-        'TypeScript',
-        'React Native',
-        'JavaScript',
+        'Astro',
         'SvelteKit',
         'Tailwind CSS',
         'Docker',
         'PostgreSQL',
-        'GraphQL',
+        'SQLite',
+        'Redis',
+        'Prisma',
     ],
     Past: [
         'Python',
@@ -20,15 +21,17 @@ const tech: TechStack = {
         'Elixir',
         'PHP',
         'Next.js',
+        'React Native',
         'Gatsby',
         'Meteor',
         'Storybook',
+        'JavaScript',
         'Angular.js',
-        'Redis',
         'Mongo DB',
+        'GraphQL',
         'Phaser',
     ],
-    Learning: ['Tauri', 'Rust', 'Decap CMS'],
+    Learning: ['Fastify', 'BullMQ', 'Kubernetes'],
 }
 
 export default tech
