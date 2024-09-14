@@ -1,11 +1,10 @@
 <script lang="ts" module>
     import PostListing from '$components/PostListing.svelte'
-    import type { PageData } from './$types'
 </script>
 
 <script lang="ts">
-    export let data: PageData
-    $: ({ posts } = data)
+    let { data } = $props()
+    const { posts } = $derived(data)
 </script>
 
 <!-- TODO: Add /tags/index.svelte - List all tags and how many posts that exist with each, sort by most posts at the top -->

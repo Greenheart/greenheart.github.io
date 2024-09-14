@@ -1,7 +1,6 @@
 <script lang="ts">
-    import type { PageData } from './$types'
-    export let data: PageData
-    $: ({ talks } = data)
+    let { data } = $props()
+    const { talks } = $derived(data)
 </script>
 
 <h1

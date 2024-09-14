@@ -1,6 +1,5 @@
 <script lang="ts">
-    import type { PageData } from './$types'
-    export let data: PageData
+    let { data } = $props()
 
     const [, HEAD] = data.talk.match(/<head>([^]+)<\/head>/) ?? []
     const [, BODY] = data.talk.match(/<body>([^]+)<\/body>/) ?? []
