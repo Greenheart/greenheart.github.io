@@ -83,6 +83,7 @@
 <a
     {href}
     onpointerenter={once(showEmail)}
+    onfocusin={once(showEmail)}
     class="bg-mantis py-3 px-8 inline-flex rounded-md shadow-lg hover:shadow-xl transform-gpu hover:scale-105 duration-150 justify-self-center text-black font-black justify-center {className}"
 >
     <span class="whitespace-nowrap">
