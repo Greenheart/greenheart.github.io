@@ -50,6 +50,8 @@ export async function getEncryptedPayload(content, password) {
 const text = process.env.VITE_EMAIL
 const pwd = process.env.VITE_PASSWORD
 
+if (!text || !pwd) throw new Error('Missing env variables')
+
 const pl = await getEncryptedPayload(text, pwd)
 
 console.log(pl)
