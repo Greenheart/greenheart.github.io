@@ -39,7 +39,7 @@
 <h1 class="font-black text-4xl lg:text-5xl mx-auto">{title}</h1>
 
 <article
-    class="prose lg:prose-lg xl:prose-xl 2xl:prose-2xl mx-auto text-base mt-4"
+    class="prose lg:prose-lg xl:prose-xl 2xl:prose-2xl mx-auto text-base mt-4 prose-blockquote:bg-white prose-blockquote:py-1 prose-blockquote:rounded-md"
 >
     <time datetime={date}>{formatDate(date)}</time>
     <Tags {tags} class="my-2" />
