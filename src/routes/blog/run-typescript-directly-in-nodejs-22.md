@@ -2,6 +2,7 @@
 title: Run TypeScript Directly with Node.js 22
 date: 2024-12-29
 tags: ['TypeScript', 'Node.js']
+featured: true
 ---
 
 **It's about to get much easier to run TypeScript directly with Node.js.** As of Node.js `22.7.0`, there are two experimental command line flags to strip TypeScript types and convert TypeScript-only syntax into JavaScript that can be excuted by Node.js.
