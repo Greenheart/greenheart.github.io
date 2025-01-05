@@ -21,6 +21,12 @@ If your code (or any dependencies) use TypeScript-only features like `enum` and 
 node --experimental-strip-types --experimental-transform-types main.ts
 ```
 
+If you start many `node`-processes and want to filter out the `ExperimentalWarning`s from the log output, you can pass the flag `--no-warnings=ExperimentalWarning` to get a much cleaner output:
+
+```sh
+node --no-warnings=ExperimentalWarning --experimental-strip-types --experimental-transform-types main.ts
+```
+
 Reading the [official guide](https://nodejs.org/en/learn/typescript/run-natively), I'm especially excited that this brings us a step closer to full TypeScript-support without any external tools or command line flags.
 
 > Future versions of Node.js will include support for TypeScript without the need for a command line flag.
@@ -38,11 +44,11 @@ If you have a `tsconfig.json` defining an `@app` import alias like this:
 ```json
 // tsconfig.json
 {
-  "compilerOptions": {
-    "paths": {
-      "@app/*": ["./src/*"]
+    "compilerOptions": {
+        "paths": {
+            "@app/*": ["./src/*"]
+        }
     }
-  }
 }
 ```
 
@@ -51,9 +57,9 @@ Then you can add the following import alias in `package.json` to make it work al
 ```json
 // package.json
 {
-  "imports": {
-    "#app/*": "./src/*"
-  }
+    "imports": {
+        "#app/*": "./src/*"
+    }
 }
 ```
 
@@ -76,7 +82,6 @@ import { something } from '#app/lib/something.ts'
 ```
 
 Also note that Node.js requires explicit file extensions when using import aliases. Perhaps it's possible to use without `.ts` extensions, but at the same time, I think it's good to be explicit - especially since most of the imports are added automatically by the code editor.
-
 
 ## Run TypeScript in production
 
