@@ -84,9 +84,11 @@
         than just code to help the team succeed.
     </p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center">
+    <div
+        class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center font-normal"
+    >
         <ul
-            class="font-light tracking-wide flex flex-col items-center space-y-2 bg-white p-4 w-80 sm:w-[284px] shadow-lg rounded-sm"
+            class="tracking-wide flex flex-col items-center space-y-2 bg-white p-4 w-80 sm:w-[284px] shadow-lg rounded-sm"
         >
             <li>Product Strategy</li>
             <li>Attention to Detail</li>
@@ -95,7 +97,7 @@
             <li>Design Systems</li>
         </ul>
         <ul
-            class="font-light tracking-wide flex flex-col items-center space-y-2 bg-white p-4 w-80 sm:w-[284px] shadow-lg rounded-sm"
+            class="tracking-wide flex flex-col items-center space-y-2 bg-white p-4 w-80 sm:w-[284px] shadow-lg rounded-sm"
         >
             <li>UI/UX Design</li>
             <li>Humane Tech & Ethical Design</li>
