@@ -48,7 +48,7 @@
 
     <!-- Workaround to replace flexbox gap: https://gist.github.com/OliverJAsh/7f29d0fa1d35216ec681d2949c3fe8b7 -->
     <div
-        class="flex flex-wrap mt-4 max-w-prose -ml-2 -mb-2 justify-center text-white"
+        class="flex flex-wrap mt-4 max-w-prose -ml-2 -mb-2 justify-center text-white font-normal"
         class:hidden={!ready}
     >
         {#if ready}
@@ -58,7 +58,7 @@
                     animate:flip={{ duration: 300, easing: quintOut }}
                 >
                     <span
-                        class="p-2 bg-ming font-light rounded-sm tracking-wide"
+                        class="p-2 bg-ming rounded-sm tracking-wide"
                         in:fade={{ delay: index * 35, duration: 300 }}
                     >
                         {technology}
