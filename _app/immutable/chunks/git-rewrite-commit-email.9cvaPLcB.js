@@ -1,9 +1,0 @@
-import{a as l,t as n}from"./disclose-version.D5g0bMZL.js";import"./legacy.CjxW4MSY.js";import{s as p,f as m,c,r as d,n as u}from"./runtime.D9GYYi2j.js";import{h}from"./html.Bz0YsFcd.js";import{l as f,s as g}from"./props.DQfrSCu4.js";import{B as _}from"./BlogLayoutWrapper.Dw_fYpOP.js";const y={title:"Update Your Git Commit Email Address Before Pushing to Remote Repository",date:"2021-07-23T00:00:00.000Z",tags:["Git","Code Snippet"]};var $=n('<p>Here’s a quick way to update commit author email and display name for previous commits in a local project.</p> <p>Two things worth mentioning before using this:</p> <ol><li><p>If you change your email, it might no longer count as contributions on your GitHub/GitLab profile. But as long as you keep the old email as a hidden email connected to your account, it should work.</p></li> <li><p>Remember that rewriting history in shared projects is a bad idea. Especially when working in a collaborative environment with other people. But for old local projects that you want to upload to a public Git repository, this method could be useful to hide some personal information.</p></li></ol> <pre class="language-shell"><!></pre> <p>Credit: <a href="https://stackoverflow.com/a/2931914/4183985" rel="nofollow">StackOverflow</a></p>',1);function E(t,a){const i=f(a,["children","$$slots","$$events","$$legacy"]);_(t,g(()=>i,y,{children:(r,w)=>{var o=$(),e=p(m(o),6),s=c(e);h(s,()=>`<code class="language-shell"><span class="token function">git</span> filter-branch --commit-filter <span class="token string">'
-      if [ "$GIT_AUTHOR_EMAIL" = "old@email.com" ];
-      then
-              GIT_AUTHOR_NAME="Your Name";
-              GIT_AUTHOR_EMAIL="new@email.com";
-              git commit-tree "$@";
-      else
-              git commit-tree "$@";
-      fi'</span> HEAD</code>`),d(e),u(2),l(r,o)},$$slots:{default:!0}}))}export{E as default,y as metadata};
