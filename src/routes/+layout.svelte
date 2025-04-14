@@ -6,7 +6,7 @@
 </script>
 
 <script lang="ts">
-    import { page } from '$app/stores'
+    import { page } from '$app/state'
     import Footer from '$components/Footer.svelte'
 
     const links = [
@@ -17,7 +17,7 @@
 </script>
 
 <!-- We need a blank layout for talks since they are rendering a Vue SPA -->
-{#if $page.route.id === '/talks/[slug]' && !$page.error}
+{#if page.route.id === '/talks/[slug]' && !page.error}
     <slot />
 {:else}
     <Meta />
