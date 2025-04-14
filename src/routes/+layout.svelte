@@ -39,10 +39,10 @@
 
     <Footer />
 
-    <style lang="postcss">
+    <style>
         @media (max-width: 360px) {
             header {
-                @apply !justify-center;
+                justify-content: center !important;
             }
         }
     </style>
