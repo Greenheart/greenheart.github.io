@@ -1,6 +1,3 @@
-export const cx = (...classes: (string | undefined | false | null)[]) =>
-    classes.filter(Boolean).join(' ').trim()
-
 const dateTimeFormat = new Intl.DateTimeFormat('en-GB', {
     year: 'numeric',
     month: 'long',

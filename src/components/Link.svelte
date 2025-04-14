@@ -3,7 +3,6 @@
     import type { HTMLAttributes } from 'svelte/elements'
 
     import isExternalURL from '$lib/isExternalURL'
-    import { cx } from '$lib/utils'
     import { SITE_URL } from '$lib/constants'
 
     const isTalk = (href: string) => href.includes(SITE_URL + '/talks/')
@@ -40,7 +39,7 @@
 <a
     {href}
     {...rest}
-    class={cx('link', className, compact ? 'compact' : undefined)}
+    class={['link', className, compact ? 'compact' : undefined]}
     {...additionalProps}
 >
     {@render children()}
