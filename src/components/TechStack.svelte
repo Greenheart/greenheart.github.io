@@ -31,13 +31,13 @@
         {#each filters as filter}
             {#if filter === selected}
                 <button
-                    class="bg-white px-3 py-2 focus:outline-none shadow-lg rounded-sm"
+                    class="bg-white px-3 py-2 focus:outline-hidden shadow-lg rounded-xs"
                 >
                     {filter}
                 </button>
             {:else}
                 <button
-                    class="px-3 py-2 focus:outline-none hover:bg-white hover:shadow-lg rounded-sm"
+                    class="px-3 py-2 focus:outline-hidden hover:bg-white hover:shadow-lg rounded-xs"
                     on:click={() => setFilter(filter)}
                 >
                     {filter}
@@ -58,7 +58,7 @@
                     animate:flip={{ duration: 300, easing: quintOut }}
                 >
                     <span
-                        class="p-2 bg-ming rounded-sm tracking-wide"
+                        class="p-2 bg-ming rounded-xs tracking-wide"
                         in:fade={{ delay: index * 35, duration: 300 }}
                     >
                         {technology}

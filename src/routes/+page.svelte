@@ -88,7 +88,7 @@
         class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center font-normal"
     >
         <ul
-            class="tracking-wide flex flex-col items-center space-y-2 bg-white p-4 w-80 sm:w-[284px] shadow-lg rounded-sm"
+            class="tracking-wide flex flex-col items-center space-y-2 bg-white p-4 w-80 sm:w-[284px] shadow-lg rounded-xs"
         >
             <li>Product Strategy</li>
             <li>Attention to Detail</li>
@@ -97,7 +97,7 @@
             <li>Design Systems</li>
         </ul>
         <ul
-            class="tracking-wide flex flex-col items-center space-y-2 bg-white p-4 w-80 sm:w-[284px] shadow-lg rounded-sm"
+            class="tracking-wide flex flex-col items-center space-y-2 bg-white p-4 w-80 sm:w-[284px] shadow-lg rounded-xs"
         >
             <li>UI/UX Design</li>
             <li>Humane Tech & Ethical Design</li>
@@ -110,14 +110,14 @@
 
 <hr class="my-16 max-w-sm mx-auto border-ming" />
 
-<section class="grid grid-cols-1 max-w-screen-md mx-auto">
+<section class="grid grid-cols-1 max-w-(--breakpoint-md) mx-auto">
     <h2
         class="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none text-center mb-6"
     >
         Featured blog post{featuredPosts.length > 1 ? 's' : ''}
     </h2>
 
-    <section class="grid grid-cols-1 max-w-screen-md mx-auto gap-6">
+    <section class="grid grid-cols-1 max-w-(--breakpoint-md) mx-auto gap-6">
         {#each featuredPosts as post}
             <PostListing {post} />
         {/each}

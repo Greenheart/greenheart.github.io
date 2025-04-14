@@ -1,30 +1,50 @@
-@tailwind base;
+@import 'tailwindcss';
 
-@layer base {
-    :root {
-        --pacificBlue: #46b4c7;
-        --ming: #256d7a;
-        --cedarChest: #c76350;
-        --mantis: #5ac75f;
-        --fernGreen: #3d7a40;
-        --white: #fff;
-        --honeydew: #d6ead7;
-        --black: #000;
-    }
+@theme {
+    --breakpoint-*: initial;
+    --breakpoint-2xs: 375px;
+    --breakpoint-xs: 475px;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+
+    --color-pacificBlue: #46b4c7;
+    --color-ming: #256d7a;
+    --color-cedarChest: #c76350;
+    --color-mantis: #5ac75f;
+    --color-fernGreen: #3d7a40;
+    --color-white: #fff;
+    --color-honeydew: #d6ead7;
+    --color-black: #000;
 }
 
-@tailwind components;
+@config '../tailwind.config.cjs';
 
-@layer components {
-    .link,
-    .prose .link {
-        color: var(--black);
+@utility link {
+    color: var(--color-black);
+    line-height: 1;
+    padding: 0.5rem;
+    background: linear-gradient(
+        to bottom,
+        var(--color-mantis) 0%,
+        var(--color-mantis) 100%
+    );
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 2px 2px;
+    transition: background-size 0.15s ease-out;
+    text-decoration: none;
+
+    .prose & {
+        color: var(--color-black);
         line-height: 1;
         padding: 0.5rem;
         background: linear-gradient(
             to bottom,
-            var(--mantis) 0%,
-            var(--mantis) 100%
+            var(--color-mantis) 0%,
+            var(--color-mantis) 100%
         );
         background-position: 0 100%;
         background-repeat: repeat-x;
@@ -33,31 +53,52 @@
         text-decoration: none;
     }
 
-    .link:hover,
-    .prose .link:hover {
+    &:hover {
+        background-size: 2px 100%;
+    }
+
+    .prose &:hover {
         background-size: 2px 100%;
     }
 
     @media (hover: none) {
-        .link:hover,
-        .prose .link:hover {
+        &:hover {
             background-size: 2px 2px;
         }
 
-        .link:active,
-        .prose .link:active {
+        .prose &:hover {
+            background-size: 2px 2px;
+        }
+
+        &:active {
+            background-size: 2px 100%;
+            transition: none;
+        }
+
+        .prose &:active {
             background-size: 2px 100%;
             transition: none;
         }
     }
 
-    .prose .link,
-    .link.compact {
+    .prose & {
+        padding: 0.1rem;
+    }
+
+    &.compact {
         padding: 0.1rem;
     }
 }
 
-@tailwind utilities;
+.prose a {
+    @apply link;
+}
+
+@utility compact {
+    & .link {
+        padding: 0.1rem;
+    }
+}
 
 html {
     overflow-y: scroll;
