@@ -8,7 +8,7 @@ const mdsvexConfig = {
     remarkPlugins: [],
     rehypePlugins: [],
     layout: {
-        blog: './src/routes/blog/BlogLayoutWrapper.svelte',
+        blog: resolve('./src/routes/blog/BlogLayoutWrapper.svelte'),
     },
 }
 
