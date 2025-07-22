@@ -26,9 +26,11 @@
     .prose code:not(pre > code) {
         background: var(--color-ming);
         color: var(--color-white);
+        display: inline-block;
         padding: 2px 4px;
         border-radius: 4px;
         margin-right: 1px;
+        line-height: 1.5rem;
         word-break: break-word;
         white-space: nowrap;
         font-weight: 500;
