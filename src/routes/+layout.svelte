@@ -23,10 +23,10 @@
     <Meta />
 
     <header
-        class="flex flex-1 justify-between p-4 max-w-6xl mx-auto flex-wrap gap-y-4 gap-x-2"
+        class="mx-auto flex max-w-6xl flex-1 flex-wrap justify-between gap-x-2 gap-y-4 p-4"
     >
         <Link href="/">Samuel Plumppu</Link>
-        <nav class="flex space-x-2 xs:space-x-4">
+        <nav class="xs:space-x-4 flex space-x-2">
             {#each links as link}
                 <Link href={link.href}>{link.text}</Link>
             {/each}

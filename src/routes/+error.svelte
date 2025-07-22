@@ -1,11 +1,11 @@
 <div class="text-center">
-    <h1 class="font-bold text-xl sm:text-3xl pb-4">
+    <h1 class="pb-4 text-xl font-bold sm:text-3xl">
         Oh no! This page does not exist
     </h1>
 
     <a
         href="/"
-        class="bg-mantis py-3 px-8 inline-flex rounded-md shadow-lg hover:shadow-xl transform-gpu hover:scale-105 duration-150 text-black font-black justify-center max-w-max"
+        class="bg-mantis inline-flex max-w-max transform-gpu justify-center rounded-md px-8 py-3 font-black text-black shadow-lg duration-150 hover:scale-105 hover:shadow-xl"
     >
         Go back
     </a>

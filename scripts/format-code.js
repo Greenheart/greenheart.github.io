@@ -2,7 +2,7 @@
 
 /**
  * Format Code Snippets for Blog Posts.
- * 
+ *
  * Why?
  *
  * 1. Ensure consistent code style in all posts.
@@ -12,14 +12,15 @@
  * Usage:
  *
  * 1. Copy the code you want to format
- * 2. Edit the prettier config below to ensure the correct parser language has been chosen.
- * 3. Run `node scripts/format-code.js` to format and copy the result to the clipboard.
+ * 2. Edit the prettier config below to ensure the correct parser language has been
+ *    chosen.
+ * 3. Run `node scripts/format-code.js` to format and copy the result to the
+ *    clipboard.
  * 4. Paste the code anywhere.
  */
 
 import prettier from 'prettier'
 import { read, write } from 'clipboardy'
-
 
 const input = await read()
 

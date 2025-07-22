@@ -4,12 +4,12 @@
 </script>
 
 <h1
-    class="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl leading-none font-black tracking-tight mb-8"
+    class="xs:text-5xl mb-8 text-4xl leading-none font-black tracking-tight sm:text-6xl lg:text-7xl"
 >
     More about me
 </h1>
 
-<h2 class="text-lg xs:text-2xl font-bold pb-4">
+<h2 class="xs:text-2xl pb-4 text-lg font-bold">
     One of my most exciting orienteering memories so far:
 </h2>
 
@@ -18,7 +18,7 @@
         src="/images/Tiomila2015.jpg"
         alt="Night time start of the Tiomila 2015 orienteering relay"
         sources={[{ srcset: '/images/Tiomila2015.webp', type: 'image/webp' }]}
-        class="max-w-5xl pb-4 w-full"
+        class="w-full max-w-5xl pb-4"
         width={1024}
         height={661}
     />

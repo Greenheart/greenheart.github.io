@@ -3,10 +3,10 @@
 </script>
 
 <section
-    class="p-4 bg-white shadow-lg rounded-md mx-auto mt-12 max-w-md text-center"
+    class="mx-auto mt-12 max-w-md rounded-md bg-white p-4 text-center shadow-lg"
 >
     <h2
-        class="text-xl xs:text-2xl md:text-3xl leading-none font-black tracking-tight mb-4"
+        class="xs:text-2xl mb-4 text-xl leading-none font-black tracking-tight md:text-3xl"
     >
         Thank you for reading! 🌱
     </h2>

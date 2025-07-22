@@ -2,10 +2,10 @@
     import EncryptedEmail from './EncryptedEmail.svelte'
 </script>
 
-<footer class="container px-4 pb-4 text-center max-w-6xl mx-auto font-light">
-    <hr class="my-16 max-w-sm mx-auto border-ming" id="contact" />
+<footer class="container mx-auto max-w-6xl px-4 pb-4 text-center font-light">
+    <hr class="border-ming mx-auto my-16 max-w-sm" id="contact" />
     <h2
-        class="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none mb-6"
+        class="xs:text-2xl mb-6 text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
     >
         Let's co-create a sustainable future!
     </h2>
@@ -24,7 +24,7 @@ Show email
 
     <p class="mt-8">© 2015 - {new Date().getFullYear()} Samuel Plumppu</p>
 
-    <div class="flex justify-center space-x-8 items-center my-8 flex-wrap">
+    <div class="my-8 flex flex-wrap items-center justify-center space-x-8">
         <a
             href="https://matrix.to/#/@Greenheart:matrix.org"
             target="_blank"
@@ -43,7 +43,7 @@ Show email
             rel="noopener noreferrer"
             aria-label="See my libre software at GitHub"
         >
-            <img src="/images/github.svg" alt="GitHub" class="w-8 h-8" />
+            <img src="/images/github.svg" alt="GitHub" class="h-8 w-8" />
         </a>
         <a
             href="https://fosstodon.org/@Greenheart"
@@ -54,7 +54,7 @@ Show email
             <img
                 src="/images/mastodon-logo.svg"
                 alt="Mastodon"
-                class="w-8 h-8"
+                class="h-8 w-8"
             />
         </a>
         <a
@@ -63,7 +63,7 @@ Show email
             rel="noopener noreferrer"
             aria-label="Connect with me on LinkedIn"
         >
-            <img src="/images/linkedin.svg" alt="LinkedIn" class="w-8 h-8" />
+            <img src="/images/linkedin.svg" alt="LinkedIn" class="h-8 w-8" />
         </a>
     </div>
 </footer>

@@ -22,5 +22,5 @@ export const load = (async ({ params: { slug }, setHeaders }) => {
         if (talk) return { talk }
     }
 
-    error(404, 'Not found');
+    error(404, 'Not found')
 }) satisfies PageServerLoad

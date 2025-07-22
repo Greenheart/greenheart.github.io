@@ -16,11 +16,10 @@ import { resolve } from 'path'
  * Rename the file extension for all matching files in a directory.
  *
  * @param {string} baseDir Where to find the files.
- * @param {function} shouldRenameFile Filter function that should
- *   return a boolean for whether or not to rename the file.
- * @param {string} beforeExt The file extension to replace. If
- *   `beforeExt` is an empty string, the `afterExt` will be added to
- *   the original filename.
+ * @param {function} shouldRenameFile Filter function that should return a
+ *   boolean for whether or not to rename the file.
+ * @param {string} beforeExt The file extension to replace. If `beforeExt` is an
+ *   empty string, the `afterExt` will be added to the original filename.
  * @param {string} afterExt The new file extension to use instead.
  * @returns The number of files renamed.
  */

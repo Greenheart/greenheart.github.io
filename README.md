@@ -20,11 +20,11 @@ _NOTE:_ This could be simplified in the future to allow fully automatic builds.
 
 ## Writing Best Practices
 
--   Use `node scripts/title-case.js` to format headings.
--   Use `node scripts/format-code.js` to ensure code has a consistent style.
--   Use `<!-- prettier-ignore-start -->` and `<!-- prettier-ignore-end -->` to wrap code blocks in blog posts to prevent the main Prettier instance of the codebase to re-format the code blocks after they already have been formatted with `node scripts/format-code.js`.
--   It's possible to prevent post drafts from rendering by prefixing the file with `_`.
+- Use `node scripts/title-case.js` to format headings.
+- Use `node scripts/format-code.js` to ensure code has a consistent style.
+- Use `<!-- prettier-ignore-start -->` and `<!-- prettier-ignore-end -->` to wrap code blocks in blog posts to prevent the main Prettier instance of the codebase to re-format the code blocks after they already have been formatted with `node scripts/format-code.js`.
+- It's possible to prevent post drafts from rendering by prefixing the file with `_`.
 
 ## Credits
 
--   Font Awesome: LinkedIn & GitHub SVG icons. Licensed under [CC BY 4.0](https://fontawesome.com/license)
+- Font Awesome: LinkedIn & GitHub SVG icons. Licensed under [CC BY 4.0](https://fontawesome.com/license)

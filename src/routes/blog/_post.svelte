@@ -36,10 +36,10 @@
 <!-- TODO: Add default OG image for all pages on the site -->
 <!-- TODO: Add option to override OG image for posts -->
 
-<h1 class="font-black text-4xl lg:text-5xl mx-auto">{title}</h1>
+<h1 class="mx-auto text-4xl font-black lg:text-5xl">{title}</h1>
 
 <article
-    class="prose lg:prose-lg xl:prose-xl 2xl:prose-2xl mx-auto text-base mt-4 prose-blockquote:bg-white prose-blockquote:py-1 prose-blockquote:rounded-md"
+    class="prose lg:prose-lg xl:prose-xl 2xl:prose-2xl prose-blockquote:bg-white prose-blockquote:py-1 prose-blockquote:rounded-md mx-auto mt-4 text-base"
 >
     <time datetime={date}>{formatDate(date)}</time>
     <Tags {tags} class="my-2" />

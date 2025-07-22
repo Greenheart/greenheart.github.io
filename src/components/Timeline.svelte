@@ -178,11 +178,11 @@
 </script>
 
 <div class="">
-    <h2 class="text-5xl font-bold mt-8">Timeline</h2>
+    <h2 class="mt-8 text-5xl font-bold">Timeline</h2>
     {#each data as { year, entries }}
-        <h2 class="text-3xl font-bold mt-4">{year}</h2>
+        <h2 class="mt-4 text-3xl font-bold">{year}</h2>
         {#each entries as { title, description }}
-            <h3 class="text-2xl font-bold my-2">{title}</h3>
+            <h3 class="my-2 text-2xl font-bold">{title}</h3>
             {#if description}
                 <p>{description}</p>
             {/if}

@@ -12,15 +12,15 @@
 
 <!-- IDEA: Show tags on this blog index page. Show the number of posts with each tag. -->
 
-<section class="grid text-center justify-center">
+<section class="grid justify-center text-center">
     <h1
-        class="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl leading-none font-black tracking-tight mb-8"
+        class="xs:text-5xl mb-8 text-4xl leading-none font-black tracking-tight sm:text-6xl lg:text-7xl"
     >
         Latest Posts
     </h1>
 </section>
 
-<section class="grid grid-cols-1 max-w-(--breakpoint-md) mx-auto gap-6">
+<section class="mx-auto grid max-w-(--breakpoint-md) grid-cols-1 gap-6">
     {#each posts as post}
         <PostListing {post} />
     {/each}

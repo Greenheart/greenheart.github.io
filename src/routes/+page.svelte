@@ -16,21 +16,21 @@
     src="/images/samuel.jpg"
     alt="Samuel"
     sources={[{ srcset: '/images/samuel.webp', type: 'image/webp' }]}
-    class="rounded-full shadow-2xl mx-auto w-32 h-32 sm:w-40 sm:h-40 my-8"
+    class="mx-auto my-8 h-32 w-32 rounded-full shadow-2xl sm:h-40 sm:w-40"
     width={160}
     height={160}
 />
 
-<section class="grid text-center justify-center">
+<section class="grid justify-center text-center">
     <h1
-        class="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl leading-none font-black tracking-tight mb-8"
+        class="xs:text-5xl mb-8 text-4xl leading-none font-black tracking-tight sm:text-6xl lg:text-7xl"
     >
         Hey! I'm Samuel.
     </h1>
     <h2
-        class="text-xl sm:text-3xl lg:text-4xl leading-6 font-black tracking-tight mb-12"
+        class="mb-12 text-xl leading-6 font-black tracking-tight sm:text-3xl lg:text-4xl"
     >
-        <div class="bg-mantis transform -skew-y-1 p-2 shadow-2xl">
+        <div class="bg-mantis -skew-y-1 transform p-2 shadow-2xl">
             <span class="whitespace-nowrap">Sustainability Entrepreneur</span>
             &
             <span class="whitespace-nowrap">Fullstack Developer</span>
@@ -38,13 +38,13 @@
     </h2>
 </section>
 
-<section class="grid grid-cols-1 max-w-prose mx-auto">
-    <p class="text-xl sm:text-2xl mb-4">
+<section class="mx-auto grid max-w-prose grid-cols-1">
+    <p class="mb-4 text-xl sm:text-2xl">
         Since 2015, I've worked with early stage startups and non-profits to
         create a future where both humanity and the living planet thrive
         together.
     </p>
-    <p class="text-xl sm:text-2xl mb-4">
+    <p class="mb-4 text-xl sm:text-2xl">
         With a strong passion for humane tech, libre software communities and
         empowering change makers to increase their impact, I'm currently
         Founding Member & Lead Developer at <Link
@@ -56,7 +56,7 @@
 
 <div class="grid pt-2">
     <h2
-        class="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none text-center"
+        class="xs:text-2xl text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
     >
         Let's co-create a sustainable future!
     </h2>
@@ -64,20 +64,20 @@
     <EncryptedEmail class="mt-6" />
 </div>
 
-<hr class="my-16 max-w-sm mx-auto border-ming" />
+<hr class="border-ming mx-auto my-16 max-w-sm" />
 
 <TechStack />
 
-<hr class="my-16 max-w-sm mx-auto border-ming" />
+<hr class="border-ming mx-auto my-16 max-w-sm" />
 
-<section class="max-w-prose mx-auto">
+<section class="mx-auto max-w-prose">
     <h2
-        class="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none text-center mb-6"
+        class="xs:text-2xl mb-6 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
     >
         How I like to contribute
     </h2>
 
-    <p class="text-xl sm:text-2xl mb-8">
+    <p class="mb-8 text-xl sm:text-2xl">
         I want the digital experiences and solutions we create to truly bring
         value to people and society. Technology is exciting, but never the end
         goal. This desire to take a holistic approach helps me contribute more
@@ -85,10 +85,10 @@
     </p>
 
     <div
-        class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center font-normal"
+        class="grid grid-cols-1 justify-items-center gap-4 font-normal sm:grid-cols-2"
     >
         <ul
-            class="tracking-wide flex flex-col items-center space-y-2 bg-white p-4 w-80 sm:w-[284px] shadow-lg rounded-xs"
+            class="flex w-80 flex-col items-center space-y-2 rounded-xs bg-white p-4 tracking-wide shadow-lg sm:w-[284px]"
         >
             <li>Product Strategy</li>
             <li>Attention to Detail</li>
@@ -97,7 +97,7 @@
             <li>Design Systems</li>
         </ul>
         <ul
-            class="tracking-wide flex flex-col items-center space-y-2 bg-white p-4 w-80 sm:w-[284px] shadow-lg rounded-xs"
+            class="flex w-80 flex-col items-center space-y-2 rounded-xs bg-white p-4 tracking-wide shadow-lg sm:w-[284px]"
         >
             <li>UI/UX Design</li>
             <li>Humane Tech & Ethical Design</li>
@@ -108,16 +108,16 @@
     </div>
 </section>
 
-<hr class="my-16 max-w-sm mx-auto border-ming" />
+<hr class="border-ming mx-auto my-16 max-w-sm" />
 
-<section class="grid grid-cols-1 max-w-(--breakpoint-md) mx-auto">
+<section class="mx-auto grid max-w-(--breakpoint-md) grid-cols-1">
     <h2
-        class="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none text-center mb-6"
+        class="xs:text-2xl mb-6 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
     >
         Featured blog post{featuredPosts.length > 1 ? 's' : ''}
     </h2>
 
-    <section class="grid grid-cols-1 max-w-(--breakpoint-md) mx-auto gap-6">
+    <section class="mx-auto grid max-w-(--breakpoint-md) grid-cols-1 gap-6">
         {#each featuredPosts as post}
             <PostListing {post} />
         {/each}

@@ -4,12 +4,12 @@
 </script>
 
 <h1
-    class="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl leading-none font-black tracking-tight mb-8"
+    class="xs:text-5xl mb-8 text-4xl leading-none font-black tracking-tight sm:text-6xl lg:text-7xl"
 >
     My talks
 </h1>
 
-<div class="flex flex-col space-y-2 items-start">
+<div class="flex flex-col items-start space-y-2">
     {#each talks as talk}
         <a href={`/talks/${talk}/`} class="link" data-sveltekit-reload>
             {talk}
