@@ -20,7 +20,25 @@
     --color-black: #000;
 }
 
-@config '../tailwind.config.cjs';
+@plugin '@tailwindcss/typography';
+
+@layer utilities {
+    .prose code:not(pre > code) {
+        background: var(--color-ming);
+        color: var(--color-white);
+        padding: 2px 4px;
+        border-radius: 4px;
+        margin-right: 1px;
+        word-break: break-word;
+        white-space: nowrap;
+        font-weight: 500;
+
+        &::before,
+        &::after {
+            content: '';
+        }
+    }
+}
 
 @utility link {
     color: var(--color-black);
