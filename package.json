@@ -24,7 +24,7 @@
         "@sveltejs/vite-plugin-svelte": "^6.1.0",
         "@tailwindcss/typography": "^0.5.16",
         "@tailwindcss/vite": "^4.1.11",
-        "@types/node": "^24.0.15",
+        "@types/node": "^24.1.0",
         "clipboardy": "^4.0.0",
         "gh-pages": "^6.3.0",
         "gray-matter": "^4.0.3",
