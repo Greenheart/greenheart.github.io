@@ -20,26 +20,27 @@
     },
     "devDependencies": {
         "@sveltejs/adapter-static": "^3.0.8",
-        "@sveltejs/kit": "^2.21.2",
-        "@sveltejs/vite-plugin-svelte": "^5.1.0",
+        "@sveltejs/kit": "^2.25.1",
+        "@sveltejs/vite-plugin-svelte": "^6.1.0",
         "@tailwindcss/typography": "^0.5.16",
-        "@tailwindcss/vite": "^4.1.8",
-        "@types/node": "^22.15.30",
+        "@tailwindcss/vite": "^4.1.11",
+        "@types/node": "^24.0.15",
         "clipboardy": "^4.0.0",
         "gh-pages": "^6.3.0",
         "gray-matter": "^4.0.3",
         "mdsvex": "^0.12.6",
-        "prettier": "^3.5.3",
-        "prettier-plugin-jsdoc": "^1.3.2",
+        "prettier": "^3.6.2",
+        "prettier-plugin-jsdoc": "^1.3.3",
         "prettier-plugin-svelte": "^3.4.0",
+        "prettier-plugin-tailwindcss": "^0.6.14",
         "prism-themes": "^1.9.0",
         "qrcode": "^1.5.4",
-        "svelte": "^5.33.14",
-        "tailwindcss": "^4.1.8",
+        "svelte": "^5.36.13",
+        "tailwindcss": "^4.1.11",
         "title-case": "^4.3.2",
         "tslib": "^2.8.1",
         "typescript": "^5.8.3",
-        "vite": "^6.3.5"
+        "vite": "^7.0.5"
     },
     "type": "module",
     "dependencies": {
@@ -52,7 +53,8 @@
         "trailingComma": "all",
         "plugins": [
             "prettier-plugin-svelte",
-            "prettier-plugin-jsdoc"
+            "prettier-plugin-jsdoc",
+            "prettier-plugin-tailwindcss"
         ]
     },
     "pnpm": {
