@@ -1,7 +1,7 @@
 import type { TechStack } from '$lib/interfaces'
 
 const tech: TechStack = {
-    Learning: ['Kubernetes', 'Local-first', 'CRDT'],
+    Learning: ['Local-first', 'CRDT'],
     Current: [
         'TypeScript',
         'Python',
@@ -20,6 +20,8 @@ const tech: TechStack = {
         'Prisma',
         'BullMQ',
         'Drizzle ORM',
+        'Kubernetes',
+        'Flux',
     ],
     Past: [
         'C#',
