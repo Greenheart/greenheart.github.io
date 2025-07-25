@@ -43,9 +43,7 @@
         "vite": "^7.0.5"
     },
     "type": "module",
-    "dependencies": {
-        "rfc4648": "^1.5.4"
-    },
+    "dependencies": {},
     "prettier": {
         "semi": false,
         "singleQuote": true,

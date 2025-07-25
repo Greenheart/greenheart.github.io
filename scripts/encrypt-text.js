@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-// @ts-nocheck
-import { base64 } from 'rfc4648'
 import { webcrypto } from 'crypto'
+
+import { stringify } from '../src/lib/base64'
 
 /**
  * Encrypt a string and turn it into an encrypted payload.
@@ -44,7 +44,7 @@ export async function getEncryptedPayload(content, password) {
     mergedData.set(iv, salt.length)
     mergedData.set(ciphertext, salt.length + iv.length)
 
-    return base64.stringify(mergedData)
+    return stringify(mergedData)
 }
 
 const text = process.env.VITE_EMAIL
