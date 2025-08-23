@@ -9,7 +9,7 @@
     let { post }: Props = $props()
 </script>
 
-<a href={'/blog/' + post.slug}>
+<a href={'/blog/' + post.slug} aria-label="Read blog post">
     <article class="rounded-md bg-white p-4 shadow-lg hover:shadow-xl">
         <h2
             class="xs:text-2xl xs:mb-4 mb-2 text-xl leading-[1.1] font-black tracking-tight"
