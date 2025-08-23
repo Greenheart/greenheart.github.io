@@ -10,14 +10,9 @@
     --breakpoint-xl: 1280px;
     --breakpoint-2xl: 1536px;
 
-    --color-pacificBlue: #46b4c7;
     --color-ming: #256d7a;
-    --color-cedarChest: #c76350;
     --color-mantis: #5ac75f;
-    --color-fernGreen: #3d7a40;
-    --color-white: #fff;
     --color-honeydew: #d6ead7;
-    --color-black: #000;
 }
 
 @plugin '@tailwindcss/typography';
