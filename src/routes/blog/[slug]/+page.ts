@@ -1,5 +1,5 @@
-export async function load({ params }) {
+export async function load({ params, data }) {
     const post = await import(`../${params.slug}.md`)
-    const content = post.default
-    return { content }
+
+    return { content: post.default, ...data }
 }
