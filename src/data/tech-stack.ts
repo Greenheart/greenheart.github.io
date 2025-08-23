@@ -1,7 +1,7 @@
 import type { TechStack } from '$lib/types'
 
 const tech: TechStack = {
-    Learning: ['Local-first', 'CRDT'],
+    Learning: ['Local-first', 'CRDT', 'Ansible'],
     Current: [
         'TypeScript',
         'Python',
@@ -17,6 +17,7 @@ const tech: TechStack = {
         'PostgreSQL',
         'SQLite',
         'Redis',
+        'Playwright',
         'Prisma',
         'BullMQ',
         'Drizzle ORM',
