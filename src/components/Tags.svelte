@@ -12,7 +12,9 @@
 
 <div class={['flex flex-wrap items-center gap-2', className]}>
     {#each tags as tag}
-        <span class="bg-mantis rounded-xs p-1 text-xs leading-3 md:text-sm">
+        <span
+            class="bg-mantis rounded-xs p-1 text-xs leading-3 sm:p-2 sm:text-base"
+        >
             {tag}
         </span>
     {/each}
