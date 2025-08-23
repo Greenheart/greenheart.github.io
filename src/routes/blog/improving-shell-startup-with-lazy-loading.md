@@ -8,7 +8,7 @@ Using [Oh My Zsh](https://ohmyz.sh/) is usually a great experience. However, add
 
 ## A Simple Solution
 
-```shell
+```sh
 # ~/.zshrc
 plugins=(nvm git) # 1
 zstyle ':omz:plugins:nvm' lazy yes # 2
@@ -28,7 +28,7 @@ However, I soon realised some of my projects had external dependencies that reli
 
 Adding an if statement to avoid lazy loading in specific directories:
 
-```shell
+```sh
 # ~/.zshrc
 plugins=(nvm git)
 
@@ -45,7 +45,7 @@ source $ZSH/oh-my-zsh.sh
 
 In the [documentation](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm) for `nvm` plugin, there are also other features that can be useful. For example, this is how to make sure `npx` and `pnpx` work even in new terminals.
 
-```shell
+```sh
 zstyle ':omz:plugins:nvm' lazy-cmd npx pnpx
 ```
 

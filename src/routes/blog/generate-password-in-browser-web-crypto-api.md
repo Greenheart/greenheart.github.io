@@ -228,7 +228,7 @@ This post is based on what I learned while creating the [pagecrypt](https://gith
 
 Install it with
 
-```shell
+```sh
 npm i pagecrypt
 ```
 

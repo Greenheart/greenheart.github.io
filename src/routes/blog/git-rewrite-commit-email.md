@@ -16,14 +16,14 @@ Let's use [git-filter-repo](https://github.com/newren/git-filter-repo) which is 
 
 Once installed, we can update the email like this:
 
-```shell
+```sh
 git-filter-repo \\\
 --email-callback 'return email.replace(b"old@email.com", b"new@email.com")'
 ```
 
 If you also want to update your name, you can run this command:
 
-```shell
+```sh
 git-filter-repo \\\
 --name-callback 'return name.replace(b"OldName", b"NewName")' \
 --email-callback 'return email.replace(b"old@email.com", b"new@email.com")'
