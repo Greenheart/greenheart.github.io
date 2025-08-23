@@ -43,4 +43,4 @@ export const tech: TechStack = {
     ],
 } as const
 
-export const filters = Object.keys(tech).reverse() as (keyof TechStack)[]
+export const groups = Object.keys(tech).reverse() as (keyof TechStack)[]
