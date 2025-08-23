@@ -10,9 +10,6 @@
         Let's co-create a sustainable future!
     </h2>
 
-    <!-- IDEA: Contact securely with Matrix by default -->
-    <!-- Then use email as backup, but discouraged -->
-
     <!-- IDEA: Update EncryptedEmail to work with a encrypted JSON payload, and then display EncryptedContact info (rename component and refactor) -->
 
     <!--
@@ -43,7 +40,7 @@ Show email
             rel="noopener noreferrer"
             aria-label="See my libre software at GitHub"
         >
-            <img src="/images/github.svg" alt="GitHub" class="h-8 w-8" />
+            <img src="/images/github.svg" alt="GitHub" class="size-8" />
         </a>
         <a
             href="https://fosstodon.org/@Greenheart"
@@ -54,7 +51,7 @@ Show email
             <img
                 src="/images/mastodon-logo.svg"
                 alt="Mastodon"
-                class="h-8 w-8"
+                class="size-8"
             />
         </a>
         <a
@@ -63,7 +60,7 @@ Show email
             rel="noopener noreferrer"
             aria-label="Connect with me on LinkedIn"
         >
-            <img src="/images/linkedin.svg" alt="LinkedIn" class="h-8 w-8" />
+            <img src="/images/linkedin.svg" alt="LinkedIn" class="size-8" />
         </a>
     </div>
 </footer>
