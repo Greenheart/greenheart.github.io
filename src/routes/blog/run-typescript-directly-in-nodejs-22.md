@@ -18,13 +18,18 @@ node --experimental-strip-types main.ts
 If your code (or any dependencies) use TypeScript-only features like `enum` and `namespace`, you need to use the following command:
 
 ```sh
-node --experimental-strip-types --experimental-transform-types main.ts
+node \\\
+--experimental-strip-types \\\
+--experimental-transform-types main.ts
 ```
 
 If you start many `node`-processes and want to filter out the `ExperimentalWarning`s from the log output, you can pass the flag `--no-warnings=ExperimentalWarning` to get a much cleaner output:
 
 ```sh
-node --no-warnings=ExperimentalWarning --experimental-strip-types --experimental-transform-types main.ts
+node \\\
+--no-warnings=ExperimentalWarning \\\
+--experimental-strip-types \\\
+--experimental-transform-types main.ts
 ```
 
 Reading the [official guide](https://nodejs.org/en/learn/typescript/run-natively), I'm especially excited that this brings us a step closer to full TypeScript-support without any external tools or command line flags.
