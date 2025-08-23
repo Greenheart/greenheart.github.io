@@ -12,16 +12,21 @@ Two things worth mentioning before using this:
 
 2. Remember that rewriting history in shared projects is a bad idea. Especially when working in a collaborative environment with other people. But for old local projects that you want to upload to a public Git repository, this method could be useful to hide some personal information.
 
+Let's use [git-filter-repo](https://github.com/newren/git-filter-repo) which is a modern replacement to `git filter-branch` and can be installed via package managers or by following the official [install guide](https://github.com/newren/git-filter-repo/blob/main/INSTALL.md).
+
+Once installed, we can update the email like this:
+
 ```shell
-git filter-branch --commit-filter '
-      if [ "$GIT_AUTHOR_EMAIL" = "old@email.com" ];
-      then
-              GIT_AUTHOR_NAME="Your Name";
-              GIT_AUTHOR_EMAIL="new@email.com";
-              git commit-tree "$@";
-      else
-              git commit-tree "$@";
-      fi' HEAD
+git-filter-repo \\
+--email-callback 'return email.replace(b"old@email.com", b"new@email.com")'
 ```
 
-Credit: [StackOverflow](https://stackoverflow.com/a/2931914/4183985)
+If you also want to update your name, you can run this command:
+
+```shell
+git-filter-repo \\
+--name-callback 'return name.replace(b"OldName", b"NewName")' \\
+--email-callback 'return email.replace(b"old@email.com", b"new@email.com")'
+```
+
+Credit: [StackOverflow](https://stackoverflow.com/a/60364176)
