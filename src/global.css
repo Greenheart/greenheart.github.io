@@ -19,7 +19,7 @@
 
 @layer utilities {
     .prose code:not(pre > code) {
-        background: var(--color-ming);
+        background: #011627;
         color: var(--color-white);
         display: inline-block;
         padding: 2px 4px;

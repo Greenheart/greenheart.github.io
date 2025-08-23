@@ -7,8 +7,6 @@
     // Override default components used to render posts: https://mdsvex.com/docs#custom-components
     import { default as a } from '$components/Link.svelte'
     export { a }
-
-    import 'prism-themes/themes/prism-night-owl.css'
 </script>
 
 <script lang="ts">
