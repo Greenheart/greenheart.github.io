@@ -5,9 +5,7 @@
     import { onMount } from 'svelte'
 
     import type { TechStack } from '$lib/types'
-    import tech from '$data/tech-stack'
-
-    const filters: Array<keyof TechStack> = ['Past', 'Current', 'Learning']
+    import { tech, filters } from '$data/tech-stack'
 </script>
 
 <script lang="ts">

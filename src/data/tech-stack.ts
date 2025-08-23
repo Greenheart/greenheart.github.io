@@ -1,6 +1,6 @@
 import type { TechStack } from '$lib/types'
 
-const tech: TechStack = {
+export const tech: TechStack = {
     Learning: ['Local-first', 'CRDT', 'Ansible'],
     Current: [
         'TypeScript',
@@ -41,6 +41,6 @@ const tech: TechStack = {
         'Express',
         'Elasticsearch',
     ],
-}
+} as const
 
-export default tech
+export const filters = Object.keys(tech) as (keyof TechStack)[]
