@@ -41,7 +41,7 @@
 >
     <h1>{title}</h1>
     <time datetime={date}>{formatDate(date)}</time>
-    <Tags {tags} class="my-2" />
+    <Tags {tags} class="my-4" />
     {@render children()}
 </article>
 
