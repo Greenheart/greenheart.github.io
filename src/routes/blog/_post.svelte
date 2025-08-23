@@ -38,9 +38,3 @@
 </article>
 
 <BlogFooter />
-
-<style>
-    :global(.prose h2 code) {
-        color: white;
-    }
-</style>
