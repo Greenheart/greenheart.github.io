@@ -2,7 +2,7 @@ import { readFileSync, readdirSync } from 'fs'
 import { resolve } from 'path'
 import frontmatter from 'gray-matter'
 
-import type { BlogPost, RawBlogPost } from '$lib/interfaces'
+import type { BlogPost, RawBlogPost } from '$lib/types'
 
 const blogDir = resolve(process.cwd(), 'src', 'routes', 'blog')
 

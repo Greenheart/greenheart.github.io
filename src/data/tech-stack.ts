@@ -1,4 +1,4 @@
-import type { TechStack } from '$lib/interfaces'
+import type { TechStack } from '$lib/types'
 
 const tech: TechStack = {
     Learning: ['Local-first', 'CRDT'],

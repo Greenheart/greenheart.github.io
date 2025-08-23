@@ -1,7 +1,7 @@
 <script lang="ts">
     import Tags from './Tags.svelte'
     import { formatDate } from '$lib/utils'
-    import type { BlogPost } from '$lib/interfaces'
+    import type { BlogPost } from '$lib/types'
 
     type Props = {
         post: BlogPost

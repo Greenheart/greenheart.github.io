@@ -4,7 +4,7 @@
     import { quintOut } from 'svelte/easing'
     import { onMount } from 'svelte'
 
-    import type { TechStack } from '$lib/interfaces'
+    import type { TechStack } from '$lib/types'
     import tech from '$data/tech-stack'
 
     const filters: Array<keyof TechStack> = ['Past', 'Current', 'Learning']
