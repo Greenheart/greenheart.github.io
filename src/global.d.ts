@@ -1,3 +1,5 @@
+import 'unplugin-icons/types/svelte'
+
 /// <reference types="@sveltejs/kit" />
 
 interface ImportMetaEnv {
