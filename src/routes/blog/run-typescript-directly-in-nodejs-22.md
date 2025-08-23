@@ -11,19 +11,19 @@ This even works with import aliases if you make some config and code changes, as
 
 ## How to run TypeScript directly with Node.js:
 
-```sh
+```shell
 node --experimental-strip-types main.ts
 ```
 
 If your code (or any dependencies) use TypeScript-only features like `enum` and `namespace`, you need to use the following command:
 
-```sh
+```shell
 node --experimental-strip-types --experimental-transform-types main.ts
 ```
 
 If you start many `node`-processes and want to filter out the `ExperimentalWarning`s from the log output, you can pass the flag `--no-warnings=ExperimentalWarning` to get a much cleaner output:
 
-```sh
+```shell
 node --no-warnings=ExperimentalWarning --experimental-strip-types --experimental-transform-types main.ts
 ```
 
