@@ -17,7 +17,9 @@
             {post.title}
         </h2>
         <div class="xs:flex xs:justify-between xs:gap-0 grid gap-1">
-            <time datetime={post.date}>{formatDate(post.date)}</time>
+            <time datetime={post.date} class="xs:m-0 mb-2"
+                >{formatDate(post.date)}</time
+            >
             {#if post.tags}
                 <Tags tags={post.tags} />
             {/if}
