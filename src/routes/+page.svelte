@@ -38,30 +38,33 @@
     </h2>
 </section>
 
-<section class="mx-auto grid max-w-prose grid-cols-1">
-    <p class="mb-4 text-xl sm:text-2xl">
+<section class="mx-auto grid max-w-prose grid-cols-1 gap-4 text-xl sm:text-2xl">
+    <p>
         Since 2015, I've worked with early stage startups and non-profits to
         create a future where both humanity and the living planet thrive
-        together.
+        together. I'm curious about how tech, systems thinking and <Link
+            href="https://doughnuteconomics.org/themes/business-enterprise"
+            compact>Doughnut design for business</Link
+        > can be combined to create a positive impact.
     </p>
-    <p class="mb-4 text-xl sm:text-2xl">
-        With a strong passion for humane tech, libre software communities and
-        empowering change makers to increase their impact, I'm currently
-        Founding Member & Lead Developer at <Link
+    <p>
+        With a strong passion for how libre software and co-operatives can help
+        create an economy that is regenerative and distributive by design, I'm
+        currently a Founding Member & Lead Developer at <Link
             href="https://greenheart.coop"
             compact>Greenheart Co-operative</Link
         >.
     </p>
 </section>
 
-<div class="grid pt-2">
+<div class="mt-12 grid">
     <h2
-        class="xs:text-2xl text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
+        class="xs:text-2xl text-center text-xl leading-none font-black tracking-tight text-balance sm:text-3xl lg:text-4xl"
     >
         Let's co-create a sustainable future!
     </h2>
 
-    <EncryptedEmail class="mt-6" />
+    <EncryptedEmail class="mt-8" />
 </div>
 
 <hr class="border-ming mx-auto my-16 max-w-sm" />
@@ -123,9 +126,7 @@
         {/each}
     </section>
 
-    <div class="flex justify-center pt-6">
+    <div class="mt-8 flex justify-center">
         <Link href="/blog">Blog archive</Link>
     </div>
 </section>
-
-<!-- TODO: Contact info. Potentially add a contact form to connect securely -->
