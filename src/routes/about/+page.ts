@@ -1,10 +1,8 @@
-import talks from '$lib/talks'
 import type { MetaTagsProps } from 'svelte-meta-tags'
 
-const title = 'Talks'
+const title = 'About'
 
 export const load = () => ({
-    talks: talks,
     pageMetaTags: Object.freeze({
         title,
         openGraph: { title },

@@ -16,7 +16,7 @@ const mdsvexConfig = {
     remarkPlugins: [],
     rehypePlugins: [],
     layout: {
-        blog: resolve('./src/routes/blog/BlogLayoutWrapper.svelte'),
+        _: resolve('./src/components/mdsvex.svelte'),
     },
     highlight: {
         highlighter: async (code, lang = 'text') => {

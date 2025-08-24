@@ -5,7 +5,7 @@
 <footer class="container mx-auto max-w-6xl px-4 pb-4 text-center font-light">
     <hr class="border-ming mx-auto my-16 max-w-sm" id="contact" />
     <h2
-        class="xs:text-2xl mb-6 text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
+        class="xs:text-2xl mb-6 text-xl leading-none font-black tracking-tight text-balance sm:text-3xl lg:text-4xl"
     >
         Let's co-create a sustainable future!
     </h2>

@@ -1,21 +1,26 @@
 import type { BlogPost } from '$lib/types'
-import posts from '$lib/posts'
 
-const { featured, other } = posts.reduce(
-    (acc, post) => {
-        acc[post.featured ? 'featured' : 'other'].push(post)
-        return acc
-    },
-    {
-        featured: [],
-        other: [],
-    } as {
-        featured: BlogPost[]
-        other: BlogPost[]
-    },
-)
+export const load = async ({ fetch }) => {
+    const posts = (await fetch('/api/posts').then((res) =>
+        res.json(),
+    )) as BlogPost[]
 
-export const load = () => ({
-    featuredPosts: featured,
-    otherPostsCount: other.length,
-})
+    const { featured, other } = posts.reduce(
+        (acc, post) => {
+            acc[post.featured ? 'featured' : 'other'].push(post)
+            return acc
+        },
+        {
+            featured: [],
+            other: [],
+        } as {
+            featured: BlogPost[]
+            other: BlogPost[]
+        },
+    )
+
+    return {
+        featuredPosts: featured,
+        otherPostsCount: other.length,
+    }
+}

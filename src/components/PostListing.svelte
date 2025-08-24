@@ -20,9 +20,7 @@
             <time datetime={post.date} class="xs:m-0 mb-2"
                 >{formatDate(post.date)}</time
             >
-            {#if post.tags}
-                <Tags tags={post.tags} />
-            {/if}
+            <Tags tags={post.tags} />
         </div>
     </article>
 </a>

@@ -1,12 +1,11 @@
-<script module>
+<script lang="ts" module>
     // Override default components used to render posts: https://mdsvex.com/docs#custom-components
-    import { default as a } from '$components/Link.svelte'
+    import { default as a } from './Link.svelte'
     export { a }
 </script>
 
-<script>
-    import BlogLayout from './_post.svelte'
+<script lang="ts">
     let props = $props()
 </script>
 
-<BlogLayout {...props} />
+{@render props.children?.()}

@@ -1,15 +1,13 @@
-export interface RawBlogPost {
+export type BlogPost = {
     title: string
     date: string
     tags?: string[]
     featured?: boolean
-}
-
-export interface BlogPost extends RawBlogPost {
+    draft?: boolean
     slug: string
 }
 
-export interface TechStack {
+export type TechStack = {
     Current: string[]
     Past: string[]
     Learning: string[]

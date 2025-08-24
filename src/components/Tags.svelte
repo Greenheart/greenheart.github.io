@@ -4,18 +4,20 @@
 
 <script lang="ts">
     type Props = {
-        tags: Required<BlogPost>['tags']
+        tags?: BlogPost['tags']
         class?: string
     }
     let { tags, class: className }: Props = $props()
 </script>
 
-<div class={['flex flex-wrap items-center gap-2', className]}>
-    {#each tags as tag}
-        <span
-            class="bg-mantis rounded-xs p-1 text-xs leading-3 sm:p-2 sm:text-base"
-        >
-            {tag}
-        </span>
-    {/each}
-</div>
+{#if tags}
+    <div class={['flex flex-wrap items-center gap-2', className]}>
+        {#each tags as tag}
+            <span
+                class="bg-mantis rounded-xs p-1 text-xs leading-3 sm:p-2 sm:text-base"
+            >
+                {tag}
+            </span>
+        {/each}
+    </div>
+{/if}
