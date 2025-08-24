@@ -11,11 +11,14 @@
 </script>
 
 {#if tags}
-    <div class={['flex flex-wrap items-center gap-2', className]}>
+    <div
+        class={[
+            'xs:text-sm flex flex-wrap items-center gap-2 text-xs leading-3 sm:text-base',
+            className,
+        ]}
+    >
         {#each tags as tag}
-            <span
-                class="bg-mantis rounded-xs p-1 text-xs leading-3 sm:p-2 sm:text-base"
-            >
+            <span class="bg-mantis rounded-xs p-1 sm:p-2">
                 {tag}
             </span>
         {/each}
