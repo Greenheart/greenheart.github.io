@@ -13,8 +13,8 @@ export const load = async () => {
             featured: [],
             other: [],
         } as {
-            featured: BlogPost[]
-            other: BlogPost[]
+            featured: Omit<BlogPost, 'Content'>[]
+            other: Omit<BlogPost, 'Content'>[]
         },
     )
 

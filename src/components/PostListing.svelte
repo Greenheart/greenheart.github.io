@@ -4,7 +4,7 @@
     import type { BlogPost } from '$lib/types'
 
     type Props = {
-        post: BlogPost
+        post: Omit<BlogPost, 'Content'>
     }
     let { post }: Props = $props()
     let { title, date, tags } = $derived(post)
