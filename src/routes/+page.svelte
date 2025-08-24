@@ -9,7 +9,7 @@
     import EncryptedEmail from '$components/EncryptedEmail.svelte'
 
     let { data } = $props()
-    const { featuredPosts, otherPostsCount } = $derived(data)
+    let { featuredPosts, otherPostsCount } = $derived(data)
 </script>
 
 <Picture
