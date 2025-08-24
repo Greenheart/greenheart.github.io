@@ -40,7 +40,7 @@ Next, let's enter into the `ubuntu` container:
 distrobox enter ubuntu
 ```
 
-_NOTE:_ The first time you run this command it will start installing dependencies, which might take some time depending on your network.
+**NOTE:** The first time you run this command it will start installing dependencies, which might take some time depending on your network.
 
 Once this is completed, your current terminal will have access to the environment of your distrobox container called `ubuntu`. You can now run commands specific to the Ubuntu environment, such as:
 
