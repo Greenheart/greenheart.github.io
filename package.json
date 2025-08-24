@@ -13,7 +13,7 @@
         "dev": "vite dev",
         "build": "vite build",
         "preview": "vite preview",
-        "gh-pages": "pnpm run build && gh-pages -d build -b master -t",
+        "gh-pages": "gh-pages -d build -b master -t",
         "encrypt:text": "node --env-file .env scripts/encrypt-text.js",
         "lint": "prettier --check .",
         "format": "prettier --write ."
