@@ -1,12 +1,11 @@
 {
+    // Hide files from the file explorer view
     "files.exclude": {
         "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
         "**/.DS_Store": true,
-        "**/Thumbs.db": true,
-        "static/talks/**/*": true
+        "**/Thumbs.db": true
     },
+    // Hide files from search results
     "search.exclude": {
         "**/node_modules": true,
         "**/*.code-search": true,
