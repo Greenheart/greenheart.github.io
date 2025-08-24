@@ -1,13 +1,12 @@
 import type { MetaTagsProps } from 'svelte-meta-tags'
 
-import type { BlogPost } from '$lib/types.js'
+import { listPosts } from '$lib/posts'
 
 const title = 'Blog'
 
-export const load = async ({ fetch }) => {
-    const posts = (await fetch('/api/posts').then((res) =>
-        res.json(),
-    )) as BlogPost[]
+export const load = async () => {
+    const posts = await listPosts()
+    console.dir({ posts })
 
     return {
         posts,

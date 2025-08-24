@@ -1,9 +1,10 @@
-export type BlogPost = {
-    title: string
-    date: string
-    tags?: string[]
-    featured?: boolean
-    draft?: boolean
+import type z from 'zod'
+
+import { postSchema } from './posts'
+
+type RawPost = z.infer<typeof postSchema>
+
+export type BlogPost = RawPost & {
     slug: string
 }
 

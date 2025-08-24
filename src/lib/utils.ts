@@ -4,8 +4,8 @@ const dateTimeFormat = new Intl.DateTimeFormat('en-GB', {
     day: 'numeric',
 })
 
-export function formatDate(date: string) {
-    return dateTimeFormat.format(new Date(date))
+export function formatDate(date: Date) {
+    return dateTimeFormat.format(date)
 }
 
 export function once(fn: Function) {

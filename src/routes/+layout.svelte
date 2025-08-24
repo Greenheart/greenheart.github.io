@@ -1,13 +1,11 @@
-<script module lang="ts">
+<script lang="ts">
+    import { deepMerge, MetaTags } from 'svelte-meta-tags'
+
+    import { page } from '$app/state'
     import Link from '$components/Link.svelte'
+    import Footer from '$components/Footer.svelte'
 
     import '../global.css'
-</script>
-
-<script lang="ts">
-    import { page } from '$app/state'
-    import Footer from '$components/Footer.svelte'
-    import { deepMerge, MetaTags } from 'svelte-meta-tags'
 
     const links = [
         { text: 'Blog', href: '/blog' },
