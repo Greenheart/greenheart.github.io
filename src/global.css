@@ -19,8 +19,14 @@
 
 @layer utilities {
     .prose code:not(pre > code) {
-        background: #011627;
-        color: var(--color-white);
+        /* night-owl */
+        /* background: #011627; 
+        color: var(--color-white); */
+
+        /* one-dark-pro */
+        background: #282c34;
+        color: var(--color-gray-200);
+
         display: inline-block;
         padding: 2px 4px;
         border-radius: 4px;
@@ -39,7 +45,7 @@
 }
 
 @utility link {
-    color: var(--color-black);
+    color: black;
     line-height: 1;
     padding: 0.5rem;
     background: linear-gradient(
@@ -54,7 +60,7 @@
     text-decoration: none;
 
     .prose & {
-        color: var(--color-black);
+        color: black;
         line-height: 1;
         padding: 0.5rem;
         background: linear-gradient(

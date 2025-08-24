@@ -1,7 +1,7 @@
 <script lang="ts" module>
-    import { createHighlighter } from 'shiki'
+    import { createHighlighter, type BundledTheme } from 'shiki'
 
-    const theme = 'one-dark-pro'
+    const theme: BundledTheme = 'one-dark-pro'
 
     const highlighter = createHighlighter({
         langs: ['js', 'ts', 'sh', 'svelte', 'sql', 'json'],

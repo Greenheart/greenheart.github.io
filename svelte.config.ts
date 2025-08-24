@@ -3,7 +3,7 @@ import adapter from '@sveltejs/adapter-static'
 import { markdocPreprocess } from 'markdoc-svelte'
 import { resolve } from 'path'
 
-import { markdocConfig } from './src/lib/markdoc'
+import { markdocConfig } from './src/lib/markdoc.ts'
 
 /** @type {import('@sveltejs/kit').Config} */
 export default {
