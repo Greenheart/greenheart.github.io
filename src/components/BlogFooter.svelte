@@ -3,9 +3,14 @@
     import LucideChevronRight from '~icons/lucide/chevron-right'
 
     import Link from './Link.svelte'
-    import { page } from '$app/state'
+    import type { BlogPost } from '$lib/posts'
 
-    let { otherPostsCount, older, newer } = page.data
+    type Props = {
+        older: Omit<BlogPost, 'Content'>
+        newer: Omit<BlogPost, 'Content'>
+        otherPostsCount: number
+    }
+    let { older, newer, otherPostsCount }: Props = $props()
 </script>
 
 <section

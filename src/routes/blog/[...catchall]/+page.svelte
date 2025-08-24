@@ -5,7 +5,8 @@
 
     let { data } = $props()
 
-    let { title, date, tags } = $derived(data.post)
+    let { post, older, newer, otherPostsCount } = $derived(data)
+    let { title, date, tags, Content } = $derived(post)
 </script>
 
 <!-- TODO: Add dynamic meta tags based on post content. -->
@@ -19,7 +20,7 @@
     <time datetime={date.toISOString()}>{formatDate(date)}</time>
     <Tags {tags} class="my-4" />
 
-    <data.post.Content />
+    <Content />
 </article>
 
-<BlogFooter />
+<BlogFooter {older} {newer} {otherPostsCount} />
