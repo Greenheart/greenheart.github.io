@@ -8,7 +8,7 @@ export const load = async ({ params }) => {
 
     try {
         const post = await getPost(slug)
-        const title = post.frontmatter.title
+        const title = post.title
 
         return {
             post,

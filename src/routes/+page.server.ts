@@ -6,7 +6,7 @@ export const load = async () => {
 
     const { featured, other } = posts.reduce(
         (acc, post) => {
-            acc[post.frontmatter.featured ? 'featured' : 'other'].push(post)
+            acc[post.featured ? 'featured' : 'other'].push(post)
             return acc
         },
         {

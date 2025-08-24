@@ -5,7 +5,7 @@
 
     let { data } = $props()
 
-    let { title, date, tags } = $derived(data.post.frontmatter)
+    let { title, date, tags } = $derived(data.post)
 </script>
 
 <!-- TODO: Add dynamic meta tags based on post content. -->

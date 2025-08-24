@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit'
 import type { MarkdocModule } from 'markdoc-svelte'
-import type { Component as ComponentType } from 'svelte'
+import type { Component } from 'svelte'
 import { z } from 'zod'
 
 // IDEA: Rename posts to pages and keep it for dynamic pages that can be organised with custom paths
@@ -19,10 +19,12 @@ export const postSchema = z.object({
     }),
 })
 
-export type Post = {
+type RawPost = z.infer<typeof postSchema>
+
+export type BlogPost = RawPost['frontmatter'] & {
     slug: string
-    Content: ComponentType
-} & z.infer<typeof postSchema>
+    Content: Component
+}
 
 const allPosts = Object.entries(import.meta.glob('$posts/**/*.md')).reduce<
     Record<string, () => Promise<MarkdocModule>>
@@ -32,7 +34,7 @@ const allPosts = Object.entries(import.meta.glob('$posts/**/*.md')).reduce<
     return rawPosts
 }, {})
 
-const posts = new Map<string, Post>()
+const posts = new Map<string, BlogPost>()
 
 /** Get a specific post, loading it the first time it's accessed */
 export async function getPost(slug: string) {
@@ -53,16 +55,14 @@ export async function getPost(slug: string) {
         })
     }
 
-    const post = { slug, frontmatter: data.frontmatter, Content } as Post
+    const post: BlogPost = { ...data.frontmatter, slug, Content }
     posts.set(slug, post)
 
     return post
 }
 
-const latestFirst = (
-    a: Pick<Post, 'frontmatter'>,
-    b: Pick<Post, 'frontmatter'>,
-) => b.frontmatter.date.getTime() - a.frontmatter.date.getTime()
+const latestFirst = (a: Pick<BlogPost, 'date'>, b: Pick<BlogPost, 'date'>) =>
+    b.date.getTime() - a.date.getTime()
 
 /** List posts without content */
 export async function listPosts() {

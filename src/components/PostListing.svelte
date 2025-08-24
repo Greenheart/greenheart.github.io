@@ -7,7 +7,7 @@
         post: BlogPost
     }
     let { post }: Props = $props()
-    let { title, date, tags } = $derived(post.frontmatter)
+    let { title, date, tags } = $derived(post)
 </script>
 
 <a href={'/blog/' + post.slug} aria-label="Read blog post">
