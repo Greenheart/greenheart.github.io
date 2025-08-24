@@ -14,7 +14,7 @@
 
 <Picture
     src="/images/samuel.jpg"
-    alt="Samuel"
+    alt="Samuel Plumppu"
     sources={[{ srcset: '/images/samuel.webp', type: 'image/webp' }]}
     class="mx-auto my-8 h-32 w-32 rounded-full shadow-2xl sm:h-40 sm:w-40"
     width={160}
