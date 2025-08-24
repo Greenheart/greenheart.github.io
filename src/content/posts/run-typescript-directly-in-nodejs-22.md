@@ -90,6 +90,6 @@ Also note that Node.js requires explicit file extensions when using import alias
 
 ## Run TypeScript in production
 
-Since this is an experimental feature, it's currently recommended to transpile TypeScript using `tsc` when building for production. To easily run TypeScript without a separate transpilation step, `tsx` ([learn more](https://github.com/privatenumber/tsx/)) is still a great choice.
+Since this is an experimental feature, it's currently recommended to transpile TypeScript using `tsc` when building for production. To easily run TypeScript without a separate transpilation step, `tsx` is still a great choice - [learn more here](https://github.com/privatenumber/tsx/).
 
 However, for development and quick scripts, this is a big boost to productivity!
