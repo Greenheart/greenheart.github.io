@@ -20,6 +20,6 @@ export const load = async () => {
 
     return {
         featuredPosts: featured,
-        otherPostsCount: other.length,
+        regularPostsCount: other.length,
     }
 }

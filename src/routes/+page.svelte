@@ -9,7 +9,7 @@
     import EncryptedEmail from '$components/EncryptedEmail.svelte'
 
     let { data } = $props()
-    let { featuredPosts, otherPostsCount } = $derived(data)
+    let { featuredPosts, regularPostsCount } = $derived(data)
 </script>
 
 <Picture
@@ -127,6 +127,6 @@
     </section>
 
     <div class="mt-8 flex justify-center">
-        <Link href="/blog">Read {otherPostsCount} more posts</Link>
+        <Link href="/blog">Read {regularPostsCount} more posts</Link>
     </div>
 </section>
