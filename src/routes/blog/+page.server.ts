@@ -6,7 +6,6 @@ const title = 'Blog'
 
 export const load = async () => {
     const posts = await listPosts()
-    console.dir({ posts })
 
     return {
         posts,

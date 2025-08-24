@@ -28,9 +28,9 @@ mkdir ~/distrobox
 To use distrobox, we begin by creating a new container named `ubuntu` and set its home directory to `~/distrobox/ubuntu`. This will also install some additional packages needed for Playwright.
 
 ```sh
-distrobox create \\\
-> --name ubuntu --image ubuntu:24.04 \\\
-> --home ~/distrobox/ubuntu \\\
+distrobox create \
+> --name ubuntu --image ubuntu:24.04 \
+> --home ~/distrobox/ubuntu \
 > --additional-packages "git vim nodejs npm"
 ```
 
