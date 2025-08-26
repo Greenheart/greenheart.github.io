@@ -29,9 +29,9 @@ To use distrobox, we begin by creating a new container named `ubuntu` and set it
 
 ```sh
 distrobox create \
-> --name ubuntu --image ubuntu:24.04 \
-> --home ~/distrobox/ubuntu \
-> --additional-packages "git vim nodejs npm"
+--name ubuntu --image ubuntu:24.04 \
+--home ~/distrobox/ubuntu \
+--additional-packages "git vim nodejs npm"
 ```
 
 Next, let's enter into the `ubuntu` container:
