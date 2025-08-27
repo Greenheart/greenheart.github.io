@@ -4,7 +4,7 @@ date: 2021-07-22
 tags: ['Firefox', 'Productivity']
 ---
 
-One of my favorite Firefox features is the ability to add bookmark keywords. These allow near instantaneous navigation when visiting the most commonly used bookmarks.
+One of my favourite Firefox features is the ability to add bookmark keywords. These allow near instantaneous navigation when visiting the most commonly used bookmarks.
 
 It's worth noting that this feature is missing in Chrome and other Chromium-based browsers such as Edge.
 
@@ -21,7 +21,7 @@ Since this can be done with just the keyboard and only requires 4 keystrokes, th
 ## Add Bookmark Keywords to Websites You Visit Often
 
 1. Open the Firefox Bookmarks Library with `CTRL/CMD + SHIFT + O`.
-2. Add a new bookmark, or edit one of your favorites.
+2. Add a new bookmark, or edit one of your favourites.
 3. Click on the bookmark to view detailed fields, and you will find `Keywords` at the bottom.
 4. In the `Keywords` field, enter a single character or single word keyword that you want to use. For example, I use `c` for calendar and `m` for mail.
 5. The bookmarks automatically save as you edit them, so once you've added the keyword you want, you can try it out using the steps above. Enjoy!

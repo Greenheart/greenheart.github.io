@@ -5,7 +5,7 @@ tags: ['TypeScript', 'Node.js']
 featured: true
 ---
 
-**It's about to get much easier to run TypeScript directly with Node.js.** As of Node.js `22.7.0`, there are two experimental command line flags to strip TypeScript types and convert TypeScript-only syntax into JavaScript that can be excuted by Node.js.
+**It's about to get much easier to run TypeScript directly with Node.js.** As of Node.js `22.7.0`, there are two experimental command line flags to strip TypeScript types and convert TypeScript-only syntax into JavaScript that can be executed by Node.js.
 
 This even works with import aliases if you make some config and code changes, as demonstrated later. But let's start with the basics first:
 
@@ -40,7 +40,7 @@ Reading the [official guide](https://nodejs.org/en/learn/typescript/run-natively
 
 One limitation as of Node.js is that import aliases defined via `tsconfig.json` and the `paths` option ([docs](https://www.typescriptlang.org/docs/handbook/modules/reference.html#paths)) don't work.
 
-However, there is a workaround availalble by adding Node.js [subpath patterns](https://nodejs.org/api/packages.html#subpath-patterns), defined in the `imports` field of `package.json` to achieve the same effect. Let's look at an example:
+However, there is a workaround available by adding Node.js [subpath patterns](https://nodejs.org/api/packages.html#subpath-patterns), defined in the `imports` field of `package.json` to achieve the same effect. Let's look at an example:
 
 ### 1. Update configuration
 
