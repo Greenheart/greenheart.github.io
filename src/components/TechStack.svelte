@@ -15,7 +15,7 @@
     onMount(() => (ready = true))
 </script>
 
-<section class="xs:h-60 flex h-80 flex-col items-center sm:h-56">
+<section class="xs:h-80 flex h-96 flex-col items-center sm:h-64">
     <h2
         class="xs:text-2xl mb-6 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
     >
