@@ -178,7 +178,7 @@ SELECT "members", "non_members" FROM "stats" WHERE "stats"."id" = 1
 
 Note that I always use `id = 1` to read and update stats. This could potentially break in the future since the `id` is theoretically not guaranteed to always be `1`.
 
-I still went with this solution though, because the first row is created as the migration above, no other code except the triggers are updating the `stats` table, and no additional rows are inserted either in the database or in the application code. Selecting an explicit `id` offered better performance compared to using `LIMIT 1`.
+I still went with this solution though, because the first row is created in the migration above, no other code except the triggers are updating the `stats` table, and no additional rows are inserted either in the database or in the application code. Selecting an explicit `id` offered better performance compared to using `LIMIT 1`.
 
 While it might not be ideal to save state like this that could easily get out of date, potential future problems could be fixed since I intentionally kept the SQLite triggers and the `stats` table as simple as possible.
 
