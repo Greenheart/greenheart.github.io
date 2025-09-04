@@ -1,4 +1,4 @@
-import"./DsnmJJEf.js";import"./D6tUPSQF.js";import{f as r,a,s as o,c as i,r as s}from"./CVtmfPP4.js";import{C as l}from"./BCaCdCMw.js";const u="nodejs-rename-file-extensions",f={title:"Rename File Extensions with Node.js",date:"2021-07-27",tags:["Code Snippet","JavaScript","Node.js"]},{title:x,date:b,tags:g}=f;var m=r("<article><p>A Node.js script to rename the file extension for all matching files in a directory.</p><!></article>");function E(n){var e=m(),t=o(i(e));l(t,{"data-language":"js",code:`#!/usr/bin/env node
+import"./DsnmJJEf.js";import"./D6tUPSQF.js";import{f as r,a,s as o,c as i,r as s}from"./CVtmfPP4.js";import{C as l}from"./x5pRBw2h.js";const u="nodejs-rename-file-extensions",f={title:"Rename File Extensions with Node.js",date:"2021-07-27",tags:["Code Snippet","JavaScript","Node.js"]},{title:x,date:b,tags:g}=f;var m=r("<article><p>A Node.js script to rename the file extension for all matching files in a directory.</p><!></article>");function E(n){var e=m(),t=o(i(e));l(t,{"data-language":"js",code:`#!/usr/bin/env node
 
 import { readdir, rename } from 'fs/promises'
 import { resolve } from 'path'
