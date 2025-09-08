@@ -4,6 +4,7 @@
 
     import Link from './Link.svelte'
     import type { BlogPost } from '$lib/posts'
+    import { MASTODON_URL } from '$lib/constants'
 
     type Props = {
         older: Omit<BlogPost, 'Content'>
@@ -14,13 +15,19 @@
 </script>
 
 <section
-    class="mx-auto mt-12 max-w-md rounded-md bg-white p-4 text-center text-balance shadow-lg"
+    class="mx-auto mt-12 max-w-lg rounded-md bg-white p-4 text-center shadow-lg"
 >
     <h2
         class="xs:text-2xl mb-4 text-xl leading-none font-black tracking-tight md:text-3xl"
     >
         Thank you for reading! 🌱
     </h2>
+
+    <p class="mb-4 lg:text-lg">
+        <Link href={MASTODON_URL} compact>Let me know</Link> if you have any questions
+        or comments.
+    </p>
+
     <p class="lg:text-lg">
         <Link href="/blog" compact>Read {otherPostsCount} more posts</Link>
         or <Link href="/" compact>learn more</Link> about me.

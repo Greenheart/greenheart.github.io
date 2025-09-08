@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { MASTODON_URL } from '$lib/constants'
     import EncryptedEmail from './EncryptedEmail.svelte'
 </script>
 
@@ -43,7 +44,7 @@ Show email
             <img src="/images/github.svg" alt="GitHub" class="size-8" />
         </a>
         <a
-            href="https://fosstodon.org/@Greenheart"
+            href={MASTODON_URL}
             target="_blank"
             rel="me noopener noreferrer"
             aria-label="Follow me on Mastodon"
