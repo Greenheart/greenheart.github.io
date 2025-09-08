@@ -9,8 +9,8 @@ export const tech: TechStack = {
         'Svelte',
         'React',
         'Fastify',
-        'Astro',
         'SvelteKit',
+        'Astro',
         'Tailwind CSS',
         'Docker',
         'Podman',
@@ -23,6 +23,7 @@ export const tech: TechStack = {
         'Drizzle ORM',
         'Kubernetes',
         'Flux',
+        'Keystatic CMS',
     ],
     Past: [
         'C#',
