@@ -9,7 +9,7 @@ I recently developed a website where the landing page shows two important number
 
 ## The website requirements
 
-During the sign up, users choose if they want to become members and whether or not they want to be visible on the website. The count of members and non-members are then visible on the landing page, only including the users who want to be visible.
+During the sign-up, users choose if they want to become members and whether they want to be visible on the website. The count of members and non-members are then visible on the landing page, only including the users who want to be visible.
 
 Here are the two relevant boolean columns in the `users` table, represented as the integers `1` or `0` in SQLite:
 
@@ -44,7 +44,7 @@ This worked well initially, but it gradually slowed down as the `users` table gr
 
 To improve query performance, I first thought about using a DB index and started experimenting. In some cases, this made the `SELECT COUNT(*)` queries faster. However, there were also other cases that actually resulted in worse performance than just letting SQLite do full table scans for each `SELECT COUNT(*)` query.
 
-The reason for this is because indexes are better suited for columns that have many different values, such as strings. Since we have two boolean columns which only can have the values `1` or `0`, we don't get reliable benefits from using an index.
+The reason for this is that indexes are better suited for columns that have many different values, such as strings. Since we have two boolean columns which only can have the values `1` or `0`, we don't get reliable benefits from using an index.
 
 This made me take a step back to think more about the problem I wanted to solve: To avoid counting members and non-members on every page load.
 
@@ -54,7 +54,7 @@ What if we could somehow cache the latest counts and retrieve them when they wer
 
 Since we have plenty of capacity in the SQLite database for both more read- and write operations, what if we could cache the latest counts directly in SQLite?
 
-I looked for inspiration and realised this would be a good opportunity to explore SQLite triggers, which seemed useful to solve my problem. Using SQLite triggers, we could re-evaluate the `SELECT COUNT(*)` only when there are meaningful changes in the DB, and save the counts in a separate `stats` table that can easily be looked up when needed.
+I looked for inspiration and realized this would be a good opportunity to explore SQLite triggers, which seemed useful to solve my problem. Using SQLite triggers, we could re-evaluate the `SELECT COUNT(*)` only when there are meaningful changes in the DB, and save the counts in a separate `stats` table that can easily be looked up when needed.
 
 ## A brief intro to SQLite triggers
 
@@ -71,7 +71,7 @@ END;
 
 SQLite triggers are very flexible and powerful. Notably, they can also use references to the `NEW` and `OLD` rows to know which rows and columns that changed, and how.
 
-However, triggers should be tested carefully, since their execution can block other DB operations. Changing triggers requires deploying a new DB migration, where the faulty triggers are dropped, and then re-created with updated SQL statements that should be executed. It's doable, but could cause consequences in a production environment. Therefore it's important to test properly before deploying triggers.
+However, triggers should be tested carefully, since their execution can block other DB operations. Changing triggers requires deploying a new DB migration, where the faulty triggers are dropped, and then re-created with updated SQL statements that should be executed. It's doable, but could cause consequences in a production environment. Therefore, it's important to test properly before deploying triggers.
 
 ## The solution: Using SQLite triggers to cache stats
 
@@ -224,8 +224,8 @@ I'm curious to understand why it needs `27 ms` for what seems like a very simple
 
 Like any solution, this one has two trade-offs worth mentioning:
 
-1. Every `INSERT`, `UPDATE` and/or `DELETE` will take slightly longer to complete because it also executes the corresponding SQLite trigger. In our case, this is acceptable since this part of the project needs to optimise for fast reads on the landing page. However, if your system needs to optimise for fast writes, this might be a problem.
-2. We need to store an additional `stats` table in the DB, which might get outdated if something happens with the triggers or the tables used to calculate the `stats`. However, the table is only one row and is only modified by triggers and never from application code. Thus SQLite triggers are a good tool as long as you test them properly.
+1. Every `INSERT`, `UPDATE` and/or `DELETE` will take slightly longer to complete because it also executes the corresponding SQLite trigger. In our case, this is acceptable since this part of the project needs to optimize for fast reads on the landing page. However, if your system needs to optimize for fast writes, this might be a problem.
+2. We need to store an additional `stats` table in the DB, which might get outdated if something happens with the triggers or the tables used to calculate the `stats`. However, the table is only one row and is only modified by triggers and never from application code. Thus, SQLite triggers are a good tool as long as you test them properly.
 
 In our case, these are very good trade-offs to make the website load significantly faster - and stay fast over time.
 
@@ -233,8 +233,8 @@ Even though SQLite triggers worked well in this case, I would carefully consider
 
 In cases where more complex validations and transformations are needed, keeping one backend module responsible for a part of the database and giving that module exclusive responsibilities to write to and read from that part of the database, you can achieve the same result as with SQLite triggers, while also making integration testing much easier. SQLite triggers are possible to test, but harder to debug if you make errors, and thus it seems reasonable to mostly use them for simpler cases.
 
-## Bonus: When to optimise performance
+## Bonus: When to optimize performance
 
-First of all, this kind of work should usually happen after the main functionality is implemented, deployed and confirmed to be valuable with users and stakeholders. Only then could it be a good time to start optimising a system by identifying potential bottlenecks and deciding when and how you need to deal with them. Even if you don't implement performance optimisations immediately, making a note about potential issues will make them easier to identify and fix when (or rather, if) the need arises in the future.
+This kind of work should usually happen after the main functionality is implemented, deployed and confirmed to be valuable with users and stakeholders. Only then could it be a good time to start optimizing a system by identifying potential bottlenecks and deciding when and how you need to deal with them. Even if you don't implement performance optimizations immediately, making a note about potential issues will make them easier to identify and fix when (or rather, if) the need arises in the future.
 
-Just don't optimise too early. Instead, focus on the core value first and improve with each iteration.
+Just don't optimize too early. Instead, focus on the core value first and improve with each iteration.

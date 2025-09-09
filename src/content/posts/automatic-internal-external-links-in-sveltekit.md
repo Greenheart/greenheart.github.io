@@ -6,11 +6,11 @@ tags: ['TypeScript', 'Svelte', 'SvelteKit', 'Code Snippet']
 
 **Update 2023-03-23:** This method is heavily outdated. See <https://kit.svelte.dev/docs/link-options> for modern options.
 
-Markdown content on blogs often require you to support both internal and external links at the same time. Most of the times, you need separate behaviors for the different kinds, like for example prefetching internal links to improve page load times on your blog, while simultaneously opening external links in separate tabs without prefetching but instead with other attributes like `rel="noopener noreferrer"`.
+Markdown content on blogs often require you to support both internal and external links at the same time. Usually, you need to separate behaviors for the different kinds of links, like for example prefetching internal links to improve page load times on your blog, while simultaneously opening external links in separate tabs without prefetching but instead with other attributes like `rel="noopener noreferrer"`.
 
 Fortunately, Svelte and SvelteKit provides a good solution to this problem.
 
-First of all, we need to test if a given URL is external. This can be solved with a helper function like this:
+First, we need to test if a given URL is external. This can be solved with a helper function like this:
 
 ```ts
 /**

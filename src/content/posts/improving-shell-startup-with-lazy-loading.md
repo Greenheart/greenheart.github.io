@@ -22,7 +22,7 @@ source $ZSH/oh-my-zsh.sh # 3
 
 This method reduced my shell startup time from _~1.5 s_ to _~200 ms_. A **huge** improvement for a common action I perform many times daily.
 
-However, I soon realised some of my projects had external dependencies that relied on commands like `node` and `npm` (and other package managers) to always be defined in the shell environment. This caused weird crashes, since lazy loading `nvm` means commands like `node` and `npm` only gets enabled when they first got used.
+However, I soon realized some of my projects had external dependencies that relied on commands like `node` and `npm` (and other package managers) to always be defined in the shell environment. This caused weird crashes, since lazy loading `nvm` means commands like `node` and `npm` only gets enabled when they first got used.
 
 ## Conditionally Lazy Loading for Specific Directories
 
@@ -43,7 +43,7 @@ source $ZSH/oh-my-zsh.sh
 
 ## Add more commands that should load nvm
 
-In the [documentation](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm) for `nvm` plugin, there are also other features that can be useful. For example, this is how to make sure `npx` and `pnpx` work even in new terminals.
+In the [documentation](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm) for `nvm` plugin, there are also features that can be useful. For example, this is how to make sure `npx` and `pnpx` work even in new terminals.
 
 ```sh
 zstyle ':omz:plugins:nvm' lazy-cmd npx pnpx

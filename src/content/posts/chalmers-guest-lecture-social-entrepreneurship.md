@@ -7,7 +7,7 @@ featured: true
 
 Imagine ten minutes of observing a room full of passionate students as they share and discuss their visions for a sustainable future. So many emotions, hopes and dreams expressed even without hearing specific words. Imagine noticing how the room gradually warms up, and eventually reaches a point where the positive energy in some groups spread to others around them, reaching almost the entire room by the end of the exercise.
 
-**That's the potential of generative social fields** - to create conditions where people have positive social interactions that create a good feeling and atmosphere. This is not the only kind of social field, but it's probably the easiest one to recognise. And by paying attention to how these generative social fields make us feel and influence how we think and act, maybe with time, we can start creating more of these positive interactions with people we meet in life.
+**That's the potential of generative social fields** - to create conditions where people have positive social interactions that create a good feeling and atmosphere. This is not the only kind of social field, but it's probably the easiest one to recognize. And by paying attention to how these generative social fields make us feel and influence how we think and act, maybe with time, we can start creating more of these positive interactions with people we meet in life.
 
 ## Social Entrepreneurship in Practice
 

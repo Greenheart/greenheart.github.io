@@ -105,7 +105,7 @@ To explain `getRandomCharacter()`, let's start by thinking about the character s
 
 Since our character set contains less than 256 characters, we need to ensure the random number isn't out of range to avoid crashes. This can be done using `%` - the [Remainder operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder), which allows us to use a random number potentially much larger than our character set length, and always get a value within our desired range.
 
-However, this method has a severe security issue - it will cause the first characters in our set to appear more often, greatly reducing the password security. This is caused by the fact that the result when using the remainder operator will restart from 0 once `randomNumber` has reached another multiple of the character set length. `39 % 40` yields `39` and `40 % 40` yields `0`, meaning we'll get the last character and then the first character again. This repeats for larger multiples such as 80 and so on, until the final iteration where we've reached the final multiple before 255. Then the remaining indices will add additional probability to pick the fist characters with the lowest indices.
+However, this method has a severe security issue - it will cause the first characters in our set to appear more often, greatly reducing the password security. This is caused by the fact that the result when using the remainder operator will restart from 0 once `randomNumber` has reached another multiple of the character set length. `39 % 40` yields `39` and `40 % 40` yields `0`, meaning we'll get the last character and then the first character again. This repeats for larger multiples such as 80 and so on, until the final iteration where we've reached the final multiple before 255. Then the remaining indices will add additional probability to pick the first characters with the lowest indices.
 
 <!-- prettier-ignore-start -->
 ```js
@@ -140,7 +140,7 @@ To give an example, this means that a character set length of 60 would yield the
 const max = 256 - (256 % 60) // 240
 ```
 
-Getting back to implementing `getRandomCharacter()`, the next step would be to ensure that the we regenerate `randomNumber` as long as it's larger than our maximum allowed value. In the final version of `getRandomCharacter()`, we'll use a [do...while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while) loop to achieve this:
+Getting back to implementing `getRandomCharacter()`, the next step would be to ensure that we regenerate `randomNumber` as long as it's larger than our maximum allowed value. In the final version of `getRandomCharacter()`, we'll use a [do...while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while) loop to achieve this:
 
 <!-- prettier-ignore-start -->
 ```js
