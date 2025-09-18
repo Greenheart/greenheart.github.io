@@ -46,10 +46,7 @@ In the following example, `globalThis.HAS_CMS_BUILD_STARTED` is only assigned on
 import type { ConfigEnv } from 'vite'
 
 declare global {
-    /**
-     * Used to ensure the CMS is only built at most once per `vite` command
-     * executed
-     */
+    /** Ensure the CMS is only built at most once for each execution of `vite` */
     var HAS_CMS_BUILD_STARTED: boolean | undefined
 }
 
@@ -63,23 +60,28 @@ type BuildMode = 'prio' | boolean
 function getBuildMode(env: ConfigEnv): BuildMode {
     // Avoid duplicate builds in the same execution of the `vite` command.
     // We only need to rebuild the CMS when dependencies have changed,
-    // and a simple solution is to build the CMS the first time the Vite dev server or production build starts.
+    // and a simple solution is to build the CMS the first time the Vite
+    // dev server or production build starts.
     if (globalThis.HAS_CMS_BUILD_STARTED) {
         return false
     } else {
-        // We can use `globalThis` to reliably determine if there has been a previous build.
-        // This is possible since `globalThis` is shared in the Vite parent process that restarts the build,
-        // and because both the Vite config loading and the SvelteKit dev/build process are run by the same parent process,
+        // We can use `globalThis` to reliably determine if there has been
+        // a previous build. This is possible since `globalThis` is shared
+        // in the Vite parent process that restarts the build, and because
+        // both the Vite config loading and the SvelteKit dev/build process
+        // are run by the same parent process.
         globalThis.HAS_CMS_BUILD_STARTED = true
     }
 
     if (env.mode !== 'development') {
         if (env.command === 'build') {
-            // In production builds, we want to finish the CMS build before other parts of the app
-            // This makes sure the CMS build finishes before other parts of the build.
+            // In production builds, we want to finish the CMS build before
+            // other parts of the app. This makes sure the CMS build finishes
+            // before other parts of the build.
             return 'prio'
         } else {
-            // Don't build when serving in production - in those cases the CMS should already be built.
+            // Don't build when serving in production.
+            // In these cases the CMS should already be built.
             return false
         }
     }
