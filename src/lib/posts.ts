@@ -1,4 +1,5 @@
 import { error } from '@sveltejs/kit'
+import { dev } from '$app/environment'
 import type { MarkdocModule } from 'markdoc-svelte'
 import type { Component } from 'svelte'
 import { z } from 'zod'
@@ -48,7 +49,6 @@ export async function getPost(slug: string) {
     const { default: Content, ...rawPost } = loaded
 
     const { data, error } = postSchema.safeParse(rawPost)
-
     if (error) {
         throw new Error('Invalid frontmatter for slug: ' + slug, {
             cause: error,
@@ -56,8 +56,13 @@ export async function getPost(slug: string) {
     }
 
     const post: BlogPost = { ...data.frontmatter, slug, Content }
-    posts.set(slug, post)
 
+    // Exclude draft posts if not running in development
+    if (!dev && post.draft) {
+        return null
+    }
+
+    posts.set(slug, post)
     return post
 }
 
@@ -66,12 +71,20 @@ const latestFirst = (a: Pick<BlogPost, 'date'>, b: Pick<BlogPost, 'date'>) =>
 
 /** List posts without content */
 export async function listPosts() {
-    return Promise.all(
-        Object.keys(allPosts).map(async (slug) => {
-            const { Content, ...post } = await getPost(slug)
-            return post
-        }),
-    )
+    return Promise.all(Object.keys(allPosts).map(async (slug) => getPost(slug)))
+        .then((posts) =>
+            posts.reduce(
+                (posts, post) => {
+                    // Filter out draft posts
+                    if (post !== null) {
+                        const { Content, ...rest } = post
+                        posts.push(rest)
+                    }
+                    return posts
+                },
+                [] as Omit<BlogPost, 'Content'>[],
+            ),
+        )
         .then((posts) => posts.sort(latestFirst))
         .catch((err) => {
             console.error(err)
