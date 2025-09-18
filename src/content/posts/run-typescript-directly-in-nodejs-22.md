@@ -5,6 +5,10 @@ tags: ['TypeScript', 'Node.js']
 featured: true
 ---
 
+**NOTE: Since Node.js 22.18.0 or 23.6.0, "type stripping" is enabled by default.** See the latest Node.js docs for [more info](https://nodejs.org/en/learn/typescript/run-natively).
+
+---
+
 **It's about to get much easier to run TypeScript directly with Node.js.** As of Node.js `22.7.0`, there are two experimental command line flags to strip TypeScript types and convert TypeScript-only syntax into JavaScript that can be executed by Node.js.
 
 This even works with import aliases if you make some config and code changes, as demonstrated later. But let's start with the basics first:
