@@ -6,6 +6,9 @@ export const load = async ({ params }) => {
     const slug = params.catchall
 
     const post = await getPost(slug)
+    if (!post) {
+        throw new Error('Skipping prerendering for draft post: ' + slug)
+    }
     const title = post.title
 
     const posts = await listPosts()
