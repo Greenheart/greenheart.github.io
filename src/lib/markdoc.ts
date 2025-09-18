@@ -1,5 +1,6 @@
 import { Markdoc, markdocPreprocess } from 'markdoc-svelte'
 import { type RenderableTreeNode } from '@markdoc/markdoc'
+import { getHighlightedCode } from './shiki-ssr.ts'
 
 const getTextContent = (children: RenderableTreeNode[]): string => {
     return children.reduce((text: string, child): string => {
@@ -25,16 +26,19 @@ export const markdocConfig: Parameters<typeof markdocPreprocess>[0] = {
                 ...Markdoc.nodes.fence.attributes,
             },
             render: 'Code',
-            transform(node, config) {
+            async transform(node, config) {
                 const attributes = node.transformAttributes(config)
                 const children = node.children.length
                     ? node.transformChildren(config)
                     : [node.attributes.content]
 
-                return new Markdoc.Tag('Code', {
-                    ...attributes,
-                    code: getTextContent(children),
-                })
+                // Prerender the code on the server to improve performance
+                const codeHTML = await getHighlightedCode(
+                    getTextContent(children),
+                    attributes['data-language'],
+                )
+
+                return new Markdoc.Tag('Code', { codeHTML })
             },
         },
     },
