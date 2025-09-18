@@ -43,6 +43,10 @@
         }
     }
 
+    .prose pre {
+        line-height: 1.5;
+    }
+
     .prose blockquote {
         /* Disable adding quote marks to block-quotes: https://github.com/tailwindlabs/tailwindcss-typography/issues/66 */
         p {
