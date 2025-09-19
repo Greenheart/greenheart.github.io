@@ -27,20 +27,19 @@ _NOTE:_ This could be simplified in the future to allow fully automatic builds.
 
 ## Keeping local draft posts in the project without checking them in to Git
 
-To ignore draft posts that start with the `_` prefix, append the following ignore pattern to `.git/info/exclude`:
+To avoid checking in draft posts that start with the `_` prefix, append the following ignore pattern to `.git/info/exclude`:
 
 ```sh
 echo "src/content/posts/_*" >> .git/info/exclude
 ```
 
-Then posts will show up as normal during local development, but not be checked into git as long as they include the `_` prefix in their filename.
+This will include the draft posts during local development, but not instruct Git to ignore these files as long as they include the filenames start with `_`.
 
-### Publishing a draft post
+To publish a draft post, just rename the file and remove the `_` prefix. Then both the production build will include the file, and Git will let make it available to stage and commit.
 
-1. Remove the `_` prefix from the filename
-2. Remove the `draft` property from the post frontmatter.
+Note that this might exclude these files from project search results, so you might need to explicitly include search locations like `src/**/*` to get the results you want.
 
-Note `.git/info/exclude` this only applies to the local Git repository and needs to be added for newly clones repositories.
+Also note that `.git/info/exclude` only applies to the local Git repository and needs to be added for newly clones repositories. The reason for using this approach instead of `.gitignore` is because this allows some tools (like for example Keystatic CMS) to include the file, while still instructing Git to ignore the file.
 
 ## Credits
 

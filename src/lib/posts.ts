@@ -16,7 +16,6 @@ export const postSchema = z.object({
         date: z.coerce.date(),
         tags: z.array(z.string()).optional(),
         featured: z.boolean().default(false),
-        draft: z.boolean().default(false),
     }),
 })
 
@@ -42,6 +41,11 @@ export async function getPost(slug: string) {
     const existing = posts.get(slug)
     if (existing) return existing
 
+    // Exclude draft posts if not running in development
+    if (!dev && slug.startsWith('_')) {
+        return null
+    }
+
     const loaded = await allPosts[slug]?.()
     if (!loaded) {
         throw new Error('No post with slug: ' + slug)
@@ -57,11 +61,6 @@ export async function getPost(slug: string) {
 
     const post: BlogPost = { ...data.frontmatter, slug, Content }
 
-    // Exclude draft posts if not running in development
-    if (!dev && post.draft) {
-        return null
-    }
-
     posts.set(slug, post)
     return post
 }
@@ -76,7 +75,7 @@ export async function listPosts() {
             posts.reduce(
                 (posts, post) => {
                     // Filter out draft posts
-                    if (post !== null) {
+                    if (post) {
                         const { Content, ...rest } = post
                         posts.push(rest)
                     }
