@@ -99,7 +99,7 @@ Both the API and the frontend are best served from the `handle` hook. However, o
 
 A few alternatives were considered:
 
-- Building the CMS when the SvelteKit app starts and the first request is sent to the `handle` hook. This could work for basic cases, but since we want to integrate more deeply with the Vite dev server and adapt to the project configuration, we get many benefits from building in the Vite plugin. Also, the CMS build step would be better to run as early as possible.
+- Building the CMS when the SvelteKit app starts and the first request is sent to the `handle` hook. This could work for basic cases, but since we want to integrate more deeply with the Vite dev server and adapt to the project configuration, we get many benefits from building in a Vite plugin. Also, the CMS build step would be better to run as early as possible.
 
 - **Chosen solution:** Building the CMS in the background with a Vite plugin. This gives a lot of flexibility and deep integration with the underlying server as well as the Vite build process. This makes it simpler to implement features like hot reloading during development.
     - The Vite plugin build went through several iterations: Initially it all happened in the same process to get a working prototype. This blocked the SvelteKit app from starting.
