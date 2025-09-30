@@ -67,7 +67,7 @@ There are multiple ways to run Keystatic together with SvelteKit with the same V
 
 Our main goal is to make both the API endpoint and the frontend routes available inside the SvelteKit app. Starting the `vite` dev server should make it possible to use Keystatic locally, reloading the CMS as soon as the `keystatic.config.ts` changes. Similarly, running `vite build && vite preview` should make a production build and serve it.
 
-The first version will only explicitly support Node.js.
+The first version will only explicitly support Node.js, but it should be possible to add support for other SvelteKit adapters and runtimes.
 
 When using Keystatic, it could be fine to use the `local` storage and only enable the CMS in the local development environment. Though most projects probably want to use the `github` storage to allow simpler content collaboration. The integration with SvelteKit should be flexible and support all modes and options of Keystatic.
 
