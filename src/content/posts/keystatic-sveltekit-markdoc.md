@@ -9,7 +9,7 @@ Have you ever worked on a [SvelteKit](https://svelte.dev/docs/kit/introduction) 
 
 After some experimentation, I found that it's actually possible to use Keystatic directly in your SvelteKit project! This makes it possible to use the same dev server and, if you want, the same production server.
 
-You can even combine Keystatic with [markdoc-svelte](github.com/CollierCZ/markdoc-svelte) to make your SvelteKit project render [Markdoc](https://markdoc.dev/) content with custom formatting, interactive Svelte components and use other powerful features of Markdoc.
+You can even combine Keystatic with [markdoc-svelte](https://github.com/CollierCZ/markdoc-svelte) to make your SvelteKit project render [Markdoc](https://markdoc.dev/) content with custom formatting, interactive Svelte components and use other powerful features of Markdoc.
 
 In combination, this gives you a solid foundation to build apps and websites where you want to make content editing accessible to your entire team via Keystatic CMS, and especially their `github` mode.
 
@@ -45,7 +45,7 @@ Keystatic CMS allows non-technical people to use a graphical, web-based interfac
 
 ## Part 2: Integrating Keystatic CMS with SvelteKit projects
 
-I've worked on many projects where a Git-based CMS made development and content-collaboration straightforward and enjoyable. For example, the multilingual mobile app [Aware (29k)](github.com/29ki/29k), the web app [IDG.tools](https://github.com/Greenheart/idg.tools) and several websites. After using other Git-based CMSes, I started using Keystatic CMS in 2023 and found it to be of both reliable and full of useful features.
+I've worked on many projects where a Git-based CMS made development and content-collaboration straightforward and enjoyable. For example, the multilingual mobile app [Aware (29k)](https://github.com/29ki/29k), the web app [IDG.tools](https://github.com/Greenheart/idg.tools) and several websites. After using other Git-based CMSes, I started using Keystatic CMS in 2023 and found it to be of both reliable and full of useful features.
 
 Up until now, using Keystatic together with SvelteKit usually meant creating a separate Astro/Remix/Next.js project just to serve the CMS. In some cases, it might be desirable to run Keystatic entirely separately from the main SvelteKit app or website since this isolates dependencies and could improve security and performance. In smaller projects though, it's more convenient and usually preferable to only have one Vite dev server, and only deploy one SvelteKit app to production.
 
