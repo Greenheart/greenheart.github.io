@@ -1,0 +1,335 @@
+---
+title: Integrate Keystatic CMS with SvelteKit to render Markdoc Content with Interactive Svelte Components
+date: 2025-10-01
+tags: ['SvelteKit', 'TypeScript', 'Keystatic CMS']
+featured: true
+---
+
+Have you ever worked on a [SvelteKit](https://svelte.dev/docs/kit/introduction) project where you want to use the Git-based [Keystatic CMS](https://keystatic.com)? Up until now that has usually meant installing a separate web framework like Astro/Remix/Next.js just to run the CMS, which might not always be desirable.
+
+After some experimentation, I found that it's actually possible to use Keystatic directly in your SvelteKit project! This makes it possible to use the same dev server and, if you want, the same production server.
+
+You can even combine Keystatic with [markdoc-svelte](github.com/CollierCZ/markdoc-svelte) to make your SvelteKit project render [Markdoc](https://markdoc.dev/) content with custom formatting, interactive Svelte components and use other powerful features of Markdoc.
+
+In combination, this gives you a solid foundation to build apps and websites where you want to make content editing accessible to your entire team via Keystatic CMS.
+
+**Quick start: Check out the [keystatic-sveltekit](https://github.com/Greenheart/keystatic-sveltekit) repository if you want the simplest way to add Keystatic to your SvelteKit project.**
+
+If you also want to understand _when_ to use this setup as well as _why_ and _how_ I designed it the way I did - then you've come to the right place! :)
+
+---
+
+## Part 1: Why use a Git-based CMS like Keystatic?
+
+Most mobile apps, web apps and websites don't need a complex backend or even a database. Instead, you can use a Git-based CMS like Keystatic to store content together with your code. This simplifies your tech stack, reduces hosting costs and can help you increase the security of your system.
+
+Keystatic CMS allows non-technical people to use a graphical, web-based interface to make content changes that automatically syncs with your Git repository in the background.
+
+### When to use a Git-based CMS like Keystatic:
+
+- You can easily represent content as Markdown/Markdoc/JSON/YAML files, images, and other static assets and doesn't need a backend server or database just to manage content.
+- You don't need a backend server or database at all.
+- You want to keep your project as simple and with as few moving pieces as possible.
+- You don't want to maintain Docker-containers for a traditional CMS or for its database, and you don't want to maintain any database backups, apart from your regular Git repository.
+- You want to be able to Git checkout any historical commit and automatically get the correct content, in the right format, matching the code implementation at the time. This allows you to quickly achieve what you want, instead of first having to find and restore an old DB backup - if it even still exists years later!
+- You want to keep hosting costs as low as possible for your web app, mobile app or website, for example by building static content and caching it via a CDN.
+
+### When to look for other CMS solutions:
+
+- You need a CMS that integrates with your existing backend system to read and modify custom data types.
+- You need complex content types that can't be represented as static files. You can achieve surprisingly much with [relationships](https://keystatic.com/docs/fields/relationship) in Keystatic, especially if you add content build scripts that run together with your regular project build to verify content and transform it into the format used by your app or website ([example](https://github.com/Greenheart/idg.tools/blob/a70dc2cf41507e1e2036a181632ee13298bb8923/content/scripts/build-content.ts)). However, for more complex relationships and cascading updates for related entries, you might want to use another solution.
+- You are implementing e-commerce features, or similar cases where you need a server and database to keep track of the orders and products to for example prevent multiple people from ordering the final item.
+- If you are working on an open source project and want to allow anyone (not just trusted collaborators) to propose content changes that automatically gets submitted as pull requests to your project. In this case you need Open Authoring, currently an [open feature request](https://github.com/Thinkmill/keystatic/issues/1433) for Keystatic but supported in other Git-based CMSes like [Decap CMS](https://decapcms.org/docs/open-authoring/).
+
+---
+
+## Part 2: Integrating Keystatic CMS with SvelteKit projects
+
+I've worked on many projects where a Git-based CMS made development and content-collaboration straightforward and enjoyable. For example, the multilingual mobile app [Aware (29k)](github.com/29ki/29k), the web app [IDG.tools](https://github.com/Greenheart/idg.tools) and several websites. After using other Git-based CMSes, I started using Keystatic CMS in 2023 and found it to be of both reliable and full of useful features.
+
+Up until now, using Keystatic together with SvelteKit usually meant creating a separate Astro/Remix/Next.js project just to serve the CMS. In some cases, it might be desirable to run Keystatic entirely separately from the main SvelteKit app or website since this isolates dependencies and could improve security and performance. In smaller projects though, it's more convenient and usually preferable to only have one Vite dev server, and only deploy one SvelteKit app to production.
+
+After thinking about this in several projects, I implemented a solution that evolved into [keystatic-sveltekit](https://github.com/Greenheart/keystatic-sveltekit).
+
+Thanks to the fact that the Keystatic API is framework-agnostic, this was a lot simpler than expected. And it works surprisingly well for both development and production usage.
+
+### Keystatic consists of two parts:
+
+1. **Backend:** Keystatic exports the `makeGenericAPIRouteHandler` function that can be called with a [keystatic.config.ts](https://keystatic.com/docs/configuration) to create a generic API endpoint that handles routing internally. The Keystatic API endpoint accepts a standard [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request) object and returns `{ body, headers, status, statusText }` which you can be returned as a standard [Response](https://developer.mozilla.org/en-US/docs/Web/API/Request). This is framework-agnostic as long as you serve it at the route `/api/keystatic/[...rest]`.
+
+2. **Frontend:** A React-based SPA that only renders on the client side. Similar to the API, the frontend expects to be served from `/keystatic/[...rest]`.
+
+### Integrating Keystatic with SvelteKit
+
+There are multiple ways to run Keystatic together with SvelteKit with the same Vite server. What follows are some of the alternatives I've considered, along with the pros and cons of each. I found this exploration quite useful to deepen my understanding of how Keystatic, SvelteKit and Vite work, and hopefully you will too.
+
+### Goals and requirements
+
+Our main goal is to make both the API endpoint and the frontend routes available inside the SvelteKit app. Starting the `vite` dev server should make it possible to use Keystatic locally, reloading the CMS as soon as the `keystatic.config.ts` changes. Similarly, running `vite build && vite preview` should make a production build and serve it.
+
+The first version will only explicitly support Node.js.
+
+When using Keystatic, it could be fine to use the `local` storage and only enable the CMS in the local development environment. Though most projects probably want to use the `github` storage to allow simpler content collaboration. The integration with SvelteKit should be flexible and support all modes and options of Keystatic.
+
+### Serving the Keystatic API within a SvelteKit project
+
+This was straightforward and went smoothly thanks to the `makeGenericAPIRouteHandler`.
+
+- Serving the Keystatic API from a [fallback](https://svelte.dev/docs/kit/routing#server-Fallback-method-handler) handler. If we add this to the `/api/keystatic/[...rest]` route, it will respond to all incoming requests, no matter which HTTP verb was used.
+    - Works well, but requires modifications to the project routes.
+
+- **Chosen solution:** Serving the Keystatic API from the SvelteKit [handle](https://svelte.dev/docs/kit/hooks#Server-hooks-handle) hook. Achieves the same result with minimal code changes, making it much simpler to add Keystatic.
+
+### Serving the Keystatic frontend within a SvelteKit project
+
+Integrating custom frontend routes in a SvelteKit app is a bit more tricky, but totally doable.
+
+- Serving the Keystatic SPA within the SvelteKit app with [svelte-preprocess-react](https://github.com/bfanger/svelte-preprocess-react), and by adding the route `/keystatic/[...rest]`. Works quite well with hot module reloading for dev, which is important when you change the `keystatic.config.ts`.
+    - The major problem with this approach is that the styles likely will interfere with each other and cause problems, since technically both apps share the same styles. This can be worked around by importing styles to specific routes only, or more drastically, by adding SvelteKit [layout groups](https://svelte.dev/docs/kit/advanced-routing#Advanced-layouts-%28group%29) to completely isolate the CMS routes from the rest of your project. However, this requires significant code changes and makes it much harder to integrate with a SvelteKit project.
+    - Another drawback with this approach is that it adds an extra dependency, and renders React inside the SvelteKit app which is unnecessary overhead since we don't use any SvelteKit or Svelte code at all on the CMS routes.
+    - Since the Keystatic SPA doesn't support SSR or prerendering, we can't use the full potential of `svelte-preprocess-react` either.
+
+- Prebuilding the Keystatic SPA separately and serving as static assets. The basic idea is good since it clearly separates React from SvelteKit, removing some unnecessary JS and making the styles separated so you don't need to make drastic routing changes like adding SvelteKit layout groups. It works quite well if you always start the CMS by visiting the `/keystatic` path. However, opening a specific route like `/keystatic/collection/posts` won't work, unless you add custom routing logic in for example the `handle` hook.
+
+- **Chosen solution:** Prebuilding the Keystatic SPA and serving it from the `handle` hook together with the API routes. This makes the internal implementation of the integration more complex, but makes it as simple as possible to add Keystatic to SvelteKit projects. It also offers the best developer experience since the expected features like hot reloading during development _just work_ out of the box.
+
+Both the API and the frontend are best served from the `handle` hook. However, one critical piece we haven't explored yet is how to build the Keystatic React SPA so it can be served by the `handle` hook.
+
+### Building the CMS in the background
+
+A few alternatives were considered:
+
+- Building the CMS when the SvelteKit app starts and the first request is sent to the `handle` hook. This could work for basic cases, but since we want to integrate more deeply with the Vite dev server and adapt to the project configuration, we get many benefits from building in the Vite plugin. Also, the CMS build step would be better to run as early as possible.
+
+- **Chosen solution:** Building the CMS in the background with a Vite plugin. This gives a lot of flexibility and deep integration with the underlying server as well as the Vite build process. This makes it simpler to implement features like hot reloading during development.
+    - The Vite plugin build went through several iterations: Initially it all happened in the same process to get a working prototype. This blocked the SvelteKit app from starting.
+    - Then, the Vite plugin started child processes to build in the background. This unblocked the main thread, but added significant overhead for starting and stopping each process.
+    - Most recently, builds run as a one-off worker for production, and a reusable worker pool during development. We can use Node.js workers to get efficient builds without the overhead of starting and stopping child processes. One good reason for using workers instead of child processes is because the CMS build is CPU-bound (compilation and bundling) rather than I/O bound (file system). By reusing the worker multiple times (worker pool) during development, we get further performance improvements.
+    - Another thing worth noting is that the CMS is bundled with all dependencies including both the Keystatic CMS and the `keystatic.config.ts` of the current project. Since we use `esbuild`, performance is no problem. It would be nice to only rebuild `keystatic.config.ts` for hot reloads during development, and only build the CMS bundle when restarting the `vite` process, since that's the only time when the CMS bundle might need to be updated. However, bundling everything together is much simpler, and has good enough performance for now.
+
+### Finding the right trade-offs
+
+As of October 2025, the best way to add Keystatic to a SvelteKit project is via the `handle` hook in `hooks.server.ts` to serve both the API and the frontend. This should be combined with a Vite plugin added in `vite.config.ts` to build (and rebuild) the CMS.
+
+With the `handle` hook, we get complete control to handle incoming requests and returning responses. However, since routes implemented in the `handle` hook are not part of the regular SvelteKit router, they need to be manually added to the build output, and will only be available in production if we use an adapter like `@sveltejs/adapter-node`.
+
+---
+
+### Backend: Serving the Keystatic API inside your SvelteKit app
+
+Keystatic exports the `makeGenericAPIRouteHandler` function that can be called with a [keystatic.config.ts](https://keystatic.com/docs/configuration) to create the API route handler.
+
+To make this available in SvelteKit, we can export a [fallback](https://svelte.dev/docs/kit/routing#server-Fallback-method-handler) API endpoint to handle all incoming requests to a route, no matter which HTTP verb the requests use.
+
+Since Keystatic expects the API endpoints to exist at `/api/keystatic/*`, we need to create a SvelteKit API endpoint in the file `routes/api/keystatic/[...rest]/+server.ts`
+
+This is what it looks like:
+
+```ts
+// routes/api/keystatic/[..rest]/+server.ts
+import type { RequestHandler } from '@sveltejs/kit'
+import { makeGenericAPIRouteHandler } from '@keystatic/core/api/generic'
+import config from '../../../../../keystatic.config'
+
+const handleKeystaticAPI = makeGenericAPIRouteHandler({ config })
+
+export const fallback: RequestHandler = async ({ request }) => {
+    const { body, ...responseInit } = await handleKeystaticAPI(request)
+    return new Response(body, responseInit)
+}
+```
+
+This works, but it's quite a lot of directories and code to keep around in your projects. On top of that, we need to duplicate this code in all projects and update it everywhere if the Keystatic API changes. It seems like the `makeGenericAPIRouteHandler` is designed with a good public API, but you never know if things need to change in the future. In those cases it can be good to find a more minimal solution that doesn't require as many changes to your SvelteKit projects.
+
+Luckily, there is a better way!
+
+### Registering the Keystatic API route in `hooks.server.ts`
+
+Instead of creating the `routes/api/keystatic/[...rest]/+server.ts` file, we can register the API route via the [handle](https://svelte.dev/docs/kit/hooks#Server-hooks-handle) hook in `hooks.server.ts`. Since it responds to all incoming requests, we need to check the URL to only handle the relevant requests, but apart from that we can use the same implementation.
+
+```ts
+// hooks.server.ts
+import { type Handle } from '@sveltejs/kit'
+import { makeGenericAPIRouteHandler } from '@keystatic/core/api/generic'
+import config from '../keystatic.config'
+
+const isKeystaticAPIPath = /^\/api\/keystatic/
+const handleKeystaticAPI = makeGenericAPIRouteHandler({ config })
+
+export const handle: Handle = ({ event, resolve }) => {
+    if (isKeystaticAPIPath.test(event.url.pathname)) {
+        const { body, ...responseInit } = await handle(event.request)
+        return new Response(body, responseInit)
+    }
+
+    return resolve(event)
+}
+```
+
+By wrapping the Keystatic-related code in a function and moving it to `lib/keystatic/index.ts`, we make it easier to read `hooks.server.ts` by not having to think about how the Keystatic API works internally. By using smaller, separate hooks, it also gets easier to compose them with [sequence](https://svelte.dev/docs/kit/@sveltejs-kit-hooks#sequence).
+
+```ts
+// hooks.server.ts
+import { handleKeystaticAPI } from '$lib/keystatic'
+import config from '../keystatic.config'
+
+export const handle = handleKeystaticAPI({ config })
+```
+
+And `handleKeystaticAPI` is implemented as follows in `lib/keystatic/index.ts`:
+
+```ts
+// lib/keystatic/index.ts
+import { makeGenericAPIRouteHandler } from '@keystatic/core/api/generic'
+import type { Handle } from '@sveltejs/kit'
+
+/** Create an API handler for all keystatic API requests. */
+export function handleKeystaticAPI(
+    ...args: Parameters<typeof makeGenericAPIRouteHandler>
+): Handle {
+    const isKeystaticAPIPath = /^\/api\/keystatic/
+    const handle = makeGenericAPIRouteHandler(...args)
+
+    return async ({ event, resolve }) => {
+        if (isKeystaticAPIPath.test(event.url.pathname)) {
+            const { body, ...responseInit } = await handle(event.request)
+            return new Response(body, responseInit)
+        }
+
+        return resolve(event)
+    }
+}
+```
+
+We now have fully functional Keystatic API!
+
+TODO: MAybe move this section little bit further down?
+
+Looking to the future, this might get even simpler if we could register routes programmatically from a SvelteKit plugin. There is an open [issue](https://github.com/sveltejs/kit/issues/8896), so let's see what the future brings. For now, registering the API route via the `handle` hook is a good workaround. However, the frontend there are no great workarounds at the moment.
+
+---
+
+<!-- TODO: is it worth describing the full process? Or just jump to the solution? -->
+<!-- IDEA: Maybe just explain the considered solutions briefly and describe their pros and cons -->
+<!-- It might be more worth focusing on the actual solution -->
+
+### Frontend: Serving the Keystatic SPA within your SvelteKit project
+
+First, we need some way to render a React SPA on a specific route within a SvelteKit application. To render React code within Svelte, [svelte-preprocess-react](https://github.com/bfanger/svelte-preprocess-react) works great. However, the tricky part is registering the route for the Keystatic CMS frontend within SvelteKit.
+
+I've explored several approaches, and similarly to how we walked through the alternatives for the Keystatic API route, here's a similar overview of how to register the Keystatic SPA route:
+
+### 1. Register SPA and API routes from a SvelteKit plugin
+
+If SvelteKit plugins can get the ability to programmatically register both API routes and
+
+TODO: simplify this and adjust to the fact that registering SvelteKit routes might be possible without even requiring usage of the `handle` hook in `hooks.server.ts`. Ideally the library should just be able to register routes automatically in the background, and you just have to pass in your `keystatic.config.ts`.
+
+The ideal approach would be to dynamically register both the Keystatic SPA and API routes at the same time within a SvelteKit [handle](https://svelte.dev/docs/kit/hooks#Server-hooks) hook. However, since [SvelteKit does not support registering](https://github.com/sveltejs/kit/issues/8896) in September 2025, we have to find other solutions.
+
+Once this becomes possible, integrating Keystatic into your SvelteKit project could look like this:
+
+```ts
+// hooks.server.ts
+export const handle = handleKeystatic()
+```
+
+Or if you have multiple hooks:
+
+```ts
+// hooks.server.ts
+import { sequence } from '@sveltejs/kit/hooks'
+
+export const handle = sequence(...yourOtherHandleHooks, handleKeystatic())
+```
+
+To make this possible, it would be great to allow registering routes similarly to how it works in Astro. I imagine the implementation of the SvelteKit version of `handleKeystatic()` could be very similar to the Keystatic integration for Astro: [@keystatic/astro](https://github.com/Thinkmill/keystatic/blob/63c767bbb8b9bbc96c30535862bcccfbbc4ea346/packages/astro/src/index.ts).
+
+### 2. Build the Keystatic SPA separately and serve it as static assets
+
+The Keystatic SPA can be rendered in multiple ways. Either pre-bundle it as a React SPA and let SvelteKit serve it from the `/static` assets. However, this would require a separate Vite config, setting the correct base path - and most importantly - making sure to update the app whenever the version of `@keystatic/core` changes. This might result in better performance since all assets can be statically pre-built and served directly from the CDN. However, a big potential issue is that the Keystatic SPA might get outdated, and/or use a different version compared to the Keystatic API which always imports directly from `@keystatic/core`.
+
+Note that the Keystatic SPA needs to be served from the same domain as the API though.
+
+### 3. Add a `/keystatic` route to render the SPA
+
+Serving a React SPA within the SvelteKit app is quite hacky, we need to
+
+We could create a route `/keystatic/[...rest]`
+
+`(keystatic)/keystatic/[...rest]`
+
+TODO: Note that this needs to use a layout group if you want to separate styles from your main app.
+
+TODO: Describe the settings that need to change in Vite
+
+Not ideal, but it works quite well once you have set it up. You'll likely enjoy the editing experience, compared to how it would be to set up with a separate server. And we don't need to install another meta-framework like Astro when we already have SvelteKit.
+
+To make the SPA work:
+
+One weird behaviour of the Keystatic SPA is that it's forcibly redirecting to `127.0.0.1` when the CMS loads. There's probably a good reason for this, but it's not documented in the code or in the public docs. Until [this issue](https://github.com/Thinkmill/keystatic/issues/366) gets resolved, the following workaround can be added to your `vite.config.ts`:
+
+```ts
+// vite.config.ts
+import { sveltekit } from '@sveltejs/kit/vite'
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+    server: {
+        // NOTE: Keystatic redirects to `127.0.0.1` when it loads, which doesn't work with the default SvelteKit + Vite configs.
+        // Therefore, we need to make the Vite server host `127.0.0.1` to allow the server to use both localhost and 127.0.0.1
+        // Related issue: https://github.com/Thinkmill/keystatic/issues/366
+        // This might be possible to remove in a preprocessing step or by patching Keystatic
+        // Ideally we should be able to could configure (or force) keystatic to use the same host as the Vite server.
+        host: '127.0.0.1',
+        fs: {
+            allow: ['./keystatic.config.ts'],
+        },
+    },
+})
+```
+
+TODO: Describe why you might want to only enable Keystatic during development, and how it can be done. Check import.meta.env or `dev` from SvelteKit. However, if you want to make the CMS accessible to other people than developers, you need to enable Keystatic also in production.
+
+TODO: Describe how the chosen solution finds a good balance between making the integration easy to add to your project, while improving performance and reliability.
+
+<!--
+IDEA: Use {building} from '$app/environment' to determine if we are prerendering the app
+IDEA: throw an error and use the handleHttpError to disable prerendering for keystatic routes
+since we can't specify the prerender option in other ways from our hook.
+IDEA: Disable prerendering in the root layout and re-enable everywhere.
+this could require significant changes to the project routing
+IDEA: Disable the crawler and explicitly add all prerendering entries
+this could require significant work as well, especially for larger sites
+IDEA: We could export a function which could be added to `kit.prerender.handleHttpError`,
+or called within your wrapping function if you need a more advanced alternative.
+Conclusion: This is the simplest solution, since you would just have to add this function, and would be
+free to keep your existing app structure apart from that. In the future, it might be possible to
+enable/disable prerendering when injecting routes from integrations/plugins.
+-->
+
+TODO: Add note about the need to test with different SvelteKit adapters. I mainly use Node.js in my projects, so if you want to try this out with your adapter, please submit issues and pull requests to make the integration easier to use.
+
+---
+
+## Part 3: How to render Markdoc content with interactive Svelte components
+
+## Future improvements: official Keystatic integration, easier project setup
+
+Thanks to the generic API handler, it's possible to integrate the Keystatic API with any basically any backend framework for Node.js/Deno/Bun. Now that we know this works for Astro, SvelteKit and Remix, it should also be possible to integrate Keystatic for other Vite-based frameworks. Rendering the React-based Keystatic frontend is the tricky part (for non-React-based frameworks), but definitely possible.
+
+I considered if it would be worth creating a Vite plugin like `vite-plugin-keystatic` to support any Vite-based meta-framework like SvelteKit, Astro, Remix and more. However, since the routing is deeply integrated and highly framework-specific, it's probably a better idea to maintain separate, minimal adapters, like `@keystatic/astro` and soon, perhaps even a `@keystatic/sveltekit` adapter that simplifies and standardizes the solutions we explored in this blog post.
+
+Speaking of which - do you think it would be worth creating an adapter like `@keystatic/sveltekit` along with a starter project, and contributing it to the Keystatic project? That would take some initial work, and maintenance in the future, but would make it possible to use the Keystatic CLI to rapidly scaffold a Keystatic project. And if we have the `@keystatic/sveltekit` adapter, it would be possible to create a `keystatic` addon for the [Svelte CLI](https://github.com/sveltejs/cli), to add Keystatic in both new and existing projects.
+
+## Closing thoughts
+
+If you take one thing away from all this, let it be the fact that it's really important to create good public APIs for your library. Just look at what happened thanks to `@keystatic/core` making the right building blocks available to allow customization beyond what was originally intended.
+
+This approach has already simplified some of my projects. It could certainly be refined though, so you're welcome to join the discussion and help make it better.
+
+**Check out the [keystatic-sveltekit](https://github.com/Greenheart/keystatic-sveltekit) repository to learn how to add Keystatic to your project.**
+
+Please share what you build using SvelteKit and Keystatic!
+
+Happy hacking!
