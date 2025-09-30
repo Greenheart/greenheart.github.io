@@ -91,7 +91,7 @@ Integrating custom frontend routes in a SvelteKit app is a bit more tricky, but 
 
 - Prebuilding the Keystatic SPA separately and serving as static assets. The basic idea is good since it clearly separates React from SvelteKit, removing some unnecessary JS and making the styles separated so you don't need to make drastic routing changes like adding SvelteKit layout groups. It works quite well if you always start the CMS by visiting the `/keystatic` path. However, opening a specific route like `/keystatic/collection/posts` won't work, unless you add custom routing logic in for example the `handle` hook.
 
-- **Chosen solution:** Prebuilding the Keystatic SPA and serving it from the `handle` hook together with the API routes. This makes the internal implementation of the integration more complex, but makes it as simple as possible to add Keystatic to SvelteKit projects. It also offers the best developer experience since the expected features like hot reloading during development _just work_ out of the box.
+- **Chosen solution:** Prebuilding the Keystatic SPA and serving it from the `handle` hook together with the API routes. This makes the internal implementation of the integration more complex, but makes it as simple as possible to add Keystatic to SvelteKit projects. It also offers the best developer experience since the expected features like hot reloading during development work out of the box.
 
 Both the API and the frontend are best served from the `handle` hook. However, one critical piece we haven't explored yet is how to build the Keystatic React SPA so it can be served by the `handle` hook.
 
