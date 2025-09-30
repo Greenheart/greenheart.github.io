@@ -9,7 +9,7 @@ When developing [Vite](https://vite.dev) plugins, you sometimes need to detect w
 
 It's usually convenient to let Vite restart the dev server whenever the configuration or other imported modules change, and rerunning your Vite plugins. However, this also means that expensive setup work could happen multiple times, wasting both time and resources. This is especially important if your plugin does expensive computations which could slow down the development experience, and if your production build involves a prerendering step, like [SvelteKit](https://svelte.dev/docs/kit/introduction).
 
-To make a Vite plugin only execute some task on the first run, we can take advantage of the fact that Vite (I'm using version 7.1.5 at the time of writing) runs the dev server as well as the production build within the same Node.js process. This means we can define properties on `globalThis` to communicate between different executions of the vite plugin.
+To make a Vite plugin only execute some task on the first run, we can take advantage of the fact that Vite (I'm using version 7.1.5 at the time of writing) runs the dev server as well as the production build within the same Node.js process. This means we can define properties on `globalThis` to communicate between different executions of the Vite plugin.
 
 While I generally think global state like `globalThis` should be avoided as much as possible, this seems like a good time to use it. Here is a minimal example of how you can use this technique in your Vite plugin:
 
@@ -46,42 +46,35 @@ In the following example, `globalThis.HAS_CMS_BUILD_STARTED` is only assigned on
 import type { ConfigEnv } from 'vite'
 
 declare global {
-    /** Ensure the CMS is only built at most once for each execution of `vite` */
     var HAS_CMS_BUILD_STARTED: boolean | undefined
 }
 
 type BuildMode = 'prio' | boolean
 
 /**
- * Only (re)build the CMS when it makes sense. This is a simple way to save
- * resources during development, while building for the actual production build,
- * but not when serving.
+ * Ensure the initial CMS build only happens once.
+ *
+ * Since the `vite` command restarts the server multiple times both during
+ * development and production builds within the same parent process, we use this
+ * function to avoid duplicate builds in the same `vite` process. This also
+ * makes the initial build faster.
  */
 function getBuildMode(env: ConfigEnv): BuildMode {
-    // Avoid duplicate builds in the same execution of the `vite` command.
-    // We only need to rebuild the CMS when dependencies have changed,
-    // and a simple solution is to build the CMS the first time the Vite
-    // dev server or production build starts.
     if (globalThis.HAS_CMS_BUILD_STARTED) {
         return false
     } else {
-        // We can use `globalThis` to reliably determine if there has been
-        // a previous build. This is possible since `globalThis` is shared
-        // in the Vite parent process that restarts the build, and because
-        // both the Vite config loading and the SvelteKit dev/build process
-        // are run by the same parent process.
+        // We can use `globalThis` to reliably determine if there has been a previous build.
+        // This is possible since `globalThis` is shared in the Vite parent process that restarts the build,
+        // and because both the Vite config loading and the SvelteKit dev/build process are run by the same parent process,
         globalThis.HAS_CMS_BUILD_STARTED = true
     }
 
     if (env.mode !== 'development') {
         if (env.command === 'build') {
-            // In production builds, we want to finish the CMS build before
-            // other parts of the app. This makes sure the CMS build finishes
-            // before other parts of the build.
+            // For production, make sure the CMS build finishes before other parts of the app build.
             return 'prio'
         } else {
-            // Don't build when serving in production.
-            // In these cases the CMS should already be built.
+            // Don't build when serving in production (e.g. preview). In these cases the CMS should already be built.
             return false
         }
     }
