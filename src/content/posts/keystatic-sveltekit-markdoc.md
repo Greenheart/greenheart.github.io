@@ -11,7 +11,7 @@ After some experimentation, I found that it's actually possible to use Keystatic
 
 You can even combine Keystatic with [markdoc-svelte](https://github.com/CollierCZ/markdoc-svelte) to make your SvelteKit project render [Markdoc](https://markdoc.dev/) content with custom formatting, interactive Svelte components and use other powerful features of Markdoc.
 
-In combination, this gives you a solid foundation to build apps and websites where you want to make content editing accessible to your entire team via Keystatic CMS, and especially their `github` mode.
+In combination, this gives you a solid foundation to build apps and websites where you want to make content editing accessible to your entire team via Keystatic CMS, and especially with their [github](https://keystatic.com/docs/github-mode) mode.
 
 **Quick start: Check out the [keystatic-sveltekit](https://github.com/Greenheart/keystatic-sveltekit) repository if you want the simplest way to add Keystatic to your SvelteKit project.**
 
