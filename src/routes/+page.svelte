@@ -50,7 +50,7 @@
     <p>
         With a strong passion for how libre software and co-operatives can help
         create an economy that is regenerative and distributive by design, I'm
-        currently a Founding Member & Lead Developer at <Link
+        currently the Founder & Lead Developer at <Link
             href="https://greenheart.coop"
             compact>Greenheart Co-operative</Link
         >.
