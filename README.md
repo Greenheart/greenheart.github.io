@@ -44,3 +44,11 @@ Also note that `.git/info/exclude` only applies to the local Git repository and 
 ## Credits
 
 - Font Awesome: LinkedIn & GitHub SVG icons. Licensed under [CC BY 4.0](https://fontawesome.com/license)
+
+## License
+
+Copyright (c) 2015-2025 Samuel Plumppu
+
+Source code licensed under Apache 2.0.
+
+

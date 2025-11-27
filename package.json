@@ -2,7 +2,7 @@
     "name": "greenheart.github.io",
     "version": "3.0.0",
     "author": "Samuel Plumppu",
-    "license": "SEE LICENSE",
+    "license": "Apache-2.0",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Greenheart/greenheart.github.io.git"
