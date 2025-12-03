@@ -1,8 +1,8 @@
 <script lang="ts">
     let { data } = $props()
 
-    const [, HEAD] = data.talk.match(/<head>([^]+)<\/head>/) ?? []
-    const [, BODY] = data.talk.match(/<body>([^]+)<\/body>/) ?? []
+    const [, HEAD] = $derived(data.talk.match(/<head>([^]+)<\/head>/) ?? [])
+    const [, BODY] = $derived(data.talk.match(/<head>([^]+)<\/head>/) ?? [])
 </script>
 
 <svelte:head>
