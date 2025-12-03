@@ -2,6 +2,7 @@
 title: Live Reloading Database Schemas with Drizzle and SQLite
 date: 2025-12-03
 tags: ['TypeScript', 'Drizzle', 'SQLite']
+featured: true
 ---
 
 During development, automatically reloading modified TypeScript code and restarting the app gives a significant productivity boost. This is very common for all kinds of frontend and backend projects.
