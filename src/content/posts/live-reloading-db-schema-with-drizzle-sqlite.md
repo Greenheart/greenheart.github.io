@@ -68,7 +68,7 @@ if (/warning|data loss|revert|abort/gi.test(dbCheckResult)) {
 
     console.error(styleText(red, msg))
     console.error(dbCheckResult + '\n')
-    process.exit(0)
+    process.exit(1)
 }
 ```
 
