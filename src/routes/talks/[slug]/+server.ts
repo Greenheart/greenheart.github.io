@@ -4,9 +4,10 @@ import { resolve } from 'path'
 
 import talks from '$lib/talks'
 
+export const prerender = true
 export const trailingSlash = 'always'
 
-export const load = async ({ params: { slug }, setHeaders }) => {
+export const GET = async ({ params: { slug }, setHeaders }) => {
     if (talks.includes(slug)) {
         const talk = await readFile(
             resolve(process.cwd(), 'static', 'talks', slug, 'index.html'),
@@ -18,7 +19,13 @@ export const load = async ({ params: { slug }, setHeaders }) => {
             location: `/talks/${slug}/`,
         })
 
-        if (talk) return { talk }
+        if (talk) {
+            return new Response(talk, {
+                headers: { 'Content-Type': 'text/html' },
+            })
+        }
+
+        throw new Error(`Unexpected error when rendering talk ${slug}`)
     }
 
     error(404, 'Not found')
