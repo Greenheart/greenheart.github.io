@@ -5,10 +5,10 @@
 _NOTE:_ This could be simplified in the future to allow fully automatic builds.
 
 1. Git clone the talks repo https://github.com/Greenheart/talks
-2. Run `npm install` in the subdirectory of each talk you want to build.
-3. From the root of the `talks` project, run `npm i && npm run build`
-4. In the website project, run `pnpm build` to build project with all talks
-5. Verify build output and deploy.
+2. To build all talks, go to the root directory of the `talks` project and run `pnpm i && pnpm build`. To build a specific talk, use the build command specific for that talk, and copy it over to the website repo.
+3. In the website project, run `pnpm build` to build project with all talks.
+4. Review the build output and remove unwanted HTML, CSS and JS. Replace favicon CDN imports. Replace font URLs to use the local fonts served together with this project.
+5. Verify everything works as expected and deploy.
 
 ## Email spam protection
 
@@ -50,5 +50,3 @@ Also note that `.git/info/exclude` only applies to the local Git repository and 
 Copyright (c) 2015-2025 Samuel Plumppu
 
 Source code licensed under Apache 2.0.
-
-
