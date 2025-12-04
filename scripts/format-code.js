@@ -25,7 +25,7 @@ import { read, write } from 'clipboardy'
 const input = await read()
 
 const formatted = prettier.format(input, {
-    plugins: ['prettier-plugin-jsdoc', 'prettier-plugin-svelte'],
+    plugins: ['prettier-plugin-svelte', 'prettier-plugin-tailwindcss'],
     semi: false,
     singleQuote: true,
     tabWidth: 4,
