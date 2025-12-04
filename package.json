@@ -19,7 +19,7 @@
         "format": "prettier --write ."
     },
     "devDependencies": {
-        "@iconify-json/lucide": "^1.2.77",
+        "@iconify-json/lucide": "^1.2.78",
         "@markdoc/markdoc": "^0.5.4",
         "@sveltejs/adapter-static": "^3.0.10",
         "@sveltejs/kit": "^2.49.1",
@@ -30,10 +30,9 @@
         "clipboardy": "^5.0.1",
         "gh-pages": "^6.3.0",
         "markdoc-svelte": "^3.0.0",
-        "prettier": "3.6.2",
-        "prettier-plugin-jsdoc": "1.5.0",
+        "prettier": "^3.7.4",
         "prettier-plugin-svelte": "^3.4.0",
-        "prettier-plugin-tailwindcss": "0.7.1",
+        "prettier-plugin-tailwindcss": "^0.7.2",
         "qrcode": "^1.5.4",
         "shiki": "^3.19.0",
         "svelte": "^5.45.5",
@@ -52,7 +51,6 @@
         "trailingComma": "all",
         "plugins": [
             "prettier-plugin-svelte",
-            "prettier-plugin-jsdoc",
             "prettier-plugin-tailwindcss"
         ]
     },
