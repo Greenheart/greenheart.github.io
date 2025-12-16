@@ -1,6 +1,6 @@
 ---
 title: Automated Text Extraction from PDF Images with OCRmyPDF
-date: 2025-09-04
+publishedAt: 2025-09-04
 tags: ['PDF', 'Data Pipeline', 'OCR']
 featured: true
 ---

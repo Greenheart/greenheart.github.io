@@ -1,6 +1,6 @@
 ---
 title: Automatic Internal and External Links in SvelteKit
-date: 2021-07-31
+publishedAt: 2021-07-31
 tags: ['TypeScript', 'Svelte', 'SvelteKit', 'Code Snippet']
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Use the Web Crypto API to Generate a Cryptographically Secure Password in the Browser and Node.js
-date: 2021-07-28
+publishedAt: 2021-07-28
 tags: ['JavaScript', 'Web Crypto API', 'Node.js']
 ---
 

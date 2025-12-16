@@ -1,6 +1,6 @@
 ---
 title: Detect Vite Plugin Restarts to Avoid Rerunning Expensive Tasks
-date: 2025-09-18
+publishedAt: 2025-09-18
 tags: ['Node.js', 'TypeScript', 'Vite']
 featured: true
 ---

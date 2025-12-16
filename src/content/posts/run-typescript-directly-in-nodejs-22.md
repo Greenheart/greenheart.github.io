@@ -1,6 +1,6 @@
 ---
 title: Run TypeScript Directly with Node.js 22
-date: 2024-12-29
+publishedAt: 2024-12-29
 tags: ['TypeScript', 'Node.js']
 featured: true
 ---

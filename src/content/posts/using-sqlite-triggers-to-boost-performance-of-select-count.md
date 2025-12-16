@@ -1,6 +1,6 @@
 ---
 title: Using SQLite Triggers to Boost the Performance of SELECT COUNT(*)
-date: 2025-08-27
+publishedAt: 2025-08-27
 tags: ['SQLite', 'Caching', 'Performance']
 featured: true
 ---

@@ -1,6 +1,6 @@
 ---
 title: Find Files Without a Substring with Grep
-date: 2024-05-29
+publishedAt: 2024-05-29
 tags: ['React', 'Shell Scripting', 'Terminal']
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Update Your Git Commit Email Address Before Pushing to Remote Repository
-date: 2021-07-23
+publishedAt: 2021-07-23
 tags: ['Git', 'Code Snippet']
 ---
 

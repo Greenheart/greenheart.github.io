@@ -1,6 +1,6 @@
 ---
 title: 'Chalmers Guest Lecture on Social Entrepreneurship'
-date: 2023-05-08
+publishedAt: 2023-05-08
 tags: ['Entrepreneurship', 'Co-operatives', 'Economics']
 featured: true
 ---

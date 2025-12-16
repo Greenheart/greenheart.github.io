@@ -1,6 +1,6 @@
 ---
 title: Rename File Extensions with Node.js
-date: 2021-07-27
+publishedAt: 2021-07-27
 tags: ['Code Snippet', 'JavaScript', 'Node.js']
 ---
 

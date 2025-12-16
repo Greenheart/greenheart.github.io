@@ -1,6 +1,6 @@
 ---
 title: Live Reloading Database Schemas with Drizzle and SQLite
-date: 2025-12-03
+publishedAt: 2025-12-03
 tags: ['TypeScript', 'Drizzle', 'SQLite']
 featured: true
 ---

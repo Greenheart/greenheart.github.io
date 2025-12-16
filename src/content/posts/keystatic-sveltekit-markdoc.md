@@ -1,6 +1,6 @@
 ---
 title: Integrate Keystatic CMS with SvelteKit to render Markdoc Content with Interactive Svelte Components
-date: 2025-10-01
+publishedAt: 2025-10-01
 tags: ['SvelteKit', 'TypeScript', 'Keystatic CMS']
 featured: true
 ---
