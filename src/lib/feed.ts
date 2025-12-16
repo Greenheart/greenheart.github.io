@@ -8,7 +8,7 @@ const samuel = { name: 'Samuel Plumppu', link: normalizedURL }
 export async function generateFeed() {
     const posts = await getAllPosts()
     const mostRecentlyUpdatedPost = posts.reduce((mostRecent, post) => {
-        if (post.date > mostRecent.date) return post
+        if (post.publishedAt > mostRecent.publishedAt) return post
         return mostRecent
     }, posts[0]!)
 
@@ -17,7 +17,7 @@ export async function generateFeed() {
         description: SITE_DESCRIPTION,
         id: normalizedURL,
         copyright: `© 2015 - ${new Date().getFullYear()} ${samuel.name}`,
-        updated: mostRecentlyUpdatedPost.date,
+        updated: mostRecentlyUpdatedPost.publishedAt,
         feedLinks: {
             json: `${SITE_URL}/feed.json`,
             atom: `${SITE_URL}/feed.atom`,
@@ -33,9 +33,9 @@ export async function generateFeed() {
         // TODO: Render markdoc content as HTML
 
         feed.addItem({
-            published: post.date,
-            // TODO: set to `post.updatedAt`
-            date: post.date,
+            published: post.publishedAt,
+            // Use specific updatedAt, or fall back to the publishing date
+            date: post.updatedAt ?? post.publishedAt,
             title: post.title,
             link: postURL,
             // content: ``,
