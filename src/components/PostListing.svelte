@@ -7,7 +7,7 @@
         post: Omit<BlogPost, 'Content'>
     }
     let { post }: Props = $props()
-    let { title, date, tags } = $derived(post)
+    let { title, publishedAt, tags } = $derived(post)
 </script>
 
 <a href={'/blog/' + post.slug} aria-label="Read blog post">
@@ -18,8 +18,8 @@
             {title}
         </h2>
         <div class="xs:flex xs:justify-between xs:gap-0 grid gap-1">
-            <time datetime={date.toISOString()} class="xs:m-0 mb-2"
-                >{formatDate(date)}</time
+            <time datetime={publishedAt.toISOString()} class="xs:m-0 mb-2"
+                >{formatDate(publishedAt)}</time
             >
             <Tags {tags} />
         </div>

@@ -6,7 +6,7 @@
     let { data } = $props()
 
     let { post, older, newer, otherPostsCount } = $derived(data)
-    let { title, date, tags, Content } = $derived(post)
+    let { title, publishedAt, updatedAt, tags, Content } = $derived(post)
 </script>
 
 <!-- TODO: Add dynamic meta tags based on post content. -->
@@ -17,7 +17,21 @@
     class="prose prose-hr:border-ming sm:prose-lg lg:prose-xl prose-blockquote:text-black prose-strong:text-black prose-blockquote:bg-white prose-blockquote:py-1 prose-blockquote:rounded-md prose-headings:text-black mx-auto mt-4 max-w-[75ch] text-base text-black marker:text-black"
 >
     <h1>{title}</h1>
-    <time datetime={date.toISOString()}>{formatDate(date)}</time>
+    <div class="flex gap-1">
+        <span>
+            Published <time datetime={publishedAt.toISOString()}
+                >{formatDate(publishedAt)}</time
+            ></span
+        >
+        <span>
+            {#if updatedAt}
+                &middot; Updated
+                <time datetime={updatedAt.toISOString()}
+                    >{formatDate(updatedAt)}</time
+                >
+            {/if}
+        </span>
+    </div>
     <Tags {tags} class="my-4" />
 
     <Content />
