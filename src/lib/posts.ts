@@ -3,6 +3,7 @@ import { dev } from '$app/environment'
 import type { MarkdocModule } from 'markdoc-svelte'
 import type { Component } from 'svelte'
 import { z } from 'zod'
+import { execSync } from 'node:child_process'
 
 // IDEA: Rename posts to pages and keep it for dynamic pages that can be organised with custom paths
 // IDEA: Rename route to handle all pages, not just in the `blog` category. This would allow us to add any type of page
@@ -10,10 +11,10 @@ import { z } from 'zod'
 // IDEA: Update the alias from $posts to $pages
 // IDEA: Update this module to load all pages instead
 
-export const postSchema = z.object({
+const postSchema = z.object({
     frontmatter: z.object({
         title: z.string(),
-        date: z.coerce.date(),
+        publishedAt: z.coerce.date(),
         tags: z.array(z.string()).optional(),
         featured: z.boolean().default(false),
     }),
@@ -24,12 +25,44 @@ type RawPost = z.infer<typeof postSchema>
 export type BlogPost = RawPost['frontmatter'] & {
     slug: string
     Content: Component
+    updatedAt?: Date
 }
+
+/**
+ * Use Git to determine when a file was last modified.
+ *
+ * This is more accurate than using the file system, where changes happen more freqeuntly.
+ *
+ * @param path The file to operate on.
+ * @returns The `updatedAt` Date, or undefined if the file has not yet been modified.
+ */
+function getFileUpdatedAtFromGit(path: string) {
+    // Get the most recent UNIX timestamp for when file was modified in Git.
+    // By using `--follow`, we get the full history even if the file was renamed.
+    // This uses the Git author timestamp, because the commit timestamp is not as accurate
+    // and may change during rebases and merges
+    // Timestamps are sorted since rebases/merges might have caused commits to show in a different order
+    const raw = execSync(
+        `git log --follow --format=%ad --date unix -- ${path} | sort --reverse`,
+    ).toString()
+
+    const timestamps = raw.split('\n').filter(Boolean)
+
+    // If we only have one timestamp, the file was just created and has not yet been updated.
+    if (timestamps.length < 2) {
+        return
+    }
+
+    const updatedAt = new Date(parseInt(timestamps[0]) * 1000)
+    return updatedAt
+}
+
+const postsBasePath = 'src/content/posts/'
 
 const allPosts = Object.entries(import.meta.glob('$posts/**/*.md')).reduce<
     Record<string, () => Promise<MarkdocModule>>
 >((rawPosts, [path, loadPost]) => {
-    const slug = path.replace('/src/content/posts/', '').replace('.md', '')
+    const slug = path.replace(`/${postsBasePath}`, '').replace('.md', '')
     rawPosts[slug] = loadPost as () => Promise<MarkdocModule>
     return rawPosts
 }, {})
@@ -59,9 +92,12 @@ export async function getPost(slug: string) {
         })
     }
 
-    // TODO: Rename the `date` field in blog posts to `publishedAt`
-    // TODO: Set `post.updatedAt` to the latest Git modification time.
-    const post: BlogPost = { ...data.frontmatter, slug, Content }
+    const post: BlogPost = {
+        ...data.frontmatter,
+        slug,
+        Content,
+        updatedAt: getFileUpdatedAtFromGit(postsBasePath + slug),
+    }
 
     posts.set(slug, post)
     return post
@@ -77,9 +113,9 @@ export async function getAllPosts() {
 }
 
 const latestPublishedFirst = (
-    a: Pick<BlogPost, 'date'>,
-    b: Pick<BlogPost, 'date'>,
-) => b.date.getTime() - a.date.getTime()
+    a: Pick<BlogPost, 'publishedAt'>,
+    b: Pick<BlogPost, 'publishedAt'>,
+) => b.publishedAt.getTime() - a.publishedAt.getTime()
 
 /** List posts without content */
 export async function listPosts() {
