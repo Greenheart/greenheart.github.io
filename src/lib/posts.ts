@@ -59,32 +59,36 @@ export async function getPost(slug: string) {
         })
     }
 
+    // TODO: Rename the `date` field in blog posts to `publishedAt`
+    // TODO: Set `post.updatedAt` to the latest Git modification time.
     const post: BlogPost = { ...data.frontmatter, slug, Content }
 
     posts.set(slug, post)
     return post
 }
 
-const latestFirst = (a: Pick<BlogPost, 'date'>, b: Pick<BlogPost, 'date'>) =>
-    b.date.getTime() - a.date.getTime()
+export async function getAllPosts() {
+    return Promise.all(
+        Object.keys(allPosts).map(async (slug) => getPost(slug)),
+    ).then((posts) =>
+        // Filter out draft posts and sort by publication date
+        (posts.filter(Boolean) as BlogPost[]).sort(latestPublishedFirst),
+    )
+}
+
+const latestPublishedFirst = (
+    a: Pick<BlogPost, 'date'>,
+    b: Pick<BlogPost, 'date'>,
+) => b.date.getTime() - a.date.getTime()
 
 /** List posts without content */
 export async function listPosts() {
-    return Promise.all(Object.keys(allPosts).map(async (slug) => getPost(slug)))
+    return getAllPosts()
         .then((posts) =>
-            posts.reduce(
-                (posts, post) => {
-                    // Filter out draft posts
-                    if (post) {
-                        const { Content, ...rest } = post
-                        posts.push(rest)
-                    }
-                    return posts
-                },
-                [] as Omit<BlogPost, 'Content'>[],
+            posts.map(
+                ({ Content, ...postWithoutContent }) => postWithoutContent,
             ),
         )
-        .then((posts) => posts.sort(latestFirst))
         .catch((err) => {
             console.error(err)
             throw error(500, err.message)
