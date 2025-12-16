@@ -28,6 +28,7 @@
         "@tailwindcss/vite": "^4.1.18",
         "@types/node": "^25.0.2",
         "clipboardy": "^5.0.2",
+        "feed": "^5.1.0",
         "gh-pages": "^6.3.0",
         "markdoc-svelte": "^3.0.0",
         "prettier": "^3.7.4",
