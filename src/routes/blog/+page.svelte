@@ -3,6 +3,8 @@
 </script>
 
 <script lang="ts">
+    import SubscribeLinks from '$components/SubscribeLinks.svelte'
+
     let { data } = $props()
     const { posts } = $derived(data)
 </script>
@@ -12,12 +14,13 @@
 
 <!-- IDEA: Show tags on this blog index page. Show the number of posts with each tag. -->
 
-<section class="grid justify-center text-center">
+<section class="mb-8 grid justify-center text-center">
     <h1
         class="xs:text-5xl mb-8 text-4xl leading-none font-black tracking-tight sm:text-6xl lg:text-7xl"
     >
-        Latest Posts
+        Blog archive
     </h1>
+    <SubscribeLinks />
 </section>
 
 <section class="mx-auto grid max-w-(--breakpoint-md) grid-cols-1 gap-6">
