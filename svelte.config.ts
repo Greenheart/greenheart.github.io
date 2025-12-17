@@ -4,8 +4,8 @@ import { markdocPreprocess } from 'markdoc-svelte'
 import { resolve } from 'path'
 
 import { markdocConfig } from './src/lib/markdoc.ts'
+import { type Config } from '@sveltejs/kit'
 
-/** @type {import('@sveltejs/kit').Config} */
 export default {
     extensions: ['.svelte', '.md', '.mdoc'],
     preprocess: [vitePreprocess(), markdocPreprocess(markdocConfig)],
@@ -17,4 +17,4 @@ export default {
             $posts: 'src/content/posts',
         },
     },
-}
+} satisfies Config
