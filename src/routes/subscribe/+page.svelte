@@ -16,18 +16,24 @@
             formats available:
         </p>
 
-        <ul class="mb-8 flex gap-4">
+        <ul
+            class="xs:justify-start xs:pl-6 mb-8 flex justify-center gap-4 p-0 [&>li]:p-0"
+        >
             <li class="flex flex-wrap justify-center gap-1">
                 <span
-                    class="size-5 self-center bg-[url(/images/feed.svg)] bg-cover bg-no-repeat"
+                    class="-mb-0.5 size-5 self-center bg-[url(/images/feed.svg)] bg-cover bg-no-repeat"
                 ></span>
-                <Link href="/feed.atom" compact class="self-center">Atom</Link>
+                <Link href="/feed.atom" compact class="h-5 self-center"
+                    >Atom</Link
+                >
             </li>
             <li class="flex flex-wrap justify-center gap-1">
                 <span
-                    class="size-5 self-center bg-[url(/images/feed.svg)] bg-cover bg-no-repeat"
+                    class="-mb-0.5 size-5 self-center bg-[url(/images/feed.svg)] bg-cover bg-no-repeat"
                 ></span>
-                <Link href="/feed.json" compact class="self-center">JSON</Link>
+                <Link href="/feed.json" compact class="h-5 self-center"
+                    >JSON</Link
+                >
             </li>
         </ul>
 
