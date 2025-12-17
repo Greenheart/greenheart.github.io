@@ -1,5 +1,7 @@
 # greenheart.github.io
 
+> Personal website and tech blog
+
 ## Building the site with talks included
 
 _NOTE:_ This could be simplified in the future to allow fully automatic builds.
@@ -40,10 +42,6 @@ To publish a draft post, just rename the file and remove the `_` prefix. Then bo
 Note that this might exclude these files from project search results, so you might need to explicitly include search locations like `src/**/*` to get the results you want.
 
 Also note that `.git/info/exclude` only applies to the local Git repository and needs to be added for newly clones repositories. The reason for using this approach instead of `.gitignore` is because this allows some tools (like for example Keystatic CMS) to include the file, while still instructing Git to ignore the file.
-
-## Credits
-
-- Font Awesome: LinkedIn & GitHub SVG icons. Licensed under [CC BY 4.0](https://fontawesome.com/license)
 
 ## License
 
