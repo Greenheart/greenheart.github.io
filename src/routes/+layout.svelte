@@ -6,6 +6,7 @@
     import Footer from '$components/Footer.svelte'
 
     import '../global.css'
+    import { MASTODON_USERNAME } from '$lib/constants.js'
 
     const links = [
         { text: 'Blog', href: '/blog' },
@@ -21,7 +22,9 @@
 </script>
 
 <MetaTags {...metaTags} />
-svelte:head
+<svelte:head>
+    <meta name="fediverse:creator" content={MASTODON_USERNAME} />
+</svelte:head>
 
 <header
     class="mx-auto flex max-w-6xl flex-1 flex-wrap justify-between gap-x-2 gap-y-4 p-4"
