@@ -5,3 +5,5 @@ export const SITE_DESCRIPTION =
 export const SITE_URL = 'https://samuelplumppu.se'
 
 export const MASTODON_URL = 'https://fosstodon.org/@Greenheart'
+
+export const postsBasePath = 'src/content/posts/'

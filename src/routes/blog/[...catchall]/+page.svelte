@@ -1,12 +1,14 @@
 <script lang="ts">
     import BlogFooter from '$components/BlogFooter.svelte'
     import Tags from '$components/Tags.svelte'
+    import { getPostUpdatedAtFromGit } from '$lib/post-details.remote.js'
     import { formatDate } from '$lib/utils'
 
     let { data } = $props()
 
     let { post, older, newer, otherPostsCount } = $derived(data)
-    let { title, publishedAt, updatedAt, tags, Content } = $derived(post)
+    let { title, publishedAt, tags, Content, slug } = $derived(post)
+    const updatedAt = $derived(await getPostUpdatedAtFromGit(slug))
 </script>
 
 <!-- TODO: Add dynamic meta tags based on post content. -->

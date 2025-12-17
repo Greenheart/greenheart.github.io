@@ -16,5 +16,13 @@ export default {
             $data: resolve('./src/data'),
             $posts: 'src/content/posts',
         },
+        experimental: {
+            remoteFunctions: true,
+        },
+    },
+    compilerOptions: {
+        experimental: {
+            async: true,
+        },
     },
 } satisfies Config
