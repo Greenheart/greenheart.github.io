@@ -33,7 +33,7 @@
     <nav class="xs:space-x-4 flex space-x-2">
         <Link href="/subscribe" class="flex" title="Subscribe (Atom / JSON)">
             <span
-                class="size-5 self-center bg-[url(/images/feed.svg)] bg-cover bg-no-repeat"
+                class="size-4 self-center bg-[url(/images/feed.svg)] bg-cover bg-no-repeat"
             ></span>
         </Link>
         {#each links as link}
