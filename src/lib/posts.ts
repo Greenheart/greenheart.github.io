@@ -11,11 +11,45 @@ import { postsBasePath } from './constants'
 // IDEA: Update the alias from $posts to $pages
 // IDEA: Update this module to load all pages instead
 
+const tagsSchema = z.enum([
+    'TypeScript',
+    'Drizzle',
+    'SQLite',
+    'SvelteKit',
+    'Keystatic CMS',
+    'Git',
+    'Terminal',
+    'Node.js',
+    'Vite',
+    'Accessibility',
+    'HTML',
+    'JavaScript',
+    'PDF',
+    'Data Pipeline',
+    'OCR',
+    'Caching',
+    'Performance',
+    'Playwright',
+    'Distrobox',
+    'Testing',
+    'React',
+    'Shell Scripting',
+    'Entrepreneurship',
+    'Co-operatives',
+    'Economics',
+    'DX',
+    'Code Snippet',
+    'Svelte',
+    'Web Crypto API',
+    'Firefox',
+    'Productivity',
+])
+
 const postSchema = z.object({
     frontmatter: z.object({
         title: z.string(),
         publishedAt: z.coerce.date(),
-        tags: z.array(z.string()).optional(),
+        tags: z.array(tagsSchema).optional(),
         featured: z.boolean().default(false),
     }),
 })
