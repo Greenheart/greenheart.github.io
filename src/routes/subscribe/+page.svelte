@@ -35,9 +35,12 @@
 
         <p>
             You can use a feed reader (sometimes called an RSS reader) to follow
-            multiple blogs or websites. This is a convenient and
-            privacy-friendly way to stay up to date without subscribing to email
-            newsletters or using relying on social media algorithms.
+            multiple blogs or websites via their <Link
+                href="https://en.wikipedia.org/wiki/Web_feed"
+                compact>web feeds</Link
+            >. This is a convenient and privacy-friendly way to stay up to date
+            without subscribing to email newsletters or using relying on social
+            media algorithms.
         </p>
 
         <h2>Get started</h2>
