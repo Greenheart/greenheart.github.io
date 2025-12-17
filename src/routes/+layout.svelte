@@ -20,38 +20,30 @@
     )
 </script>
 
-<!-- We need a blank layout for talks since they are rendering a Vue SPA -->
-{#if page.route.id === '/talks/[slug]' && !page.error}
+<MetaTags {...metaTags} />
+svelte:head
+
+<header
+    class="mx-auto flex max-w-6xl flex-1 flex-wrap justify-between gap-x-2 gap-y-4 p-4"
+>
+    <Link href="/">Samuel Plumppu</Link>
+    <nav class="xs:space-x-4 flex space-x-2">
+        <Link href="/subscribe" class="flex" title="Subscribe (Atom / JSON)">
+            <span
+                class="size-5 self-center bg-[url(/images/feed.svg)] bg-cover bg-no-repeat"
+            ></span>
+        </Link>
+        {#each links as link}
+            <Link href={link.href}>{link.text}</Link>
+        {/each}
+    </nav>
+</header>
+
+<div class="container mx-auto max-w-6xl p-4 pb-0">
     {@render children()}
-{:else}
-    <MetaTags {...metaTags} />
+</div>
 
-    <header
-        class="mx-auto flex max-w-6xl flex-1 flex-wrap justify-between gap-x-2 gap-y-4 p-4"
-    >
-        <Link href="/">Samuel Plumppu</Link>
-        <nav class="xs:space-x-4 flex space-x-2">
-            <Link
-                href="/subscribe"
-                class="flex"
-                title="Subscribe (Atom / JSON)"
-            >
-                <span
-                    class="size-5 self-center bg-[url(/images/feed.svg)] bg-cover bg-no-repeat"
-                ></span>
-            </Link>
-            {#each links as link}
-                <Link href={link.href}>{link.text}</Link>
-            {/each}
-        </nav>
-    </header>
-
-    <div class="container mx-auto max-w-6xl p-4 pb-0">
-        {@render children()}
-    </div>
-
-    <Footer />
-{/if}
+<Footer />
 
 <style>
     @media screen and (max-width: 354px) {

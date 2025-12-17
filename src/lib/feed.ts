@@ -3,7 +3,7 @@ import { render } from 'svelte/server'
 import type { Component } from 'svelte'
 
 import { SITE_DESCRIPTION, SITE_URL } from '$lib/constants'
-import { getAllPosts, type BlogPost } from '$lib/posts'
+import { getAllPosts } from '$lib/posts'
 import { getPostUpdatedAtFromGit } from './post-details.remote'
 
 const normalizedURL = SITE_URL.endsWith('/') ? SITE_URL : SITE_URL + '/'
