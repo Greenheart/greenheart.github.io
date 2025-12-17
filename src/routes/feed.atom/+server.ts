@@ -9,7 +9,3 @@ export const GET = async () => {
         headers: { 'Content-Type': 'application/atom+xml' },
     })
 }
-
-// TODO: Add "(feed icon) Subscribe" to the site footer
-// TODO: Add "(feed icon) Subscribe" to the top of the /blog page
-// TODO: Wherever the feed icon is present, also include a help link (or text) similar to "Learn more about [web feeds](https://en.wikipedia.org/wiki/Web_feed)" or link to https://aboutfeeds.com/

@@ -26,7 +26,7 @@ async function renderSvelteMarkdocToHTML(component: Component) {
             // Simplify markup by replacing code <span> elements with the plain text, formatted content
             .replaceAll(/<span[^>]*>/gm, '')
             .replaceAll(/<\/span>/gm, '')
-            // Remove all HTML comments, since we don't plan to hydrate this HTML as an SvelteKit app.
+            // Remove all HTML comments (SvelteKit hydration markers), since we want simple and minimal HTML.
             .replaceAll(/<!--([\s\S]*?)-->/gm, '')
     )
 }
