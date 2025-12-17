@@ -62,6 +62,7 @@ export async function generateFeed() {
             link: postURL,
             content,
             id: postURL,
+            category: post.tags?.map((tag) => ({ name: tag })),
         })
 
         // Set the top-level updatedAt for the feed based on the last updated post
