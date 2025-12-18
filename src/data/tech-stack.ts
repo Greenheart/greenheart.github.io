@@ -1,7 +1,7 @@
 import type { TechStack } from '$lib/types'
 
 export const tech: TechStack = {
-    Learning: ['Local-first', 'CRDT', 'Ansible'],
+    Learning: ['Rust', 'Local-first', 'CRDT', 'Ansible'],
     Current: [
         'TypeScript',
         'Python',
