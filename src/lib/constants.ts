@@ -11,4 +11,6 @@ const mastodon = {
 export const MASTODON_URL = `https://${mastodon.server}/@${mastodon.username}`
 export const MASTODON_USERNAME = `@${mastodon.username}@${mastodon.server}`
 
-export const postsBasePath = 'src/content/posts/'
+export const contentBasePath = 'src/content/'
+export const postsBasePath = contentBasePath + 'posts/'
+export const projectsBasePath = contentBasePath + 'projects/'

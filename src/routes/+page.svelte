@@ -7,9 +7,16 @@
 
 <script lang="ts">
     import EncryptedEmail from '$components/EncryptedEmail.svelte'
+    import Tags from '$components/Tags.svelte'
 
     let { data } = $props()
-    let { featuredPosts, regularPostsCount } = $derived(data)
+    let {
+        featuredPosts,
+        otherPostsCount,
+        featuredProjects,
+        otherProjectsCount,
+        earliestProjectStartYear,
+    } = $derived(data)
 </script>
 
 <Picture
@@ -69,9 +76,38 @@
 
 <hr class="border-ming mx-auto my-16 max-w-sm" />
 
-<TechStack />
+<section class="mx-auto flex max-w-prose flex-col gap-4">
+    <h2
+        class="xs:text-2xl mb-6 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
+    >
+        Featured projects
+    </h2>
+    {#each featuredProjects as { name, tags, startedYear, updatedYear }}
+        <article class="rounded-md bg-white p-2">
+            <h3 class="text-xl font-bold">{name}</h3>
+            <div class="py-2 text-sm">
+                <time datetime={startedYear.toString()}>{startedYear}</time>
+                {#if updatedYear > startedYear}
+                    - <time datetime={updatedYear.toString()}
+                        >{updatedYear}</time
+                    >{/if}
+            </div>
+            <Tags {tags} />
+        </article>
+    {/each}
+
+    {#if otherProjectsCount}
+        <div class="mt-8 flex justify-center">
+            <Link href="/projects"
+                >Explore {otherProjectsCount} more projects I've worked on since {earliestProjectStartYear}</Link
+            >
+        </div>
+    {/if}
+</section>
 
 <hr class="border-ming mx-auto my-16 max-w-sm" />
+
+<TechStack />
 
 <section class="mx-auto max-w-prose">
     <h2
@@ -91,7 +127,7 @@
         class="grid grid-cols-1 justify-items-center gap-4 font-normal sm:grid-cols-2"
     >
         <ul
-            class="flex w-80 flex-col items-center space-y-2 rounded-xs bg-white p-4 tracking-wide shadow-lg sm:w-71"
+            class="flex w-80 flex-col items-center space-y-2 rounded-md bg-white p-4 tracking-wide shadow-lg sm:w-71"
         >
             <li>Product Strategy</li>
             <li>Attention to Detail</li>
@@ -100,7 +136,7 @@
             <li>Design Systems</li>
         </ul>
         <ul
-            class="flex w-80 flex-col items-center space-y-2 rounded-xs bg-white p-4 tracking-wide shadow-lg sm:w-71"
+            class="flex w-80 flex-col items-center space-y-2 rounded-md bg-white p-4 tracking-wide shadow-lg sm:w-71"
         >
             <li>UI/UX Design</li>
             <li>Humane Tech & Ethical Design</li>
@@ -126,7 +162,9 @@
         {/each}
     </section>
 
-    <div class="mt-8 flex justify-center">
-        <Link href="/blog">Read {regularPostsCount} more posts</Link>
-    </div>
+    {#if otherPostsCount}
+        <div class="mt-8 flex justify-center">
+            <Link href="/blog">Read {otherPostsCount} more posts</Link>
+        </div>
+    {/if}
 </section>
