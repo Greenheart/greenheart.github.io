@@ -83,52 +83,46 @@
         Featured projects
     </h2>
 
-    <p>I usually explore</p>
-
     {#each featuredProjects as { name, tags, startedYear, updatedYear, Content, code, demo }}
         <article class="grid gap-2 rounded-md bg-white p-4">
             <div class="flex items-center justify-between gap-1">
                 <h3 class="text-xl font-bold">{name}</h3>
-                <div class="text-sm">
+                <div class="flex gap-1 text-sm">
                     <time datetime={startedYear.toString()}>{startedYear}</time>
-                    {#if updatedYear > startedYear}
-                        - <time datetime={updatedYear.toString()}
+                    {#if updatedYear > startedYear}<span>-</span><time
+                            datetime={updatedYear.toString()}
                             >{updatedYear}</time
                         >{/if}
                 </div>
             </div>
 
-            <div class="flex justify-end gap-2">
-                {#if demo}
-                    <Link href={demo} class="inline-flex items-center gap-1"
-                        ><img
-                            src="/images/external-link.svg"
-                            alt="External link to demo"
-                            class="size-5"
-                        />Demo</Link
-                    >
-                {/if}
-                {#if code}
-                    <Link href={code} class="inline-flex items-center gap-1"
-                        ><img
-                            src="/images/code-xml.svg"
-                            alt="Show code (Git)"
-                            class="size-5"
-                        />Code</Link
-                    >
-                {/if}
+            <div class="xs:grid-cols-[1fr_auto] grid gap-1">
+                <Tags
+                    {tags}
+                    variant="subtle"
+                    class="[&>span]:text-xs [&>span]:sm:p-1"
+                />
+                <div class="xs:self-start flex justify-end gap-2">
+                    {#if demo}
+                        <Link href={demo} class="inline-flex items-center gap-1"
+                            ><img
+                                src="/images/external-link.svg"
+                                alt="External link to demo"
+                                class="size-5"
+                            />Demo</Link
+                        >
+                    {/if}
+                    {#if code}
+                        <Link href={code} class="inline-flex items-center gap-1"
+                            ><img
+                                src="/images/code-xml.svg"
+                                alt="Show code (Git)"
+                                class="size-5"
+                            />Code</Link
+                        >
+                    {/if}
+                </div>
             </div>
-
-            <!-- <p class="flex font-semibold">{tags.join(' · ')}</p> -->
-            <!-- <p class="flex gap-2 font-semibold">
-                {#each tags as tag}<span>{tag}</span>{/each}
-            </p> -->
-
-            <Tags
-                {tags}
-                variant="subtle"
-                class="[&>span]:text-xs [&>span]:sm:p-1"
-            />
 
             <div class="prose prose-p:first:mt-0 prose-p:last:mb-0">
                 <Content />
