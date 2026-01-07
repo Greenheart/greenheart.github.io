@@ -1,10 +1,6 @@
-<script module lang="ts">
-    import type { BlogPost } from '$lib/types'
-</script>
-
 <script lang="ts">
     type Props = {
-        tags?: BlogPost['tags']
+        tags?: string[]
         class?: string
     }
     let { tags, class: className }: Props = $props()
