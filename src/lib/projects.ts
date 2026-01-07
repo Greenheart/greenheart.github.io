@@ -17,12 +17,18 @@ const projectSchema = z.object({
             updatedYear: z.number().min(2000).max(2100).optional(),
             featured: z.boolean().default(false),
         })
-        .refine(
-            (data) =>
+        .superRefine((data, ctx) => {
+            console.log(data.name, data.startedYear, data.updatedYear)
+            if (
                 data.updatedYear !== undefined &&
-                data.startedYear <= data.updatedYear,
-            'updatedYear can not be before startedYear',
-        )
+                data.updatedYear < data.startedYear
+            ) {
+                ctx.addIssue({
+                    code: 'custom',
+                    message: `updatedYear (${data.updatedYear}) can not be before startedYear (${data.startedYear})`,
+                })
+            }
+        })
         .transform(
             (data) =>
                 // Default to updated the same year if not defined
