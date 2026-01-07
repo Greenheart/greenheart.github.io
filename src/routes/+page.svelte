@@ -82,17 +82,26 @@
     >
         Featured projects
     </h2>
-    {#each featuredProjects as { name, tags, startedYear, updatedYear }}
-        <article class="rounded-md bg-white p-2">
-            <h3 class="text-xl font-bold">{name}</h3>
-            <div class="py-2 text-sm">
-                <time datetime={startedYear.toString()}>{startedYear}</time>
-                {#if updatedYear > startedYear}
-                    - <time datetime={updatedYear.toString()}
-                        >{updatedYear}</time
-                    >{/if}
+
+    <!-- TODO: Make projects look different compared to blog posts -->
+    {#each featuredProjects as { name, tags, startedYear, updatedYear, Content }}
+        <article class="grid gap-2 rounded-md bg-white p-4">
+            <div class="flex items-center justify-between gap-1">
+                <h3 class="text-xl font-bold">{name}</h3>
+                <div class="text-sm">
+                    <time datetime={startedYear.toString()}>{startedYear}</time>
+                    {#if updatedYear > startedYear}
+                        - <time datetime={updatedYear.toString()}
+                            >{updatedYear}</time
+                        >{/if}
+                </div>
             </div>
-            <Tags {tags} />
+
+            <Tags {tags} variant="subtle" />
+
+            <div class="prose prose-p:first:mt-0 prose-p:last:mb-0">
+                <Content />
+            </div>
         </article>
     {/each}
 

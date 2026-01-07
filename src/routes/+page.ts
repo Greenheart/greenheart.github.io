@@ -1,11 +1,11 @@
 import { listPosts } from '$lib/posts'
-import { listProjects } from '$lib/projects'
+import { getAllProjects } from '$lib/projects'
 import { separateFeatured } from '$lib/utils'
 
 export const load = async () => {
     const [posts, projects] = await Promise.all([
         separateFeatured(await listPosts()),
-        separateFeatured(await listProjects()),
+        separateFeatured(await getAllProjects()),
     ])
 
     const earliestProjectStartYear = [

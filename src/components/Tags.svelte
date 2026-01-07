@@ -1,9 +1,15 @@
 <script lang="ts">
+    const variants = {
+        default: 'bg-mantis',
+        subtle: 'bg-honeydew',
+    } as const
+
     type Props = {
         tags?: string[]
         class?: string
+        variant?: keyof typeof variants
     }
-    let { tags, class: className }: Props = $props()
+    let { tags, class: className, variant = 'default' }: Props = $props()
 </script>
 
 {#if tags}
@@ -14,7 +20,7 @@
         ]}
     >
         {#each tags as tag}
-            <span class="bg-mantis rounded-xs p-1 sm:p-2">
+            <span class="{variants[variant]} rounded-xs p-1 sm:p-2">
                 {tag}
             </span>
         {/each}
