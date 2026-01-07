@@ -32,7 +32,7 @@ export type BlogPost = RawPost['frontmatter'] & {
 export type BlogPostWithoutMetadata = Omit<BlogPost, 'updatedAt'>
 
 const allPosts = Object.entries(
-    import.meta.glob('src/content/posts/**/*.md'),
+    import.meta.glob('/src/content/posts/**/*.md'),
 ).reduce<Record<string, () => Promise<MarkdocModule>>>(
     (rawPosts, [path, loadPost]) => {
         const slug = path.replace(`/${postsBasePath}`, '').replace('.md', '')
@@ -60,12 +60,10 @@ export async function getPost(slug: string) {
     }
     const { default: Content, ...rawPost } = loaded
 
-    const { data, error } = postSchema.safeParse(rawPost, { reportInput: true })
-    if (error) {
-        throw new Error('Invalid frontmatter for slug: ' + slug, {
-            cause: error,
-        })
-    }
+    const data = postSchema.parse(rawPost, {
+        reportInput: true,
+        error: () => 'Invalid frontmatter for slug: ' + slug,
+    })
 
     const post: BlogPostWithoutMetadata = {
         ...data.frontmatter,
