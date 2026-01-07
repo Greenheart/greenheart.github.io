@@ -18,7 +18,6 @@ const projectSchema = z.object({
             featured: z.boolean().default(false),
         })
         .superRefine((data, ctx) => {
-            console.log(data.name, data.startedYear, data.updatedYear)
             if (
                 data.updatedYear !== undefined &&
                 data.updatedYear < data.startedYear
