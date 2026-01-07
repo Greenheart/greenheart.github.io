@@ -14,7 +14,6 @@ export default {
         alias: {
             $components: resolve('./src/components'),
             $data: resolve('./src/data'),
-            $posts: 'src/content/posts',
         },
         experimental: {
             remoteFunctions: true,

@@ -10,7 +10,6 @@ import { tagsSchema } from './schemas'
 // IDEA: Rename posts to pages and keep it for dynamic pages that can be organised with custom paths
 // IDEA: Rename route to handle all pages, not just in the `blog` category. This would allow us to add any type of page
 // IDEA: Make the routing controlled by the files and directories of `pages`
-// IDEA: Update the alias from $posts to $pages
 // IDEA: Update this module to load all pages instead
 
 const postSchema = z.object({
@@ -32,13 +31,16 @@ export type BlogPost = RawPost['frontmatter'] & {
 
 export type BlogPostWithoutMetadata = Omit<BlogPost, 'updatedAt'>
 
-const allPosts = Object.entries(import.meta.glob('$posts/**/*.md')).reduce<
-    Record<string, () => Promise<MarkdocModule>>
->((rawPosts, [path, loadPost]) => {
-    const slug = path.replace(`/${postsBasePath}`, '').replace('.md', '')
-    rawPosts[slug] = loadPost as () => Promise<MarkdocModule>
-    return rawPosts
-}, {})
+const allPosts = Object.entries(
+    import.meta.glob('src/content/posts/**/*.md'),
+).reduce<Record<string, () => Promise<MarkdocModule>>>(
+    (rawPosts, [path, loadPost]) => {
+        const slug = path.replace(`/${postsBasePath}`, '').replace('.md', '')
+        rawPosts[slug] = loadPost as () => Promise<MarkdocModule>
+        return rawPosts
+    },
+    {},
+)
 
 const posts = new Map<string, BlogPostWithoutMetadata>()
 

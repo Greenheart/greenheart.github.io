@@ -1,5 +1,6 @@
-import { tech } from '$data/tech-stack'
 import z from 'zod'
+
+import { tech } from '$data/tech-stack'
 
 const allTechSkills = [...tech.Current, ...tech.Learning, ...tech.Past]
 
