@@ -5,38 +5,13 @@ import type { Component } from 'svelte'
 import { z } from 'zod'
 
 import { postsBasePath } from './constants'
-import { tech } from '$data/tech-stack'
+import { tagsSchema } from './schemas'
 
 // IDEA: Rename posts to pages and keep it for dynamic pages that can be organised with custom paths
 // IDEA: Rename route to handle all pages, not just in the `blog` category. This would allow us to add any type of page
 // IDEA: Make the routing controlled by the files and directories of `pages`
 // IDEA: Update the alias from $posts to $pages
 // IDEA: Update this module to load all pages instead
-
-const allTechSkills = [...tech.Current, ...tech.Learning, ...tech.Past]
-
-const tagsSchema = z.enum([
-    ...allTechSkills,
-    'Git',
-    'Terminal',
-    'Vite',
-    'Accessibility',
-    'PDF',
-    'Data Pipeline',
-    'OCR',
-    'Caching',
-    'Performance',
-    'Distrobox',
-    'Testing',
-    'Shell Scripting',
-    'Entrepreneurship',
-    'Co-operatives',
-    'Economics',
-    'DX',
-    'Code Snippet',
-    'Firefox',
-    'Productivity',
-])
 
 const postSchema = z.object({
     frontmatter: z.object({
