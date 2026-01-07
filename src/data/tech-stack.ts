@@ -25,6 +25,7 @@ export const tech = {
         'Flux',
         'Keystatic CMS',
         'Web Crypto API',
+        'HTML', // NOTE: Separate tech stack into different categories and move some items to a lower priority.
     ],
     Past: [
         'C#',

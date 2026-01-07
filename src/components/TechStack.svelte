@@ -15,11 +15,13 @@
     onMount(() => (ready = true))
 </script>
 
-<section class="xs:h-80 flex h-96 flex-col items-center sm:h-64">
+<section
+    class="xs:h-80 xs:mb-40 mb-48 flex h-96 flex-col items-center sm:mb-36 sm:h-64"
+>
     <h2
         class="xs:text-2xl mb-6 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
     >
-        My tech stack
+        Technologies I work with
     </h2>
 
     <Tabs.Root bind:value={selected} class="p-4">
