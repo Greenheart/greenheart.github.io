@@ -1,6 +1,6 @@
 import type { TechStack } from '$lib/types'
 
-export const tech: TechStack = {
+export const tech = {
     Learning: ['Rust', 'Local-first', 'CRDT', 'Ansible'],
     Current: [
         'TypeScript',
@@ -24,6 +24,7 @@ export const tech: TechStack = {
         'Kubernetes',
         'Flux',
         'Keystatic CMS',
+        'Web Crypto API',
     ],
     Past: [
         'C#',

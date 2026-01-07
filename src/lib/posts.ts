@@ -3,7 +3,9 @@ import { dev } from '$app/environment'
 import type { MarkdocModule } from 'markdoc-svelte'
 import type { Component } from 'svelte'
 import { z } from 'zod'
+
 import { postsBasePath } from './constants'
+import { tech } from '$data/tech-stack'
 
 // IDEA: Rename posts to pages and keep it for dynamic pages that can be organised with custom paths
 // IDEA: Rename route to handle all pages, not just in the `blog` category. This would allow us to add any type of page
@@ -11,36 +13,27 @@ import { postsBasePath } from './constants'
 // IDEA: Update the alias from $posts to $pages
 // IDEA: Update this module to load all pages instead
 
+const allTechSkills = [...tech.Current, ...tech.Learning, ...tech.Past]
+
 const tagsSchema = z.enum([
-    'TypeScript',
-    'Drizzle',
-    'SQLite',
-    'SvelteKit',
-    'Keystatic CMS',
+    ...allTechSkills,
     'Git',
     'Terminal',
-    'Node.js',
     'Vite',
     'Accessibility',
-    'HTML',
-    'JavaScript',
     'PDF',
     'Data Pipeline',
     'OCR',
     'Caching',
     'Performance',
-    'Playwright',
     'Distrobox',
     'Testing',
-    'React',
     'Shell Scripting',
     'Entrepreneurship',
     'Co-operatives',
     'Economics',
     'DX',
     'Code Snippet',
-    'Svelte',
-    'Web Crypto API',
     'Firefox',
     'Productivity',
 ])
@@ -90,7 +83,7 @@ export async function getPost(slug: string) {
     }
     const { default: Content, ...rawPost } = loaded
 
-    const { data, error } = postSchema.safeParse(rawPost)
+    const { data, error } = postSchema.safeParse(rawPost, { reportInput: true })
     if (error) {
         throw new Error('Invalid frontmatter for slug: ' + slug, {
             cause: error,
