@@ -21,7 +21,7 @@
             <time datetime={publishedAt.toISOString()} class="xs:m-0 mb-2"
                 >{formatDate(publishedAt)}</time
             >
-            <Tags {tags} />
+            <Tags {tags} variant="subtle" />
         </div>
     </article>
 </a>

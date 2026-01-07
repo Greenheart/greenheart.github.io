@@ -2,6 +2,7 @@
     const variants = {
         default: 'bg-mantis',
         subtle: 'bg-honeydew',
+        white: 'bg-white',
     } as const
 
     type Props = {
