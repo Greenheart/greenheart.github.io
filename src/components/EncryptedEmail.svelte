@@ -8,7 +8,7 @@
 
     if (!pl || !pwd) throw new Error('EncryptedEmail.svelte: Missing data')
 
-    async function deriveKey(salt: Uint8Array, password: string) {
+    async function deriveKey(salt: Uint8Array<ArrayBuffer>, password: string) {
         const encoder = new TextEncoder()
         const baseKey = await crypto.subtle.importKey(
             'raw',
