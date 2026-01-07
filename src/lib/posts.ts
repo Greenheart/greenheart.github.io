@@ -92,14 +92,6 @@ const latestPublishedFirst = (
 
 /** List posts without content */
 export async function listPosts() {
-    return getAllPosts()
-        .then((posts) =>
-            posts.map(
-                ({ Content, ...postWithoutContent }) => postWithoutContent,
-            ),
-        )
-        .catch((err) => {
-            console.error(err)
-            throw error(500, err.message)
-        })
+    const posts = await getAllPosts()
+    return posts.map(({ Content, ...postWithoutContent }) => postWithoutContent)
 }
