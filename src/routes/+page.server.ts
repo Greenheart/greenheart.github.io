@@ -1,25 +1,17 @@
 import { listPosts } from '$lib/posts'
-import type { BlogPost } from '$lib/types'
+import { getAllProjects } from '$lib/projects'
+import { separateFeatured } from '$lib/utils'
 
 export const load = async () => {
-    const posts = await listPosts()
-
-    const { featured, other } = posts.reduce(
-        (acc, post) => {
-            acc[post.featured ? 'featured' : 'other'].push(post)
-            return acc
-        },
-        {
-            featured: [],
-            other: [],
-        } as {
-            featured: Omit<BlogPost, 'Content'>[]
-            other: Omit<BlogPost, 'Content'>[]
-        },
-    )
+    const [posts, projects] = await Promise.all([
+        separateFeatured(await listPosts()),
+        separateFeatured(await getAllProjects()),
+    ])
 
     return {
-        featuredPosts: featured,
-        regularPostsCount: other.length,
+        featuredPosts: posts.featured,
+        otherPostsCount: posts.other.length,
+        featuredProjects: projects.featured,
+        otherProjectsCount: projects.other.length,
     }
 }
