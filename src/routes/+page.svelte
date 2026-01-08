@@ -166,7 +166,7 @@
     </p>
 
     {#each featuredProjects as { name, tags, startedYear, updatedYear, Content, code, demo }}
-        <article class="grid gap-2 rounded-md bg-white p-4">
+        <article class="grid gap-2 rounded-md bg-white p-4 shadow-lg">
             <div class="flex items-center justify-between gap-1">
                 <h3 class="text-2xl font-black">{name}</h3>
                 <div class="flex gap-1 text-sm">
