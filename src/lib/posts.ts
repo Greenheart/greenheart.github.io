@@ -1,4 +1,3 @@
-import { error } from '@sveltejs/kit'
 import { dev } from '$app/environment'
 import type { MarkdocModule } from 'markdoc-svelte'
 import type { Component } from 'svelte'
