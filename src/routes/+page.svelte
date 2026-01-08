@@ -76,6 +76,28 @@
 
 <hr class="border-ming mx-auto my-16 max-w-sm" />
 
+<section class="mx-auto grid max-w-(--breakpoint-md) grid-cols-1">
+    <h2
+        class="xs:text-2xl mb-6 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
+    >
+        Featured blog post{featuredPosts.length > 1 ? 's' : ''}
+    </h2>
+
+    <section class="mx-auto grid max-w-(--breakpoint-md) grid-cols-1 gap-6">
+        {#each featuredPosts as post}
+            <PostListing {post} />
+        {/each}
+    </section>
+
+    {#if otherPostsCount}
+        <div class="mt-8 flex justify-center">
+            <Link href="/blog">Read {otherPostsCount} more posts</Link>
+        </div>
+    {/if}
+</section>
+
+<hr class="border-ming mx-auto my-16 max-w-sm" />
+
 <section class="mx-auto flex max-w-prose flex-col gap-4">
     <h2
         class="xs:text-2xl mb-6 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
@@ -178,26 +200,4 @@
             <li>Improved Development Practices</li>
         </ul>
     </div>
-</section>
-
-<hr class="border-ming mx-auto my-16 max-w-sm" />
-
-<section class="mx-auto grid max-w-(--breakpoint-md) grid-cols-1">
-    <h2
-        class="xs:text-2xl mb-6 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
-    >
-        Featured blog post{featuredPosts.length > 1 ? 's' : ''}
-    </h2>
-
-    <section class="mx-auto grid max-w-(--breakpoint-md) grid-cols-1 gap-6">
-        {#each featuredPosts as post}
-            <PostListing {post} />
-        {/each}
-    </section>
-
-    {#if otherPostsCount}
-        <div class="mt-8 flex justify-center">
-            <Link href="/blog">Read {otherPostsCount} more posts</Link>
-        </div>
-    {/if}
 </section>
