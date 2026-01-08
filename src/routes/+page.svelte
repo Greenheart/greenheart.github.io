@@ -71,7 +71,7 @@
 
     <EncryptedEmail />
 
-    <SocialLinks size="sm" />
+    <SocialLinks />
 </div>
 
 <hr class="border-ming mx-auto my-16 max-w-sm" />

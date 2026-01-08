@@ -1,16 +1,10 @@
 <script lang="ts">
     import { MASTODON_URL } from '$lib/constants'
 
-    const sizes = {
-        sm: 'h-6',
-        md: 'h-8',
-    }
-
     type Props = {
         class?: string
-        size?: keyof typeof sizes
     }
-    let { class: className, size = 'md' }: Props = $props()
+    let { class: className }: Props = $props()
 </script>
 
 <div
@@ -22,11 +16,7 @@
         rel="noopener noreferrer"
         aria-label="Message me securely with the Matrix protocol"
     >
-        <img
-            src="/images/matrix-logo.svg"
-            alt="Matrix.org logo"
-            class={sizes[size]}
-        />
+        <img src="/images/matrix-logo.svg" alt="Matrix.org logo" class="h-6" />
     </a>
     <a
         href="https://github.com/Greenheart"
@@ -34,11 +24,7 @@
         rel="noopener noreferrer"
         aria-label="See my libre software at GitHub"
     >
-        <img
-            src="/images/github.svg"
-            alt="GitHub"
-            class={['aspect-square', sizes[size]]}
-        />
+        <img src="/images/github.svg" alt="GitHub" class="aspect-square h-6" />
     </a>
     <a
         href={MASTODON_URL}
@@ -49,7 +35,7 @@
         <img
             src="/images/mastodon-logo.svg"
             alt="Mastodon"
-            class={['aspect-square', sizes[size]]}
+            class="aspect-square h-6"
         />
     </a>
     <a
@@ -61,7 +47,7 @@
         <img
             src="/images/linkedin.svg"
             alt="LinkedIn"
-            class={['aspect-square', sizes[size]]}
+            class="aspect-square h-6"
         />
     </a>
 </div>
