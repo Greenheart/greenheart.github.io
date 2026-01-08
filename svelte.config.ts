@@ -1,10 +1,10 @@
+import { type Config } from '@sveltejs/kit'
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 import adapter from '@sveltejs/adapter-static'
 import { markdocPreprocess } from 'markdoc-svelte'
-import { resolve } from 'path'
+import { resolve } from 'node:path'
 
 import { markdocConfig } from './src/lib/markdoc.ts'
-import { type Config } from '@sveltejs/kit'
 
 export default {
     extensions: ['.svelte', '.md', '.mdoc'],
@@ -14,6 +14,7 @@ export default {
         alias: {
             $components: resolve('./src/components'),
             $data: resolve('./src/data'),
+            $assets: resolve('./src/assets'),
         },
         experimental: {
             remoteFunctions: true,

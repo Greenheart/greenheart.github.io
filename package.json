@@ -22,6 +22,7 @@
         "@iconify-json/lucide": "^1.2.82",
         "@markdoc/markdoc": "^0.5.4",
         "@sveltejs/adapter-static": "^3.0.10",
+        "@sveltejs/enhanced-img": "^0.9.2",
         "@sveltejs/kit": "^2.49.3",
         "@sveltejs/vite-plugin-svelte": "^6.2.3",
         "@tailwindcss/typography": "^0.5.19",
@@ -58,7 +59,8 @@
     "pnpm": {
         "onlyBuiltDependencies": [
             "@tailwindcss/oxide",
-            "esbuild"
+            "esbuild",
+            "sharp"
         ]
     },
     "dependencies": {

@@ -1,6 +1,5 @@
 <script module lang="ts">
     import TechStack from '$components/TechStack.svelte'
-    import Picture from '$components/Picture.svelte'
     import PostListing from '$components/PostListing.svelte'
     import Link from '$components/Link.svelte'
 </script>
@@ -8,6 +7,7 @@
 <script lang="ts">
     import EncryptedEmail from '$components/EncryptedEmail.svelte'
     import Tags from '$components/Tags.svelte'
+    import samuel from '$assets/images/samuel.png'
 
     let { data } = $props()
     let {
@@ -19,13 +19,10 @@
     } = $derived(data)
 </script>
 
-<Picture
-    src="/images/samuel.jpg"
+<enhanced:img
+    src={samuel}
     alt="Samuel Plumppu"
-    sources={[{ srcset: '/images/samuel.webp', type: 'image/webp' }]}
-    class="mx-auto my-8 h-32 w-32 rounded-full shadow-2xl sm:h-40 sm:w-40"
-    width={160}
-    height={160}
+    class="mx-auto my-8 size-32 rounded-full object-cover shadow-2xl sm:h-40 sm:w-40"
 />
 
 <section class="grid justify-center text-center">
