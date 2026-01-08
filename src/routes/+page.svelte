@@ -91,10 +91,12 @@
                     class="2xs:text-right 2xs:pt-1.25 self-start text-sm"
                     >{formatDate(publishedAt)}</time
                 >
-                <a
-                    href={`/blog/${slug}`}
-                    class="decoration-mantis text-lg font-semibold text-balance underline underline-offset-2"
-                    >{title}</a
+                <span>
+                    <a
+                        href={`/blog/${slug}`}
+                        class="decoration-mantis text-lg font-semibold text-balance underline underline-offset-2"
+                        >{title}</a
+                    ></span
                 >
             </li>
         {/each}
