@@ -1,6 +1,6 @@
 const dateTimeFormat = new Intl.DateTimeFormat('en-GB', {
     year: 'numeric',
-    month: 'long',
+    month: 'short',
     day: 'numeric',
 })
 

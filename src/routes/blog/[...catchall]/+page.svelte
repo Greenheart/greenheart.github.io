@@ -19,7 +19,7 @@
     class="prose prose-hr:border-ming sm:prose-lg lg:prose-xl prose-blockquote:text-black prose-strong:text-black prose-blockquote:bg-white prose-blockquote:py-1 prose-blockquote:rounded-md prose-headings:text-black mx-auto mt-4 max-w-[75ch] text-base text-black marker:text-black"
 >
     <h1>{title}</h1>
-    <div class="flex gap-1">
+    <div class="flex flex-wrap gap-1 text-sm whitespace-nowrap sm:text-base">
         <span>
             Published <time datetime={publishedAt.toISOString()}
                 >{formatDate(publishedAt)}</time
