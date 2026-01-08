@@ -83,12 +83,12 @@
         Featured blog post{featuredPosts.length > 1 ? 's' : ''}
     </h2>
 
-    <ul class="mx-auto grid max-w-(--breakpoint-md) gap-2">
+    <ul class="xs:gap-2 mx-auto grid max-w-(--breakpoint-md) gap-4">
         {#each featuredPosts as { publishedAt, slug, title }}
-            <li class="grid grid-cols-[80px_1fr] gap-4">
+            <li class="2xs:grid-cols-[80px_1fr] grid gap-x-4 gap-y-1">
                 <time
                     datetime={publishedAt.toISOString()}
-                    class="self-start pt-1.25 text-right text-sm"
+                    class="2xs:text-right 2xs:pt-1.25 self-start text-sm"
                     >{formatDate(publishedAt)}</time
                 >
                 <a
