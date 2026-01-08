@@ -8,6 +8,7 @@
     import EncryptedEmail from '$components/EncryptedEmail.svelte'
     import Tags from '$components/Tags.svelte'
     import samuel from '$assets/images/samuel.png'
+    import SocialLinks from '$components/SocialLinks.svelte'
 
     let { data } = $props()
     let {
@@ -61,17 +62,16 @@
     </p>
 </section>
 
-<div class="mt-12 grid gap-4">
+<div class="mt-12 grid gap-8">
     <h2
-        class="xs:text-2xl pb-4 text-center text-xl leading-none font-black tracking-tight text-balance sm:text-3xl lg:text-4xl"
+        class="xs:text-2xl text-center text-xl leading-none font-black tracking-tight text-balance sm:text-3xl lg:text-4xl"
     >
         Let's co-create a sustainable future!
     </h2>
 
     <EncryptedEmail />
 
-    <Link href="#contact" class="justify-self-center">More contact options</Link
-    >
+    <SocialLinks size="sm" />
 </div>
 
 <hr class="border-ming mx-auto my-16 max-w-sm" />
