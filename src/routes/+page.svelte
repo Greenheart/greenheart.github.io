@@ -1,6 +1,5 @@
 <script module lang="ts">
     import TechStack from '$components/TechStack.svelte'
-    import PostListing from '$components/PostListing.svelte'
     import Link from '$components/Link.svelte'
 </script>
 
@@ -9,6 +8,7 @@
     import Tags from '$components/Tags.svelte'
     import samuel from '$assets/images/samuel.png'
     import SocialLinks from '$components/SocialLinks.svelte'
+    import { formatDate } from '$lib/utils.js'
 
     let { data } = $props()
     let {
@@ -76,18 +76,29 @@
 
 <hr class="border-ming mx-auto my-16 max-w-sm" />
 
-<section class="mx-auto grid max-w-(--breakpoint-md) grid-cols-1">
+<section class="mx-auto grid max-w-(--breakpoint-md)">
     <h2
-        class="xs:text-2xl mb-6 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
+        class="xs:text-2xl mb-8 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
     >
         Featured blog post{featuredPosts.length > 1 ? 's' : ''}
     </h2>
 
-    <section class="mx-auto grid max-w-(--breakpoint-md) grid-cols-1 gap-6">
-        {#each featuredPosts as post}
-            <PostListing {post} />
+    <ul class="mx-auto grid max-w-(--breakpoint-md) gap-2">
+        {#each featuredPosts as { publishedAt, slug, title }}
+            <li class="grid grid-cols-[80px_1fr] gap-4">
+                <time
+                    datetime={publishedAt.toISOString()}
+                    class="self-start pt-1.25 text-right text-sm"
+                    >{formatDate(publishedAt)}</time
+                >
+                <a
+                    href={`/blog/${slug}`}
+                    class="decoration-mantis text-lg font-semibold text-balance underline underline-offset-2"
+                    >{title}</a
+                >
+            </li>
         {/each}
-    </section>
+    </ul>
 
     {#if otherPostsCount}
         <div class="mt-8 flex justify-center">
