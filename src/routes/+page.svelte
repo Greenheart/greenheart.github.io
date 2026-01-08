@@ -109,6 +109,48 @@
 
 <hr class="border-ming mx-auto my-16 max-w-sm" />
 
+<TechStack />
+
+<section class="mx-auto max-w-prose">
+    <h2
+        class="xs:text-2xl mb-6 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
+    >
+        How I like to contribute
+    </h2>
+
+    <p class="mb-8 text-xl sm:text-2xl">
+        I want the digital experiences and solutions we create to truly bring
+        value to people and society. Technology is exciting, but never the end
+        goal. This desire to take a holistic approach helps me contribute more
+        than just code to help the team succeed.
+    </p>
+
+    <div
+        class="grid grid-cols-1 justify-items-center gap-4 font-normal sm:grid-cols-2"
+    >
+        <ul
+            class="flex w-80 flex-col items-center space-y-2 rounded-md bg-white p-4 tracking-wide shadow-lg sm:w-71"
+        >
+            <li>Product Strategy</li>
+            <li>Attention to Detail</li>
+            <li>Mentorship & Team Growth</li>
+            <li>Community Building</li>
+            <li>Design Systems</li>
+        </ul>
+        <ul
+            class="flex w-80 flex-col items-center space-y-2 rounded-md bg-white p-4 tracking-wide shadow-lg sm:w-71"
+        >
+            <li>UI/UX Design</li>
+            <li>Humane Tech & Ethical Design</li>
+            <li>Systems Thinking</li>
+            <li>Privacy Advocacy</li>
+            <li>Improved Development Practices</li>
+        </ul>
+    </div>
+</section>
+
+<hr class="border-ming mx-auto my-16 max-w-sm" />
+
 <section class="mx-auto flex max-w-prose flex-col gap-4">
     <h2
         class="xs:text-2xl mb-6 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
@@ -169,46 +211,4 @@
             >
         </div>
     {/if}
-</section>
-
-<hr class="border-ming mx-auto my-16 max-w-sm" />
-
-<TechStack />
-
-<section class="mx-auto max-w-prose">
-    <h2
-        class="xs:text-2xl mb-6 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
-    >
-        How I like to contribute
-    </h2>
-
-    <p class="mb-8 text-xl sm:text-2xl">
-        I want the digital experiences and solutions we create to truly bring
-        value to people and society. Technology is exciting, but never the end
-        goal. This desire to take a holistic approach helps me contribute more
-        than just code to help the team succeed.
-    </p>
-
-    <div
-        class="grid grid-cols-1 justify-items-center gap-4 font-normal sm:grid-cols-2"
-    >
-        <ul
-            class="flex w-80 flex-col items-center space-y-2 rounded-md bg-white p-4 tracking-wide shadow-lg sm:w-71"
-        >
-            <li>Product Strategy</li>
-            <li>Attention to Detail</li>
-            <li>Mentorship & Team Growth</li>
-            <li>Community Building</li>
-            <li>Design Systems</li>
-        </ul>
-        <ul
-            class="flex w-80 flex-col items-center space-y-2 rounded-md bg-white p-4 tracking-wide shadow-lg sm:w-71"
-        >
-            <li>UI/UX Design</li>
-            <li>Humane Tech & Ethical Design</li>
-            <li>Systems Thinking</li>
-            <li>Privacy Advocacy</li>
-            <li>Improved Development Practices</li>
-        </ul>
-    </div>
 </section>
