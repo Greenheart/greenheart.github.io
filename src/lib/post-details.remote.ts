@@ -9,11 +9,10 @@ import { postsBasePath } from './constants'
  *
  * This is more accurate than using the file system, where changes happen more freqeuntly.
  *
- * @param path The file to operate on.
+ * @param path The file path to operate on.
  * @returns The `updatedAt` Date, or undefined if the file has not yet been modified.
  */
-export const getPostUpdatedAtFromGit = prerender(z.string(), (slug: string) => {
-    const path = resolve(postsBasePath, `${slug}.md`)
+function getFileUpdatedAtFromGit(path: string) {
     // Get the most recent UNIX timestamp for when file was modified in Git.
     // By using `--follow`, we get the full history even if the file was renamed.
     // This uses the Git author timestamp, because the commit timestamp is not as accurate
@@ -31,6 +30,15 @@ export const getPostUpdatedAtFromGit = prerender(z.string(), (slug: string) => {
         return
     }
 
+    // Git stores timestamps in seconds, so we need to convert to ms to get the expected JS date.
     const updatedAt = new Date(parseInt(timestamps[0]) * 1000)
     return updatedAt
+}
+
+/**
+ * Use Git to determine when a blog post was last modified.
+ */
+export const getPostUpdatedAtFromGit = prerender(z.string(), (slug: string) => {
+    const path = resolve(postsBasePath, `${slug}.md`)
+    return getFileUpdatedAtFromGit(path)
 })
