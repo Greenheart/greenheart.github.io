@@ -2,7 +2,6 @@
 title: Detect Vite Plugin Restarts to Avoid Rerunning Expensive Tasks
 publishedAt: 2025-09-18
 tags: ['Node.js', 'TypeScript', 'Vite']
-featured: true
 ---
 
 When developing [Vite](https://vite.dev) plugins, you sometimes need to detect when the Vite server restarts. Both the `vite` dev server and `vite build` can run your plugin multiple times within the same Node.js process. In my case, I wanted to only execute an expensive task once, and avoid duplicate work.

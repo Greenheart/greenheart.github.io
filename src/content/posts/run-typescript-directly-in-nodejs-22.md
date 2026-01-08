@@ -2,7 +2,6 @@
 title: Run TypeScript Directly with Node.js 22
 publishedAt: 2024-12-29
 tags: ['TypeScript', 'Node.js']
-featured: true
 ---
 
 **NOTE: Since Node.js 22.18.0 or 23.6.0, "type stripping" is enabled by default.** See the latest Node.js docs for [more info](https://nodejs.org/en/learn/typescript/run-natively).

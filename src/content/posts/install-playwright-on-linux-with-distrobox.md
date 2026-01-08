@@ -2,7 +2,6 @@
 title: Installing Playwright on non-Ubuntu Linux distributions
 publishedAt: 2025-08-23
 tags: ['Playwright', 'Distrobox', 'Testing']
-featured: true
 ---
 
 ## Prerequisites
