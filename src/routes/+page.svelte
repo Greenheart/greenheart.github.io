@@ -61,14 +61,17 @@
     </p>
 </section>
 
-<div class="mt-12 grid">
+<div class="mt-12 grid gap-4">
     <h2
-        class="xs:text-2xl text-center text-xl leading-none font-black tracking-tight text-balance sm:text-3xl lg:text-4xl"
+        class="xs:text-2xl pb-4 text-center text-xl leading-none font-black tracking-tight text-balance sm:text-3xl lg:text-4xl"
     >
         Let's co-create a sustainable future!
     </h2>
 
-    <EncryptedEmail class="mt-8" />
+    <EncryptedEmail />
+
+    <Link href="#contact" class="justify-self-center">More contact options</Link
+    >
 </div>
 
 <hr class="border-ming mx-auto my-16 max-w-sm" />
