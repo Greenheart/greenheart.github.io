@@ -7,6 +7,6 @@ updatedYear: 2026
 featured: true
 ---
 
-E-commerce website and admin dashboard for a local bakery. Focus on comprehensive testing and delivering a simple solution that is easy to self-host and maintain.
+Fullstack e-commerce project for a local bakery, including backend, public frontend and admin dashboard. Focus on comprehensive testing and delivering a simple but effective solution that is easy to self-host and maintain.
 
-Automatic OpenAPI documentation generated from the API implementation. Automatic type safety for the client code too by using `openapi-fetch`.
+Automatic OpenAPI documentation generated from the backend code, meaning they always stay in sync. This in turn enables type safety for the clients via [openapi-fetch](https://openapi-ts.dev/openapi-fetch/).

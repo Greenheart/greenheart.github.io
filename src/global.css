@@ -20,7 +20,7 @@
 @layer utilities {
     .prose code:not(pre > code) {
         /* night-owl */
-        /* background: #011627; 
+        /* background: #011627;
         color: var(--color-white); */
 
         /* one-dark-pro */
