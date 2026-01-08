@@ -80,7 +80,7 @@
     <h2
         class="xs:text-2xl mb-6 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
     >
-        Featured projects
+        Featured project{featuredProjects.length > 1 ? 's' : ''}
     </h2>
 
     {#each featuredProjects as { name, tags, startedYear, updatedYear, Content, code, demo }}
