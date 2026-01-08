@@ -153,10 +153,15 @@
 
 <section class="mx-auto flex max-w-prose flex-col gap-4">
     <h2
-        class="xs:text-2xl mb-6 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
+        class="xs:text-2xl mb-4 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
     >
         Featured project{featuredProjects.length > 1 ? 's' : ''}
     </h2>
+
+    <p class="mb-6">
+        Here are some of the most notable personal projects I've worked on. Most
+        of my code is libre software and you're welcome to get involved!
+    </p>
 
     {#each featuredProjects as { name, tags, startedYear, updatedYear, Content, code, demo }}
         <article class="grid gap-2 rounded-md bg-white p-4">
