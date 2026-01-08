@@ -159,7 +159,7 @@
     </h2>
 
     <p class="mb-6">
-        Here are some of the most notable personal projects I've worked on. Most
+        Here are some of the most notable projects I've worked on so far. Most
         of my code is libre software and you're welcome to get involved!
     </p>
 
