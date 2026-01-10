@@ -13,9 +13,12 @@
     --color-ming: #256d7a;
     --color-moss: #5ac75f;
     --color-honeydew: #d6ead7;
+    --color-evergreen: #152816;
 }
 
 @plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer utilities {
     .prose code:not(pre > code) {
@@ -130,6 +133,10 @@
     &.compact {
         padding: 0.1rem;
     }
+}
+
+.dark .link {
+    color: white;
 }
 
 .prose a {
