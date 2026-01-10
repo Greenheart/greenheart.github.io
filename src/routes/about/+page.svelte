@@ -30,8 +30,9 @@
             running, orienteering, or hiking, there's something special with
             navigating in completely new terrain and finding your way. I guess
             this could explain my view of life as a journey where we get to
-            learn and improve ourselves and the world around us, leaving a
-            better trace for those who follow in our footsteps.
+            learn, experience personal growth and find our ways to improve the
+            world around us, leaving a better trace for those who follow in our
+            footsteps.
         </p>
 
         <p>
