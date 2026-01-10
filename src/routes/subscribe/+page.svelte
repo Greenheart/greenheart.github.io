@@ -19,7 +19,7 @@
         </p>
 
         <ul
-            class="xs:justify-start xs:pl-6 not-prose mb-8 flex justify-center gap-4 p-0 marker:hidden [&>li]:p-0"
+            class="not-prose mb-8 flex justify-center gap-8 p-0 marker:hidden [&>li]:p-0"
         >
             <li>
                 <Link href="/feed.atom" class="inline-flex items-center gap-1"
