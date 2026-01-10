@@ -41,7 +41,7 @@
     {#if older}
         <a
             href={`/blog/${older.slug}`}
-            class="group flex flex-col gap-4 rounded-md bg-amber-100 p-4 shadow-md transition-all duration-300 hover:bg-amber-400/60 hover:shadow-xl"
+            class="group hover:bg-yellow/60 flex flex-col gap-4 rounded-md bg-amber-100 p-4 shadow-md transition-all duration-300 hover:shadow-xl"
         >
             <span
                 class="flex items-center gap-2 text-xs font-bold tracking-wide uppercase"
@@ -59,7 +59,7 @@
     {#if newer}
         <a
             href={`/blog/${newer.slug}`}
-            class="group flex flex-col items-end gap-4 rounded-md bg-amber-100 p-4 text-end shadow-md transition-all duration-300 hover:bg-amber-400/60 hover:shadow-xl"
+            class="group hover:bg-yellow/60 flex flex-col items-end gap-4 rounded-md bg-amber-100 p-4 text-end shadow-md transition-all duration-300 hover:shadow-xl"
         >
             <span
                 class="flex items-center gap-2 text-xs font-bold tracking-wide uppercase"

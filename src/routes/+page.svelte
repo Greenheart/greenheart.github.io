@@ -23,7 +23,7 @@
 <enhanced:img
     src={samuel}
     alt="Samuel Plumppu"
-    class="mx-auto my-8 size-32 rounded-full object-cover shadow-2xl sm:h-40 sm:w-40 dark:shadow-amber-400"
+    class="dark:shadow-yellow mx-auto my-8 size-32 rounded-full object-cover shadow-2xl sm:h-40 sm:w-40"
     fetchpriority="high"
 />
 
@@ -75,7 +75,7 @@
     <SocialLinks />
 </div>
 
-<hr class="border-ming mx-auto my-16 max-w-sm" />
+<hr class="border-yellow mx-auto my-16 max-w-sm" />
 
 <section class="mx-auto grid max-w-(--breakpoint-md)">
     <h2
@@ -110,7 +110,7 @@
     {/if}
 </section>
 
-<hr class="border-ming mx-auto my-16 max-w-sm" />
+<hr class="border-yellow mx-auto my-16 max-w-sm" />
 
 <TechStack />
 
@@ -152,7 +152,7 @@
     </div>
 </section>
 
-<hr class="border-ming mx-auto my-16 max-w-sm" />
+<hr class="border-yellow mx-auto my-16 max-w-sm" />
 
 <section class="mx-auto flex max-w-prose flex-col gap-4">
     <h2

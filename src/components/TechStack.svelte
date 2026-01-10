@@ -56,7 +56,7 @@
                             }}
                         >
                             <span
-                                class="bg-ming rounded-xs p-2 tracking-wide"
+                                class="bg-yellow rounded-xs p-2 tracking-wide"
                                 in:fade|global={{
                                     delay: index * 35,
                                     duration: 300,

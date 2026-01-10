@@ -15,6 +15,7 @@
     --color-honeydew: #d6ead7;
     --color-evergreen: #152816;
     --color-carbon-black: #0e1b0f;
+    --color-yellow: var(--color-amber-400);
 }
 
 @plugin '@tailwindcss/typography';

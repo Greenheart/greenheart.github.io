@@ -5,7 +5,7 @@
 </script>
 
 <footer class="container mx-auto max-w-6xl px-4 pb-8 text-center">
-    <hr class="border-ming mx-auto my-16 max-w-sm" id="contact" />
+    <hr class="border-yellow mx-auto my-16 max-w-sm" id="contact" />
     <h2
         class="xs:text-2xl mb-6 text-xl leading-none font-black tracking-tight text-balance sm:text-3xl lg:text-4xl"
     >
