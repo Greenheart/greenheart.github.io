@@ -34,7 +34,7 @@
             {/if}
         </span>
     </div>
-    <Tags {tags} class="my-4" variant="white" />
+    <Tags {tags} class="my-4" />
 
     <Content />
 </article>
