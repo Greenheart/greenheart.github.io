@@ -14,6 +14,7 @@
     --color-moss: #5ac75f;
     --color-honeydew: #d6ead7;
     --color-evergreen: #152816;
+    --color-carbon-black: #0e1b0f;
 }
 
 @plugin '@tailwindcss/typography';

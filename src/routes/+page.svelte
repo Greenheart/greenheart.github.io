@@ -131,7 +131,7 @@
         class="grid grid-cols-1 justify-items-center gap-4 font-normal sm:grid-cols-2"
     >
         <ul
-            class="flex w-80 flex-col items-center space-y-2 rounded-md bg-white p-4 tracking-wide shadow-lg sm:w-71"
+            class="dark:bg-carbon-black flex w-80 flex-col items-center space-y-2 rounded-md bg-white p-4 tracking-wide shadow-lg sm:w-71"
         >
             <li>Product Strategy</li>
             <li>Attention to Detail</li>
@@ -140,7 +140,7 @@
             <li>Design Systems</li>
         </ul>
         <ul
-            class="flex w-80 flex-col items-center space-y-2 rounded-md bg-white p-4 tracking-wide shadow-lg sm:w-71"
+            class="dark:bg-carbon-black flex w-80 flex-col items-center space-y-2 rounded-md bg-white p-4 tracking-wide shadow-lg sm:w-71"
         >
             <li>UI/UX Design</li>
             <li>Humane Tech & Ethical Design</li>
@@ -166,8 +166,10 @@
     </p>
 
     {#each featuredProjects as { name, tags, startedYear, updatedYear, Content, code, demo }}
-        <article class="grid gap-2 rounded-md bg-white p-4 shadow-lg">
-            <div class="flex items-center justify-between gap-1">
+        <article
+            class="dark:bg-carbon-black grid gap-2 rounded-md bg-white p-4 shadow-lg"
+        >
+            <div class="mb-2 flex items-center justify-between gap-1">
                 <h3 class="text-2xl font-black">{name}</h3>
                 <div class="flex gap-1 text-sm">
                     <time datetime={startedYear.toString()}>{startedYear}</time>
@@ -184,7 +186,9 @@
                 class="[&>span]:text-xs [&>span]:sm:p-1"
             />
 
-            <div class="prose prose-p:first:mt-0 prose-p:last:mb-0">
+            <div
+                class="prose prose-p:first:mt-0 prose-p:last:mb-0 prose-strong:text-current prose-headings:text-current text-current marker:text-current"
+            >
                 <Content />
             </div>
 
@@ -194,7 +198,7 @@
                         ><img
                             src="/images/external-link.svg"
                             alt="External link to demo"
-                            class="size-5"
+                            class="size-5 dark:invert"
                         />Demo</Link
                     >
                 {/if}
@@ -203,7 +207,7 @@
                         ><img
                             src="/images/code-xml.svg"
                             alt="Show code (Git)"
-                            class="size-5"
+                            class="size-5 dark:invert"
                         />Code</Link
                     >
                 {/if}

@@ -41,7 +41,7 @@
         </p>
     </div>
 
-    <h2 class="xs:text-2xl pt-8 pb-4 text-center text-lg font-bold">
+    <h2 class="xs:text-2xl mb-4 pt-8 text-center text-lg font-bold">
         One of my most exciting orienteering memories so far:
     </h2>
 
@@ -49,7 +49,7 @@
         <enhanced:img
             src={Tiomila2015}
             alt="Night time start of the Tiomila 2015 orienteering relay"
-            class="w-full max-w-5xl pb-4"
+            class="mb-4 w-full max-w-5xl"
         />
         <figcaption class="max-w-prose">
             Seconds after the start of Tiomila 2015, one of the world's largest

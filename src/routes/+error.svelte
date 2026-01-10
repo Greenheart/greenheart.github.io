@@ -1,5 +1,5 @@
 <div class="text-center">
-    <h1 class="pb-4 text-xl font-bold sm:text-3xl">
+    <h1 class="mb-4 text-xl font-bold sm:text-3xl">
         Oh no! This page does not exist
     </h1>
 
