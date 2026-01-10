@@ -96,6 +96,14 @@
         text-decoration: none;
     }
 
+    .dark .prose & {
+        color: white;
+
+        &:hover {
+            color: black;
+        }
+    }
+
     .prose h2 code,
     .prose h3 code,
     .prose h4 code {
