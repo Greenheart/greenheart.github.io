@@ -30,8 +30,9 @@
                 <Tabs.Trigger
                     value={group}
                     class={[
-                        'cursor-pointer rounded-xs px-3 py-2 hover:bg-white hover:shadow-lg',
-                        group === selected && 'bg-white shadow-lg',
+                        'dark:hover:bg-carbon-black cursor-pointer rounded-xs px-3 py-2 hover:bg-white hover:shadow-lg',
+                        group === selected &&
+                            'dark:bg-carbon-black bg-white shadow-lg',
                     ]}
                 >
                     {group}
@@ -43,7 +44,7 @@
                 value={group}
                 class={[
                     // Workaround to replace flexbox gap: https://gist.github.com/OliverJAsh/7f29d0fa1d35216ec681d2949c3fe8b7
-                    '-mb-2 -ml-2 flex max-w-prose flex-wrap justify-center pt-4 font-normal text-white',
+                    '-mb-2 -ml-2 flex max-w-prose flex-wrap justify-center pt-4 font-normal dark:text-black',
                 ]}
             >
                 {#if ready && group === selected}
