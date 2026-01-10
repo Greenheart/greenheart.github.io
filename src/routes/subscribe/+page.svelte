@@ -5,7 +5,7 @@
 
 <section class="mb-8 grid justify-center">
     <h1
-        class="xs:text-5xl mb-8 text-4xl leading-none font-black tracking-tight sm:text-6xl lg:text-7xl"
+        class="xs:text-5xl mb-8 text-center text-4xl leading-none font-black tracking-tight sm:text-6xl lg:text-7xl"
     >
         Subscribe to my blog
     </h1>
@@ -13,7 +13,7 @@
     <article
         class="prose prose-hr:border-yellow/60 sm:prose-lg lg:prose-xl prose-blockquote:text-current prose-strong:text-current prose-blockquote:bg-white dark:prose-blockquote:bg-carbon-black prose-blockquote:py-1 prose-blockquote:rounded-md prose-headings:text-current mx-auto mt-4 text-base text-current marker:text-current"
     >
-        <p>
+        <p class="text-center">
             You can read my latest blog posts in your feed reader. Multiple
             formats available:
         </p>
