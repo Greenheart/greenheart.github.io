@@ -23,7 +23,7 @@
 <enhanced:img
     src={samuel}
     alt="Samuel Plumppu"
-    class="mx-auto my-8 size-32 rounded-full object-cover shadow-2xl sm:h-40 sm:w-40"
+    class="mx-auto my-8 size-32 rounded-full object-cover shadow-2xl sm:h-40 sm:w-40 dark:shadow-amber-400"
 />
 
 <section class="grid justify-center text-center">
@@ -35,7 +35,7 @@
     <h2
         class="mb-12 text-xl leading-6 font-black tracking-tight sm:text-3xl sm:leading-8 lg:text-4xl lg:leading-9"
     >
-        <div class="bg-moss -skew-y-1 transform p-2 shadow-2xl">
+        <div class="bg-moss -skew-y-1 transform p-2 text-black shadow-2xl">
             <span class="whitespace-nowrap">Sustainability Entrepreneur</span>
             &
             <span class="whitespace-nowrap">Fullstack Developer</span>
