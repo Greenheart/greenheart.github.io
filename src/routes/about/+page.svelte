@@ -28,7 +28,7 @@
             Beyond my interest in technology and its impact on people and
             planet, I like to spend as much time as possible in nature. Usually
             running, orienteering, or hiking, there's something special with
-            navigating in a completely new terrain and finding your way. I guess
+            navigating in completely new terrain and finding your way. I guess
             this could explain my view of life as a journey where we get to
             learn and improve ourselves and the world around us, leaving a
             better trace for those who follow in our footsteps.
