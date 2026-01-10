@@ -10,29 +10,33 @@
         Subscribe to my blog
     </h1>
 
-    <article class="prose text-black">
+    <article
+        class="prose prose-hr:border-yellow/60 sm:prose-lg lg:prose-xl prose-blockquote:text-current prose-strong:text-current prose-blockquote:bg-white dark:prose-blockquote:bg-carbon-black prose-blockquote:py-1 prose-blockquote:rounded-md prose-headings:text-current mx-auto mt-4 text-base text-current marker:text-current"
+    >
         <p>
             You can read my latest blog posts in your feed reader. Multiple
             formats available:
         </p>
 
         <ul
-            class="xs:justify-start xs:pl-6 mb-8 flex justify-center gap-4 p-0 [&>li]:p-0"
+            class="xs:justify-start xs:pl-6 not-prose mb-8 flex justify-center gap-4 p-0 marker:hidden [&>li]:p-0"
         >
-            <li class="flex flex-wrap justify-center gap-1">
-                <span
-                    class="-mb-0.5 size-5 self-center bg-[url(/images/feed.svg)] bg-cover bg-no-repeat"
-                ></span>
-                <Link href="/feed.atom" compact class="h-5 self-center"
-                    >Atom</Link
+            <li>
+                <Link href="/feed.atom" class="inline-flex items-center gap-1"
+                    ><img
+                        src="/images/feed.svg"
+                        alt="RSS/Atom feed icon"
+                        class="size-5"
+                    />Atom</Link
                 >
             </li>
-            <li class="flex flex-wrap justify-center gap-1">
-                <span
-                    class="-mb-0.5 size-5 self-center bg-[url(/images/feed.svg)] bg-cover bg-no-repeat"
-                ></span>
-                <Link href="/feed.json" compact class="h-5 self-center"
-                    >JSON</Link
+            <li>
+                <Link href="/feed.json" class="inline-flex items-center gap-1"
+                    ><img
+                        src="/images/feed.svg"
+                        alt="RSS/Atom feed icon"
+                        class="size-5"
+                    />JSON</Link
                 >
             </li>
         </ul>
@@ -59,7 +63,7 @@
             </li>
             <li>
                 Install and get started with a feed reader for your device. I
-                can recommend <Link
+                recommend <Link
                     href="https://github.com/spacecowboy/Feeder#readme"
                     >Feeder (Android)</Link
                 > and <Link href="https://netnewswire.com/"
@@ -76,9 +80,11 @@
                 landing page URL, like <code>{SITE_URL}</code>
                 and the feed reader will find the feed automatically. You can also
                 use the
-                <span
-                    class="mx-1 -mb-1 inline-block size-5 bg-[url(/images/feed.svg)] bg-cover bg-no-repeat"
-                ></span> feed icon to find direct links to add in your reader.
+                <img
+                    src="/images/feed.svg"
+                    alt="RSS/Atom feed icon"
+                    class="not-prose xs:-mb-1 xs:size-5 mx-1 inline-block size-4 dark:invert"
+                /> feed icon to find direct links to add in your reader.
             </li>
         </ol>
 
