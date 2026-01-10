@@ -41,7 +41,9 @@
         </p>
     </div>
 
-    <h2 class="xs:text-2xl mb-4 pt-8 text-center text-lg font-bold">
+    <h2
+        class="xs:text-2xl mb-8 pt-8 text-center text-lg font-black text-balance"
+    >
         One of my most exciting orienteering memories so far:
     </h2>
 
