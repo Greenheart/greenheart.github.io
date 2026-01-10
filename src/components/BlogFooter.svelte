@@ -16,12 +16,12 @@
 </script>
 
 <section
-    class="mx-auto mt-12 max-w-lg space-y-4 rounded-md bg-white p-4 text-center shadow-lg lg:text-lg"
+    class="dark:bg-carbon-black mx-auto mt-12 max-w-lg space-y-4 rounded-md bg-white p-4 text-center shadow-lg lg:text-lg"
 >
     <h2
         class="xs:text-2xl text-xl leading-none font-black tracking-tight md:text-3xl"
     >
-        Thank you for reading! 🌱
+        Thank you for reading!
     </h2>
 
     <p>
