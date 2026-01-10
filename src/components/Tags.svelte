@@ -1,6 +1,6 @@
 <script lang="ts">
     const variants = {
-        default: 'bg-mantis',
+        default: 'bg-moss',
         subtle: 'bg-honeydew',
         white: 'bg-white',
     } as const

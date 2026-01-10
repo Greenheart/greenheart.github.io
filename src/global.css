@@ -11,7 +11,7 @@
     --breakpoint-2xl: 1536px;
 
     --color-ming: #256d7a;
-    --color-mantis: #5ac75f;
+    --color-moss: #5ac75f;
     --color-honeydew: #d6ead7;
 }
 
@@ -64,8 +64,8 @@
     padding: 0.5rem;
     background: linear-gradient(
         to bottom,
-        var(--color-mantis) 0%,
-        var(--color-mantis) 100%
+        var(--color-moss) 0%,
+        var(--color-moss) 100%
     );
     background-position: 0 100%;
     background-repeat: repeat-x;
@@ -79,8 +79,8 @@
         padding: 0.5rem;
         background: linear-gradient(
             to bottom,
-            var(--color-mantis) 0%,
-            var(--color-mantis) 100%
+            var(--color-moss) 0%,
+            var(--color-moss) 100%
         );
         background-position: 0 100%;
         background-repeat: repeat-x;

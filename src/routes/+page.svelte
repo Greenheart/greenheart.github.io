@@ -35,7 +35,7 @@
     <h2
         class="mb-12 text-xl leading-6 font-black tracking-tight sm:text-3xl lg:text-4xl"
     >
-        <div class="bg-mantis -skew-y-1 transform p-2 shadow-2xl">
+        <div class="bg-moss -skew-y-1 transform p-2 shadow-2xl">
             <span class="whitespace-nowrap">Sustainability Entrepreneur</span>
             &
             <span class="whitespace-nowrap">Fullstack Developer</span>
@@ -94,7 +94,7 @@
                 <span>
                     <a
                         href={`/blog/${slug}`}
-                        class="decoration-mantis text-lg font-semibold text-balance underline underline-offset-2"
+                        class="decoration-moss text-lg font-semibold text-balance underline underline-offset-2"
                         >{title}</a
                     ></span
                 >

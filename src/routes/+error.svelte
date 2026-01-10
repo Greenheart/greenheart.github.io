@@ -5,7 +5,7 @@
 
     <a
         href="/"
-        class="bg-mantis inline-flex max-w-max transform-gpu justify-center rounded-md px-8 py-3 font-black text-black shadow-lg duration-150 hover:scale-105 hover:shadow-xl"
+        class="bg-moss inline-flex max-w-max transform-gpu justify-center rounded-md px-8 py-3 font-black text-black shadow-lg duration-150 hover:scale-105 hover:shadow-xl"
     >
         Go back
     </a>
