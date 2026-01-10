@@ -198,7 +198,7 @@
                         ><img
                             src="/images/external-link.svg"
                             alt="External link to demo"
-                            class="size-5 dark:invert"
+                            class="size-5"
                         />Demo</Link
                     >
                 {/if}
@@ -207,7 +207,7 @@
                         ><img
                             src="/images/code-xml.svg"
                             alt="Show code (Git)"
-                            class="size-5 dark:invert"
+                            class="size-5"
                         />Code</Link
                     >
                 {/if}

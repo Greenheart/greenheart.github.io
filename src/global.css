@@ -97,14 +97,6 @@
         text-decoration: none;
     }
 
-    .dark .prose & {
-        color: white;
-
-        &:hover {
-            color: black;
-        }
-    }
-
     .prose h2 code,
     .prose h3 code,
     .prose h4 code {
@@ -148,11 +140,22 @@
     }
 }
 
-.dark .link {
+.dark .link,
+.dark .prose .link {
     color: white;
+
+    /* Invert colors of SVG icons displayed as images */
+    img {
+        transition: all 0.3s var(--ease-out);
+        filter: invert(100%);
+    }
 
     &:hover {
         color: black;
+
+        img {
+            filter: unset;
+        }
     }
 }
 

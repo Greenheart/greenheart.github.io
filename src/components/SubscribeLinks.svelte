@@ -3,15 +3,18 @@
 </script>
 
 <p>
-    <span class="inline-flex flex-wrap justify-center gap-1">
-        <span
-            class="mr-1 size-5 self-center bg-[url(/images/feed.svg)] bg-cover bg-no-repeat dark:invert"
-        ></span>
-        <Link href="/subscribe" compact class="self-center">Subscribe</Link>
+    <span class="inline-flex flex-wrap items-center justify-center gap-1">
+        <Link href="/subscribe" class="inline-flex items-center gap-1" compact
+            ><img
+                src="/images/feed.svg"
+                alt="RSS/Atom feed icon"
+                class="size-5"
+            />Subscribe</Link
+        >
         with your feed reader:
-        <span class="inline-flex flex-nowrap gap-0.5"
-            ><Link href="/feed.atom" compact class="self-center">Atom</Link
-            >/<Link href="/feed.json" compact class="self-center">JSON</Link
+        <span class="inline-flex flex-nowrap items-center gap-0.5"
+            ><Link href="/feed.atom" class="self-center" compact>Atom</Link
+            >/<Link href="/feed.json" class="self-center" compact>JSON</Link
             ></span
         >
     </span>
