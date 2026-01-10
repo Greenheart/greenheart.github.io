@@ -16,7 +16,7 @@
 <!-- TODO: Add option to override OG image for posts -->
 
 <article
-    class="prose prose-hr:border-yellow sm:prose-lg lg:prose-xl prose-blockquote:text-current prose-strong:text-current prose-blockquote:bg-white dark:prose-blockquote:bg-carbon-black prose-blockquote:py-1 prose-blockquote:rounded-md prose-headings:text-current mx-auto mt-4 max-w-[75ch] text-base text-current marker:text-current"
+    class="prose prose-hr:border-yellow/60 sm:prose-lg lg:prose-xl prose-blockquote:text-current prose-strong:text-current prose-blockquote:bg-white dark:prose-blockquote:bg-carbon-black prose-blockquote:py-1 prose-blockquote:rounded-md prose-headings:text-current mx-auto mt-4 max-w-[75ch] text-base text-current marker:text-current"
 >
     <h1>{title}</h1>
     <div class="flex flex-wrap gap-1 text-sm whitespace-nowrap sm:text-base">
