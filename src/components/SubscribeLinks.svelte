@@ -5,7 +5,7 @@
 <p>
     <span class="inline-flex flex-wrap justify-center gap-1">
         <span
-            class="mr-1 size-5 self-center bg-[url(/images/feed.svg)] bg-cover bg-no-repeat"
+            class="mr-1 size-5 self-center bg-[url(/images/feed.svg)] bg-cover bg-no-repeat dark:invert"
         ></span>
         <Link href="/subscribe" compact class="self-center">Subscribe</Link>
         with your feed reader:
