@@ -84,7 +84,7 @@
     {href}
     onpointerenter={once(showEmail)}
     onfocusin={once(showEmail)}
-    class="bg-moss inline-flex transform-gpu justify-center justify-self-center rounded-md px-8 py-3 font-black text-black shadow-lg duration-150 hover:scale-105 hover:shadow-xl {className}"
+    class="bg-moss inline-flex transform-gpu justify-center justify-self-center rounded-md px-8 py-3 font-black text-black shadow-lg duration-150 ease-out hover:scale-105 hover:shadow-xl {className}"
 >
     <span class="whitespace-nowrap">
         {label}
