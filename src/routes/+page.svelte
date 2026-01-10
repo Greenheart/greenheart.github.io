@@ -24,6 +24,7 @@
     src={samuel}
     alt="Samuel Plumppu"
     class="mx-auto my-8 size-32 rounded-full object-cover shadow-2xl sm:h-40 sm:w-40 dark:shadow-amber-400"
+    fetchpriority="high"
 />
 
 <section class="grid justify-center text-center">

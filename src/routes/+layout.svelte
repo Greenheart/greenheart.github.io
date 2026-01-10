@@ -36,10 +36,8 @@
                 src="/images/feed.svg"
                 alt="RSS/Atom feed icon"
                 class="size-4"
+                fetchpriority="high"
             />
-            <!-- <span
-                class="size-4 self-center bg-[url(/images/feed.svg)] bg-cover bg-no-repeat"
-            ></span> -->
         </Link>
         {#each links as link}
             <Link href={link.href}>{link.text}</Link>
