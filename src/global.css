@@ -173,6 +173,11 @@ html {
     overflow-y: scroll;
     scrollbar-gutter: stable both-edges;
     color-scheme: dark light;
+    color: black;
+
+    &.dark {
+        color: white;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
