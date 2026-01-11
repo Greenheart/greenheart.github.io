@@ -150,11 +150,13 @@
         filter: invert(100%);
     }
 
-    &:hover {
-        color: black;
+    @media (hover: hover) {
+        &:hover {
+            color: black;
 
-        img {
-            filter: unset;
+            img {
+                filter: unset;
+            }
         }
     }
 }
