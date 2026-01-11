@@ -23,7 +23,7 @@
 <enhanced:img
     src={samuel}
     alt="Samuel Plumppu"
-    class="dark:shadow-yellow mx-auto my-8 size-32 rounded-full object-cover shadow-2xl sm:h-40 sm:w-40"
+    class="shadow-yellow mx-auto my-8 size-32 rounded-full object-cover shadow-2xl sm:h-40 sm:w-40"
     fetchpriority="high"
 />
 
