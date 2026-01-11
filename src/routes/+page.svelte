@@ -216,11 +216,12 @@
         </article>
     {/each}
 
-    {#if otherProjectsCount}
+    <!-- TODO: Uncomment when the /projects page is ready -->
+    <!-- {#if otherProjectsCount}
         <div class="mt-8 flex justify-center">
             <Link href="/projects"
                 >Explore {otherProjectsCount} more projects I've worked on since {earliestProjectStartYear}</Link
             >
         </div>
-    {/if}
+    {/if} -->
 </section>
