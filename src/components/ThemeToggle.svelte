@@ -1,11 +1,10 @@
 <script lang="ts">
     import { browser } from '$app/environment'
 
-    const themes = ['dark', 'light', 'system'] as const
+    const themes = ['dark', 'light'] as const
 
     function getTheme() {
-        debugger
-        if (!browser) return 'system'
+        if (!browser) return 'dark'
 
         if (localStorage.theme) {
             return localStorage.theme
@@ -19,18 +18,15 @@
     }
 
     function setTheme(theme: (typeof themes)[number]) {
-        if (theme === 'system') {
-            delete localStorage.theme
-        } else {
-            localStorage.theme = theme
-        }
+        localStorage.theme = theme
+        currentTheme = theme
+
         document.documentElement.classList.toggle(
             'dark',
             localStorage.theme === 'dark' ||
                 (!('theme' in localStorage) &&
                     window.matchMedia('(prefers-color-scheme: dark)').matches),
         )
-        currentTheme = theme
     }
 
     let currentTheme = $state<(typeof themes)[number]>(getTheme())
@@ -41,13 +37,19 @@
 
 <button
     title={`Toggle theme from ${currentTheme} to ${nextTheme}`}
+    aria-label={`Toggle theme from ${currentTheme} to ${nextTheme}`}
     onclick={() => setTheme(nextTheme)}
     class="cursor-pointer"
 >
-    <img
-        src="/images/theme.svg"
-        alt="Theme toggle icon"
-        class="size-5 dark:invert"
-        fetchpriority="high"
-    />
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        class="size-5"
+        viewBox="0 0 24 24"
+        ><path
+            fill="currentColor"
+            d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m0-1.5v-17a8.5 8.5 0 0 1 0 17"
+        /></svg
+    >
 </button>
