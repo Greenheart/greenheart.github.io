@@ -16,8 +16,8 @@ importers:
         version: 4.5.0(svelte@5.46.1)
     devDependencies:
       '@iconify-json/lucide':
-        specifier: ^1.2.83
-        version: 1.2.83
+        specifier: ^1.2.84
+        version: 1.2.84
       '@markdoc/markdoc':
         specifier: ^0.5.4
         version: 0.5.4
@@ -264,8 +264,8 @@ packages:
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
 
-  '@iconify-json/lucide@1.2.83':
-    resolution: {integrity: sha512-k/255BFdcE+gY8cwQOlJMKjxOScW++8tiMxWw8jJXqHoQhBmOgsxm8SHVUIZqSrquMCcSNJn6rx67ZTQhoR2cA==}
+  '@iconify-json/lucide@1.2.84':
+    resolution: {integrity: sha512-m45MY1aW2swSK6Neb3J2qdZ+BxZ1VTdN7UeoXENwyMACG9bqGHWYJYxWoFzwoSnCfYLyKWTcBhesBgMd5IrUzQ==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -1985,7 +1985,7 @@ snapshots:
 
   '@floating-ui/utils@0.2.10': {}
 
-  '@iconify-json/lucide@1.2.83':
+  '@iconify-json/lucide@1.2.84':
     dependencies:
       '@iconify/types': 2.0.0
 
