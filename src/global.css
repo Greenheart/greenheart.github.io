@@ -150,8 +150,20 @@
         filter: invert(100%);
     }
 
+    /* Browsers with hover should see the hover effect */
     @media (hover: hover) {
         &:hover {
+            color: black;
+
+            img {
+                filter: unset;
+            }
+        }
+    }
+
+    /* Browsers without hover (touch devices) should only see the changed colors when links are active */
+    @media (hover: none) {
+        &:active {
             color: black;
 
             img {
