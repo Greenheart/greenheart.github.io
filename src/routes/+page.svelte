@@ -5,9 +5,9 @@
 
 <script lang="ts">
     import EncryptedEmail from '$components/EncryptedEmail.svelte'
-    import Tags from '$components/Tags.svelte'
-    import samuel from '$assets/images/samuel.png'
+    import Project from '$components/Project.svelte'
     import SocialLinks from '$components/SocialLinks.svelte'
+    import samuel from '$assets/images/samuel.png'
     import { formatDate } from '$lib/utils.js'
 
     let { data } = $props()
@@ -166,54 +166,8 @@
         of my code is libre software and you're welcome to get involved!
     </p>
 
-    {#each featuredProjects as { name, tags, startedYear, updatedYear, Content, code, demo }}
-        <article
-            class="dark:bg-carbon-black grid gap-2 rounded-md bg-white p-4 shadow-lg"
-        >
-            <div class="mb-2 flex items-center justify-between gap-1">
-                <h3 class="dark:text-yellow text-2xl font-black">{name}</h3>
-                <div class="flex gap-1 text-sm">
-                    <time datetime={startedYear.toString()}>{startedYear}</time>
-                    {#if updatedYear > startedYear}<span>-</span><time
-                            datetime={updatedYear.toString()}
-                            >{updatedYear}</time
-                        >{/if}
-                </div>
-            </div>
-
-            <Tags
-                {tags}
-                variant="subtle"
-                class="[&>span]:text-xs [&>span]:sm:p-1"
-            />
-
-            <div
-                class="prose prose-p:first:mt-0 prose-p:last:mb-0 prose-strong:text-current prose-headings:text-current text-current marker:text-current"
-            >
-                <Content />
-            </div>
-
-            <div class="flex justify-end gap-2">
-                {#if demo}
-                    <Link href={demo} class="inline-flex items-center gap-1"
-                        ><img
-                            src="/images/external-link.svg"
-                            alt="External link to demo"
-                            class="size-5"
-                        />Demo</Link
-                    >
-                {/if}
-                {#if code}
-                    <Link href={code} class="inline-flex items-center gap-1"
-                        ><img
-                            src="/images/code-xml.svg"
-                            alt="Show code (Git)"
-                            class="size-5"
-                        />Code</Link
-                    >
-                {/if}
-            </div>
-        </article>
+    {#each featuredProjects as project}
+        <Project {project} />
     {/each}
 
     <!-- TODO: Uncomment when the /projects page is ready -->
