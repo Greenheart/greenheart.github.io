@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,6 +7,16 @@
         <link rel="icon" href="/images/favicon-32x32.png" type="image/png" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#5ac75f" />
+        <meta name="color-scheme" content="dark light" />
+        <script>
+            document.documentElement.classList.toggle(
+                'dark',
+                localStorage.theme === 'dark' ||
+                    (!('theme' in localStorage) &&
+                        window.matchMedia('(prefers-color-scheme: dark)')
+                            .matches),
+            )
+        </script>
         <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -25,47 +35,63 @@
             title="Blog feed (Atom)"
         />
         
-		<link href="./_app/immutable/assets/0.GHLy8F1k.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.C-Yjp9s9.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/BMt_E8lW.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/coNuk9vO.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/B7Mc_Ci6.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.W7eDwfcG.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/PPVm8Dsz.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/qptW2HJI.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/DkFmvXu1.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/l7tQHot9.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/1BiE7J-L.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/CmHniBBp.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/BawEld27.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.JRrDrks3.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/BqroQTRk.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/D5_GDKGn.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/CMaSI_hS.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/Bvqs9Z_S.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/CzIQmLT8.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/Ctur7ITO.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/BAeT0Tag.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/3.CDGLFbmi.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/B5w1g4i7.js"><!--12qhfyh--><meta name="fediverse:creator" content="@Greenheart@fosstodon.org"/><!----><!--7x56jp--><!--[--><!--]--> <!--[--><meta name="robots" content="index,follow"/><!--]--> <!--[--><meta name="description" content="Experienced fullstack developer, curious about how tech, systems thinking and Doughnut design for business can be combined to create a positive impact."/><!--]--> <!--[--><link rel="canonical" href="http://sveltekit-prerender/about"/><!--]--> <!--[!--><!--]--> <!--[!--><!--]--> <!--[!--><!--]--> <!--[!--><!--]--> <!--[!--><!--]--> <!--[--><!--[--><meta property="og:url" content="http://sveltekit-prerender/about"/><!--]--> <!--[--><meta property="og:type" content="website"/> <!--[!--><!--[!--><!--[!--><!--[!--><!--]--><!--]--><!--]--><!--]--><!--]--> <!--[--><meta property="og:title" content="About"/><!--]--> <!--[--><meta property="og:description" content="Experienced fullstack developer, curious about how tech, systems thinking and Doughnut design for business can be combined to create a positive impact."/><!--]--> <!--[!--><!--]--> <!--[!--><!--]--> <!--[!--><!--]--> <!--[!--><!--]--> <!--[!--><!--]--><!--]--> <!--[!--><!--]--> <!--[!--><!--]--><!----><title>About · Samuel Plumppu - Sustainability Entrepreneur &amp; Fullstack Developer</title>
+		<link href="./_app/immutable/assets/0.DDzbNh1A.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.BB3qb4TY.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/DX6CF0CU.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/CJ5kycIc.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/CzssVKiR.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.PTpALIBQ.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/X3pk7U9o.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/Bdha1fzv.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/BGW--rBo.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/U57kl7hy.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/BIxsqi5k.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/f7323myC.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.Dae1bmuq.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/CLaDNB_m.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/BC9GrCcg.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/I_XotMi0.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/D1lv_vzg.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/LulF463E.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/h-MAvg0y.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/DvVQtHu_.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/Cx6Rq4FS.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/3.SPdNCBJW.js"><!--12qhfyh--><meta name="fediverse:creator" content="@Greenheart@fosstodon.org"/><!----><!--hu6oa8--><!--[--><!--]--> <!--[--><meta name="robots" content="index,follow"/><!--]--> <!--[--><meta name="description" content="Experienced fullstack developer, curious about how tech, systems thinking and Doughnut design for business can be combined to create a positive impact."/><!--]--> <!--[--><link rel="canonical" href="http://sveltekit-prerender/about"/><!--]--> <!--[!--><!--]--> <!--[!--><!--]--> <!--[!--><!--]--> <!--[!--><!--]--> <!--[!--><!--]--> <!--[--><!--[--><meta property="og:url" content="http://sveltekit-prerender/about"/><!--]--> <!--[--><meta property="og:type" content="website"/> <!--[!--><!--[!--><!--[!--><!--[!--><!--]--><!--]--><!--]--><!--]--><!--]--> <!--[--><meta property="og:title" content="About"/><!--]--> <!--[--><meta property="og:description" content="Experienced fullstack developer, curious about how tech, systems thinking and Doughnut design for business can be combined to create a positive impact."/><!--]--> <!--[!--><!--]--> <!--[!--><!--]--> <!--[!--><!--]--> <!--[!--><!--]--> <!--[!--><!--]--><!--]--> <!--[!--><!--]--> <!--[!--><!--]--><!----><title>About · Samuel Plumppu - Sustainability Entrepreneur &amp; Fullstack Developer</title>
     </head>
 
-    <body class="bg-honeydew" data-sveltekit-preload-data="hover">
-        <div id="svelte" style="display: contents"><!--[--><!--[--><!----><!----> <header class="xs:text-base 2xs:justify-between mx-auto flex max-w-6xl flex-1 flex-wrap justify-center gap-x-2 gap-y-4 p-4 text-sm svelte-12qhfyh"><a href="/" class="link"><!---->Samuel Plumppu<!----></a><!----> <nav class="xs:space-x-4 flex space-x-2"><a href="/subscribe" title="Subscribe (Atom / JSON)" class="link flex"><span class="size-4 self-center bg-[url(/images/feed.svg)] bg-cover bg-no-repeat"></span><!----></a><!----> <!--[--><a href="/blog" class="link"><!---->Blog<!----></a><a href="/about" class="link"><!---->About<!----></a><a href="/talks" class="link"><!---->Talks<!----></a><!--]--></nav></header> <div class="container mx-auto max-w-6xl p-4 pb-0"><!----><h1 class="xs:text-5xl mb-8 text-4xl leading-none font-black tracking-tight sm:text-6xl lg:text-7xl">More about me</h1> <h2 class="xs:text-2xl pb-4 text-lg font-bold">One of my most exciting orienteering memories so far:</h2> <figure class="flex flex-col items-center"><picture><!--[--><source srcset="/images/Tiomila2015.webp" type="image/webp" width="1024" height="661"/><!--]--> <img src="/images/Tiomila2015.jpg" width="1024" height="661" alt="Night time start of the Tiomila 2015 orienteering relay" class="w-full max-w-5xl pb-4"/></picture><!----> <figcaption class="max-w-prose">Seconds after the start of Tiomila 2015, one of the world's largest
-        orienteering relays. I ran the first leg and somehow got to the top 5 as
-        we left the arena, later finishing the course as <a href="https://10mila.se/index.php/sv/?option=com_tiomilaresults&amp;year=70&amp;class=8&amp;leg=1&amp;total=1" class="link compact"><!---->19th<!----></a><!----> of 318 runners. Best of all, photographer <a href="https://www.peterholgersson.se/" class="link compact"><!---->Peter Holgersson<!----></a><!----> captured this moment so beautifully.</figcaption></figure><!----><!----></div> <footer class="container mx-auto max-w-6xl px-4 pb-8 text-center"><hr class="border-ming mx-auto my-16 max-w-sm" id="contact"/> <h2 class="xs:text-2xl mb-6 text-xl leading-none font-black tracking-tight text-balance sm:text-3xl lg:text-4xl">Let's co-create a sustainable future!</h2> <a href="#" class="bg-mantis inline-flex transform-gpu justify-center justify-self-center rounded-md px-8 py-3 font-black text-black shadow-lg duration-150 hover:scale-105 hover:shadow-xl "><span class="whitespace-nowrap">Email me</span></a><!----> <p class="mt-8">© 2015 - 2025 Samuel Plumppu</p> <div class="my-8 flex flex-wrap items-center justify-center space-x-8"><a href="https://matrix.to/#/@Greenheart:matrix.org" target="_blank" rel="noopener noreferrer" aria-label="Message me securely with the Matrix protocol"><img src="/images/matrix-logo.svg" alt="Matrix.org logo" class="h-8"/></a> <a href="https://github.com/Greenheart" target="_blank" rel="noopener noreferrer" aria-label="See my libre software at GitHub"><img src="/images/github.svg" alt="GitHub" class="size-8"/></a> <a href="https://fosstodon.org/@Greenheart" target="_blank" rel="me noopener noreferrer" aria-label="Follow me on Mastodon"><img src="/images/mastodon-logo.svg" alt="Mastodon" class="size-8"/></a> <a href="https://linkedin.com/in/samuelplumppu" target="_blank" rel="noopener noreferrer" aria-label="Connect with me on LinkedIn"><img src="/images/linkedin.svg" alt="LinkedIn" class="size-8"/></a></div> <p><span class="inline-flex flex-wrap justify-center gap-1"><span class="mr-1 size-5 self-center bg-[url(/images/feed.svg)] bg-cover bg-no-repeat"></span> <a href="/subscribe" class="link self-center compact"><!---->Subscribe<!----></a><!----> with your feed reader: <span class="inline-flex flex-nowrap gap-0.5"><a href="/feed.atom" class="link self-center compact"><!---->Atom<!----></a><!---->/<a href="/feed.json" class="link self-center compact"><!---->JSON<!----></a><!----></span></span></p><!----></footer><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
+    <body
+        class="bg-honeydew dark:bg-evergreen"
+        data-sveltekit-preload-data="hover"
+    >
+        <div id="svelte" style="display: contents"><!--[--><!--[--><!----><!----> <header class="xs:text-base 2xs:justify-between mx-auto flex max-w-6xl flex-1 flex-wrap justify-center gap-x-2 gap-y-4 p-4 text-sm svelte-12qhfyh"><a href="/" class="link"><!---->Samuel Plumppu<!----></a><!----> <nav class="xs:space-x-4 flex space-x-2"><a href="/subscribe" title="Subscribe (Atom / JSON)" class="link flex"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="size-4" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></g></svg><!----></a><!----> <!--[--><a href="/blog" class="link"><!---->Blog<!----></a><a href="/about" class="link"><!---->About<!----></a><a href="/talks" class="link"><!---->Talks<!----></a><!--]--> <button title="Toggle theme from dark to light" aria-label="Toggle theme from dark to light" class="cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="size-5" viewBox="0 0 24 24"><path fill="currentColor" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m0-1.5v-17a8.5 8.5 0 0 1 0 17"></path></svg></button><!----></nav></header> <div class="container mx-auto max-w-6xl p-4 pb-0"><!----><div class="mx-auto max-w-5xl"><h1 class="xs:text-5xl mb-8 text-center text-4xl leading-none font-black tracking-tight sm:text-6xl lg:text-7xl">More about me</h1> <div class="mx-auto grid max-w-prose gap-4 text-xl sm:text-2xl"><p>While my core professional work is systems development and making
+            convivial technology that benefits people and planet, I also use
+            systems thinking as a general lens to view and explore the world.</p> <p>I'm a curious and reflective person, learning something new every
+            day and always seeking to improve my understanding of the world, its
+            people, and its systems of systems. Making connections, long term
+            analyses and abstract thinking are some of my strengths.</p> <p>Beyond my interest in technology and its impact on people and
+            planet, I like to spend as much time as possible in nature. Usually
+            running, orienteering, or hiking, there's something special with
+            navigating in completely new terrain and finding your way. I guess
+            this could explain my view of life as a journey where we get to
+            learn, experience personal growth and find our ways to improve the
+            world around us, leaving a better trace for those who follow in our
+            footsteps.</p> <p>Back in the day, I used to exercise and compete in orienteering at a
+            high level, but these days, orienteering is more of exciting and
+            rewarding way to explore new forests and regions.</p></div> <h2 class="xs:text-2xl mb-8 pt-8 text-center text-lg font-black text-balance">One of my most exciting orienteering memories so far:</h2> <figure class="flex flex-col items-center"><!--[--><!--[!--><img src="/_app/immutable/assets/Tiomila2015.B8uu_jnd.jpg" alt="Night time start of the Tiomila 2015 orienteering relay" class="mb-4 w-full max-w-5xl"/><!--]--><!--]--> <figcaption class="max-w-prose">Seconds after the start of Tiomila 2015, one of the world's largest
+            orienteering relays. I ran the first leg and somehow got to the top
+            5 as we left the arena, later finishing the course as <a href="https://10mila.se/index.php/sv/?option=com_tiomilaresults&amp;year=70&amp;class=8&amp;leg=1&amp;total=1" class="link compact"><!---->19th<!----></a><!----> of 318 runners. Best of all, photographer <a href="https://www.peterholgersson.se/" class="link compact"><!---->Peter Holgersson<!----></a><!----> captured this moment so beautifully.</figcaption></figure></div><!----><!----></div> <footer class="container mx-auto max-w-6xl px-4 pb-8 text-center"><hr class="border-yellow mx-auto my-16 max-w-sm" id="contact"/> <h2 class="xs:text-2xl mb-6 text-xl leading-none font-black tracking-tight text-balance sm:text-3xl lg:text-4xl">Let's co-create a sustainable future!</h2> <a href="#" class="bg-moss inline-flex transform-gpu justify-center justify-self-center rounded-md px-8 py-3 font-black text-black shadow-lg duration-150 ease-out hover:scale-105 hover:shadow-xl "><span class="whitespace-nowrap">Email me</span></a><!----> <p class="mt-8">© 2015 - 2026 Samuel Plumppu</p> <div class="flex flex-wrap items-center justify-center space-x-8 dark:invert my-8"><a href="https://matrix.to/#/@Greenheart:matrix.org" target="_blank" rel="noopener noreferrer" aria-label="Message me securely with the Matrix protocol"><img src="/images/matrix-logo.svg" alt="Matrix.org logo" class="h-6"/></a> <a href="https://github.com/Greenheart" target="_blank" rel="noopener noreferrer" aria-label="See my libre software at GitHub"><img src="/images/github.svg" alt="GitHub" class="aspect-square h-6"/></a> <a href="https://fosstodon.org/@Greenheart" target="_blank" rel="me noopener noreferrer" aria-label="Follow me on Mastodon"><img src="/images/mastodon-logo.svg" alt="Mastodon" class="aspect-square h-6"/></a> <a href="https://linkedin.com/in/samuelplumppu" target="_blank" rel="noopener noreferrer" aria-label="Connect with me on LinkedIn"><img src="/images/linkedin.svg" alt="LinkedIn" class="aspect-square h-6"/></a></div><!----> <p><span class="inline-flex flex-wrap items-center justify-center gap-1"><a href="/subscribe" class="link inline-flex items-center gap-1 compact"><img src="/images/feed.svg" alt="RSS/Atom feed icon" class="size-5"/>Subscribe<!----></a><!----> with your feed reader: <span class="inline-flex flex-nowrap items-center gap-0.5"><a href="/feed.atom" class="link self-center compact"><!---->Atom<!----></a><!---->/<a href="/feed.json" class="link self-center compact"><!---->JSON<!----></a><!----></span></span></p><!----></footer><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_11s9394 = {
+					__sveltekit_kxwaik = {
 						base: new URL(".", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("./_app/immutable/entry/start.C-Yjp9s9.js"),
-						import("./_app/immutable/entry/app.W7eDwfcG.js")
+						import("./_app/immutable/entry/start.BB3qb4TY.js"),
+						import("./_app/immutable/entry/app.PTpALIBQ.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 3],
