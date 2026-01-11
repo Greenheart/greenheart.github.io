@@ -33,12 +33,23 @@
     <Link href="/">Samuel Plumppu</Link>
     <nav class="xs:space-x-4 flex space-x-2">
         <Link href="/subscribe" class="flex" title="Subscribe (Atom / JSON)">
-            <img
-                src="/images/feed.svg"
-                alt="RSS/Atom feed icon"
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
                 class="size-4"
-                fetchpriority="high"
-            />
+                viewBox="0 0 24 24"
+                ><g
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    ><path
+                        d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"
+                    /><circle cx="5" cy="19" r="1" /></g
+                ></svg
+            >
         </Link>
         {#each links as link}
             <Link href={link.href}>{link.text}</Link>
