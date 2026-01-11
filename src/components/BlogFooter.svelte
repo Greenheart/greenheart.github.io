@@ -16,12 +16,12 @@
 </script>
 
 <section
-    class="mx-auto mt-12 max-w-lg space-y-4 rounded-md bg-white p-4 text-center shadow-lg lg:text-lg"
+    class="dark:bg-carbon-black mx-auto mt-12 max-w-lg space-y-4 rounded-md bg-white p-4 text-center shadow-lg lg:text-lg"
 >
     <h2
         class="xs:text-2xl text-xl leading-none font-black tracking-tight md:text-3xl"
     >
-        Thank you for reading! 🌱
+        Thank you for reading!
     </h2>
 
     <p>
@@ -41,14 +41,16 @@
     {#if older}
         <a
             href={`/blog/${older.slug}`}
-            class="group flex flex-col gap-4 rounded-md bg-amber-100 p-4 shadow-md transition-all duration-300 hover:bg-amber-400/60 hover:shadow-xl"
+            class="dark:bg-carbon-black group flex flex-col gap-4 rounded-md bg-white p-4 shadow-md transition-all duration-300 hover:shadow-xl"
         >
             <span
                 class="flex items-center gap-2 text-xs font-bold tracking-wide uppercase"
             >
                 <LucideChevronLeft class="size-5 shrink-0" /> Previous
             </span>
-            <span class="underline-offset-3 group-hover:underline">
+            <span
+                class="group-hover:decoration-moss underline-offset-3 group-hover:underline"
+            >
                 {older.title}
             </span>
         </a>
@@ -59,7 +61,7 @@
     {#if newer}
         <a
             href={`/blog/${newer.slug}`}
-            class="group flex flex-col items-end gap-4 rounded-md bg-amber-100 p-4 text-end shadow-md transition-all duration-300 hover:bg-amber-400/60 hover:shadow-xl"
+            class="dark:bg-carbon-black group flex flex-col items-end gap-4 rounded-md bg-white p-4 text-end shadow-md transition-all duration-300 hover:shadow-xl"
         >
             <span
                 class="flex items-center gap-2 text-xs font-bold tracking-wide uppercase"
@@ -67,7 +69,9 @@
                 Next
                 <LucideChevronRight class="size-5 shrink-0" />
             </span>
-            <span class="underline-offset-3 group-hover:underline">
+            <span
+                class="group-hover:decoration-moss underline-offset-3 group-hover:underline"
+            >
                 {newer.title}
             </span>
         </a>

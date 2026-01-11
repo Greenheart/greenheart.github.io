@@ -5,9 +5,9 @@
 
 <script lang="ts">
     import EncryptedEmail from '$components/EncryptedEmail.svelte'
-    import Tags from '$components/Tags.svelte'
-    import samuel from '$assets/images/samuel.png'
+    import Project from '$components/Project.svelte'
     import SocialLinks from '$components/SocialLinks.svelte'
+    import samuel from '$assets/images/samuel.png'
     import { formatDate } from '$lib/utils.js'
 
     let { data } = $props()
@@ -23,7 +23,8 @@
 <enhanced:img
     src={samuel}
     alt="Samuel Plumppu"
-    class="mx-auto my-8 size-32 rounded-full object-cover shadow-2xl sm:h-40 sm:w-40"
+    class="shadow-yellow mx-auto my-8 size-32 rounded-full object-cover shadow-2xl sm:h-40 sm:w-40"
+    fetchpriority="high"
 />
 
 <section class="grid justify-center text-center">
@@ -33,9 +34,9 @@
         Hey! I'm Samuel.
     </h1>
     <h2
-        class="mb-12 text-xl leading-6 font-black tracking-tight sm:text-3xl lg:text-4xl"
+        class="mb-12 text-xl leading-6 font-black tracking-tight sm:text-3xl sm:leading-8 lg:text-4xl lg:leading-9"
     >
-        <div class="bg-moss -skew-y-1 transform p-2 shadow-2xl">
+        <div class="bg-moss -skew-y-1 transform p-2 text-black shadow-2xl">
             <span class="whitespace-nowrap">Sustainability Entrepreneur</span>
             &
             <span class="whitespace-nowrap">Fullstack Developer</span>
@@ -74,7 +75,7 @@
     <SocialLinks />
 </div>
 
-<hr class="border-ming mx-auto my-16 max-w-sm" />
+<hr class="border-yellow/60 mx-auto my-16 max-w-sm" />
 
 <section class="mx-auto grid max-w-(--breakpoint-md)">
     <h2
@@ -109,7 +110,7 @@
     {/if}
 </section>
 
-<hr class="border-ming mx-auto my-16 max-w-sm" />
+<hr class="border-yellow/60 mx-auto my-16 max-w-sm" />
 
 <TechStack />
 
@@ -131,7 +132,7 @@
         class="grid grid-cols-1 justify-items-center gap-4 font-normal sm:grid-cols-2"
     >
         <ul
-            class="flex w-80 flex-col items-center space-y-2 rounded-md bg-white p-4 tracking-wide shadow-lg sm:w-71"
+            class="dark:bg-carbon-black flex w-80 flex-col items-center space-y-2 rounded-md bg-white p-4 tracking-wide shadow-lg sm:w-71"
         >
             <li>Product Strategy</li>
             <li>Attention to Detail</li>
@@ -140,7 +141,7 @@
             <li>Design Systems</li>
         </ul>
         <ul
-            class="flex w-80 flex-col items-center space-y-2 rounded-md bg-white p-4 tracking-wide shadow-lg sm:w-71"
+            class="dark:bg-carbon-black flex w-80 flex-col items-center space-y-2 rounded-md bg-white p-4 tracking-wide shadow-lg sm:w-71"
         >
             <li>UI/UX Design</li>
             <li>Humane Tech & Ethical Design</li>
@@ -151,7 +152,7 @@
     </div>
 </section>
 
-<hr class="border-ming mx-auto my-16 max-w-sm" />
+<hr class="border-yellow/60 mx-auto my-16 max-w-sm" />
 
 <section class="mx-auto flex max-w-prose flex-col gap-4">
     <h2
@@ -165,57 +166,16 @@
         of my code is libre software and you're welcome to get involved!
     </p>
 
-    {#each featuredProjects as { name, tags, startedYear, updatedYear, Content, code, demo }}
-        <article class="grid gap-2 rounded-md bg-white p-4 shadow-lg">
-            <div class="flex items-center justify-between gap-1">
-                <h3 class="text-2xl font-black">{name}</h3>
-                <div class="flex gap-1 text-sm">
-                    <time datetime={startedYear.toString()}>{startedYear}</time>
-                    {#if updatedYear > startedYear}<span>-</span><time
-                            datetime={updatedYear.toString()}
-                            >{updatedYear}</time
-                        >{/if}
-                </div>
-            </div>
-
-            <Tags
-                {tags}
-                variant="subtle"
-                class="[&>span]:text-xs [&>span]:sm:p-1"
-            />
-
-            <div class="prose prose-p:first:mt-0 prose-p:last:mb-0">
-                <Content />
-            </div>
-
-            <div class="flex justify-end gap-2">
-                {#if demo}
-                    <Link href={demo} class="inline-flex items-center gap-1"
-                        ><img
-                            src="/images/external-link.svg"
-                            alt="External link to demo"
-                            class="size-5"
-                        />Demo</Link
-                    >
-                {/if}
-                {#if code}
-                    <Link href={code} class="inline-flex items-center gap-1"
-                        ><img
-                            src="/images/code-xml.svg"
-                            alt="Show code (Git)"
-                            class="size-5"
-                        />Code</Link
-                    >
-                {/if}
-            </div>
-        </article>
+    {#each featuredProjects as project}
+        <Project {project} />
     {/each}
 
-    {#if otherProjectsCount}
+    <!-- TODO: Uncomment when the /projects page is ready -->
+    <!-- {#if otherProjectsCount}
         <div class="mt-8 flex justify-center">
             <Link href="/projects"
                 >Explore {otherProjectsCount} more projects I've worked on since {earliestProjectStartYear}</Link
             >
         </div>
-    {/if}
+    {/if} -->
 </section>

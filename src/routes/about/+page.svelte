@@ -28,10 +28,11 @@
             Beyond my interest in technology and its impact on people and
             planet, I like to spend as much time as possible in nature. Usually
             running, orienteering, or hiking, there's something special with
-            navigating in a completely new terrain and finding your way. I guess
+            navigating in completely new terrain and finding your way. I guess
             this could explain my view of life as a journey where we get to
-            learn and improve ourselves and the world around us, leaving a
-            better trace for those who follow in our footsteps.
+            learn, experience personal growth and find our ways to improve the
+            world around us, leaving a better trace for those who follow in our
+            footsteps.
         </p>
 
         <p>
@@ -41,7 +42,9 @@
         </p>
     </div>
 
-    <h2 class="xs:text-2xl pt-8 pb-4 text-center text-lg font-bold">
+    <h2
+        class="xs:text-2xl mb-8 pt-8 text-center text-lg font-black text-balance"
+    >
         One of my most exciting orienteering memories so far:
     </h2>
 
@@ -49,7 +52,7 @@
         <enhanced:img
             src={Tiomila2015}
             alt="Night time start of the Tiomila 2015 orienteering relay"
-            class="w-full max-w-5xl pb-4"
+            class="mb-4 w-full max-w-5xl"
         />
         <figcaption class="max-w-prose">
             Seconds after the start of Tiomila 2015, one of the world's largest

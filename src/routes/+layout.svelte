@@ -4,6 +4,7 @@
     import { page } from '$app/state'
     import Link from '$components/Link.svelte'
     import Footer from '$components/Footer.svelte'
+    import ThemeToggle from '$components/ThemeToggle.svelte'
 
     import '../global.css'
     import { MASTODON_USERNAME } from '$lib/constants.js'
@@ -32,13 +33,28 @@
     <Link href="/">Samuel Plumppu</Link>
     <nav class="xs:space-x-4 flex space-x-2">
         <Link href="/subscribe" class="flex" title="Subscribe (Atom / JSON)">
-            <span
-                class="size-4 self-center bg-[url(/images/feed.svg)] bg-cover bg-no-repeat"
-            ></span>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                class="size-4"
+                viewBox="0 0 24 24"
+                ><g
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    ><path
+                        d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"
+                    /><circle cx="5" cy="19" r="1" /></g
+                ></svg
+            >
         </Link>
         {#each links as link}
             <Link href={link.href}>{link.text}</Link>
         {/each}
+        <ThemeToggle />
     </nav>
 </header>
 
@@ -49,7 +65,7 @@
 <Footer />
 
 <style>
-    @media screen and (max-width: 354px) {
+    @media screen and (max-width: 400px) {
         header {
             justify-content: center !important;
             flex-direction: column;
