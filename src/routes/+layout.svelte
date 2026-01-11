@@ -54,7 +54,7 @@
 <Footer />
 
 <style>
-    @media screen and (max-width: 354px) {
+    @media screen and (max-width: 400px) {
         header {
             justify-content: center !important;
             flex-direction: column;
