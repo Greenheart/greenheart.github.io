@@ -1,5 +1,6 @@
 <script lang="ts">
     import { browser } from '$app/environment'
+    import { withoutTransition } from '$lib/without-transition'
 
     const themes = ['dark', 'light'] as const
 
@@ -38,7 +39,7 @@
 <button
     title={`Toggle theme from ${currentTheme} to ${nextTheme}`}
     aria-label={`Toggle theme from ${currentTheme} to ${nextTheme}`}
-    onclick={() => setTheme(nextTheme)}
+    onclick={() => withoutTransition(() => setTheme(nextTheme))}
     class="cursor-pointer"
 >
     <svg
