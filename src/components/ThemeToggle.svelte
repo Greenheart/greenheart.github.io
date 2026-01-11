@@ -4,6 +4,17 @@
 
     const themes = ['dark', 'light'] as const
 
+    // let prefersDarkTheme = new MediaQuery('(prefers-color-scheme: dark)')
+    let prefersDarkTheme =
+        typeof window !== 'undefined'
+            ? window.matchMedia('(prefers-color-scheme: dark)')
+            : { matches: false }
+
+    // @ts-expect-error The optional chaining is enough to abort if running this on the server side (e.g. during prerendering).
+    prefersDarkTheme.addEventListener?.('change', (event) => {
+        withoutTransition(() => setTheme(event.matches ? 'dark' : 'light'))
+    })
+
     function getTheme() {
         if (!browser) return 'dark'
 
@@ -11,7 +22,7 @@
             return localStorage.theme
         }
 
-        if (window.matchMedia('(prefers-color-scheme: dark)')) {
+        if (prefersDarkTheme.matches) {
             return 'dark'
         }
 
@@ -25,12 +36,11 @@
         document.documentElement.classList.toggle(
             'dark',
             localStorage.theme === 'dark' ||
-                (!('theme' in localStorage) &&
-                    window.matchMedia('(prefers-color-scheme: dark)').matches),
+                (!('theme' in localStorage) && prefersDarkTheme.matches),
         )
     }
 
-    let currentTheme = $state<(typeof themes)[number]>(getTheme())
+    let currentTheme = $derived<(typeof themes)[number]>(getTheme())
     let nextTheme = $derived(
         themes[(themes.indexOf(currentTheme) + 1) % themes.length],
     )
