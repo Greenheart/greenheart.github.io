@@ -12,11 +12,31 @@
     // TODO: spell check all texts
     const data: Year[] = [
         {
+            year: 2022,
+            entries: [
+                {
+                    title: 'Fullstack Developer at Relate',
+                },
+                {
+                    title: 'Lead Developer of IDG.tools at Inner Development Goals',
+                },
+            ],
+        },
+        {
+            year: 2021,
+            entries: [
+                {
+                    title: 'Fullstack Developer at 29k',
+                },
+            ],
+        },
+        {
             year: 2019,
             entries: [
                 {
-                    title: "Joined We Don't Have Time",
-                    description: '',
+                    title: "System Developer at We Don't Have Time",
+                    description:
+                        'Initially focusing on community building before the launch and testing the apps, but already after a few months I switched to developing the web app and various experimental projects that eventually became the core business at the time. Improved consistency, quality and iteration speed of the frontend web app team by creating a more structured approach to frontend devleopment by implementing a design system and component library and documentation with best practices.',
                 },
                 {
                     title: '',
@@ -47,12 +67,12 @@
                 {
                     title: 'First tech talk at Borås Developer Meetup',
                     description:
-                        'Shared the story about freeCodeCamp.org, our progress so far and what we had learned while growing a massive community.',
+                        'I shared the story about freeCodeCamp.org, our progress so far and what we had learned while growing a massive community.',
                 },
                 {
                     title: 'System Developer at WooCode',
                     description:
-                        'A really exciting time, working together with a great team and learning a lot about. In the end, I decided to stay true to my intention to study IT at Chalmers.',
+                        'A really exciting time, working together with a great team and learning a lot about software craftsmanship. I had planned for a long time to take one gap year and then continue by studying IT at Chalmers, so I left during summer.',
                 },
             ],
         },
@@ -77,7 +97,7 @@
                 {
                     title: 'Decided to no longer focus on elite orienteering',
                     description:
-                        "With more opportunities opening up in the programming world, I had to challenge my dreams and re-evaluate what I wanted. At the time a tough choice, but in the end a good outcome. Best part is that I still enjoy orienteering to this day and regularly go for forest runs. The elite commitment taught me a lot which I'm grateful for.",
+                        "With more opportunities opening up in the programming world, I had to challenge my dreams and re-evaluate what I wanted. At the time a tough choice, but in the end a good outcome. Best part is that I still enjoy orienteering to this day and regularly go for forest runs. The elite commitment and mindset of continuous improvement taught me a lot which I'm grateful for.",
                 },
             ],
         },
@@ -97,7 +117,7 @@
                 {
                     title: 'First open source contributions',
                     description:
-                        'Got lovely support and inspiration from other freeCodeCamp.org contributors. This truly showed the potential of open source.',
+                        'Got lovely support and inspiration from other freeCodeCamp.org contributors. This truly showed the potential of open source. First open source contribution in a major project: https://github.com/freeCodeCamp/freeCodeCamp/pull/1573',
                 },
                 {
                     title: 'Joined the freeCodeCamp.org community',
@@ -152,7 +172,7 @@
                 {
                     title: 'Started at Kunskapsskolan Borås',
                     description:
-                        'With my personal mentor, the freedom to decide my schedule, goals and priorities, this was a golden opportunity to challenge my abilities, and start developing a growth mindset. This sparked my curiosity and has proven to be a very worthwile investment.',
+                        'With my personal mentor, the freedom to decide my schedule, goals and priorities, this was a golden opportunity to challenge my abilities and start developing a growth mindset. This sparked my curiosity for learning and had a significant impact on my early life.',
                 },
             ],
         },
@@ -160,7 +180,9 @@
             year: 2006,
             entries: [
                 {
-                    title: 'First orienteering competition',
+                    title: 'First orienteering competitions',
+                    description:
+                        'Not the fastest orienteer at this point, but I remember having a lot of fun.',
                 },
             ],
         },
