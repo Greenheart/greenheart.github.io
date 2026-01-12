@@ -7,7 +7,6 @@
     import EncryptedEmail from '$components/EncryptedEmail.svelte'
     import Project from '$components/Project.svelte'
     import SocialLinks from '$components/SocialLinks.svelte'
-    import samuel from '$assets/images/samuel.png'
     import { formatDate } from '$lib/utils.js'
 
     let { data } = $props()
@@ -21,10 +20,12 @@
 </script>
 
 <enhanced:img
-    src={samuel}
+    src="$assets/images/samuel.png"
     alt="Samuel Plumppu"
     class="shadow-yellow mx-auto my-8 size-32 rounded-full object-cover shadow-2xl sm:h-40 sm:w-40"
     fetchpriority="high"
+    width="500"
+    height="500"
 />
 
 <section class="grid justify-center text-center">

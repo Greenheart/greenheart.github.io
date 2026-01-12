@@ -1,6 +1,5 @@
 <script lang="ts">
     import Link from '$components/Link.svelte'
-    import Tiomila2015 from '$assets/images/Tiomila2015.jpg'
 </script>
 
 <div class="mx-auto max-w-5xl">
@@ -48,13 +47,15 @@
         One of my most exciting orienteering memories so far:
     </h2>
 
-    <figure class="flex flex-col items-center">
+    <figure>
         <enhanced:img
-            src={Tiomila2015}
+            src="$assets/images/Tiomila2015.jpg"
             alt="Night time start of the Tiomila 2015 orienteering relay"
             class="mb-4 w-full max-w-5xl"
+            width="1024"
+            height="661"
         />
-        <figcaption class="max-w-prose">
+        <figcaption class="mx-auto max-w-prose">
             Seconds after the start of Tiomila 2015, one of the world's largest
             orienteering relays. I ran the first leg and somehow got to the top
             5 as we left the arena, later finishing the course as <Link
