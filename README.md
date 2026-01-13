@@ -35,7 +35,7 @@ To avoid checking in draft posts that start with the `_` prefix, append the foll
 echo "src/content/posts/_*" >> .git/info/exclude
 ```
 
-This will include the draft posts during local development, but not instruct Git to ignore these files as long as they include the filenames start with `_`.
+This will include the draft posts during local development, but instruct Git to ignore these filenames starting with `_`.
 
 To publish a draft post, just rename the file and remove the `_` prefix. Then both the production build will include the file, and Git will let make it available to stage and commit.
 
