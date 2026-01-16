@@ -137,18 +137,25 @@
         >
             <li>Product Strategy</li>
             <li>Attention to Detail</li>
+            <li>Intercultural Collaboration</li>
             <li>Mentorship & Team Growth</li>
-            <li>Community Building</li>
-            <li>Design Systems</li>
+            <li>
+                <Link
+                    href="https://openlibrary.org/books/OL27421718M/An_Everyone_Culture"
+                    compact>Feedback & Learning Culture</Link
+                >
+            </li>
+            <li>Improved Development Practices</li>
         </ul>
         <ul
             class="dark:bg-carbon-black flex w-80 flex-col items-center space-y-2 rounded-md bg-white p-4 tracking-wide shadow-lg sm:w-71"
         >
+            <li>Project Management</li>
+            <li>Stakeholder Communication</li>
+            <li>Systems Thinking</li>
             <li>UI/UX Design</li>
             <li>Humane Tech & Ethical Design</li>
-            <li>Systems Thinking</li>
-            <li>Privacy Advocacy</li>
-            <li>Improved Development Practices</li>
+            <li>Design Systems</li>
         </ul>
     </div>
 </section>
