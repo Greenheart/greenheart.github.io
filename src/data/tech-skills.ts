@@ -64,7 +64,7 @@ export const ALL_TECH_SKILLS = [
 
 type SkillName = (typeof ALL_TECH_SKILLS)[number]
 /** Higher proficiency is better */
-type Proficiency = 5 | 4 | 3 | 2 | 1
+export type Proficiency = 5 | 4 | 3 | 2 | 1
 type UsedInThePast = true
 type Skill = [SkillName, Proficiency, UsedInThePast?]
 
