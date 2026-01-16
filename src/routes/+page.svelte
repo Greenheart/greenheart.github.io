@@ -109,6 +109,10 @@
             <Link href="/blog">Read {otherPostsCount} more posts</Link>
         </div>
     {/if}
+
+    <div class="mt-8 flex justify-center">
+        <Link href="#featured-projects">Explore my featured projects</Link>
+    </div>
 </section>
 
 <hr class="border-yellow/60 mx-auto my-16 max-w-sm" />
@@ -167,6 +171,7 @@
 <section class="mx-auto flex max-w-prose flex-col gap-8">
     <h2
         class="xs:text-2xl mb-4 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
+        id="featured-projects"
     >
         Featured project{featuredProjects.length > 1 ? 's' : ''}
     </h2>
