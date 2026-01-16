@@ -7,8 +7,8 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
         ['JavaScript', 5],
         ['Rust', 3],
         ['Python', 3],
-        ['C#', 2, true],
-        ['PHP', 2, true],
+        ['C#', 2],
+        ['PHP', 2],
     ],
     'Web development': [
         ['HTML', 5],
@@ -21,7 +21,7 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
         ['Vitest', 3],
         ['Storybook', 2],
         ['Next.js', 2],
-        ['Angular.js', 2, true],
+        ['Angular.js', 2],
     ],
     'Backend development & APIs': [
         ['REST', 4],
@@ -33,7 +33,7 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
         ['OpenSearch', 3],
         ['GraphQL', 2],
         ['Elasticsearch', 2],
-        ['Meteor', 2, true],
+        ['Meteor', 2],
     ],
     'Databases & ORMs': [
         ['PostgreSQL', 4],
@@ -42,7 +42,7 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
         ['SQLite', 3],
         ['Prisma', 3],
         ['Drizzle', 3],
-        ['Mongo DB', 2, true],
+        ['Mongo DB', 2],
     ],
     'Servers & containers': [
         ['Linux', 4],
@@ -59,9 +59,9 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
     ],
     CMS: [
         ['Keystatic', 4],
-        ['Decap', 3, true],
+        ['Decap', 3],
         ['Strapi', 3],
-        ['WordPress', 2, true],
+        ['WordPress', 2],
     ],
     'Other tech skills': [
         ['Accessibility', 3],
@@ -72,7 +72,7 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
         ['OCR', 2],
         ['Local-first', 2],
         ['CRDT', 2],
-        ['Phaser', 2, true],
+        ['Phaser', 2],
     ],
 } as const
 
@@ -148,5 +148,4 @@ export const ALL_TECH_SKILLS = [
 type SkillName = (typeof ALL_TECH_SKILLS)[number]
 /** Higher proficiency is better */
 export type Proficiency = 5 | 4 | 3 | 2 | 1
-type UsedInThePast = true
-type Skill = [SkillName, Proficiency, UsedInThePast?]
+type Skill = [SkillName, Proficiency]

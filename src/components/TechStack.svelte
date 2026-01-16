@@ -31,8 +31,6 @@
         experience.
     </p>
 
-    <!-- IDEA: Maybe add the `*` suffix to skills that I've used in the past -->
-
     <p class="mb-2">Skills are sorted based on proficiency:</p>
     <div class="mb-8 flex items-center gap-2">
         <span class="mr-2 text-2xl" aria-hidden="true">+</span>
