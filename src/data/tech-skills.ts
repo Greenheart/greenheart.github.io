@@ -1,74 +1,4 @@
 /**
- * This enables type checking for the skill definitions below and for tags.
- *
- * Can be updated by running:
- * Object.values(TECH_SKILLS).flatMap(category => category.map(skill => skill[0]))
- */
-export const ALL_TECH_SKILLS = [
-    'TypeScript',
-    'JavaScript',
-    'Rust',
-    'Python',
-    'C#',
-    'PHP',
-    'HTML',
-    'CSS',
-    'Svelte',
-    'SvelteKit',
-    'React',
-    'Astro',
-    'Playwright',
-    'Vitest',
-    'Storybook',
-    'Next.js',
-    'Angular.js',
-    'REST',
-    'OpenAPI',
-    'Node.js',
-    'Fastify',
-    'Express',
-    'BullMQ',
-    'OpenSearch',
-    'GraphQL',
-    'Elasticsearch',
-    'Meteor',
-    'PostgreSQL',
-    'Redis',
-    'Valkey',
-    'SQLite',
-    'Prisma',
-    'Drizzle',
-    'Mongo DB',
-    'Linux',
-    'Podman',
-    'Docker',
-    'Kubernetes',
-    'Flux',
-    'Ansible',
-    'React Native',
-    'Android',
-    'iOS',
-    'Keystatic',
-    'Decap',
-    'Strapi',
-    'WordPress',
-    'Cryptography',
-    'Shell Scripting',
-    'CI/CD',
-    'Data Pipelines',
-    'OCR',
-    'Local-first',
-    'CRDT',
-    'Phaser',
-] as const
-
-type SkillName = (typeof ALL_TECH_SKILLS)[number]
-/** Higher proficiency is better */
-export type Proficiency = 5 | 4 | 3 | 2 | 1
-type UsedInThePast = true
-type Skill = [SkillName, Proficiency, UsedInThePast?]
-
-/**
  * Main data source for tech skills, organized into categories.
  */
 export const TECH_SKILLS: Record<string, Skill[]> = {
@@ -133,7 +63,8 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
         ['Strapi', 3],
         ['WordPress', 2, true],
     ],
-    'Other Tech skills': [
+    'Other tech skills': [
+        ['Accessibility', 3],
         ['Cryptography', 3],
         ['Shell Scripting', 3],
         ['CI/CD', 3],
@@ -144,3 +75,78 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
         ['Phaser', 2, true],
     ],
 } as const
+
+/**
+ * This enables type checking for the skill definitions below and for tags.
+ *
+ * Do not edit this array directly. New tech skills should either be added:
+ * 1) In the `TECH_SKILLS` below (to show it as tech skills)
+ * 2) Directly in the `tagsSchema` (if it's only needed for blog posts or projects)
+ *
+ * This array can be automatically updated by running:
+ * `pnpm update-skills`
+ */
+export const ALL_TECH_SKILLS = [
+    'TypeScript',
+    'JavaScript',
+    'Rust',
+    'Python',
+    'C#',
+    'PHP',
+    'HTML',
+    'CSS',
+    'Svelte',
+    'SvelteKit',
+    'React',
+    'Astro',
+    'Playwright',
+    'Vitest',
+    'Storybook',
+    'Next.js',
+    'Angular.js',
+    'REST',
+    'OpenAPI',
+    'Node.js',
+    'Fastify',
+    'Express',
+    'BullMQ',
+    'OpenSearch',
+    'GraphQL',
+    'Elasticsearch',
+    'Meteor',
+    'PostgreSQL',
+    'Redis',
+    'Valkey',
+    'SQLite',
+    'Prisma',
+    'Drizzle',
+    'Mongo DB',
+    'Linux',
+    'Podman',
+    'Docker',
+    'Kubernetes',
+    'Flux',
+    'Ansible',
+    'React Native',
+    'Android',
+    'iOS',
+    'Keystatic',
+    'Decap',
+    'Strapi',
+    'WordPress',
+    'Accessibility',
+    'Cryptography',
+    'Shell Scripting',
+    'CI/CD',
+    'Data Pipelines',
+    'OCR',
+    'Local-first',
+    'CRDT',
+    'Phaser',
+] as const
+
+type SkillName = (typeof ALL_TECH_SKILLS)[number]
+/** Higher proficiency is better */
+export type Proficiency = 5 | 4 | 3 | 2 | 1
+type UsedInThePast = true
+type Skill = [SkillName, Proficiency, UsedInThePast?]
