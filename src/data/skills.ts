@@ -1,8 +1,76 @@
-type SkillName = string
+/**
+ * This enables type checking for the skill definitions below and for tags.
+ *
+ * Can be updated by running:
+ * Object.values(TECH_SKILLS).flatMap(category => category.map(skill => skill[0]))
+ */
+export const ALL_TECH_SKILLS = [
+    'TypeScript',
+    'JavaScript',
+    'Rust',
+    'Python',
+    'C#',
+    'PHP',
+    'HTML',
+    'CSS',
+    'Svelte',
+    'SvelteKit',
+    'React',
+    'Astro',
+    'Playwright',
+    'Vitest',
+    'Storybook',
+    'Next.js',
+    'Angular.js',
+    'REST',
+    'OpenAPI',
+    'Node.js',
+    'Fastify',
+    'Express',
+    'BullMQ',
+    'OpenSearch',
+    'GraphQL',
+    'Elasticsearch',
+    'Meteor',
+    'PostgreSQL',
+    'Redis',
+    'Valkey',
+    'SQLite',
+    'Prisma',
+    'Drizzle',
+    'Mongo DB',
+    'Linux',
+    'Podman',
+    'Docker',
+    'Kubernetes',
+    'Flux',
+    'Ansible',
+    'React Native',
+    'Android',
+    'iOS',
+    'Keystatic',
+    'Decap',
+    'Strapi',
+    'WordPress',
+    'Cryptography',
+    'Shell Scripting',
+    'CI/CD',
+    'Data Pipelines',
+    'OCR',
+    'Local-first',
+    'CRDT',
+    'Phaser',
+] as const
+
+type SkillName = (typeof ALL_TECH_SKILLS)[number]
+/** Higher proficiency is better */
 type Proficiency = 5 | 4 | 3 | 2 | 1
 type UsedInThePast = true
 type Skill = [SkillName, Proficiency, UsedInThePast?]
 
+/**
+ * Main data source for tech skills, organized into categories.
+ */
 export const TECH_SKILLS: Record<string, Skill[]> = {
     'Programming Languages': [
         ['TypeScript', 5],
@@ -28,6 +96,7 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
     'Backend Development & APIs': [
         ['REST', 4],
         ['OpenAPI', 4],
+        ['Node.js', 4],
         ['Fastify', 4],
         ['Express', 4],
         ['BullMQ', 4],
@@ -68,6 +137,8 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
         ['Cryptography', 3],
         ['Shell Scripting', 3],
         ['CI/CD', 3],
+        ['Data Pipelines', 3],
+        ['OCR', 2],
         ['Local-first', 2],
         ['CRDT', 2],
         ['Phaser', 2, true],
