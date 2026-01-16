@@ -32,13 +32,19 @@
 >
     <Link href="/">Samuel Plumppu</Link>
     <nav class="xs:space-x-4 flex space-x-2">
-        <Link href="/subscribe" class="flex" title="Subscribe (Atom / JSON)">
+        <Link
+            href="/subscribe"
+            class="flex"
+            title="Subscribe (Atom / JSON)"
+            aria-label="Subscribe (Atom / JSON)"
+        >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
                 height="32"
                 class="size-4"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
                 ><g
                     fill="none"
                     stroke="currentColor"
