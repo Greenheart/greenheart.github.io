@@ -113,8 +113,6 @@
 
 <hr class="border-yellow/60 mx-auto my-16 max-w-sm" />
 
-<TechStack />
-
 <section class="mx-auto max-w-prose">
     <h2
         class="xs:text-2xl mb-6 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
@@ -162,7 +160,11 @@
 
 <hr class="border-yellow/60 mx-auto my-16 max-w-sm" />
 
-<section class="mx-auto flex max-w-prose flex-col gap-4">
+<TechStack />
+
+<hr class="border-yellow/60 mx-auto my-16 max-w-sm" />
+
+<section class="mx-auto flex max-w-prose flex-col gap-8">
     <h2
         class="xs:text-2xl mb-4 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
     >
