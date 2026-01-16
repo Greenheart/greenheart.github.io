@@ -1,12 +1,6 @@
 export type { BlogPost } from '$lib/posts'
 export type { Project } from '$lib/projects'
 
-export type TechStack = {
-    Current: string[]
-    Past: string[]
-    Learning: string[]
-}
-
 /**
  * Mark properties P as required. Useful to override only a few properties.
  *
