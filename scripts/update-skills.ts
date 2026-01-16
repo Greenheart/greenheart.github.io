@@ -12,7 +12,7 @@ if (import.meta.main) {
     )
 
     const oldSkills = rawFile.match(
-        /export const ALL_TECH_SKILLS = \[\s*([\s\S]*)\n\] as const/,
+        /export const ALL_TECH_SKILLS = \[\s*([\s\S]*)\,?\n\] as const/,
     )![1]
 
     await writeFile(
