@@ -61,7 +61,8 @@ export async function getPost(slug: string) {
 
     const data = postSchema.parse(rawPost, {
         reportInput: true,
-        error: () => 'Invalid frontmatter for slug: ' + slug,
+        error: () =>
+            'Invalid frontmatter for slug: ' + `${postsBasePath}${slug}.md`,
     })
 
     const post: BlogPostWithoutMetadata = {

@@ -70,7 +70,8 @@ export async function getProject(slug: string) {
 
     const data = projectSchema.parse(rawProject, {
         reportInput: true,
-        error: () => 'Invalid frontmatter for slug: ' + slug,
+        error: () =>
+            'Invalid frontmatter for slug: ' + `${projectsBasePath}${slug}.md`,
     })
 
     const project: Project = {
