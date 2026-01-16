@@ -50,22 +50,16 @@
             <h3 class="text-xl font-semibold">{title}</h3>
 
             <ul
-                class={[
-                    // Workaround to replace flexbox gap: https://gist.github.com/OliverJAsh/7f29d0fa1d35216ec681d2949c3fe8b7
-                    // IDEA: Maybe replace this with proper flexbox gap, though that reduces browser support.
-                    '-mb-1.5 -ml-1.5 flex flex-wrap pt-4 text-sm font-normal dark:text-black',
-                ]}
+                class="flex flex-wrap gap-1.5 pt-4 text-sm font-normal dark:text-black"
             >
                 {#each skills as [technology, proficiency], index (technology)}
-                    <li class="pb-4 pl-1.5">
-                        <span
-                            class="{skillColors[
-                                proficiency
-                            ]} rounded-xs p-1.5 tracking-wide"
-                        >
-                            {technology}
-                            <div class="sr-only">({proficiency})</div>
-                        </span>
+                    <li
+                        class="{skillColors[
+                            proficiency
+                        ]} rounded-xs px-1.5 py-1 tracking-wide"
+                    >
+                        {technology}
+                        <span class="sr-only">({proficiency})</span>
                     </li>
                 {/each}
             </ul>
