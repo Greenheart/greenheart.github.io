@@ -1,23 +1,16 @@
 <script module lang="ts">
-    import { fade } from 'svelte/transition'
-    import { flip } from 'svelte/animate'
-    import { quintOut } from 'svelte/easing'
-    import { onMount } from 'svelte'
-    import { Tabs } from 'bits-ui'
+    import { TECH_SKILLS, type Proficiency } from '$data/tech-skills'
 
-    import type { TechStack } from '$lib/types'
-    import { tech, groups } from '$data/tech-stack'
+    const skillColors: Record<Proficiency, string> = {
+        5: 'bg-yellow',
+        4: 'bg-yellow/90',
+        3: 'bg-yellow/75',
+        2: 'bg-yellow/60',
+        1: 'bg-yellow/50',
+    } as const
 </script>
 
-<script lang="ts">
-    let selected = $state<keyof TechStack>('Current')
-    let ready = $state(false)
-    onMount(() => (ready = true))
-</script>
-
-<section
-    class="xs:h-80 xs:mb-40 mb-48 flex h-96 flex-col items-center sm:mb-36 sm:h-64"
->
+<section class="mx-auto mb-16 max-w-prose">
     <h2
         class="xs:text-2xl mb-6 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
     >
@@ -38,51 +31,44 @@
         experience.
     </p>
 
-    <Tabs.Root bind:value={selected} class="p-4">
-        <Tabs.List class="mx-auto mb-6 grid w-72 grid-cols-3 gap-2">
-            {#each groups as group}
-                <Tabs.Trigger
-                    value={group}
-                    class={[
-                        'dark:hover:bg-carbon-black cursor-pointer rounded-xs px-3 py-2 hover:bg-white hover:shadow-lg',
-                        group === selected &&
-                            'dark:bg-carbon-black bg-white shadow-lg',
-                    ]}
-                >
-                    {group}
-                </Tabs.Trigger>
-            {/each}
-        </Tabs.List>
-        {#each groups as group}
-            <Tabs.Content
-                value={group}
+    <!-- IDEA: Maybe add the `*` suffix to skills that I've used in the past -->
+
+    <p class="mb-2">Skills are sorted based on proficiency:</p>
+    <div class="mb-8 flex items-center gap-2">
+        <span class="mr-2 text-2xl" aria-hidden="true">+</span>
+        {#each Object.entries(skillColors).reverse() as [proficiency, color] (proficiency)}
+            <div
+                class="{color} size-5 rounded-xs"
+                aria-label={proficiency}
+            ></div>
+        {/each}
+        <span class="ml-2 text-2xl" aria-hidden="true">-</span>
+    </div>
+
+    {#each Object.entries(TECH_SKILLS) as [title, skills] (title)}
+        <section class="mb-4">
+            <h3 class="text-xl font-semibold">{title}</h3>
+
+            <ul
                 class={[
                     // Workaround to replace flexbox gap: https://gist.github.com/OliverJAsh/7f29d0fa1d35216ec681d2949c3fe8b7
-                    '-mb-2 -ml-2 flex max-w-prose flex-wrap justify-center pt-4 font-normal dark:text-black',
+                    // IDEA: Maybe replace this with proper flexbox gap, though that reduces browser support.
+                    '-mb-1.5 -ml-1.5 flex flex-wrap pt-4 text-sm font-normal dark:text-black',
                 ]}
             >
-                {#if ready && group === selected}
-                    {#each tech[group] as technology, index (technology)}
+                {#each skills as [technology, proficiency], index (technology)}
+                    <li class="pb-4 pl-1.5">
                         <span
-                            class="pb-5 pl-2"
-                            animate:flip={{
-                                duration: 300,
-                                easing: quintOut,
-                            }}
+                            class="{skillColors[
+                                proficiency
+                            ]} rounded-xs p-1.5 tracking-wide"
                         >
-                            <span
-                                class="bg-yellow rounded-xs p-2 tracking-wide"
-                                in:fade|global={{
-                                    delay: index * 35,
-                                    duration: 300,
-                                }}
-                            >
-                                {technology}
-                            </span>
+                            {technology}
+                            <div class="sr-only">({proficiency})</div>
                         </span>
-                    {/each}
-                {/if}
-            </Tabs.Content>
-        {/each}
-    </Tabs.Root>
+                    </li>
+                {/each}
+            </ul>
+        </section>
+    {/each}
 </section>
