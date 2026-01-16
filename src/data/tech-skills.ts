@@ -72,7 +72,7 @@ type Skill = [SkillName, Proficiency, UsedInThePast?]
  * Main data source for tech skills, organized into categories.
  */
 export const TECH_SKILLS: Record<string, Skill[]> = {
-    'Programming Languages': [
+    'Programming languages': [
         ['TypeScript', 5],
         ['JavaScript', 5],
         ['Rust', 3],
@@ -80,7 +80,7 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
         ['C#', 2, true],
         ['PHP', 2, true],
     ],
-    'Web Development': [
+    'Web development': [
         ['HTML', 5],
         ['CSS', 4],
         ['Svelte', 4],
@@ -93,7 +93,7 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
         ['Next.js', 2],
         ['Angular.js', 2, true],
     ],
-    'Backend Development & APIs': [
+    'Backend development & APIs': [
         ['REST', 4],
         ['OpenAPI', 4],
         ['Node.js', 4],
@@ -114,7 +114,7 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
         ['Drizzle', 3],
         ['Mongo DB', 2, true],
     ],
-    'Servers & Containers': [
+    'Servers & containers': [
         ['Linux', 4],
         ['Podman', 4],
         ['Docker', 4],
@@ -122,7 +122,7 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
         ['Flux', 2],
         ['Ansible', 1],
     ],
-    'Mobile Development': [
+    'Mobile development': [
         ['React Native', 4],
         ['Android', 3],
         ['iOS', 2],
@@ -133,7 +133,7 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
         ['Strapi', 3],
         ['WordPress', 2, true],
     ],
-    'Other Technologies': [
+    'Other Tech skills': [
         ['Cryptography', 3],
         ['Shell Scripting', 3],
         ['CI/CD', 3],

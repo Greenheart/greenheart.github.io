@@ -1,6 +1,6 @@
 import z from 'zod'
 
-import { ALL_TECH_SKILLS } from '$data/skills'
+import { ALL_TECH_SKILLS } from '$data/tech-skills'
 
 /**
  * Tags used for posts and projects
