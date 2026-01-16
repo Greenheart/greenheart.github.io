@@ -1,10 +1,10 @@
 ---
 title: Automated Text Extraction from PDF Images with OCRmyPDF
 publishedAt: 2025-09-04
-tags: ['PDF', 'Data Pipeline', 'OCR']
+tags: ['PDF', 'Data Pipelines', 'OCR']
 ---
 
-When extracting text content from PDF files, you occasionally find embedded images without any text nodes. For tiny PDFs this can usually be solved manually, but it's not feasible to manually re-type text from many PDF pages. Especially not as part of a data pipeline processing many thousands of documents.
+When extracting text content from PDF files, you occasionally find embedded images without any text nodes. For tiny PDFs this can usually be solved manually, but it's not feasible to manually retype text from many PDF pages. Especially not as part of a data pipeline processing many thousands of documents.
 
 Luckily, there are ways to automate the text extraction by using Optical Character Recognition ([OCR](https://en.wikipedia.org/wiki/Optical_character_recognition)) software.
 
