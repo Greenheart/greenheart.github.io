@@ -45,7 +45,7 @@
     </div>
 
     {#each Object.entries(TECH_SKILLS) as [title, skills] (title)}
-        <section class="mb-4">
+        <section class="mb-8">
             <h3 class="text-xl font-semibold">{title}</h3>
 
             <ul
