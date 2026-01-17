@@ -188,7 +188,7 @@
             <h3>Leadership</h3>
             <p>
                 Good leadership to me is like coaching, creating a learning
-                culture where the team continously improves their technical
+                culture where the team continuously improves their technical
                 capabilities and collaboration skills.
             </p>
         </li>
@@ -223,7 +223,7 @@
                 Instead of working around symptoms, I often try exploring the
                 systems perspective to find underlying causes. I've found that
                 "solving a problem" usually means updating the solution - but
-                not always. Sometimes you need to ask diffferent questions, and
+                not always. Sometimes you need to ask different questions, and
                 redefine the problem.
             </p>
         </li>
@@ -249,7 +249,7 @@
         <li>
             I've worked at several early-stage startups and impactful
             non-profits. I'm used to working in resource constrained
-            environments where every technical, human and financial resouce
+            environments where every technical, human and financial resource
             needs to be used wisely.
         </li>
         <li>
