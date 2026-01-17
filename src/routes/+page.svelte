@@ -112,7 +112,13 @@
     {/if}
 
     <div class="mt-8 flex justify-center">
-        <Link href="#featured-projects">Explore my featured projects</Link>
+        <Link href="#featured-projects" class="inline-flex items-center gap-2"
+            ><img
+                src="/images/code-xml.svg"
+                alt="Show code (Git)"
+                class="size-5"
+            />Featured projects</Link
+        >
     </div>
 </section>
 
