@@ -213,8 +213,8 @@
             <h3>Ownership</h3>
             <p>
                 I enjoy taking ownership for the products, services and features
-                I work on, ensuring we're meeting the needs of the people and
-                delivering accessible, performant solutions.
+                I work on, ensuring we're meeting the needs of people using
+                them, and delivering accessible, performant solutions.
             </p>
         </li>
         <li>
