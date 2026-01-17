@@ -4,7 +4,7 @@ tags: ['TypeScript', 'Node.js', 'Svelte']
 code: https://github.com/paccao/allerthsbageri.se
 startedYear: 2025
 updatedYear: 2026
-featured: true
+featuredWeight: 4
 ---
 
 Fullstack e-commerce system for a local bakery with backend, API, public frontend and admin dashboard. Focus on comprehensive testing and delivering a simple but effective solution that is easy to self-host and maintain.

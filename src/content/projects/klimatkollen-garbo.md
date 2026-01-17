@@ -5,7 +5,7 @@ code: https://github.com/Klimatbyran/garbo
 demo: https://klimatkollen.se/en/
 startedYear: 2024
 updatedYear: 2025
-featured: true
+featuredWeight: 3
 ---
 
 Garbo is powered by LLMs to fetch and extract self-reported [GHG emissions](https://en.wikipedia.org/wiki/GHG_Protocol_Corporate_Standard) data from companies. It automates the process of data extraction, evaluation, and formatting, providing a streamlined workflow for handling environmental data.
