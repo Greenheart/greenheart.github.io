@@ -172,40 +172,60 @@
         My beliefs
     </h2>
 
-    <ul class="list-disc space-y-4 pl-4 text-xl">
+    <ul
+        class="xs:[&>li]:grid-cols-3 dark:[&>li>span]:text-yellow list-disc space-y-8 pl-4 text-xl [&>li]:grid [&>li]:gap-4 [&>li:even>span]:order-last [&>li>p]:col-span-2 [&>li>span]:font-bold"
+    >
         <li>
-            I believe everyone can teach you something, no matter their
-            experience, job title or background. This approach is especially
-            useful in cross-functional teams with people from development,
-            design, product and business.
+            <span>People</span>
+            <p>
+                I believe everyone can teach you something, no matter their
+                experience, job title or background. This approach is especially
+                useful in cross-functional teams with people from development,
+                design, product and business.
+            </p>
         </li>
         <li>
-            Good leadership to me is like coaching, creating a learning culture
-            where the team continously improves their technical capabilities and
-            collaboration skills.
+            <span>Leadership</span>
+            <p>
+                Good leadership to me is like coaching, creating a learning
+                culture where the team continously improves their technical
+                capabilities and collaboration skills.
+            </p>
         </li>
         <li>
-            I'm driven by curiosity and a strong learning mindset and generally
-            try to see challenges and problems as learning opportunities. These
-            are some of the most important qualaities I look for in people I
-            collaborate with.
+            <span>Curiosity</span>
+            <p>
+                I'm driven by curiosity and a strong learning mindset and
+                generally try to see challenges and problems as learning
+                opportunities. These are some of the most important qualities I
+                look for in people I collaborate with.
+            </p>
         </li>
         <li>
-            I believe testing (mostly integration) is fundamental to quality
-            software, especially for large projects that are going to be used
-            and developed for many years.
+            <span>Quality</span>
+            <p>
+                I believe testing (mostly integration) is fundamental to quality
+                software, especially for large projects that are going to be
+                used and developed for many years.
+            </p>
         </li>
         <li>
-            I enjoy taking ownership for the products, services and features I
-            work on, ensuring we're meeting the needs of the people and
-            delivering accessible, performant solutions.
+            <span>Ownership</span>
+            <p>
+                I enjoy taking ownership for the products, services and features
+                I work on, ensuring we're meeting the needs of the people and
+                delivering accessible, performant solutions.
+            </p>
         </li>
         <li>
-            Instead of working around symptoms, I often try exploring the
-            systems perspective to find underlying causes. I've found that
-            "solving a problem" usually means updating the solution - but not
-            always. Sometimes you need to ask diffferent questions, and redefine
-            the problem.
+            <span>Systems Thinking</span>
+            <p>
+                Instead of working around symptoms, I often try exploring the
+                systems perspective to find underlying causes. I've found that
+                "solving a problem" usually means updating the solution - but
+                not always. Sometimes you need to ask diffferent questions, and
+                redefine the problem.
+            </p>
         </li>
     </ul>
 </section>
