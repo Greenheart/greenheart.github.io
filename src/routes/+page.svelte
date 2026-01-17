@@ -173,7 +173,7 @@
     </h2>
 
     <ul
-        class="xs:[&>li]:grid-cols-3 dark:[&>li>h3]:text-yellow list-disc space-y-8 pl-4 text-xl [&>li]:grid [&>li]:gap-4 [&>li:even>h3]:order-last [&>li>h3]:font-bold [&>li>p]:col-span-2"
+        class="xs:[&>li]:grid-cols-3 dark:[&>li>h3]:text-yellow list-disc space-y-8 pl-4 text-xl [&>li]:grid [&>li]:gap-4 [&>li>h3]:font-bold [&>li>p]:col-span-2"
     >
         <li>
             <h3>People</h3>
