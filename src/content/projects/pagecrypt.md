@@ -1,5 +1,5 @@
 ---
-name: 'PageCrypt: Password Protected HTML files'
+name: 'PageCrypt: Password protected HTML files'
 tags: ['TypeScript', 'Web Crypto API', 'Node.js', 'HTML']
 code: https://github.com/Greenheart/pagecrypt
 startedYear: 2021
