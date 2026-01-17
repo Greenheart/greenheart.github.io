@@ -177,7 +177,7 @@
         Featured project{featuredProjects.length > 1 ? 's' : ''}
     </h2>
 
-    <p class="mb-6">
+    <p class="mb-6 text-xl sm:text-2xl">
         Here are some of the most notable projects I've worked on so far. Most
         of my code is libre software and you're welcome to get involved!
     </p>
