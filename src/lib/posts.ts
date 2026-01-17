@@ -6,6 +6,8 @@ import { z } from 'zod'
 import { postsBasePath } from './constants'
 import { tagsSchema } from './schemas'
 
+// @ts-expect-error Defined by `vite-plugin-blog-reading-times`
+import readingTimes from 'virtual:blog-reading-times'
 // IDEA: Rename posts to pages and keep it for dynamic pages that can be organised with custom paths
 // IDEA: Rename route to handle all pages, not just in the `blog` category. This would allow us to add any type of page
 // IDEA: Make the routing controlled by the files and directories of `pages`
@@ -26,6 +28,8 @@ export type BlogPost = RawPost['frontmatter'] & {
     slug: string
     Content: Component
     updatedAt?: Date
+    /** Reading time in minutes */
+    minutes: number
 }
 
 export type BlogPostWithoutMetadata = Omit<BlogPost, 'updatedAt'>
@@ -69,6 +73,7 @@ export async function getPost(slug: string) {
         ...data.frontmatter,
         slug,
         Content,
+        minutes: readingTimes[slug],
     }
 
     posts.set(slug, post)

@@ -7,7 +7,7 @@
     let { data } = $props()
 
     let { post, older, newer, otherPostsCount } = $derived(data)
-    let { title, publishedAt, tags, Content, slug } = $derived(post)
+    let { title, publishedAt, tags, Content, slug, minutes } = $derived(post)
     const updatedAt = $derived(await getPostUpdatedAtFromGit(slug))
 </script>
 
@@ -19,20 +19,26 @@
     class="prose prose-hr:border-yellow/60 sm:prose-lg lg:prose-xl prose-blockquote:text-current prose-strong:text-current prose-blockquote:bg-white dark:prose-blockquote:bg-carbon-black prose-blockquote:py-1 prose-blockquote:rounded-md prose-headings:text-current mx-auto mt-4 max-w-[75ch] text-base text-current marker:text-current"
 >
     <h1>{title}</h1>
-    <div class="flex flex-wrap gap-1 text-sm whitespace-nowrap sm:text-base">
-        <span>
-            Published <time datetime={publishedAt.toISOString()}
-                >{formatDate(publishedAt)}</time
-            ></span
-        >
-        <span>
-            {#if updatedAt}
-                &middot; Updated
-                <time datetime={updatedAt.toISOString()}
-                    >{formatDate(updatedAt)}</time
-                >
-            {/if}
-        </span>
+    <div
+        class="flex flex-wrap items-center gap-4 text-sm whitespace-nowrap sm:text-base"
+    >
+        <span>{minutes} min read</span>
+        <span class="2xs:block hidden self-center">~</span>
+        <div class="flex flex-nowrap gap-1 text-xs">
+            <span>
+                Published <time datetime={publishedAt.toISOString()}
+                    >{formatDate(publishedAt)}</time
+                ></span
+            >
+            <span>
+                {#if updatedAt}
+                    &middot; Updated
+                    <time datetime={updatedAt.toISOString()}
+                        >{formatDate(updatedAt)}</time
+                    >
+                {/if}
+            </span>
+        </div>
     </div>
     <Tags {tags} class="my-4" />
 
