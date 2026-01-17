@@ -13,7 +13,9 @@
     class="dark:bg-carbon-black grid gap-2 rounded-md bg-white p-4 shadow-lg"
 >
     <div class="mb-2 flex items-center justify-between gap-1">
-        <h3 class="dark:text-yellow text-2xl font-black">{project.name}</h3>
+        <h3 class="dark:text-yellow text-xl font-black sm:text-2xl">
+            {project.name}
+        </h3>
         <div class="flex gap-1 text-sm">
             <time datetime={project.startedYear.toString()}
                 >{project.startedYear}</time
