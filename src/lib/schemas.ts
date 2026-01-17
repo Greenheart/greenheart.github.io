@@ -25,4 +25,5 @@ export const tagsSchema = z.enum([
     'Firefox',
     'Productivity',
     'Web Crypto API',
+    'Open Source',
 ])
