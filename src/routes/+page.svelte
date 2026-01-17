@@ -155,7 +155,11 @@
         >
             <li>Project Management</li>
             <li>Stakeholder Communication</li>
-            <li>Systems Thinking</li>
+            <li>
+                <Link href="https://learningsystemsthinking.com/" compact
+                    >Systems Thinking</Link
+                >
+            </li>
             <li>UI/UX Design</li>
             <li>Humane Tech & Ethical Design</li>
             <li>Design Systems</li>
