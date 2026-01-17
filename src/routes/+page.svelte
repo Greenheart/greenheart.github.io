@@ -173,10 +173,10 @@
     </h2>
 
     <ul
-        class="xs:[&>li]:grid-cols-3 dark:[&>li>span]:text-yellow list-disc space-y-8 pl-4 text-xl [&>li]:grid [&>li]:gap-4 [&>li:even>span]:order-last [&>li>p]:col-span-2 [&>li>span]:font-bold"
+        class="xs:[&>li]:grid-cols-3 dark:[&>li>h3]:text-yellow list-disc space-y-8 pl-4 text-xl [&>li]:grid [&>li]:gap-4 [&>li:even>h3]:order-last [&>li>h3]:font-bold [&>li>p]:col-span-2"
     >
         <li>
-            <span>People</span>
+            <h3>People</h3>
             <p>
                 I believe everyone can teach you something, no matter their
                 experience, job title or background. This approach is especially
@@ -185,7 +185,7 @@
             </p>
         </li>
         <li>
-            <span>Leadership</span>
+            <h3>Leadership</h3>
             <p>
                 Good leadership to me is like coaching, creating a learning
                 culture where the team continously improves their technical
@@ -193,7 +193,7 @@
             </p>
         </li>
         <li>
-            <span>Curiosity</span>
+            <h3>Curiosity</h3>
             <p>
                 I'm driven by curiosity and a strong learning mindset and
                 generally try to see challenges and problems as learning
@@ -202,7 +202,7 @@
             </p>
         </li>
         <li>
-            <span>Quality</span>
+            <h3>Quality</h3>
             <p>
                 I believe testing (mostly integration) is fundamental to quality
                 software, especially for large projects that are going to be
@@ -210,7 +210,7 @@
             </p>
         </li>
         <li>
-            <span>Ownership</span>
+            <h3>Ownership</h3>
             <p>
                 I enjoy taking ownership for the products, services and features
                 I work on, ensuring we're meeting the needs of the people and
@@ -218,7 +218,7 @@
             </p>
         </li>
         <li>
-            <span>Systems Thinking</span>
+            <h3>Systems Thinking</h3>
             <p>
                 Instead of working around symptoms, I often try exploring the
                 systems perspective to find underlying causes. I've found that
