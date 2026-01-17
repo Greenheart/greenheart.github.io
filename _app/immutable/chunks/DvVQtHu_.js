@@ -1,1 +1,0 @@
-const a=new Intl.DateTimeFormat("en-GB",{year:"numeric",month:"short",day:"numeric"});function n(e){return a.format(e)}function o(e){return function(t){e&&e.call(this,t),e=null}}function u(e){return e.reduce((t,r)=>(t[r.featured?"featured":"other"].push(r),t),{featured:[],other:[]})}export{n as f,o,u as s};
