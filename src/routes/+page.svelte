@@ -120,7 +120,7 @@
 
 <section class="mx-auto max-w-prose">
     <h2
-        class="xs:text-2xl mb-6 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
+        class="xs:text-2xl mb-8 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
     >
         How I like to contribute
     </h2>
@@ -161,12 +161,17 @@
             <li>Design Systems</li>
         </ul>
     </div>
+</section>
 
-    <h3
-        class="mt-16 mb-6 text-2xl leading-none font-black tracking-tight sm:text-2xl"
+<hr class="border-yellow/60 mx-auto my-16 max-w-sm" />
+
+<section class="mx-auto max-w-prose">
+    <h2
+        class="xs:text-2xl mb-8 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
     >
         My beliefs
-    </h3>
+    </h2>
+
     <ul class="list-disc space-y-4 pl-4 text-xl">
         <li>
             I believe everyone can teach you something, no matter their
@@ -203,12 +208,16 @@
             the problem.
         </li>
     </ul>
+</section>
 
-    <h3
-        class="mt-16 mb-6 text-2xl leading-none font-black tracking-tight sm:text-2xl"
+<hr class="border-yellow/60 mx-auto my-16 max-w-sm" />
+
+<section class="mx-auto max-w-prose">
+    <h2
+        class="xs:text-2xl mb-8 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
     >
         Unique experiences
-    </h3>
+    </h2>
     <ul class="list-disc space-y-4 pl-4 text-xl">
         <li>
             I founded a <Link href={GREENHEART_COOP_URL} compact
