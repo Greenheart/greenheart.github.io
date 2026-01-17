@@ -21,7 +21,7 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
         ['Vitest', 3],
         ['Storybook', 2],
         ['Next.js', 2],
-        ['Angular.js', 2],
+        ['Angular', 2],
     ],
     'Backend development & APIs': [
         ['REST', 4],
@@ -106,7 +106,7 @@ export const ALL_TECH_SKILLS = [
     'Vitest',
     'Storybook',
     'Next.js',
-    'Angular.js',
+    'Angular',
     'REST',
     'OpenAPI',
     'Node.js',
