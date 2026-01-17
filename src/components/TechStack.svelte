@@ -17,14 +17,14 @@
         Technologies I work with
     </h2>
 
-    <p class="mb-4 text-xl sm:text-2xl">
+    <p class="mb-4 text-xl">
         I primarily use fullstack TypeScript for web, mobile and backend
         development. Currently, I enjoy learning Rust and low level systems
         programming. I have been programming daily since 2013 and have worked
         with a wide range of technologies.
     </p>
 
-    <p class="mb-8 text-xl sm:text-2xl">
+    <p class="mb-8 text-xl">
         I'm comfortable with learning new programming languages and technologies
         whenever I need them. Rather than chasing the next shiny thing, I value
         picking tools based on the problem space, project goals and team
