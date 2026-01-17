@@ -268,7 +268,7 @@
 
 <section class="mx-auto flex max-w-prose flex-col gap-8">
     <h2
-        class="xs:text-2xl mb-4 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
+        class="xs:text-2xl mb-4 scroll-mt-8 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
         id="featured-projects"
     >
         Featured project{featuredProjects.length > 1 ? 's' : ''}
