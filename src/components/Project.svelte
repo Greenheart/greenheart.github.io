@@ -10,9 +10,9 @@
 </script>
 
 <article
-    class="dark:bg-carbon-black grid gap-2 rounded-md bg-white p-4 shadow-lg"
+    class="dark:bg-carbon-black 2xs:m-0 -mx-3 grid gap-2 rounded-md bg-white p-4 shadow-lg"
 >
-    <div class="mb-2 flex items-center justify-between gap-1">
+    <div class="mb-2 flex items-center justify-between gap-2">
         <h3 class="dark:text-yellow text-xl font-black sm:text-2xl">
             {project.name}
         </h3>
