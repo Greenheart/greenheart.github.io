@@ -161,6 +161,74 @@
             <li>Design Systems</li>
         </ul>
     </div>
+
+    <h3
+        class="mt-16 mb-6 text-2xl leading-none font-black tracking-tight sm:text-2xl"
+    >
+        My beliefs
+    </h3>
+    <ul class="list-disc space-y-4 pl-4 text-xl">
+        <li>
+            I believe everyone can teach you something, no matter their
+            experience, job title or background. This approach is especially
+            useful in cross-functional teams with people from development,
+            design, product and business.
+        </li>
+        <li>
+            Good leadership to me is like coaching, creating a learning culture
+            where the team continously improves their technical capabilities and
+            collaboration skills.
+        </li>
+        <li>
+            I'm driven by curiosity and a strong learning mindset and generally
+            try to see challenges and problems as learning opportunities. These
+            are some of the most important qualaities I look for in people I
+            collaborate with.
+        </li>
+        <li>
+            I believe testing (mostly integration) is fundamental to quality
+            software, especially for large projects that are going to be used
+            and developed for many years.
+        </li>
+        <li>
+            I enjoy taking ownership for the products, services and features I
+            work on, ensuring we're meeting the needs of the people and
+            delivering accessible, performant solutions.
+        </li>
+        <li>
+            Instead of working around symptoms, I often try exploring the
+            systems perspective to find underlying causes. I've found that
+            "solving a problem" usually means updating the solution - but not
+            always. Sometimes you need to ask diffferent questions, and redefine
+            the problem.
+        </li>
+    </ul>
+
+    <h3
+        class="mt-16 mb-6 text-2xl leading-none font-black tracking-tight sm:text-2xl"
+    >
+        Unique experiences
+    </h3>
+    <ul class="list-disc space-y-4 pl-4 text-xl">
+        <li>
+            I founded a <Link href={GREENHEART_COOP_URL} compact
+                >co-operative system development agency</Link
+            >, managing teams, projects and clients. Doubling the annual yearly
+            revenue two years in a row while reinvesting all surplus to enable
+            social impact projects.
+        </li>
+        <li>
+            I've worked at several early-stage startups and impactful
+            non-profits. I'm used to working in resource constrained
+            environments where every technical, human and financial resouce
+            needs to be used wisely.
+        </li>
+        <li>
+            I've worked in highly international, diverse teams since 2019, which
+            has taught me a lot about intercultural collaboration and made me
+            more humble and considerate.
+        </li>
+    </ul>
 </section>
 
 <hr class="border-yellow/60 mx-auto my-16 max-w-sm" />
