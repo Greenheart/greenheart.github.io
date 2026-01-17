@@ -1,10 +1,10 @@
 ---
-name: 'PageCrypt: Password Protected HTML files'
+name: 'PageCrypt: Password protected HTML files'
 tags: ['TypeScript', 'Web Crypto API', 'Node.js', 'HTML']
 code: https://github.com/Greenheart/pagecrypt
 startedYear: 2021
 updatedYear: 2026
-featured: true
+featuredWeight: 1
 ---
 
 Password protected Single Page Applications and HTML files, built using the Web Crypto API. Originally a rewrite of a similar project back in March 2021, I made significant improvements to create a smaller, simpler tool. At the time, this was the first public open source project to use the Web Crypto API for password protected HTML files. Since 2021, several other similar projects have borrowed significant parts of the code I wrote, thereby making sure this improved solution reaches many more users and developers.

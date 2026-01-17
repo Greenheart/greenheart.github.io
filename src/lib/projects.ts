@@ -15,7 +15,11 @@ const projectSchema = z.object({
             code: z.url().optional(),
             startedYear: z.number().min(2000).max(2100),
             updatedYear: z.number().min(2000).max(2100).optional(),
-            featured: z.boolean().default(false),
+            /**
+             * If defined, makes the project featured.
+             * A higher weight means the project is shown earlier.
+             */
+            featuredWeight: z.int().min(1).optional(),
         })
         .superRefine((data, ctx) => {
             if (
@@ -70,7 +74,8 @@ export async function getProject(slug: string) {
 
     const data = projectSchema.parse(rawProject, {
         reportInput: true,
-        error: () => 'Invalid frontmatter for slug: ' + slug,
+        error: () =>
+            'Invalid frontmatter for slug: ' + `${projectsBasePath}${slug}.md`,
     })
 
     const project: Project = {

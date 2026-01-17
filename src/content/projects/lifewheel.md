@@ -5,7 +5,7 @@ demo: https://reconnect.earth/lifewheel/
 code: https://github.com/Greenheart/lifewheel
 startedYear: 2023
 updatedYear: 2026
-featured: true
+featuredWeight: 2
 ---
 
 Reflect on Your Life Balance. Local-first, privacy-friendly web app for your personal well-being. Built for the [SvelteHack 2023](https://hack.sveltesociety.dev/2023), and developed since then. Using this regularly with friends and family.

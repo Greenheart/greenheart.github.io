@@ -1,74 +1,67 @@
 <script module lang="ts">
-    import { fade } from 'svelte/transition'
-    import { flip } from 'svelte/animate'
-    import { quintOut } from 'svelte/easing'
-    import { onMount } from 'svelte'
-    import { Tabs } from 'bits-ui'
+    import { TECH_SKILLS, type Proficiency } from '$data/tech-skills'
 
-    import type { TechStack } from '$lib/types'
-    import { tech, groups } from '$data/tech-stack'
+    const skillColors: Record<Proficiency, string> = {
+        5: 'bg-yellow',
+        4: 'bg-yellow/90',
+        3: 'bg-yellow/75',
+        2: 'bg-yellow/60',
+        1: 'bg-yellow/50',
+    } as const
 </script>
 
-<script lang="ts">
-    let selected = $state<keyof TechStack>('Current')
-    let ready = $state(false)
-    onMount(() => (ready = true))
-</script>
-
-<section
-    class="xs:h-80 xs:mb-40 mb-48 flex h-96 flex-col items-center sm:mb-36 sm:h-64"
->
+<section class="mx-auto mb-16 max-w-prose">
     <h2
         class="xs:text-2xl mb-6 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
     >
         Technologies I work with
     </h2>
 
-    <Tabs.Root bind:value={selected} class="p-4">
-        <Tabs.List class="mx-auto mb-6 grid w-72 grid-cols-3 gap-2">
-            {#each groups as group}
-                <Tabs.Trigger
-                    value={group}
-                    class={[
-                        'dark:hover:bg-carbon-black cursor-pointer rounded-xs px-3 py-2 hover:bg-white hover:shadow-lg',
-                        group === selected &&
-                            'dark:bg-carbon-black bg-white shadow-lg',
-                    ]}
-                >
-                    {group}
-                </Tabs.Trigger>
-            {/each}
-        </Tabs.List>
-        {#each groups as group}
-            <Tabs.Content
-                value={group}
-                class={[
-                    // Workaround to replace flexbox gap: https://gist.github.com/OliverJAsh/7f29d0fa1d35216ec681d2949c3fe8b7
-                    '-mb-2 -ml-2 flex max-w-prose flex-wrap justify-center pt-4 font-normal dark:text-black',
-                ]}
-            >
-                {#if ready && group === selected}
-                    {#each tech[group] as technology, index (technology)}
-                        <span
-                            class="pb-5 pl-2"
-                            animate:flip={{
-                                duration: 300,
-                                easing: quintOut,
-                            }}
-                        >
-                            <span
-                                class="bg-yellow rounded-xs p-2 tracking-wide"
-                                in:fade|global={{
-                                    delay: index * 35,
-                                    duration: 300,
-                                }}
-                            >
-                                {technology}
-                            </span>
-                        </span>
-                    {/each}
-                {/if}
-            </Tabs.Content>
+    <p class="mb-4 text-xl">
+        I primarily use fullstack TypeScript for web, mobile and backend
+        development. Currently, I enjoy learning Rust and low level systems
+        programming. I have been programming daily since 2013 and have worked
+        with a wide range of technologies.
+    </p>
+
+    <p class="mb-8 text-xl">
+        I'm comfortable with learning new programming languages and technologies
+        whenever I need them. Rather than chasing the next shiny thing, I value
+        picking tools based on the problem space, project goals and team
+        experience.
+    </p>
+
+    <p class="mb-2">
+        Skills are sorted based on proficiency<span class="sr-only">
+            (from 5 to 1)</span
+        >:
+    </p>
+    <div class="mb-8 flex items-center gap-2" aria-hidden="true">
+        <span class="mr-2 text-2xl">+</span>
+        {#each Object.entries(skillColors).reverse() as [proficiency, color] (proficiency)}
+            <div class="{color} size-5 rounded-xs"></div>
         {/each}
-    </Tabs.Root>
+        <span class="ml-2 text-2xl">-</span>
+    </div>
+
+    {#each Object.entries(TECH_SKILLS) as [title, skills] (title)}
+        <section class="mb-8">
+            <h3 class="text-xl font-semibold">{title}</h3>
+
+            <ul
+                class="flex flex-wrap gap-1.5 pt-4 text-sm font-normal dark:text-black"
+            >
+                {#each skills as [technology, proficiency], index (technology)}
+                    <li
+                        class="{skillColors[
+                            proficiency
+                        ]} rounded-xs px-1.5 py-1 tracking-wide"
+                    >
+                        {technology}
+                        <span class="sr-only">({proficiency})</span>
+                    </li>
+                {/each}
+            </ul>
+        </section>
+    {/each}
 </section>
