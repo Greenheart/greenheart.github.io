@@ -31,16 +31,17 @@
         experience.
     </p>
 
-    <p class="mb-2">Skills are sorted based on proficiency:</p>
-    <div class="mb-8 flex items-center gap-2">
-        <span class="mr-2 text-2xl" aria-hidden="true">+</span>
+    <p class="mb-2">
+        Skills are sorted based on proficiency<span class="sr-only">
+            (from 5 to 1)</span
+        >:
+    </p>
+    <div class="mb-8 flex items-center gap-2" aria-hidden="true">
+        <span class="mr-2 text-2xl">+</span>
         {#each Object.entries(skillColors).reverse() as [proficiency, color] (proficiency)}
-            <div
-                class="{color} size-5 rounded-xs"
-                aria-label={proficiency}
-            ></div>
+            <div class="{color} size-5 rounded-xs"></div>
         {/each}
-        <span class="ml-2 text-2xl" aria-hidden="true">-</span>
+        <span class="ml-2 text-2xl">-</span>
     </div>
 
     {#each Object.entries(TECH_SKILLS) as [title, skills] (title)}
