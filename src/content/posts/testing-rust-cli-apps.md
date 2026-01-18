@@ -5,7 +5,7 @@ tags: ['Rust', 'Terminal', 'Open Source']
 featured: true
 ---
 
-I recently finished reading the [Command Line Applications in Rust](https://rust-cli.github.io/book/) after experimenting with the exercises and adding more test cases. While the testing chapter covers the [basics of testing CLI apps](https://rust-cli.github.io/book/tutorial/testing.html), it didn't show the full potential of the recommended crates [assert_cmd](https://crates.io/crates/assert_cmd), [assert_fs](https://crates.io/crates/assert_fs) and [predicates](https://crates.io/crates/predicates).
+I recently finished reading the book [Command Line Applications in Rust](https://rust-cli.github.io/book/), experimenting with the exercises and adding more test cases. While the testing chapter covers the [basics of testing CLI apps](https://rust-cli.github.io/book/tutorial/testing.html), it didn't show the full potential of the recommended crates [assert_cmd](https://crates.io/crates/assert_cmd), [assert_fs](https://crates.io/crates/assert_fs) and [predicates](https://crates.io/crates/predicates).
 
 Specifically, I wondered how to create a temporary directory with multiple nested subdirectories and files. This is very useful for testing CLI tools that scaffold projects. Or in the case of my current Rust project, building a simple Git clone to learn more about how Git works internally, how to structure unit and integration tests in Rust, and to practice using the language.
 
