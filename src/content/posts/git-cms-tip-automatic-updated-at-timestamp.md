@@ -1,5 +1,5 @@
 ---
-title: 'Git-based CMS tip: Automatic `updatedAt` timestamps with Git'
+title: 'Git-based CMS tip: Automatic updatedAt timestamps with Git'
 publishedAt: 2025-12-16
 tags: ['Git', 'Shell Scripting', 'TypeScript']
 featured: true
