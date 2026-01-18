@@ -41,6 +41,6 @@ fn find_content_in_file_of_tmp_dir() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
-Making this change was also a good opportunity to learn more about how [mdBook](github.com/rust-lang/mdBook) works, which is commonly used for many Rust books and technical tutorials. I really enjoyed how fast it builds, and even runs tests for the code samples to verify everything works as expected. This makes technical writing such a smooth experience.
+Making this change was also a good opportunity to learn more about how [mdBook](https://github.com/rust-lang/mdBook) works, which is commonly used for many Rust books and technical tutorials. I really enjoyed how fast it builds, and even runs tests for the code samples to verify everything works as expected. This makes technical writing such a smooth experience.
 
 And speaking of the Git clone, it's coming together nicely and has already taught me a lot about both Rust programming and how to create integration tests that simulate a Git repository. In fact, these testing techniques already helped me catch a regression while refactoring to reuse some code between `git cat-file` and `git ls-tree`, so this knowledge has already proven useful!
