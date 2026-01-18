@@ -1,7 +1,8 @@
 <script lang="ts">
     const variants = {
         default: 'bg-white dark:bg-carbon-black',
-        subtle: 'bg-honeydew dark:bg-evergreen',
+        subtle: 'dark:bg-evergreen bg-yellow',
+        yellow: 'bg-yellow text-black',
     } as const
 
     type Props = {

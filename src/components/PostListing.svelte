@@ -29,7 +29,7 @@
                 <span class="items-center">&middot;</span>
                 <time datetime={`${minutes}m`}>{minutes} min</time>
             </span>
-            <Tags {tags} variant="subtle" />
+            <Tags {tags} variant="yellow" />
         </div>
     </article>
 </a>
