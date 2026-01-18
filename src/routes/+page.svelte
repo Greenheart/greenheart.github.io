@@ -258,7 +258,7 @@
         </li>
         <li>
             I've worked at several early-stage startups and impactful
-            non-profits. I'm used to working in resource constrained
+            non-profits. I'm used to working in resource-constrained
             environments where every technical, human and financial resource
             needs to be used wisely.
         </li>
