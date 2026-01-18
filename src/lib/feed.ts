@@ -4,7 +4,7 @@ import type { Component } from 'svelte'
 
 import { SITE_DESCRIPTION, SITE_URL } from '$lib/constants'
 import { getAllPosts } from '$lib/posts'
-import { getPostUpdatedAtFromGit } from './post-details.remote'
+import { getPostMetadata } from './post-details.remote'
 
 const normalizedURL = SITE_URL.endsWith('/') ? SITE_URL : SITE_URL + '/'
 const samuel = { name: 'Samuel Plumppu', link: normalizedURL }
@@ -51,7 +51,7 @@ export async function generateFeed() {
 
     for (const post of posts) {
         const postURL = `${SITE_URL}/blog/${post.slug}`
-        const updatedAt = await getPostUpdatedAtFromGit(post.slug)
+        const { updatedAt } = await getPostMetadata(post.slug)
         const content = await renderSvelteMarkdocToHTML(post.Content)
 
         feed.addItem({

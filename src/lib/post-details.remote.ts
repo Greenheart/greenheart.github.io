@@ -1,7 +1,10 @@
-import { prerender } from '$app/server'
+import { z } from 'zod'
+import readingTime from 'reading-time'
 import { execSync } from 'node:child_process'
 import { resolve } from 'node:path'
-import { z } from 'zod'
+import { readFileSync } from 'node:fs'
+
+import { prerender } from '$app/server'
 import { postsBasePath } from './constants'
 
 /**
@@ -36,9 +39,50 @@ function getFileUpdatedAtFromGit(path: string) {
 }
 
 /**
- * Use Git to determine when a blog post was last modified.
+ * Get reading time in minutes for a given blog post
  */
-export const getPostUpdatedAtFromGit = prerender(z.string(), (slug: string) => {
+function getReadingTime(path: string) {
+    const text = extractTextFromMarkdown(readFileSync(path, 'utf-8'))
+    return Math.ceil(readingTime(text, { wordsPerMinute: 240 }).minutes)
+}
+
+/**
+ * Get metadata for a given blog post to determine when it was updated
+ */
+export const getPostMetadata = prerender(z.string(), (slug: string) => {
     const path = resolve(postsBasePath, `${slug}.md`)
-    return getFileUpdatedAtFromGit(path)
+    return {
+        updatedAt: getFileUpdatedAtFromGit(path),
+        minutes: getReadingTime(path),
+    }
 })
+
+function extractTextFromMarkdown(markdown: string) {
+    return (
+        markdown
+            // Remove comments
+            .replaceAll(/<!--(.*?)-->/gm, '')
+            // Consistently use spaces for indentation
+            .replaceAll('\t', '    ')
+            // More than 1 space should be max 4 spaces
+            .replaceAll(/[ ]{2,}/g, '    ')
+            // Footnotes
+            .replaceAll(/^\[[^]]*\][^(].*/gm, '')
+            // Indented blocks of code
+            .replaceAll(/^( {4,}[^-*]).*/gm, '')
+            // Custom header IDs
+            .replaceAll(/{#.*}/g, '')
+            // Replace newlines with spaces for consistency
+            .replaceAll('\n', ' ')
+            // Remove images
+            .replaceAll(/!\[[^\]]*\]\([^)]*\)/g, '')
+            // Remove HTML tags
+            .replaceAll(/<\/?[^>]*>/g, '')
+            // Remove special characters
+            .replaceAll(/[#*`~\-–^=<>+|/:]/g, '')
+            // Remove footnote references
+            .replaceAll(/\[[0-9]*\]/g, '')
+            // Remove enumerations
+            .replaceAll(/[0-9#]*\./g, '')
+    )
+}
