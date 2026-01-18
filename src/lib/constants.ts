@@ -4,6 +4,8 @@ export const SITE_DESCRIPTION =
     'Experienced fullstack developer, curious about how tech, systems thinking and Doughnut design for business can be combined to create a positive impact.'
 export const SITE_URL = 'https://samuelplumppu.se'
 export const GREENHEART_COOP_URL = 'https://greenheart.coop/en'
+export const REPO_URL =
+    'https://github.com/Greenheart/greenheart.github.io/tree/2021/'
 
 const mastodon = {
     username: 'Greenheart',

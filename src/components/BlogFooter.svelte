@@ -11,8 +11,9 @@
         older: Omit<BlogPost, 'Content'>
         newer: Omit<BlogPost, 'Content'>
         otherPostsCount: number
+        pageSourceURL: string
     }
-    let { older, newer, otherPostsCount }: Props = $props()
+    let { older, newer, otherPostsCount, pageSourceURL }: Props = $props()
 </script>
 
 <section
@@ -33,7 +34,20 @@
 
     <p>
         <Link href="/blog" compact>Read {otherPostsCount} more posts</Link>
-        or <Link href="/" compact>learn more</Link> about me.
+        or learn more <Link href="/" compact>about me</Link>.
+    </p>
+
+    <p class="flex items-center justify-center gap-1">
+        <Link
+            href={pageSourceURL}
+            class="inline-flex items-center gap-1"
+            compact
+            ><img
+                src="/images/code-xml.svg"
+                alt="Show code (Git)"
+                class="size-5"
+            />View source</Link
+        > for this page.
     </p>
 </section>
 

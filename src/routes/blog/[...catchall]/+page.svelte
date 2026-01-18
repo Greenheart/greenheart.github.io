@@ -1,6 +1,7 @@
 <script lang="ts">
     import BlogFooter from '$components/BlogFooter.svelte'
     import Tags from '$components/Tags.svelte'
+    import { REPO_URL } from '$lib/constants.js'
     import { getPostMetadata } from '$lib/post-details.remote.js'
     import { formatDate } from '$lib/utils'
 
@@ -8,7 +9,7 @@
 
     let { post, older, newer, otherPostsCount } = $derived(data)
     let { title, publishedAt, tags, Content, slug } = $derived(post)
-    const { updatedAt, minutes } = $derived(await getPostMetadata(slug))
+    const { updatedAt, minutes, path } = $derived(await getPostMetadata(slug))
 </script>
 
 <!-- TODO: Add dynamic meta tags based on post content. -->
@@ -47,4 +48,9 @@
     <Content />
 </article>
 
-<BlogFooter {older} {newer} {otherPostsCount} />
+<BlogFooter
+    {older}
+    {newer}
+    {otherPostsCount}
+    pageSourceURL={new URL(path, REPO_URL).toString()}
+/>

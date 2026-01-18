@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import readingTime from 'reading-time'
 import { execSync } from 'node:child_process'
-import { resolve } from 'node:path'
+import { join } from 'node:path'
 import { readFileSync } from 'node:fs'
 
 import { prerender } from '$app/server'
@@ -50,10 +50,11 @@ function getReadingTime(path: string) {
  * Get metadata for a given blog post to determine when it was updated
  */
 export const getPostMetadata = prerender(z.string(), (slug: string) => {
-    const path = resolve(postsBasePath, `${slug}.md`)
+    const path = join(postsBasePath, `${slug}.md`)
     return {
         updatedAt: getFileUpdatedAtFromGit(path),
         minutes: getReadingTime(path),
+        path,
     }
 })
 
