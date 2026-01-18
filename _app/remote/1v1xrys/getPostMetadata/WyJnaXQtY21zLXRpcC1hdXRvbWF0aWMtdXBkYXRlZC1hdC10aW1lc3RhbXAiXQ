@@ -1,1 +1,1 @@
-{"type":"result","result":"[{\"updatedAt\":-1,\"minutes\":1,\"path\":2},3,\"src/content/posts/git-cms-tip-automatic-updated-at-timestamp.md\"]"}
+{"type":"result","result":"[{\"updatedAt\":1,\"minutes\":2,\"path\":3},[\"Date\",\"2026-01-18T05:09:53.000Z\"],3,\"src/content/posts/git-cms-tip-automatic-updated-at-timestamp.md\"]"}
