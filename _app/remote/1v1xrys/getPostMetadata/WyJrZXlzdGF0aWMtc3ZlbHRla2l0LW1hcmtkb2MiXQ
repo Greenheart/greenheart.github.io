@@ -1,1 +1,1 @@
-{"type":"result","result":"[{\"updatedAt\":1,\"minutes\":2},[\"Date\",\"2026-01-16T21:16:38.000Z\"],12]"}
+{"type":"result","result":"[{\"updatedAt\":1,\"minutes\":2,\"path\":3},[\"Date\",\"2026-01-16T21:16:38.000Z\"],12,\"src/content/posts/keystatic-sveltekit-markdoc.md\"]"}

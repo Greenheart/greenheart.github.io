@@ -1,1 +1,1 @@
-{"type":"result","result":"[{\"updatedAt\":1,\"minutes\":2},[\"Date\",\"2025-12-16T22:40:59.000Z\"],5]"}
+{"type":"result","result":"[{\"updatedAt\":1,\"minutes\":2,\"path\":3},[\"Date\",\"2025-12-16T22:40:59.000Z\"],5,\"src/content/posts/generate-password-in-browser-web-crypto-api.md\"]"}

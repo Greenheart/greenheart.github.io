@@ -1,1 +1,1 @@
-{"type":"result","result":"[{\"updatedAt\":1,\"minutes\":2},[\"Date\",\"2026-01-16T18:16:56.000Z\"],4]"}
+{"type":"result","result":"[{\"updatedAt\":1,\"minutes\":2,\"path\":3},[\"Date\",\"2026-01-16T18:16:56.000Z\"],4,\"src/content/posts/live-reloading-db-schema-with-drizzle-sqlite.md\"]"}
