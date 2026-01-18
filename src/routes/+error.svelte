@@ -1,7 +1,26 @@
+<script lang="ts">
+    import { dev } from '$app/environment'
+    import { page } from '$app/state'
+
+    const errorMessage = $derived.by<string | undefined>(() => {
+        if (page.error) {
+            try {
+                const res = JSON.parse(page.error.message)?.[0]?.message
+                return res
+            } catch (_) {}
+        }
+    })
+</script>
+
 <div class="text-center">
     <h1 class="mb-4 text-xl font-bold sm:text-3xl">
-        Oh no! This page does not exist
+        Oh no! Something went wrong :(
     </h1>
+
+    {#if dev && page.error}
+        <p class="font-semibold text-red-400">{errorMessage}</p>
+        <pre class="text-left text-sm">{page.error.message}</pre>
+    {/if}
 
     <a
         href="/"
