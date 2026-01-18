@@ -20,11 +20,11 @@
 >
     <h1>{title}</h1>
     <div
-        class="flex flex-wrap items-center gap-4 text-sm whitespace-nowrap sm:text-base"
+        class="flex flex-wrap items-center gap-x-2 gap-y-4 text-xs whitespace-nowrap sm:text-sm"
     >
-        <span>{minutes} min read</span>
+        <span class="2xs:w-min w-full">{minutes} min read</span>
         <span class="2xs:block hidden self-center">~</span>
-        <div class="flex flex-nowrap gap-1 text-xs">
+        <div class="flex flex-nowrap gap-1">
             <span>
                 Published <time datetime={publishedAt.toISOString()}
                     >{formatDate(publishedAt)}</time
