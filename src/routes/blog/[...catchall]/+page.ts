@@ -1,13 +1,14 @@
 import type { MetaTagsProps } from 'svelte-meta-tags'
 
 import { getPost, listPosts } from '$lib/posts'
+import { error } from '@sveltejs/kit'
 
 export const load = async ({ params }) => {
     const slug = params.catchall
 
     const post = await getPost(slug)
     if (!post) {
-        throw new Error('Skipping prerendering for draft post: ' + slug)
+        error(403, 'Skipping prerendering for draft post: ' + slug)
     }
     const title = post.title
 

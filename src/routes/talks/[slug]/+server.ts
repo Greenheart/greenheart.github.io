@@ -25,7 +25,7 @@ export const GET = async ({ params: { slug }, setHeaders }) => {
             })
         }
 
-        throw new Error(`Unexpected error when rendering talk ${slug}`)
+        error(500, `Unexpected error when rendering talk ${slug}`)
     }
 
     error(404, 'Not found')

@@ -5,6 +5,7 @@ import { z } from 'zod'
 
 import { postsBasePath } from './constants'
 import { tagsSchema } from './schemas'
+import { error } from '@sveltejs/kit'
 
 // IDEA: Rename posts to pages and keep it for dynamic pages that can be organised with custom paths
 // IDEA: Rename route to handle all pages, not just in the `blog` category. This would allow us to add any type of page
@@ -55,18 +56,22 @@ export async function getPost(slug: string) {
 
     const loaded = await allPosts[slug]?.()
     if (!loaded) {
-        throw new Error('No post with slug: ' + slug)
+        error(404, 'No post with slug: ' + slug)
     }
     const { default: Content, ...rawPost } = loaded
 
-    const data = postSchema.parse(rawPost, {
+    const result = postSchema.safeParse(rawPost, {
         reportInput: true,
         error: () =>
-            'Invalid frontmatter for slug: ' + `${postsBasePath}${slug}.md`,
+            'Invalid frontmatter for post: ' + `${postsBasePath}${slug}.md`,
     })
 
+    if (result.error) {
+        error(500, result.error)
+    }
+
     const post: BlogPostWithoutMetadata = {
-        ...data.frontmatter,
+        ...result.data.frontmatter,
         slug,
         Content,
     }

@@ -5,6 +5,7 @@ import { z } from 'zod'
 import { projectsBasePath } from './constants'
 import { tagsSchema } from './schemas'
 import type { RequiredProperties } from './types'
+import { error } from '@sveltejs/kit'
 
 const projectSchema = z.object({
     frontmatter: z
@@ -68,18 +69,22 @@ export async function getProject(slug: string) {
 
     const loaded = await allProjects[slug]?.()
     if (!loaded) {
-        throw new Error('No project with slug: ' + slug)
+        error(404, 'No project with slug: ' + slug)
     }
     const { default: Content, ...rawProject } = loaded
 
-    const data = projectSchema.parse(rawProject, {
+    const result = projectSchema.safeParse(rawProject, {
         reportInput: true,
         error: () =>
             'Invalid frontmatter for slug: ' + `${projectsBasePath}${slug}.md`,
     })
 
+    if (result.error) {
+        error(500, result.error)
+    }
+
     const project: Project = {
-        ...data.frontmatter,
+        ...result.data.frontmatter,
         slug,
         Content,
     }
