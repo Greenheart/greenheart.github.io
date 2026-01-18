@@ -12,12 +12,12 @@
     const { minutes } = $derived(await getPostMetadata(post.slug))
 </script>
 
-<a href={'/blog/' + post.slug} aria-label="Read blog post">
+<a href={'/blog/' + post.slug} aria-label="Read blog post" class="group">
     <article
-        class="dark:bg-carbon-black group rounded-md bg-white p-4 shadow-lg hover:shadow-xl"
+        class="dark:bg-carbon-black rounded-md bg-white p-4 shadow-lg hover:shadow-xl"
     >
         <h2
-            class="xs:text-2xl xs:mb-4 decoration-moss mb-2 text-xl leading-[1.1] font-black tracking-tight group-hover:underline"
+            class="xs:text-2xl xs:mb-4 decoration-moss mb-2 text-xl leading-[1.1] font-black tracking-tight group-focus-within:underline group-hover:underline"
         >
             {title}
         </h2>
