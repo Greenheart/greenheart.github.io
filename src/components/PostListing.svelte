@@ -2,12 +2,14 @@
     import Tags from './Tags.svelte'
     import { formatDate } from '$lib/utils'
     import type { BlogPost } from '$lib/types'
+    import { getPostMetadata } from '$lib/post-details.remote'
 
     type Props = {
         post: Omit<BlogPost, 'Content'>
     }
     let { post }: Props = $props()
     let { title, publishedAt, tags } = $derived(post)
+    const { minutes } = $derived(await getPostMetadata(post.slug))
 </script>
 
 <a href={'/blog/' + post.slug} aria-label="Read blog post">
@@ -19,10 +21,14 @@
         >
             {title}
         </h2>
-        <div class="xs:flex xs:justify-between xs:gap-0 grid gap-1">
-            <time datetime={publishedAt.toISOString()} class="xs:m-0 mb-2"
-                >{formatDate(publishedAt)}</time
-            >
+        <div class="flex flex-wrap justify-between gap-2">
+            <span class="flex flex-nowrap gap-1 whitespace-nowrap">
+                <time datetime={publishedAt.toISOString()}
+                    >{formatDate(publishedAt)}</time
+                >
+                <span class="items-center">&middot;</span>
+                <time datetime={`${minutes}m`}>{minutes} min</time>
+            </span>
             <Tags {tags} variant="subtle" />
         </div>
     </article>
