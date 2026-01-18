@@ -2,6 +2,7 @@
 title: 'Git-based CMS tip: Automatic `updatedAt` timestamps with Git'
 publishedAt: 2025-12-16
 tags: ['Git', 'Shell Scripting', 'TypeScript']
+featured: true
 ---
 
 One of the main benefits of using a database to power either a backend API or a CMS is the ability to get consistent `updatedAt` timestamps for entries like posts, comments or other forms of content. Until recently, this has been one of the main features that made me consider database-powered CMSes and backends even in cases where 90% of the project would work much better with a Git-based CMS.
