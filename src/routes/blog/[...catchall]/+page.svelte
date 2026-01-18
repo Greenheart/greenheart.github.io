@@ -22,7 +22,9 @@
     <div
         class="flex flex-wrap items-center gap-x-2 gap-y-4 text-xs whitespace-nowrap sm:text-sm"
     >
-        <span class="2xs:w-min w-full">{minutes} min read</span>
+        <time datetime={`${minutes}m`} class="2xs:w-min w-full"
+            >{minutes} min read</time
+        >
         <span class="2xs:block hidden self-center">~</span>
         <div class="flex flex-nowrap gap-1">
             <span>
