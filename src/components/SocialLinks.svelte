@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { MASTODON_URL } from '$lib/constants'
+    import { CODE_URL, MASTODON_URL } from '$lib/constants'
 
     type Props = {
         class?: string
@@ -22,7 +22,7 @@
         <img src="/images/matrix-logo.svg" alt="Matrix.org logo" class="h-6" />
     </a>
     <a
-        href="https://github.com/Greenheart"
+        href={CODE_URL}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="See my libre software at GitHub"

@@ -8,7 +8,7 @@
     import Project from '$components/Project.svelte'
     import SocialLinks from '$components/SocialLinks.svelte'
     import { formatDate } from '$lib/utils.js'
-    import { GREENHEART_COOP_URL } from '$lib/constants.js'
+    import { CODE_URL, GREENHEART_COOP_URL } from '$lib/constants.js'
 
     let { data } = $props()
     let {
@@ -39,7 +39,6 @@
         class="mb-12 text-xl leading-6 font-black tracking-tight sm:text-3xl sm:leading-8 lg:text-4xl lg:leading-9"
     >
         <div class="bg-moss -skew-y-1 transform p-2 text-black shadow-2xl">
-            <!-- TODO: split the base title at & -->
             <span class="whitespace-nowrap">System Developer</span>
             &
             <span class="whitespace-nowrap">Sustainability Entrepreneur</span>
@@ -294,6 +293,14 @@
     {#each featuredProjects as project}
         <Project {project} />
     {/each}
+
+    <Link href={CODE_URL} class="inline-flex items-center gap-1 self-center"
+        ><img
+            src="/images/code-xml.svg"
+            alt="Show code (Git)"
+            class="size-5"
+        />Explore more of my public projects</Link
+    >
 
     <!-- TODO: Uncomment when the /projects page is ready -->
     <!-- {#if otherProjectsCount}

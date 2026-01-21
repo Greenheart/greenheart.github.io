@@ -6,6 +6,7 @@ export const SITE_URL = 'https://samuelplumppu.se'
 export const GREENHEART_COOP_URL = 'https://greenheart.coop/en'
 export const REPO_URL =
     'https://github.com/Greenheart/greenheart.github.io/tree/2021/'
+export const CODE_URL = 'https://github.com/Greenheart'
 
 const mastodon = {
     username: 'Greenheart',
