@@ -255,7 +255,8 @@
                 >co-operative system development agency</Link
             >, managing teams, projects and clients. Doubling the annual yearly
             revenue two years in a row while reinvesting all surplus to enable
-            social impact projects.
+            social impact projects and speed up the transition to a regenerative
+            and distributive economy.
         </li>
         <li>
             I've worked at several early-stage startups and impactful
