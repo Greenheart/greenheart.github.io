@@ -50,18 +50,27 @@
     <p>
         Since 2015, I've worked with early stage startups and non-profits to
         create a future where both humanity and the living planet thrive
-        together. I'm curious about how tech, systems thinking and <Link
+        together. I'm a curious and reflective person who enjoy learning, <Link
+            href="/blog"
+            compact>writing</Link
+        > and building <Link href="#featured-projects" compact>projects</Link>.
+    </p>
+
+    <p>
+        I primarily work with fullstack TypeScript and Rust, and have used a <Link
+            href="#tech"
+            compact>wide range of technologies</Link
+        > over the years.
+    </p>
+
+    <p>
+        Beyond programming, I combine tech, systems thinking and <Link
             href="https://doughnuteconomics.org/themes/business-enterprise"
             compact>Doughnut design for business</Link
-        > can be combined to create a positive impact.
-    </p>
-    <p>
-        With a strong passion for how libre software and co-operatives can help
-        create an economy that is regenerative and distributive by design, I'm
-        currently the Founder & Lead Developer at <Link
-            href={GREENHEART_COOP_URL}
-            compact>Greenheart Co-operative</Link
-        >.
+        > to create a positive impact. With a strong passion for how libre software
+        and co-operatives can help create an economy that is regenerative and distributive
+        by design, I'm currently the Founder & Lead Developer at
+        <Link href={GREENHEART_COOP_URL} compact>Greenheart Co-operative</Link>.
     </p>
 </section>
 
