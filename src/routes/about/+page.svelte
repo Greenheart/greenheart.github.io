@@ -11,7 +11,7 @@
 
     <div class="mx-auto grid max-w-prose gap-4 text-xl sm:text-2xl">
         <p>
-            While my core professional work is systems development and making
+            While my core professional work is system development and making
             <Link
                 href="https://en.wikipedia.org/wiki/Tools_for_Conviviality"
                 compact>convivial technology</Link
