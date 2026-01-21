@@ -27,20 +27,32 @@
         </p>
 
         <p>
-            Beyond my interest in technology and its impact on people and
-            planet, I like to spend as much time as possible in nature. Usually
-            running, orienteering, or hiking - there's something special with
-            navigating in completely new terrain and finding your way. I guess
-            this could explain my view of life as a journey where we get to
-            learn, experience personal growth and find our ways to improve the
-            world around us, leaving a better trace for those who follow in our
-            footsteps.
+            Some topics I care deeply about are <Link
+                href="https://www.inkandswitch.com/essay/local-first/"
+                compact>local-first</Link
+            > software,
+            <Link href="https://permacomputing.net/" compact
+                >permacomputing</Link
+            > and empowering people to customise and even contribute to the software
+            they use.
+        </p>
+
+        <hr class="border-yellow/60 mx-auto my-12 w-full max-w-sm" />
+
+        <p>
+            Beyond my interest in technology, I like to spend as much time as
+            possible in nature, usually running, orienteering, or hiking.
+            There's something special with navigating in completely new terrain
+            and finding your way. I guess this could explain my view of life as
+            a journey where we get to learn, experience personal growth and find
+            our ways to improve the world around us, leaving a better trace for
+            those who follow in our footsteps.
         </p>
 
         <p>
-            Back in the day, I used to compete in orienteering at a high level,
-            but these days, orienteering is mostly an exciting and rewarding way
-            to explore new forests and regions.
+            I used to compete in orienteering at a high level, but these days,
+            it's mostly a hobby and great way to explore new forests and
+            regions.
         </p>
     </div>
 
