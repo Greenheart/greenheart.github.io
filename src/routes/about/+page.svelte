@@ -12,8 +12,11 @@
     <div class="mx-auto grid max-w-prose gap-4 text-xl sm:text-2xl">
         <p>
             While my core professional work is systems development and making
-            convivial technology that benefits people and planet, I also use
-            systems thinking as a general lens to view and explore the world.
+            <Link
+                href="https://en.wikipedia.org/wiki/Tools_for_Conviviality"
+                compact>convivial technology</Link
+            > that benefits people and planet, I also use systems thinking as a general
+            lens to view and explore the world.
         </p>
 
         <p>
@@ -26,7 +29,7 @@
         <p>
             Beyond my interest in technology and its impact on people and
             planet, I like to spend as much time as possible in nature. Usually
-            running, orienteering, or hiking, there's something special with
+            running, orienteering, or hiking - there's something special with
             navigating in completely new terrain and finding your way. I guess
             this could explain my view of life as a journey where we get to
             learn, experience personal growth and find our ways to improve the
@@ -35,9 +38,9 @@
         </p>
 
         <p>
-            Back in the day, I used to exercise and compete in orienteering at a
-            high level, but these days, orienteering is more of exciting and
-            rewarding way to explore new forests and regions.
+            Back in the day, I used to compete in orienteering at a high level,
+            but these days, orienteering is mostly an exciting and rewarding way
+            to explore new forests and regions.
         </p>
     </div>
 
