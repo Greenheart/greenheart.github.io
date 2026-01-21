@@ -1,7 +1,7 @@
 export const BASE_TITLE =
     'Samuel Plumppu - System Developer & Sustainability Entrepreneur'
 export const SITE_DESCRIPTION =
-    'Experienced system developer, curious about how tech, systems thinking and Doughnut design for business can be combined to create a positive impact.'
+    'Experienced system developer in Switzerland, primarily working with TypeScript and Rust. Curious learner who enjoy writing and building projects. Beyond programming, I combine tech, systems thinking and Doughnut design for business to create a positive impact.'
 export const SITE_URL = 'https://samuelplumppu.se'
 export const GREENHEART_COOP_URL = 'https://greenheart.coop/en'
 export const REPO_URL =
