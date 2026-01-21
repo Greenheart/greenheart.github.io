@@ -19,6 +19,7 @@ export const tagsSchema = z.enum([
     'Testing',
     'Entrepreneurship',
     'Co-operatives',
+    'Systems Thinking',
     'Economics',
     'DX',
     'Code Snippet',
