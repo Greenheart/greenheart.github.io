@@ -39,9 +39,10 @@
         class="mb-12 text-xl leading-6 font-black tracking-tight sm:text-3xl sm:leading-8 lg:text-4xl lg:leading-9"
     >
         <div class="bg-moss -skew-y-1 transform p-2 text-black shadow-2xl">
-            <span class="whitespace-nowrap">Sustainability Entrepreneur</span>
+            <!-- TODO: split the base title at & -->
+            <span class="whitespace-nowrap">System Developer</span>
             &
-            <span class="whitespace-nowrap">Fullstack Developer</span>
+            <span class="whitespace-nowrap">Sustainability Entrepreneur</span>
         </div>
     </h2>
 </section>
