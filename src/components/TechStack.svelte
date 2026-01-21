@@ -12,7 +12,8 @@
 
 <section class="mx-auto mb-16 max-w-prose">
     <h2
-        class="xs:text-2xl mb-6 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
+        id="tech"
+        class="xs:text-2xl mb-6 scroll-mt-8 text-center text-xl leading-none font-black tracking-tight sm:text-3xl lg:text-4xl"
     >
         Technologies I work with
     </h2>
