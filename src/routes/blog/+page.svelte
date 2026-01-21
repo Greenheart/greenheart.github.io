@@ -18,7 +18,7 @@
     <h1
         class="xs:text-5xl mb-8 text-4xl leading-none font-black tracking-tight sm:text-6xl lg:text-7xl"
     >
-        Blog archive
+        Blog posts
     </h1>
     <SubscribeLinks />
 </section>
