@@ -1,5 +1,6 @@
 <script lang="ts">
     import EncryptedEmail from './EncryptedEmail.svelte'
+    import Link from './Link.svelte'
     import SocialLinks from './SocialLinks.svelte'
     import SubscribeLinks from './SubscribeLinks.svelte'
 </script>
@@ -19,4 +20,16 @@
     <SocialLinks class="my-8" />
 
     <SubscribeLinks />
+
+    <p class="mx-auto mt-8 max-w-prose text-xs">
+        This website is 100% certified home-grown and organic.<br
+            class="xs:block hidden"
+        /><Link
+            href="https://www.nature.com/articles/s44222-025-00323-4"
+            compact>Writing is thinking</Link
+        > and you either <Link
+            href="https://en.wiktionary.org/wiki/use_it_or_lose_it"
+            compact>use it or lose it</Link
+        >.
+    </p>
 </footer>
