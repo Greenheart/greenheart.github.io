@@ -171,7 +171,7 @@
             <li>Project Management</li>
             <li>Stakeholder Communication</li>
             <li>
-                <Link href="https://learningsystemsthinking.com/" compact
+                <Link href="/blog/practicing-systems-thinking" compact
                     >Systems Thinking</Link
                 >
             </li>
