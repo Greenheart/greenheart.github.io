@@ -2,7 +2,6 @@
 title: Using SQLite Triggers to Boost the Performance of SELECT COUNT(*)
 publishedAt: 2025-08-27
 tags: ['SQLite', 'Caching', 'Performance']
-featured: true
 ---
 
 I recently developed a website where the landing page shows two important numbers, both derived from the `users` table. Initially, these numbers were retrieved by executing `SELECT COUNT(*)` for every page load. This worked well in the beginning but got slower as the number of users grew and the website traffic increased. However, by using SQLite triggers and a dedicated `stats` table, I made the website load much faster, and using fewer resources. This blog post describes my process and how to implement similar solutions in your own projects.
