@@ -273,6 +273,18 @@
             needs to be used wisely.
         </li>
         <li>
+            Every year since 2021, I've had the privilige to hold guest lectures
+            at Chalmers University of Technology for the course <Link
+                href="https://www.chalmers.se/en/education/your-studies/find-course-and-programme-syllabi/course-syllabus/TEK237/"
+                compact>Social innovation and social entrepreneurship</Link
+            >. My goal is to showcase how to use Doughnut Economics and <Link
+                href="https://doughnuteconomics.org/themes/business-enterprise"
+                compact>Doughnut design</Link
+            > for social enterprises. I also hope to inspire more young people to
+            learn about co-operatives and how this model enables transformative change.
+            <Link href="/talks" compact>(slides)</Link>.
+        </li>
+        <li>
             I've worked in highly international, diverse teams since 2019, which
             has taught me a lot about intercultural collaboration and made me
             more humble and considerate.
