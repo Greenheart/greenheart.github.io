@@ -281,7 +281,7 @@
                 href="https://doughnuteconomics.org/themes/business-enterprise"
                 compact>Doughnut design</Link
             > for social enterprises. I also hope to inspire more young people to
-            learn about co-operatives and how this model enables transformative change.
+            learn about co-operatives and how they enable transformative change.
             <Link href="/talks" compact>(slides)</Link>.
         </li>
         <li>
