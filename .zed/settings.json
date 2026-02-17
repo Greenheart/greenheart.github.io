@@ -1,0 +1,4 @@
+{
+    // Exclude built talks from Zed search results and file explorer
+    "file_scan_exclusions": ["static/talks/**/*"],
+}
