@@ -8,10 +8,7 @@
 </script>
 
 <div
-    class={[
-        'flex flex-wrap items-center justify-center space-x-8 dark:invert',
-        className,
-    ]}
+    class={['flex flex-wrap items-center justify-center space-x-6', className]}
 >
     <a
         href="https://matrix.to/#/@Greenheart:matrix.org"
@@ -19,7 +16,11 @@
         rel="noopener noreferrer"
         aria-label="Message me securely with the Matrix protocol"
     >
-        <img src="/images/matrix-logo.svg" alt="Matrix.org logo" class="h-6" />
+        <img
+            src="/images/matrix-logo.svg"
+            alt="Matrix.org logo"
+            class="h-6 dark:invert"
+        />
     </a>
     <a
         href={CODE_URL}
@@ -44,5 +45,13 @@
         aria-label="Connect with me on LinkedIn"
     >
         <span class="i-[mdi--linkedin] size-6"></span>
+    </a>
+    <a
+        href="https://www.npmjs.com/~greenheart"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Published code at npm"
+    >
+        <span class="i-[mdi--npm] size-10"></span>
     </a>
 </div>
