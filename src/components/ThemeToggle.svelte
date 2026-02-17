@@ -52,7 +52,7 @@
     title={`Toggle theme from ${currentTheme} to ${nextTheme}`}
     aria-label={`Toggle theme from ${currentTheme} to ${nextTheme}`}
     onclick={() => withoutTransition(() => setTheme(nextTheme))}
-    class="cursor-pointer"
+    class="justify-square -ml-2 flex aspect-square cursor-pointer items-center justify-center"
 >
-    <span class="i-[fluent--dark-theme-20-regular] size-5"></span>
+    <span class="i-[fluent--dark-theme-24-regular] size-5"></span>
 </button>

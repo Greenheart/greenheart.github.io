@@ -31,7 +31,7 @@
     class="xs:text-base 2xs:justify-between mx-auto flex max-w-6xl flex-1 flex-wrap justify-center gap-x-2 gap-y-4 p-4 text-sm"
 >
     <Link href="/">Samuel Plumppu</Link>
-    <nav class="xs:space-x-4 flex space-x-2">
+    <nav class="xs:space-x-4 flex space-x-2 pr-2">
         <Link
             href="/subscribe"
             class="flex"
