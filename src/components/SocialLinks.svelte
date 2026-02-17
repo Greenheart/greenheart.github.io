@@ -27,7 +27,7 @@
         rel="noopener noreferrer"
         aria-label="See my libre software at GitHub"
     >
-        <img src="/images/github.svg" alt="GitHub" class="aspect-square h-6" />
+        <span class="i-[mdi--github] size-6"></span>
     </a>
     <a
         href={MASTODON_URL}
@@ -35,11 +35,7 @@
         rel="me noopener noreferrer"
         aria-label="Follow me on Mastodon"
     >
-        <img
-            src="/images/mastodon-logo.svg"
-            alt="Mastodon"
-            class="aspect-square h-6"
-        />
+        <span class="i-[mdi--mastodon] size-6"></span>
     </a>
     <a
         href="https://linkedin.com/in/samuelplumppu"
@@ -47,10 +43,6 @@
         rel="noopener noreferrer"
         aria-label="Connect with me on LinkedIn"
     >
-        <img
-            src="/images/linkedin.svg"
-            alt="LinkedIn"
-            class="aspect-square h-6"
-        />
+        <span class="i-[mdi--linkedin] size-6"></span>
     </a>
 </div>
