@@ -39,11 +39,8 @@
             href={pageSourceURL}
             class="inline-flex items-center gap-1"
             compact
-            ><img
-                src="/images/code-xml.svg"
-                alt="Show code (Git)"
-                class="size-5"
-            />View source</Link
+            ><span class="i-[lucide--code-xml] size-5"></span>
+            View source</Link
         > for this page.
     </p>
 </section>

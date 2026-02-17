@@ -23,20 +23,12 @@
         >
             <li>
                 <Link href="/feed.atom" class="inline-flex items-center gap-1"
-                    ><img
-                        src="/images/feed.svg"
-                        alt="RSS/Atom feed icon"
-                        class="size-5"
-                    />Atom</Link
+                    ><span class="i-[lucide--rss] size-5"></span>Atom</Link
                 >
             </li>
             <li>
                 <Link href="/feed.json" class="inline-flex items-center gap-1"
-                    ><img
-                        src="/images/feed.svg"
-                        alt="RSS/Atom feed icon"
-                        class="size-5"
-                    />JSON</Link
+                    ><span class="i-[lucide--rss] size-5"></span>JSON</Link
                 >
             </li>
         </ul>
@@ -80,11 +72,10 @@
                 landing page URL, like <code>{SITE_URL}</code>
                 and the feed reader will find the feed automatically. You can also
                 use the
-                <img
-                    src="/images/feed.svg"
-                    alt="RSS/Atom feed icon"
-                    class="not-prose xs:-mb-1 xs:size-5 mx-1 inline-block size-4 dark:invert"
-                /> feed icon to find direct links to add in your reader.
+                <span
+                    class="i-[lucide--rss] xs:-mb-1 xs:size-5 mx-1 inline-block size-4"
+                ></span>
+                feed icon to find direct links to add in your reader.
             </li>
         </ol>
 

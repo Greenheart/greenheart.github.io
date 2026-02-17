@@ -122,11 +122,7 @@
 
     <div class="mt-8 flex justify-center">
         <Link href="#featured-projects" class="inline-flex items-center gap-2"
-            ><img
-                src="/images/code-xml.svg"
-                alt="Show code (Git)"
-                class="size-5"
-            />Featured projects</Link
+            ><span class="i-[lucide--code-xml] size-5"></span>Featured projects</Link
         >
     </div>
 </section>
@@ -316,11 +312,8 @@
     {/each}
 
     <Link href={CODE_URL} class="inline-flex items-center gap-1 self-center"
-        ><img
-            src="/images/code-xml.svg"
-            alt="Show code (Git)"
-            class="size-5"
-        />Explore more of my public projects</Link
+        ><span class="i-[lucide--code-xml] size-5"></span>
+        Explore more of my public projects</Link
     >
 
     <!-- TODO: Uncomment when the /projects page is ready -->

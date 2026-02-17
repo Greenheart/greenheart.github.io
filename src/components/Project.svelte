@@ -42,20 +42,14 @@
     <div class="flex justify-end gap-2">
         {#if project.demo}
             <Link href={project.demo} class="inline-flex items-center gap-1"
-                ><img
-                    src="/images/external-link.svg"
-                    alt="External link to demo"
-                    class="size-5"
-                />Demo</Link
+                ><span class="i-[lucide--external-link] size-5"></span>
+                Demo</Link
             >
         {/if}
         {#if project.code}
             <Link href={project.code} class="inline-flex items-center gap-1"
-                ><img
-                    src="/images/code-xml.svg"
-                    alt="Show code (Git)"
-                    class="size-5"
-                />Code</Link
+                ><span class="i-[lucide--code-xml] size-5"></span>
+                Code</Link
             >
         {/if}
     </div>

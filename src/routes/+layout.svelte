@@ -38,24 +38,7 @@
             title="Subscribe (Atom / JSON)"
             aria-label="Subscribe (Atom / JSON)"
         >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                class="size-4"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                ><g
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    ><path
-                        d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"
-                    /><circle cx="5" cy="19" r="1" /></g
-                ></svg
-            >
+            <span class="i-[lucide--rss] size-5"></span>
         </Link>
         {#each links as link}
             <Link href={link.href}>{link.text}</Link>
