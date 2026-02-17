@@ -41,7 +41,9 @@
             <span class="i-[lucide--rss] size-5"></span>
         </Link>
         {#each links as link}
-            <Link href={link.href}>{link.text}</Link>
+            <Link href={link.href} class="flex items-center justify-center"
+                >{link.text}</Link
+            >
         {/each}
         <ThemeToggle />
     </nav>
