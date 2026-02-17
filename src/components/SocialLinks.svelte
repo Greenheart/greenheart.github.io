@@ -8,7 +8,10 @@
 </script>
 
 <div
-    class={['flex flex-wrap items-center justify-center space-x-6', className]}
+    class={[
+        'flex flex-wrap items-center justify-center space-x-6 [&>a]:flex [&>a]:items-center',
+        className,
+    ]}
 >
     <a
         href="https://matrix.to/#/@Greenheart:matrix.org"
