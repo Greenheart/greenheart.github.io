@@ -2,9 +2,11 @@
     import { browser } from '$app/environment'
     import { withoutTransition } from '$lib/without-transition'
 
-    const themes = ['dark', 'light'] as const
+    const DARK = 'dark'
+    const LIGHT = 'light'
 
-    // let prefersDarkTheme = new MediaQuery('(prefers-color-scheme: dark)')
+    const themes = [DARK, LIGHT] as const
+
     let prefersDarkTheme =
         typeof window !== 'undefined'
             ? window.matchMedia('(prefers-color-scheme: dark)')
@@ -12,21 +14,21 @@
 
     // @ts-expect-error The optional chaining is enough to abort if running this on the server side (e.g. during prerendering).
     prefersDarkTheme.addEventListener?.('change', (event) => {
-        withoutTransition(() => setTheme(event.matches ? 'dark' : 'light'))
+        withoutTransition(() => setTheme(event.matches ? DARK : LIGHT))
     })
 
     function getTheme() {
-        if (!browser) return 'dark'
+        if (!browser) return DARK
 
         if (localStorage.theme) {
             return localStorage.theme
         }
 
         if (prefersDarkTheme.matches) {
-            return 'dark'
+            return DARK
         }
 
-        return 'light'
+        return LIGHT
     }
 
     function setTheme(theme: (typeof themes)[number]) {
@@ -34,8 +36,8 @@
         currentTheme = theme
 
         document.documentElement.classList.toggle(
-            'dark',
-            localStorage.theme === 'dark' ||
+            DARK,
+            localStorage.theme === DARK ||
                 (!('theme' in localStorage) && prefersDarkTheme.matches),
         )
     }
