@@ -1,7 +1,4 @@
 <script lang="ts">
-    import LucideChevronLeft from '~icons/lucide/chevron-left'
-    import LucideChevronRight from '~icons/lucide/chevron-right'
-
     import Link from './Link.svelte'
     import type { BlogPost } from '$lib/posts'
     import { MASTODON_URL } from '$lib/constants'
@@ -60,7 +57,7 @@
             <span
                 class="flex items-center gap-2 text-xs font-bold tracking-wide uppercase"
             >
-                <LucideChevronLeft class="size-5 shrink-0" /> Previous
+                <span class="i-[lucide--chevron-left] size-5 shrink-0"></span> Previous
             </span>
             <span
                 class="group-hover:decoration-moss underline-offset-3 group-hover:underline"
@@ -81,7 +78,7 @@
                 class="flex items-center gap-2 text-xs font-bold tracking-wide uppercase"
             >
                 Next
-                <LucideChevronRight class="size-5 shrink-0" />
+                <span class="i-[lucide--chevron-right] size-5 shrink-0"></span>
             </span>
             <span
                 class="group-hover:decoration-moss underline-offset-3 group-hover:underline"

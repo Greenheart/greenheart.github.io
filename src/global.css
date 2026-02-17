@@ -1,5 +1,11 @@
 @import 'tailwindcss';
 
+@plugin '@tailwindcss/typography';
+@plugin '@iconify/tailwind4' {
+    prefix: 'i';
+    scale: 1.2;
+}
+
 @theme {
     --breakpoint-*: initial;
     --breakpoint-2xs: 375px;
@@ -16,8 +22,6 @@
     --color-carbon-black: #0e1b0f;
     --color-yellow: #ffc847;
 }
-
-@plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:where(.dark, .dark *));
 

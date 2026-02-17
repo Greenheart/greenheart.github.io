@@ -21,6 +21,7 @@
     },
     "devDependencies": {
         "@iconify-json/lucide": "^1.2.91",
+        "@iconify/tailwind4": "^1.2.1",
         "@markdoc/markdoc": "^0.5.4",
         "@sveltejs/adapter-static": "^3.0.10",
         "@sveltejs/enhanced-img": "^0.10.2",
@@ -44,7 +45,6 @@
         "tailwindcss": "^4.1.18",
         "title-case": "^4.3.2",
         "typescript": "^5.9.3",
-        "unplugin-icons": "^23.0.1",
         "vite": "^7.3.1",
         "zod": "^4.3.6"
     },
