@@ -10,8 +10,8 @@
     "homepage": "https://samuelplumppu.se",
     "private": true,
     "scripts": {
-        "dev": "vite dev",
-        "build": "vite build",
+        "dev": "pnpm update-skills && vite dev",
+        "build": "pnpm update-skills && vite build",
         "preview": "vite preview",
         "gh-pages": "gh-pages -d build -b master -t",
         "update-skills": "node scripts/update-skills.ts",
