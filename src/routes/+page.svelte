@@ -269,8 +269,8 @@
             needs to be used wisely.
         </li>
         <li>
-            Every year since 2021, I've had the privilige to hold guest lectures
-            at Chalmers University of Technology for the course <Link
+            Every year since 2021, I've had the privilege to guest lecture at
+            Chalmers University of Technology for the course <Link
                 href="https://www.chalmers.se/en/education/your-studies/find-course-and-programme-syllabi/course-syllabus/TEK237/"
                 compact>Social innovation and social entrepreneurship</Link
             >. My goal is to showcase how to use Doughnut Economics and <Link
