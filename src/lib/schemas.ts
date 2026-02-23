@@ -3,20 +3,18 @@ import z from 'zod'
 import { ALL_TECH_SKILLS } from '$data/tech-skills'
 
 /**
- * Tags used for posts and projects
+ * Tags which are only used for posts and projects
  */
 export const tagsSchema = z.enum([
     ...ALL_TECH_SKILLS,
     'Git',
     'Terminal',
     'Vite',
-    'Accessibility',
     'PDF',
     'Data Pipelines',
     'Caching',
     'Performance',
     'Distrobox',
-    'Testing',
     'Entrepreneurship',
     'Co-operatives',
     'Systems Thinking',

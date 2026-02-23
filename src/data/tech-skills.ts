@@ -1,11 +1,13 @@
 /**
  * Main data source for tech skills, organized into categories.
+ *
+ * Update the types by running `pnpm update-skills`
  */
 export const TECH_SKILLS: Record<string, Skill[]> = {
     'Programming languages': [
         ['TypeScript', 5],
         ['JavaScript', 5],
-        ['Rust', 3],
+        ['Rust', 4],
         ['Python', 3],
         ['C#', 2],
         ['PHP', 2],
@@ -30,6 +32,7 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
         ['Fastify', 4],
         ['Express', 4],
         ['BullMQ', 4],
+        ['Axum', 3],
         ['OpenSearch', 3],
         ['GraphQL', 2],
         ['Elasticsearch', 2],
@@ -42,6 +45,7 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
         ['SQLite', 3],
         ['Prisma', 3],
         ['Drizzle', 3],
+        ['SQLx', 3],
         ['Database Design', 3],
         ['Mongo DB', 2],
     ],
@@ -55,6 +59,7 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
     ],
     'Mobile development': [
         ['React Native', 4],
+        ['PWA', 4],
         ['Android', 3],
         ['iOS', 2],
     ],
@@ -80,10 +85,10 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
 } as const
 
 /**
- * This enables type checking for the skill definitions below and for tags.
+ * This enables type checking for the skill definitions above, and for other website content.
  *
  * Do not edit this array directly. New tech skills should either be added:
- * 1) In the `TECH_SKILLS` below (to show it as tech skills)
+ * 1) In the `TECH_SKILLS` above (to show them as tech skills)
  * 2) Directly in the `tagsSchema` (if it's only needed for blog posts or projects)
  *
  * This array can be automatically updated by running:
@@ -113,6 +118,7 @@ export const ALL_TECH_SKILLS = [
     'Fastify',
     'Express',
     'BullMQ',
+    'Axum',
     'OpenSearch',
     'GraphQL',
     'Elasticsearch',
@@ -123,6 +129,7 @@ export const ALL_TECH_SKILLS = [
     'SQLite',
     'Prisma',
     'Drizzle',
+    'SQLx',
     'Database Design',
     'Mongo DB',
     'Linux',
@@ -132,6 +139,7 @@ export const ALL_TECH_SKILLS = [
     'Flux',
     'Ansible',
     'React Native',
+    'PWA',
     'Android',
     'iOS',
     'Keystatic',

@@ -33,9 +33,7 @@
     </p>
 
     <p class="mb-2">
-        Skills are sorted based on proficiency<span class="sr-only">
-            (from 5 to 1)</span
-        >:
+        Skills sorted by proficiency<span class="sr-only"> (from 5 to 1)</span>:
     </p>
     <div class="mb-8 flex items-center gap-2" aria-hidden="true">
         <span class="mr-2 text-2xl">+</span>

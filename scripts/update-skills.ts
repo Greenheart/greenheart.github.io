@@ -3,6 +3,11 @@ import { resolve } from 'node:path'
 
 import { TECH_SKILLS } from '../src/data/tech-skills.ts'
 
+/**
+ * This script updates tech skills to keep the TypeScript definitions in sync
+ * with the actual data. This provides type safety and spell checking,
+ * while avoiding the issue of circular references in TypeScript.
+ */
 if (import.meta.main) {
     const path = resolve(import.meta.dirname, '../src/data/tech-skills.ts')
     const rawFile = await readFile(path, 'utf-8')
