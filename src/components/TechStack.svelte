@@ -48,7 +48,7 @@
             <h3 class="text-xl font-semibold">{title}</h3>
 
             <ul
-                class="flex flex-wrap gap-1.5 pt-4 text-sm font-normal dark:text-black"
+                class="flex max-w-125 flex-wrap gap-1.5 pt-4 text-sm font-normal dark:text-black"
             >
                 {#each skills as [technology, proficiency], index (technology)}
                     <li
