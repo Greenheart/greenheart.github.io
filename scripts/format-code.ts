@@ -20,11 +20,11 @@
  */
 
 import prettier from 'prettier'
-import { read, write } from 'clipboardy'
+import { readText, writeText } from 'tinyclip'
 
-const input = await read()
+const input = await readText()
 
-const formatted = prettier.format(input, {
+const formatted = await prettier.format(input, {
     plugins: ['prettier-plugin-svelte', 'prettier-plugin-tailwindcss'],
     semi: false,
     singleQuote: true,
@@ -34,8 +34,8 @@ const formatted = prettier.format(input, {
     proseWrap: 'always',
     // Any parser from https://prettier.io/docs/en/options.html#parser
     // NOTE: Remember to use the correct language
-    parser: 'svelte',
+    // parser: 'typescript',
 })
 
-await write(formatted)
+await writeText(formatted)
 console.log('\n✅ Copied formatted code to the clipboard!')

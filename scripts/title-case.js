@@ -16,11 +16,11 @@
  */
 
 import { titleCase } from 'title-case'
-import clipboard from 'clipboardy'
+import { readText, writeText } from 'tinyclip'
 
-const input = await clipboard.read()
+const input = await readText()
 const result = titleCase(input)
 console.log(result)
-await clipboard.write(result)
+await writeText(result)
 
 console.log('\n✅ Copied formatted title to the clipboard!')
