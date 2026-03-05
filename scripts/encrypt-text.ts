@@ -7,12 +7,12 @@ import { stringify } from '../src/lib/base64'
 /**
  * Encrypt a string and turn it into an encrypted payload.
  *
- * @param {string} content The data to encrypt
- * @param {string} password The password which will be used to encrypt + decrypt
+ * @param content The data to encrypt
+ * @param password The password which will be used to encrypt + decrypt
  *   the content.
  * @returns An encrypted payload
  */
-export async function getEncryptedPayload(content, password) {
+export async function getEncryptedPayload(content: string, password: string) {
     const encoder = new TextEncoder()
     const salt = webcrypto.getRandomValues(new Uint8Array(32))
     const baseKey = await webcrypto.subtle.importKey(
