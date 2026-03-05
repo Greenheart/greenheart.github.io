@@ -15,7 +15,7 @@
         "preview": "vite preview",
         "gh-pages": "gh-pages -d build -b master -t",
         "update-skills": "node scripts/update-skills.ts",
-        "encrypt:text": "node --env-file .env scripts/encrypt-text.js",
+        "encrypt:text": "node --env-file .env scripts/encrypt-text.ts",
         "lint": "prettier --check .",
         "format": "prettier --write ."
     },

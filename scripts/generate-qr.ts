@@ -7,7 +7,7 @@ import { writeFile } from 'fs/promises'
  * USAGE:
  *
  * 1. Change the variables
- * 2. Run `node scripts/generate-qr.js`
+ * 2. Run `node scripts/generate-qr.ts`
  * 3. Move file to static dir and use on site or use where it's needed
  */
 const TARGET_URL = 'https://example.com'

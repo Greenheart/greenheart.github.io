@@ -22,8 +22,8 @@ _NOTE:_ This could be simplified in the future to allow fully automatic builds.
 
 ## Writing best practices
 
-- Use `node scripts/title-case.js` to format headings.
-- Use `node scripts/format-code.js` to ensure code has a consistent style.
+- Use `node scripts/title-case.ts` to format headings.
+- Use `node scripts/format-code.ts` to ensure code has a consistent style.
 - Add `<!-- prettier-ignore-start -->` and `<!-- prettier-ignore-end -->` to wrap code blocks in blog posts to prevent the main Prettier instance of the codebase to re-format the code blocks after they already have been formatted with `node scripts/format-code.js`.
 - It's possible to prevent post drafts from rendering by prefixing the file with `_`.
 

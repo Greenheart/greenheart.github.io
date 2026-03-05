@@ -10,7 +10,7 @@
  * Usage:
  *
  * 1. Copy the heading you want to format
- * 2. Run `node scripts/title-case.js` to format and copy the result to the
+ * 2. Run `node scripts/title-case.ts` to format and copy the result to the
  *    clipboard.
  * 3. Paste the heading anywhere.
  */

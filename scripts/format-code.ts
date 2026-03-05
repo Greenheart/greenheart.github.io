@@ -14,7 +14,7 @@
  * 1. Copy the code you want to format
  * 2. Edit the prettier config below to ensure the correct parser language has been
  *    chosen.
- * 3. Run `node scripts/format-code.js` to format and copy the result to the
+ * 3. Run `node scripts/format-code.ts` to format and copy the result to the
  *    clipboard.
  * 4. Paste the code anywhere.
  */
