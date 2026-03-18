@@ -78,6 +78,7 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
         ['Chroma', 3],
         ['Claude', 3],
         ['GPT', 3],
+        ['LocalAI', 2],
     ],
     'Other tech skills': [
         ['Testing', 4],
@@ -164,6 +165,7 @@ export const ALL_TECH_SKILLS = [
     'Chroma',
     'Claude',
     'GPT',
+    'LocalAI',
     'Testing',
     'Local-first',
     'GIS',
