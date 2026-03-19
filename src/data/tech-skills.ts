@@ -47,7 +47,7 @@ export const TECH_SKILLS: Record<string, Skill[]> = {
         ['Drizzle', 3],
         ['SQLx', 3],
         ['Database Design', 3],
-        ['Mongo DB', 2],
+        ['MongoDB', 2],
     ],
     'Servers & containers': [
         ['Linux', 4],
@@ -142,7 +142,7 @@ export const ALL_TECH_SKILLS = [
     'Drizzle',
     'SQLx',
     'Database Design',
-    'Mongo DB',
+    'MongoDB',
     'Linux',
     'Podman',
     'Docker',
