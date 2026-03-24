@@ -50,7 +50,7 @@
         <span class="i-[mdi--linkedin] size-6"></span>
     </a>
     <a
-        href="https://www.npmjs.com/~greenheart"
+        href="https://npmx.dev/~greenheart"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Published code at npm"
