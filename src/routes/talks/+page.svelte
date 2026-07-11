@@ -6,8 +6,9 @@
 <h1
     class="xs:text-5xl mb-8 text-4xl leading-none font-black tracking-tight sm:text-6xl lg:text-7xl"
 >
-    My talks
+    Talks
 </h1>
+<p class="mb-8 text-xl sm:text-2xl">Some of my public presentations.</p>
 
 <div class="flex flex-col items-start space-y-2">
     {#each talks as talk}
